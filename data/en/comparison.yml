@@ -1,0 +1,86 @@
+############################### comparison table ############################
+comparison:
+  enable: true
+  title: "How juuri.ai differs from others"
+  description: "Compare our services to other marketing solutions"
+  
+  # CTA section (optional) - New addition for enhanced template
+  cta_text: "Interested? Contact us for a free consultation"
+  cta_link: "#otayhteytta"
+  
+  # Table rows - features being compared
+  features:
+    - "Speed"
+    - "Flexibility"
+    - "Quality content"
+    - "Brand management"
+    - "Scalability"
+    - "Cost efficiency"
+    - "AI utilization"
+  
+  # Table columns - different service providers/options
+  columns:
+    # Column 1 - Your service (highlighted)
+    - name: "Juuri.ai"
+      highlighted: true
+      color_class: "success"
+      values:
+        - true  # Speed
+        - true  # Flexibility
+        - true  # Quality content
+        - true  # Brand management
+        - true  # Scalability
+        - true  # Cost efficiency
+        - true  # AI utilization
+    
+    # Column 2
+    - name: "Marketing Agency"
+      highlighted: false
+      color_class: "default"
+      values:
+        - false # Speed
+        - false # Flexibility
+        - true  # Quality content
+        - true  # Brand management
+        - false # Scalability
+        - false # Cost efficiency
+        - false # AI utilization
+    
+    # Column 3
+    - name: "In-house Team"
+      highlighted: false
+      color_class: "default"
+      values:
+        - true  # Speed
+        - false # Flexibility
+        - true  # Quality content
+        - true  # Brand management
+        - false # Scalability
+        - false # Cost efficiency
+        - false # AI utilization
+    
+    # Column 4
+    - name: "DIY Tools"
+      highlighted: false
+      color_class: "default"
+      values:
+        - false # Speed
+        - false # Flexibility
+        - false # Quality content
+        - false # Brand management
+        - false # Scalability
+        - true  # Cost efficiency
+        - false # AI utilization
+    
+    # Column 5
+    - name: "Freelancers"
+      highlighted: false
+      color_class: "default"
+      values:
+        - false # Speed
+        - true  # Flexibility
+        - false # Quality content
+        - false # Brand management
+        - false # Scalability
+        - true  # Cost efficiency
+        - false # AI utilization

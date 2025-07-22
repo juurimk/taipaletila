@@ -1,0 +1,314 @@
+{{ define "main" }}
+
+{{ partial "navigation.html" . }}
+
+{{ $data := index site.Data site.Language.Lang }}
+{{ $serviceSlug := .Params.slug | default (path.Base .File.Dir) }}
+{{ $service := index (where $data.services.services.service_items "slug" $serviceSlug) 0 }}
+
+{{/* Get sectionset for service pages */}}
+{{ $sectionset := index site.Params.sectionsets "service_pages" | default "darkset" }}
+
+{{ if $service }}
+
+{{"<!-- Service Hero Banner -->" | safeHTML}}
+<section class="service-hero-banner section-{{ $sectionset }}">
+  {{/* Background image */}}
+  <div class="service-hero-bg" style="background-image: url('{{ $service.image_webp | default $service.image | absURL }}');"></div>
+  
+  {{/* Overlay */}}
+  <div class="service-hero-overlay"></div>
+  
+  {{/* Content */}}
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="service-hero-content text-center">
+          
+          {{/* Service Logo */}}
+          {{ if $service.logo }}
+          <div class="service-hero-logo mb-4">
+            <img class="img-fluid lozad" 
+                 data-src="{{ $service.logo | absURL }}" 
+                 alt="{{ $service.name }} logo">
+          </div>
+          {{ end }}
+          
+          {{/* Service Title */}}
+          <h1 class="service-hero-title">{{ $service.name }}</h1>
+          
+          {{/* Service Description */}}
+          {{ if $service.description }}
+          <div class="service-hero-description">
+            <p>{{ $service.description | safeHTML }}</p>
+          </div>
+          {{ end }}
+          
+          {{/* CTA Button */}}
+          <div class="service-hero-cta">
+            <a href="#contact-form" class="btn btn-hero-cta">
+              Kysy tarjous
+              <i class="ti-arrow-down" aria-hidden="true"></i>
+            </a>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{"<!-- /Service Hero Banner -->" | safeHTML}}
+
+{{"<!-- Service Content -->" | safeHTML}}
+<section class="service-content-section section-{{ $sectionset }}">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 offset-lg-1">
+        
+        {{/* Main Content */}}
+        <div class="service-main-content">
+          {{ if $service.detailed_content }}
+            {{ $service.detailed_content | markdownify }}
+          {{ else if $service.content }}
+            {{ $service.content | markdownify }}
+          {{ else }}
+            <p>{{ $service.short_description | safeHTML }}</p>
+          {{ end }}
+        </div>
+
+        {{/* Service Gallery */}}
+        {{ if $service.images }}
+        <div class="service-gallery mt-5">
+          <div class="row">
+            {{ range $service.images }}
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="service-gallery-item">
+                <img class="img-fluid rounded lozad" 
+                     data-src="{{ . | absURL }}" 
+                     alt="{{ $service.name }} kuva">
+              </div>
+            </div>
+            {{ end }}
+          </div>
+        </div>
+        {{ end }}
+
+      </div>
+    </div>
+  </div>
+</section>
+{{"<!-- /Service Content -->" | safeHTML}}
+
+{{"<!-- Contact Form Section -->" | safeHTML}}
+<section id="contact-form" class="service-contact-form section-{{ $sectionset }}">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        
+        {{/* Contact Form Header */}}
+        <div class="contact-form-header text-center mb-5">
+          <h2 class="contact-form-title">Kysy tarjous palvelusta {{ $service.name }}</h2>
+          <p class="contact-form-subtitle">Kerro meille projektistasi ja saat henkilökohtaisen tarjouksen nopeasti.</p>
+        </div>
+        
+        {{/* Contact Form */}}
+        <div class="service-contact-form-wrapper">
+          <form class="service-contact-form-inner" action="#" method="post" name="service-contact-form" id="service-contact-form">
+            
+            {{/* Hidden field for service */}}
+            <input type="hidden" name="service" value="{{ $service.name }}">
+            
+            <div class="row">
+              
+              {{/* Name Field */}}
+              <div class="col-lg-6 mb-4">
+                <div class="form-group">
+                  <label for="contact-name" class="form-label">Nimi *</label>
+                  <input type="text" class="form-control" name="name" id="contact-name" required placeholder="Nimesi">
+                </div>
+              </div>
+              
+              {{/* Email Field */}}
+              <div class="col-lg-6 mb-4">
+                <div class="form-group">
+                  <label for="contact-email" class="form-label">Sähköposti *</label>
+                  <input type="email" class="form-control" name="email" id="contact-email" required placeholder="sahkoposti@yritys.fi">
+                </div>
+              </div>
+              
+              {{/* Company Field */}}
+              <div class="col-lg-6 mb-4">
+                <div class="form-group">
+                  <label for="contact-company" class="form-label">Yritys</label>
+                  <input type="text" class="form-control" name="company" id="contact-company" placeholder="Yrityksesi nimi">
+                </div>
+              </div>
+              
+              {{/* Phone Field */}}
+              <div class="col-lg-6 mb-4">
+                <div class="form-group">
+                  <label for="contact-phone" class="form-label">Puhelin</label>
+                  <input type="tel" class="form-control" name="phone" id="contact-phone" placeholder="+358 40 123 4567">
+                </div>
+              </div>
+              
+              {{/* Budget Field */}}
+              <div class="col-lg-12 mb-4">
+                <div class="form-group">
+                  <label for="contact-budget" class="form-label">Arvioitu budjetti</label>
+                  <select class="form-control" name="budget" id="contact-budget">
+                    <option value="">Valitse budjettisi</option>
+                    <option value="under-5000">Alle 5 000 €</option>
+                    <option value="5000-15000">5 000 - 15 000 €</option>
+                    <option value="15000-30000">15 000 - 30 000 €</option>
+                    <option value="30000-50000">30 000 - 50 000 €</option>
+                    <option value="over-50000">Yli 50 000 €</option>
+                  </select>
+                </div>
+              </div>
+              
+              {{/* Message Field */}}
+              <div class="col-lg-12 mb-4">
+                <div class="form-group">
+                  <label for="contact-message" class="form-label">Viesti *</label>
+                  <textarea class="form-control" name="message" id="contact-message" rows="5" required placeholder="Kerro projektistasi, tavoitteistasi ja aikataulustasi..."></textarea>
+                </div>
+              </div>
+              
+              {{/* Privacy Checkbox */}}
+              <div class="col-lg-12 mb-4">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="privacy" id="contact-privacy" required>
+                  <label class="form-check-label" for="contact-privacy">
+                    Hyväksyn <a href="/tietosuoja" target="_blank">tietosuojakäytännön</a> *
+                  </label>
+                </div>
+              </div>
+              
+              {{/* Submit Button */}}
+              <div class="col-lg-12 text-center">
+                <button type="submit" class="btn btn-contact-submit">
+                  <span class="btn-text">Lähetä tarjouspyyntö</span>
+                  <i class="ti-arrow-right btn-icon" aria-hidden="true"></i>
+                </button>
+              </div>
+              
+            </div>
+          </form>
+          
+          {{/* Success Message */}}
+          <div class="contact-success-message" id="contact-success" style="display: none;">
+            <div class="success-content text-center">
+              <i class="ti-check success-icon" aria-hidden="true"></i>
+              <h3>Kiitos yhteydenotostasi!</h3>
+              <p>Tarjouspyyntösi on lähetetty onnistuneesti. Otamme sinuun yhteyttä 1-2 arkipäivän kuluessa.</p>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{"<!-- /Contact Form Section -->" | safeHTML}}
+
+{{"<!-- Back to Services Section -->" | safeHTML}}
+<section class="back-to-services section-{{ $sectionset }}">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <a href="/#services" class="btn btn-back-services">
+          <i class="ti-arrow-left" aria-hidden="true"></i>
+          Takaisin palveluihin
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+{{"<!-- /Back to Services Section -->" | safeHTML}}
+
+{{ else }}
+{{"<!-- Service not found -->" | safeHTML}}
+<section class="service-not-found section-{{ $sectionset }}">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2 text-center">
+        <h1 class="error-title">Palvelua ei löytynyt</h1>
+        <p class="error-description">Hakemaasi palvelua ei löytynyt.</p>
+        <a href="/#services" class="btn btn-main mt-4">
+          <i class="ti-arrow-left" aria-hidden="true"></i>
+          Takaisin palveluihin
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{"<!-- Service Contact Form JavaScript -->" | safeHTML}}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const serviceForm = document.getElementById('service-contact-form');
+  const successMessage = document.getElementById('contact-success');
+  
+  if (serviceForm) {
+    serviceForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const submitBtn = this.querySelector('.btn-contact-submit');
+      const nameInput = this.querySelector('input[name="name"]');
+      const emailInput = this.querySelector('input[name="email"]');
+      const messageInput = this.querySelector('textarea[name="message"]');
+      const privacyInput = this.querySelector('input[name="privacy"]');
+      
+      // Basic validation
+      if (!nameInput.value.trim() || !emailInput.value.trim() || !messageInput.value.trim()) {
+        alert('Täytä kaikki pakolliset kentät.');
+        return;
+      }
+      
+      if (!privacyInput.checked) {
+        alert('Hyväksy tietosuojakäytäntö jatkaaksesi.');
+        return;
+      }
+      
+      // Email validation
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(emailInput.value)) {
+        alert('Syötä kelvollinen sähköpostiosoite.');
+        return;
+      }
+      
+      // Disable submit button
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<span class="btn-text">Lähetetään...</span>';
+      
+      // Here you would typically send the data to your form handler
+      // For now, we'll simulate a successful submission
+      setTimeout(function() {
+        serviceForm.style.display = 'none';
+        if (successMessage) {
+          successMessage.style.display = 'block';
+        }
+        
+        // Scroll to success message
+        successMessage.scrollIntoView({ behavior: 'smooth' });
+      }, 1000);
+    });
+  }
+  
+  // Smooth scroll for CTA button
+  const heroCtaBtn = document.querySelector('.btn-hero-cta');
+  if (heroCtaBtn) {
+    heroCtaBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  }
+});
+</script>
+
+{{ end }}

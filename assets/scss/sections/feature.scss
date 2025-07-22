@@ -1,0 +1,35 @@
+// =============================================================================
+// Feature section
+// =============================================================================
+.feature-icon {
+ text-align: center;
+ margin-bottom: 20px;
+ 
+ // Mobiilissa enemmän tilaa
+ @media (max-width: 767px) {
+   margin-top: 30px;
+   margin-bottom: 25px;
+ }
+ 
+ i {
+   font-size: 2rem;
+   color: var(--siteset-sectionset-color) !important;
+ }
+}
+
+.feature-title {
+ text-align: center;
+ color: var(--siteset-lightset-color);
+}
+
+.feature-description {
+ text-align: center !important;
+ color: var(--siteset-lightset-bg);
+ margin-top: 10px !important;
+ margin-bottom: 0px !important;
+ 
+ // Mobiilissa enemmän tilaa alareunaan
+ @media (max-width: 767px) {
+   margin-bottom: 20px !important;
+ }
+}

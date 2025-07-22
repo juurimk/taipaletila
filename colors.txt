@@ -1,0 +1,118 @@
+siteset_saaristo:
+-sectionset_saaristo:
+--lightset:
+  bg-color: #FFFFFF
+  color: #000000 
+  button: #FCA311
+  H2: #FCA311
+--neutralset:
+  bg-color: #E5E5E5
+  color: #000000 
+  button: #FCA311
+  H2: #FCA311
+--darkset:
+  bg-color: #14213D
+  color: #ffffff 
+  button: #FCA311
+  H2: #FCA311
+--coloriset:
+  bg-color: #FCA311
+  color: #ffffff
+  button: #ffffff
+  H2: #ffffff
+
+***
+siteset_kaste:
+-sectionset_kaste:
+--lightset:
+  bg-color: #FFFFFF
+  color: #032320 
+  button:rgb(0, 173, 179)
+  H2: #2ec4b6
+--neutralset:
+  bg-color: #cbf3f0
+  color: #032320
+  button: rgb(0, 173, 179)
+  H2: #2ec4b6
+--darkset:
+  color: #032320
+  color: #ffffff 
+  button: rgb(0, 173, 179)
+  H2: #2ec4b6
+--coloriset:
+  bg-color: #2ec4b6
+  color: #ffffff
+  button: #ffffff
+  H2: #ffffff
+
+***
+siteset_korpi:
+-sectionset_korpi:
+--lightset:
+  bg-color: #FFFFFF
+  color: #032320 
+  button: #1fc41f
+  H2: #1fc41f
+--neutralset:
+  bg-color: #e4e4e4
+  color: #032320
+  button: #1fc41f
+  H2: #1fc41f
+--darkset:
+  color: #000000
+  color: #ffffff 
+  button: #1fc41f
+  H2: #1fc41f
+--coloriset:
+  bg-color: #055905
+  color: #ffffff
+  button: #ffffff
+  H2: #ffffff
+
+***
+siteset_hiekka:
+-sectionset_hiekka:
+--lightset: 
+  bg-color: #fefaf5
+  color: #A98E76
+  button: #e1a927
+  H2: #171717
+--neutralset:
+  bg-color: #d2c5b3
+  color: #171717
+  button: #e1a927
+  H2: #A98E76
+--darkset:
+  color: #171717
+  color: #fefaf5 
+  button: #fefaf5
+  H2: #fefaf5
+--coloriset:
+  bg-color: #e1a927
+  color: #fefaf5
+  button: #fefaf5
+  H2: #fefaf5
+
+***
+siteset_loimu:
+-sectionset_loimu:
+--lightset: 
+  bg-color: #FAF0CA
+  color: #000000
+  button: #F95738
+  H2: #F95738
+--neutralset:
+  bg-color: #d2c5b3
+  color: #000000
+  button: #F95738
+  H2: #F95738
+--darkset:
+  color: #0d3b66
+  color: #FAF0CA
+  button: #FAF0CA
+  H2: #FAF0CA
+--coloriset:
+  bg-color: #F95738
+  color: #FAF0CA
+  button: #FAF0CA
+  H2: #FAF0CA

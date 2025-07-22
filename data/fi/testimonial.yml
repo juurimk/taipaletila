@@ -1,0 +1,18 @@
+################################# Testimonial #########################
+testimonial:
+  enable : true
+  # title : "Mitä meistä sanotaan"  # LISÄÄ TÄMÄ RIVI
+  # bg_image poistettu - ei tarvita enää
+  # bg_image_webp poistettu - ei tarvita enää
+  testimonial_item :
+    # testimonial item loop
+    - name : Mikael Andersson
+      content : Meghna-tiimi ylitti odotuksemme täysin. Heidän ammattitaitonsa ja sitoutumisensa projektiin oli erinomaista. Suosittelemme lämpimästi!
+      
+    # testimonial item loop
+    - name : Laura Hakkarainen
+      content : Saimme juuri sen mitä tarvitsimme - modernin, toimivan verkkosivuston joka on nostanut myyntiämme merkittävästi. Kiitos erinomaisesta työstä!
+      
+    # testimonial item loop
+    - name : Tommi Rautiainen
+      content : Asiakaspalvelu on huippuluokkaa ja tekninen toteutus oli moitteetonta. Projektimme valmistui ajallaan ja budjetissa. Loistava kokemus!

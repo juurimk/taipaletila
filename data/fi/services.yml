@@ -1,0 +1,60 @@
+############################### services ############################
+services:
+  enable: true
+  title: "Palvelut"
+  
+  # Service single page button (jos haluat näyttää yhteisen painikkeen)
+  single_page_button:
+    enable: false
+    label: "Kysy tarjous"
+    link: "#palvelut"
+  
+  # Service single page contact section (ennen contact formia)
+  contact_section:
+    enable: true
+    title: "Aloitetaan yhdessä"
+    description: "Kerro meille projektistasi ja löydetään yhdessä paras ratkaisu tarpeisiisi. Vastaamme viesteihin nopeasti."
+  
+  # Service items - vain etusivun korttien tiedot
+  service_items:
+    # Service 1 - JuuriSyy
+    - name: "JuuriSyy"
+      subtitle: "AI-automaatiot ja integraatiot"
+      price: "Kysy tarjous!"
+      slug: "juurisyy"
+      link: "#otayhteytta"
+      image: "images/services/service-juurisyy.png"
+      image_webp: "images/services/service-juurisyy.webp"
+      short_description: "Vapauta työaikaa ja tuo työhön tehokkuutta ja kasvua inhimillisen automaation avulla."
+      bullet_description: |
+        - Räätälöidyt automaatio- ja tekoälyratkaisut
+        - Liidien hankinnan automaatiot
+        - Tekoälykoulutukset ja työpajat tiimeille
+
+    # Service 2 - JuuriNyt
+    - name: "JuuriNyt"
+      subtitle: "Markkinointi ja mainonta"
+      price: "Kysy tarjous!"
+      slug: "juurinyt"
+      link: "#otayhteytta"
+      image: "images/services/service-juurinyt.png"
+      image_webp: "images/services/service-juurinyt.webp"
+      short_description: "Lisää tunnettuutta ja kysyntää systemaattisella markkinoinnilla."
+      bullet_description: |
+        - Markkinoinnin ja mainonnan kokonaisuudet
+        - Strategia
+        - Yritys- ja henkilöbrändäykset
+
+    # Service 3 - JuuriSinulle
+    - name: "JuuriSinulle"
+      subtitle: "Sisällöntuotannon palvelut"
+      price: "Alk. 80 €/h"
+      slug: "juurisinulle"
+      link: "#otayhteytta"
+      image: "images/services/service-juurisinulle.png"
+      image_webp: "images/services/service-juurisinulle.webp"
+      short_description: "Näytä ammattimaiselta ja pysy asiakkaidesi mielessä. Sisällöntuotantopalveluita, jotka tuottavat tulosta."
+      bullet_description: |
+        - Modernit sisällöntuotannon työkalut
+        - Ammattilaisen viimeistelemät sisältöstrategiat ja sisällöntuotannot
+        - Laadukasta graafista suunnittelua

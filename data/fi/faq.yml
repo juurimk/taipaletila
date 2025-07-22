@@ -1,0 +1,52 @@
+############################### FAQ ############################
+faq:
+  enable: true
+  title: Usein kysytyt kysymykset
+  # subtitle: Vastauksia yleisimpiin kysymyksiin
+  # faq_description: Tässä löydät vastaukset yleisimpiin kysymyksiin palveluistamme. Jos et löydä vastausta kysymykseesi, ota rohkeasti yhteyttä - autamme mielellämme!
+
+  # FAQ Items (ilman kategorioita)
+  faq_items:
+    # FAQ item 1
+    - question: Miten hyödynnämme tekoälyä markkinoinnissa?
+      answer: | 
+        **Räätälöidyt tekoälyagentit, jotka tuntevat yrityksesi**
+        Rakennamme älykkäitä avustajia, jotka tuntevat yrityksesi tavat toimia. Luomme markkinointitiimiin kampanjamanagereita, HR tiimille älykkäitä Tekoälyavustajia ja muita kokonaisuuksia, jotka tehostavat toimintaanne.
+ 
+        Tekoäly on loistava sisällön tuottamisessa ideointivaiheessa. Se voi ehdottaa otsikoita, hahmotella tekstirunkoja ja tuottaa variaatioita tai tuottaa suoraan hakukoneoptimoitua sisältöä. Prosessimme, jokainen julkaistava sana käy ihmisen tarkistuksen läpi. Ihmisyys ei katoa.
+
+    # FAQ item 2
+    - question: Mitä työkaluja hyödynnämme?
+      answer: |
+        **Uusimmat kielimallit**  
+        Käytämme markkinoiden kehittyneimpiä AI-kielimalleja, mutta aina selkeällä strategialla. Emme anna tekoälyn improvisoida. Se toimii tarkkojen ohjeiden mukaan. Näin varmistamme laadun. Koulutamme mallit ymmärtämään juuri  yrityksen kieltä ja arvoja.
+
+        **Automaatioalustat, joiden avulla saadaan aikaiseksi**  
+        Hyödynnämme kokemustamme N8N:stä, Make.com:sta ja Zapierista rakentaaksemme kokonaisuuksia, jotka toimivat. Asiakastieto liikkuu järjestelmästä toiseen saumattomasti, kampanjat käynnistyvät oikeaan aikaan ja seuranta tapahtuu automaattisesti. Mutta aina niin, että ihminen näkee mitä tapahtuu ja voi puuttua asiaan tarvittaessa.
+
+    # FAQ item 3
+    - question: Tekoäly kuulostaa kylmältä. Häviääkö inhimillisyys?
+      answer: Päinvastoin. Kun tekoäly hoitaa tylsimmät rutiinit, ihmisille jää   enemmän aikaa olla ihmisiä. Asiakaspalvelija voi kuunnella asiakasta paremmin, kun ei tarvitse etsiä tietoja kymmenestä järjestelmästä. Markkinoija voi keskittyä tarinankerrontaan, kun esivalmisteluvaiheet tapahtuvat automaattisesti. Tekoäly tekee tilaa inhimillisyydelle - ei vie sitä pois.
+  
+    # FAQ item 4
+    - question: Kuinka nopeasti nähdään todellisia tuloksia?
+      answer: |
+        Riippuu täysin siitä, mitä ongelmaa ratkotaan. Yksinkertainen chatbot voi alkaa säästää aikaa heti. Monimutkaisempi asiakkuudenhallinta vaatii vähän enemmän hiomista. Olemme rehellisiä: aitoa kasvua ei synny yhdessä yössä, mutta aikaa alkaa säästymään heti. Varmistamme, että jokainen askel vie oikeaan suuntaan ja että näet edistymisen matkan varrella.
+
+    # FAQ item 5
+    - question: Entä, jos tilaajalla ei ole teknistä osaamista omassa tiimissään?
+      answer: |
+        Sitä varten me olemme olemassa. Selitämme kaiken selkokielellä, koulutamme tiimiäsi käyttämään ratkaisuja ja olemme tukena aina kun tarvitset. Tavoite on, että sinä hallitset lopputuloksen et ole riippuvainen meistä päivittäisessä toiminnassa. Mutta kun tarvitset apua, olemme puhelun päässä. Ja jos teiltä löytyykin sitä teknistä osaamista, vielä parempi. Kaikki ratkaisumme voimme rakentaa niin, että ne ovat täysin teidän ylläpitämiä ja hallinnoimia.
+
+    # FAQ item 6
+    - question: Miten varmistatte, että ratkaisu toimii juuri meidän yrityksessämme?
+      answer: |
+        Emme tule valmiilla sapluunoilla. Jokainen ala on erilainen, jokainen yritys on ainutlaatuinen. Siksi vietämme aikaa ymmärtääksemme toimintaanne. Yleisratkaisut harvoin toimivat ja sen vuoksi räätälöinti on usein välttämätöntä. 
+
+  # Contact CTA section
+  # contact_cta:
+  #  enable: true
+  #  title: Aloitetaan kasvu
+  #  description: Jutellaan. Ei käsien heiluttelua, vaan rehellinen keskustelu siitä, miten voisimme auttaa sinua kasvamaan.
+  #  button_text: Ota yhteyttä
+  #  button_link: "#contact"

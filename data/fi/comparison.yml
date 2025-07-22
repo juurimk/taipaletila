@@ -1,0 +1,89 @@
+############################### comparison table ############################
+comparison:
+  enable: true
+  title: "Miten juuri.ai eroaa muista?"
+  column_label: "Ominaisuus"
+  caption: "Vertailutaulukko palveluntarjoajien ominaisuuksista, kuten nopeus, skaala ja tekoälyn hyödyntäminen."
+  # description: "Vertaa palvelumme muihin markkinointiratkaisuihin"
+  
+  # CTA section (optional) - New addition for enhanced template
+  cta_text: "Kiinnostuitko? Ota yhteyttä ilmaiseen konsultaatioon"
+  cta_link: "#otayhteytta"
+  
+  # Table rows - features being compared
+  features:
+    - "Nopeus"
+    - "Joustavuus"
+    - "Laadukas sisältö"
+    - "Brändinhallinta"
+    - "Skaalautuvuus"
+    - "Kustannustehokkuus"
+    - "Tekoälyn hyödyntäminen"
+
+  
+  # Table columns - different service providers/options
+  columns:
+    # Column 1 - Your service (highlighted)
+    - name: "Juuri.ai"
+      highlighted: true
+      color_class: "success" # This will determine the styling
+      values:
+        - true  # Nopeus
+        - true  # Joustavuus
+        - true  # Laadukas sisältö
+        - true  # Brändinhallinta
+        - true  # Skaalautuvuus
+        - true  # Kustannustehokkuus
+        - true  # Tekoälyn hyödyntäminen
+    
+    # Column 2
+    - name: "Markkinointi- toimisto"
+      highlighted: false
+      color_class: "default"
+      values:
+        - false # Nopeus
+        - false # Joustavuus
+        - true  # Laadukas sisältö
+        - true  # Brändinhallinta
+        - false # Skalautuvuus
+        - false # Kustannustehokkuus
+        - false # Tekoälyn hyödyntäminen
+    
+    # Column 3
+    - name: "Oma tiimi"
+      highlighted: false
+      color_class: "default"
+      values:
+        - true  # Nopeus
+        - false # Joustavuus
+        - true  # Laadukas sisältö
+        - true  # Brändinhallinta
+        - false # Skalautuvuus
+        - false # Kustannustehokkuus
+        - false # Tekoälyn hyödyntäminen
+    
+    # Column 4
+    - name: "Omat työkalut"
+      highlighted: false
+      color_class: "default"
+      values:
+        - false # Nopeus
+        - false # Joustavuus
+        - false # Laadukas sisältö
+        - false # Brändinhallinta
+        - false # Skalautuvuus
+        - true  # Kustannustehokkuus
+        - false # Tekoälyn hyödyntäminen
+    
+    # Column 5
+    - name: "Freelancerit"
+      highlighted: false
+      color_class: "default"
+      values:
+        - false # Nopeus
+        - true  # Joustavuus
+        - false # Laadukas sisältö
+        - false # Brändinhallinta
+        - false # Skalautuvuus
+        - true  # Kustannustehokkuus
+        - false # Tekoälyn hyödyntäminen

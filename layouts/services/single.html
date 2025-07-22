@@ -1,0 +1,454 @@
+{{ define "main" }}
+
+{{/* Normaalit navigaatio etusivulta */}}
+{{ partial "navigation.html" . }}
+
+{{ $data := index site.Data site.Language.Lang }}
+{{ $service := .Params }}
+
+{{ if $service }}
+
+{{ if $service.banner_image }}
+<section class="service-hero">
+  <div class="service-hero-bg" style="background-image: url('{{ $service.banner_image }}');">
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2 text-center">
+        <h1 style="color: white;">{{ $service.title }}</h1>
+        {{ if $service.subtitle }}
+        <p style="color: white; font-size: 1.2rem;">{{ $service.subtitle }}</p>
+        {{ end }}
+
+        {{ if $service.button.enable }}
+        <div class="video-button">
+          <a href="{{ $service.button.link }}" class="btn btn-transparent page-scroll">
+            {{ $service.button.label }}
+          </a>
+        </div>
+        {{ end }}
+
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{ if and .Params.main_text .Params.main_text.enable }}
+{{ $sectionset := index site.Params.sectionsets "main_text" | default "lightset" }}
+<section class="main-text-section section section-{{ $sectionset }}">
+  <div class="container">
+    <!-- Breadcrumbs -->
+    <div class="row">
+      <div class="col-12">
+        <nav aria-label="breadcrumb" class="breadcrumb-nav">
+          <ol>
+            <li>
+              <a href="{{ "/" | relURL }}">{{ .Site.Title | default "Etusivu" }}</a>
+            </li>
+            
+            {{ $currentPage := . }}
+            {{ range $index, $ancestor := .Ancestors.Reverse }}
+              {{ if ne $ancestor.Kind "home" }}
+                <li>
+                  <span class="separator">/</span>
+                  <a href="{{ $ancestor.RelPermalink }}">{{ $ancestor.Title }}</a>
+                </li>
+              {{ end }}
+            {{ end }}
+            
+            <li class="active" aria-current="page">
+              <span class="separator">/</span>
+              <span>{{ .Title }}</span>
+            </li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+    
+    <!-- Alkuperäinen sisältö -->
+    <div class="row justify-content-center">
+      <div class="col-lg-8 col-md-10 text-center">
+        {{ with .Params.main_text.title_1 }}
+        <h2 class="main-text-title">{{ . }}</h2>
+        {{ end }}
+        {{ with .Params.main_text.content_1 }}
+        <div class="main-text-content">
+          {{ . | markdownify }}
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+
+
+  {{/* Palvelun sisältö */}}
+  {{ $sectionset := index site.Params.sectionsets "service_pages" | default "lightset" }}
+  {{ if .Content }}
+  <section class="service-content section-{{ $sectionset }}">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10 offset-lg-1">
+          <div class="service-main-content">
+            {{ .Content }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
+    {{ if and .Params.packages .Params.packages.enable }}
+  {{ $sectionset := index site.Params.sectionsets "packages" | default "lightset" }}
+  <section id="packages-section" class="section packages-section section-{{ $sectionset }}">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center mb-5">
+          <h2 class="packages-title">{{ .Params.packages.title }}</h2>
+          {{ if .Params.packages.description }}
+          <p class="packages-description">{{ .Params.packages.description }}</p>
+          {{ end }}
+        </div>
+      </div>
+      <div class="row justify-content-center" role="list">
+        {{ range .Params.packages.package_items }}
+        <div class="col-lg-3 col-md-6 col-sm-12 mb-4" role="listitem">
+          {{ if .link }}
+          <a href="{{ .link }}" class="package-box-link">
+          {{ end }}
+            <div class="package-box h-100 d-flex flex-column">
+              <h5 class="package-box-title">{{ .title }}</h5>
+              <div class="package-box-text">{{ .description | markdownify }}</div>
+              {{ if .price }}
+              <div class="package-box-price mt-auto">{{ .price }}</div>
+              {{ end }}
+            </div>
+          {{ if .link }}
+          </a>
+          {{ end }}
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
+  {{ if and .Params.expert .Params.expert.enable }}
+{{ $sectionset := index site.Params.sectionsets "expert" | default "lightset" }}
+<section id="expert-section" class="section expert-section section-{{ $sectionset }}">
+  <div class="container">
+    <div class="row align-items-center">
+      
+      {{ if .Params.expert.image }}
+      <div class="col-md-6 mb-4 mb-md-0 text-center">
+        <img src="{{ .Params.expert.image | absURL }}" alt="Asiantuntija" class="expert-image img-fluid rounded shadow">
+      </div>
+      {{ end }}
+
+      <div class="col-md-6">
+        {{ if .Params.expert.title }}
+        <h2 class="expert-title">{{ .Params.expert.title }}</h2>
+        {{ end }}
+        
+        {{ if .Params.expert.content }}
+        <div class="expert-content">
+          {{ .Params.expert.content | markdownify }}
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+
+  {{/* Palvelukohtainen FAQ-osio */}}
+  {{ if and .Params.faq .Params.faq.enable }}
+  {{ with .Params.faq }}
+
+  <section id="service-faq" class="section faq-section section-{{ $sectionset }}" style="background-color: var(--siteset-{{ $sectionset }}-bg); color: var(--siteset-{{ $sectionset }}-color);">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-12">
+          <div class="title text-center wow fadeInUp" data-wow-duration="500ms">
+            <h2 id="faq-title" style="font-size: 2rem; color: var(--siteset-{{ $sectionset }}-h2);">{{ with .title }} {{ index (split . " ") 0 | safeHTML }} {{ end }}<span class="color" style="color: var(--siteset-{{ $sectionset }}-h2);">
+              {{ with .title }} {{ after (len (index (split . " ") 0)) . | safeHTML }} {{ end }}</span></h2>
+            {{ if .subtitle }}
+            <h4 class="faq-subtitle" style="color: var(--siteset-{{ $sectionset }}-button);  margin-bottom: 20px; margin-top: 15px;">
+              {{ .subtitle }}
+            </h4>
+            {{ end }}
+            {{ if .faq_description }}
+            <div class="faq-description text-center" style="margin: 10px auto 40px; max-width: 700px;">
+              <p style="color: var(--siteset-{{ $sectionset }}-color); margin-bottom: 0;">{{ .faq_description | safeHTML }}</p>
+            </div>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="faq-accordion" style="margin-bottom: 60px;" role="list" aria-labelledby="faq-title">
+            {{ range $index, $item := .faq_items }}
+            <div class="faq-item" style="margin-bottom: 20px;" role="listitem">
+              <button class="service-faq-btn" type="button" data-target="serviceFaq{{ $index }}"
+                id="faq-btn-{{ $index }}"
+                aria-expanded="false"
+                aria-controls="serviceFaq{{ $index }}"
+                tabindex="0"
+                style="background: #fff !important; color: var(--siteset-{{ $sectionset }}-h2) !important; border: none !important; border-radius: 25px; width: 100%; text-align: left; padding: 20px 25px; font-size: 16px; font-weight: 600; cursor: pointer; outline: none; display: flex; justify-content: space-between; align-items: center; transition: all 0.3s ease; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);"
+                aria-label="{{ .question }}">
+                <span class="faq-question-text" style="flex-grow: 1; line-height: 1.4; margin-right: 15px;">{{ .question }}</span>
+                <span class="faq-icon" style="display: flex; align-items: center; justify-content: center; width: 30px; height: 30px; background: transparent; border-radius: 50%; transition: all 0.3s ease; flex-shrink: 0;">
+                  <i class="ti-plus" style="font-size: 16px; color: var(--siteset-{{ $sectionset }}-h2); opacity: 0.7; transition: all 0.3s ease;"></i>
+                </span>
+              </button>
+              <div id="serviceFaq{{ $index }}" class="faq-answer" style="display: none; padding: 10px 25px 0 25px; margin-top: 5px;"
+                role="region" aria-labelledby="faq-btn-{{ $index }}">
+                <p style="color: var(--siteset-{{ $sectionset }}-color); margin-bottom: 0; opacity: 0.9;">{{ .answer | markdownify }}</p>
+              </div>
+            </div>
+            {{ end }}
+          </div>
+        </div>
+      </div>
+
+      {{ if .contact_cta.enable }}
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="faq-contact-cta text-center" 
+               style="background: rgba(var(--siteset-{{ $sectionset }}-button), 0.1); border-radius: 15px; padding: 40px 30px; border: 1px solid rgba(var(--siteset-{{ $sectionset }}-button), 0.2);">
+            <h4 style="color: var(--siteset-{{ $sectionset }}-color); font-size: 1.5rem; font-weight: 600; margin-bottom: 15px;">{{ .contact_cta.title }}</h4>
+            <p style="color: var(--siteset-{{ $sectionset }}-color); font-size: 16px; margin-bottom: 25px; line-height: 1.6;">{{ .contact_cta.description }}</p>
+            <a href="{{ .contact_cta.button_link | safeURL }}" class="btn btn-main" 
+               style="background: var(--siteset-{{ $sectionset }}-button); color: var(--siteset-{{ $sectionset }}-bg); padding: 15px 35px; font-size: 16px; font-weight: 600; text-transform: none !important; letter-spacing: normal !important; border: none; border-radius: 0px; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(var(--siteset-{{ $sectionset }}-button), 0.3); text-decoration: none;">
+              {{ .contact_cta.button_text }}
+            </a>
+          </div>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </section>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const serviceFaqButtons = document.querySelectorAll(".service-faq-btn");
+
+    serviceFaqButtons.forEach((button) => {
+      // Näppäimistö: Enter ja Space toggle
+      button.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" || e.key === " " || e.keyCode === 13 || e.keyCode === 32) {
+          e.preventDefault();
+          button.click();
+        }
+      });
+
+      button.addEventListener("click", function () {
+        const targetId = this.getAttribute("data-target");
+        const answer = document.getElementById(targetId);
+        const icon = this.querySelector(".faq-icon i");
+        const iconContainer = this.querySelector(".faq-icon");
+        const isOpen = answer.style.display === "block";
+
+        // Sulje kaikki muut vastaukset
+        serviceFaqButtons.forEach((otherBtn) => {
+          if (otherBtn !== this) {
+            const otherTargetId = otherBtn.getAttribute("data-target");
+            const otherAnswer = document.getElementById(otherTargetId);
+            const otherIcon = otherBtn.querySelector(".faq-icon i");
+            const otherIconContainer = otherBtn.querySelector(".faq-icon");
+            otherAnswer.style.display = "none";
+            otherIcon.className = "ti-plus";
+            otherBtn.setAttribute("aria-expanded", "false");
+            otherIcon.style.color = "var(--siteset-{{ $sectionset }}-h2)";
+            otherIcon.style.opacity = "0.7";
+            otherIconContainer.style.background = "transparent";
+          }
+        });
+
+        // Vaihda nykyisen vastauksen tilaa
+        if (isOpen) {
+          answer.style.display = "none";
+          icon.className = "ti-plus";
+          this.setAttribute("aria-expanded", "false");
+          icon.style.color = "var(--siteset-{{ $sectionset }}-h2)";
+          icon.style.opacity = "0.7";
+          iconContainer.style.background = "transparent";
+        } else {
+          answer.style.display = "block";
+          icon.className = "ti-minus";
+          this.setAttribute("aria-expanded", "true");
+          icon.style.color = "#fff";
+          icon.style.opacity = "1";
+          iconContainer.style.background = "rgba(0,0,0,0.10)";
+        }
+      });
+    });
+  });
+  </script>
+
+  {{ end }}
+  {{ end }}
+
+
+    {{ if and .Params.benefits .Params.benefits.enable }}
+  {{ $sectionset := index site.Params.sectionsets "benefits" | default "lightset" }}
+  <section class="section benefits section-{{ $sectionset }}" id="benefits">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-12">
+          {{ if .Params.benefits.title }}
+          <div class="title text-center mb-4">
+            <h2 style="color: var(--siteset-{{ $sectionset }}-h2);">
+              {{ .Params.benefits.title }}
+            </h2>
+          </div>
+          {{ end }}
+        </div>
+
+        <div class="row justify-content-center" role="list">
+        {{ range .Params.benefits.benefits_list }}
+          <div class="col-lg-4 col-md-6 col-sm-12 mb-4 benefit-item" role="listitem">
+            <div class="benefit-icon" aria-hidden="true">
+              {{ with .icon }}<i class="{{ . }}"></i>{{ end }}
+            </div>
+            <div class="benefit-text">
+              <h4>{{ .title }}</h4>
+              <p>{{ .content | markdownify }}</p>
+            </div>
+          </div>
+        {{ end }}
+        </div>
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
+
+  {{/* Palvelukohtainen yhteydenotto */}}
+  {{ $contactData := $data.contact.contact }}
+  {{ $contactSectionset := index site.Params.sectionsets "contact" | default "lightset" }}
+  
+  {{ if $contactData.enable }}
+  <section id="otayhteytta" class="contact-us section-bg section-{{ $contactSectionset }}">
+    <div class="container pb-5">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="title text-center">
+            {{ $contactTitle := $contactData.title }}
+            {{ with .Params.contact }}
+            {{ with .title }}
+            {{ $contactTitle = . }}
+            {{ end }}
+            {{ end }}
+            <h2 style="font-size: 2rem;">{{ $contactTitle | safeHTML }}</h2>
+
+          </div>
+        </div>
+
+        <div class="contact-info col-lg-6">
+          <h3>{{ $contactData.subtitle | markdownify }}</h3>
+          <p>{{ $contactData.content | markdownify }}</p>
+
+          {{ if $contactData.contact_form.enable }}
+          <div class="contact-details">
+            {{ range $contactData.contact_list }}
+            <div class="con-info clearfix">
+              <i class="{{ .icon }}"></i>
+              <span>{{ .info }}</span>
+            </div>
+            {{ end }}
+          </div>
+{{ with .Params.contact.contact_people }}
+  <div class="contact-details" role="region" aria-labelledby="contact-people-title">
+    <h3 id="contact-people-title" class="sr-only">Yhteyshenkilöt</h3>
+    {{ range . }}
+    <div class="contact-person mb-4">
+      <div class="con-info clearfix">
+        <strong>{{ .name }}</strong>
+      </div>
+      <div class="con-info clearfix">
+        <strong>{{ .person }}</strong>
+      </div>
+      <div class="con-info clearfix">
+        <i class="ti-mobile"></i>
+        <a href="tel:{{ .phone }}" class="contact-link">{{ .phone }}</a>
+      </div>
+      <div class="con-info clearfix">
+        <i class="ti-email"></i>
+        <a href="mailto:{{ .email }}" class="contact-link">{{ .email }}</a>
+      </div>
+    </div>
+    {{ end }}
+  </div>
+{{ end }}
+
+          
+          <a href="{{ $.Site.Params.calendar_url }}" class="btn-calendar-fill" target="_blank">{{ $.Site.Params.calendar_text }}</a>
+          {{ end }}
+        </div>
+
+        {{ if $contactData.contact_form.enable }}
+        {{ with $contactData.contact_form }}
+        <div class="col-lg-6">
+          <form id="contact-form" class="form-meghna" method="post" action="{{ .form_action }}" role="form">
+            <div class="form-group">
+              <input type="text" placeholder="{{ .name }}*" class="form-control" name="name" id="name" aria-label="{{ .name }} (pakollinen)" aria-required="true" required>
+            </div>
+            <div class="form-group">
+              <input type="email" placeholder="{{ .email }}*" class="form-control" name="email" id="email" aria-label="{{ .email }} (pakollinen)" aria-required="true" required>
+            </div>
+            <div class="form-group">
+              <input type="tel" placeholder="{{ .phonenumber }}*" class="form-control" name="phonenumber" id="phonenumber" aria-label="{{ .phonenumber }} (pakollinen)" aria-required="true" required>
+            </div>
+
+            {{ if $.Params.contact.contact_form.services }}
+            <div class="form-group" role="group" {{ if $.Params.contact.contact_form.services_title }}aria-labelledby="services-title"{{ else }}aria-label="Valitse kiinnostavat palvelut"{{ end }}>
+              {{ if $.Params.contact.contact_form.services_title }}
+              <strong id="services-title">{{ $.Params.contact.contact_form.services_title }}</strong>
+              {{ end }}
+              <div class="checkbox-group">
+                {{ range $index, $service := $.Params.contact.contact_form.services }}
+                <div class="checkbox-item">
+                  <input type="checkbox" 
+                         id="service-{{ $index }}" 
+                         name="services[]" 
+                         value="{{ $service.value }}">
+                  <label for="service-{{ $index }}">{{ $service.label }}</label>
+                </div>
+                {{ end }}
+              </div>
+            </div>
+            {{ end }}
+            <div class="form-group">
+              <textarea rows="6" placeholder="{{ if $.Params.contact.contact_form.message }}{{ $.Params.contact.contact_form.message }}{{ else }}{{ .message }}{{ end }}*" class="form-control" name="message" id="message" aria-label="{{ if $.Params.contact.contact_form.message }}{{ $.Params.contact.contact_form.message }}{{ else }}{{ .message }}{{ end }} (pakollinen)" aria-required="true" required></textarea>
+            </div>
+            <div id="cf-submit">
+              <button type="submit" id="contact-submit" class="btn btn-transparent btn-block" value="{{ .submit }}">{{ .submit }}</button>
+            </div>
+          </form>
+        </div>
+        {{ end }}
+        {{ end }}
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
+{{ else }}
+  <section class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2 text-center">
+          <h1>Palvelua ei löytynyt</h1>
+          <p>Hakemaasi palvelua ei löytynyt.</p>
+          <a href="/#services" class="btn btn-main">Takaisin palveluihin</a>
+        </div>
+      </div>
+    </div>
+  </section>
+{{ end }}
+
+{{ end }}

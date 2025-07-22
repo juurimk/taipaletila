@@ -1,0 +1,53 @@
+.about {
+  .block {
+    .icon-box {
+      i {
+        font-size: 2rem;
+        display: inline-block;
+        margin-bottom: 1rem;
+        color: var(--siteset-lightset-button);
+
+        @media (max-width: 576px) {
+          margin-top: 1.2rem;
+          margin-bottom: 0rem;
+        }
+      }
+    }
+
+    .content {
+      h3 {
+        font-size: 1.25rem;
+        font-weight: 700;
+        font-family: var(--sitefont);
+        color: var(--siteset-darkset-color);
+        margin-top: 1rem;
+        text-align: center;
+      }
+
+      p {
+        color: var(--siteset-darkset-color);
+      }
+
+      //  Tämä osa lisätään
+      .about-text {
+        color: var(--siteset-darkset-color);
+
+        p {
+          margin-bottom: 1rem;
+        }
+
+        ul,
+        ol {
+          margin-left: 1.25rem;
+          padding-left: 1rem;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  #about.section {
+    padding: 40px 0px 70px 0px !important;
+  }
+}

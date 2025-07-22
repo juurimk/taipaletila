@@ -1,0 +1,18 @@
+############################# About ###################################
+about:
+  enable : true
+  # title : 3 syytä valita Juuri.ai
+  about_item :
+  - icon : ti-ruler-pencil # themify icon pack : https://themify.me/themify-icons
+    title : Inhimillinen automaatio
+    content : Ihminen tekee tärkeimmän työn ja automaatio hoitaa loput. Kun rutiinit pyörivät itsestään, tiimisi voi käyttää osaamisensa ja intohimonsa siihen, mikä tekee yrityksestänne ainutlaatuisen.
+
+  - icon : ti-cup # themify icon pack : https://themify.me/themify-icons
+    title : Olemme ammattilaisia
+    content : Tuotamme tekstit, kuvat ja julkaisut alusta loppuun. Tiedät aina, että sisältö on brändisi näköistä ja ajallaan tehtyä.
+
+  - icon : ti-stats-up # themify icon pack : https://themify.me/themify-icons
+    title : Kustannustehokas kasvu
+    content : Saat suuren toimiston jälkeä ilman perinteisen markkinointitoimiston hintaa.
+
+  

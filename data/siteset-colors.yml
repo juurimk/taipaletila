@@ -1,0 +1,1637 @@
+# Siteset Colors Data Structure - Smart Button Text Colors
+# Place this file at: /data/siteset-colors.yml
+# Automatic button text color selection for optimal readability
+
+sitesets:
+  saaristo:
+    name: "Saaristo (Archipelago)"
+    description: "Orange and dark blue archipelago theme"
+    # PORTFOLIO COLORS - Kaikki teeman värit käyttöön
+    portfolio:
+      color1: "#14213D"    # Tummansininen (lightset button/h2)
+      color2: "#FCA311"    # Oranssi (neutralset button)
+      color3: "#E5E5E5"    # Vaalea harmaa (neutralset bg)
+      color4: "#FFFFFF"    # Valkoinen (lightset bg)
+      color5: "#000000"    # Musta (lightset color)
+      gray: "#d5d5d5"      # Kiinteä harmaa (voi vaihtaa)
+    sectionsets:
+      lightset:
+        bg_color: "#FFFFFF"
+        color: "#000000"
+        button: "#14213D"
+        button_text: "#000000"
+        h2: "#14213D"
+        h1: "#FFFFFF"
+        mask_color: "#14213D"
+        opacity:
+          button_highlighted: 0.2
+          button_table_bg: 0.1
+          button_hover: 0.8
+        text_highlighted: "#000000"
+        
+      neutralset:
+        bg_color: "#E5E5E5"
+        color: "#000000"
+        section_description: "#FF0000" 
+        button: "#FCA311"
+        button_text: "#FCA311"
+        h2: "#FCA311"
+        h1: "#FFFFFF"
+        mask_color: "#14213D"
+        opacity:
+          button_highlighted: 0.3
+          button_table_bg: 0.15
+          button_hover: 0.8
+        text_highlighted: "#000000"
+        
+      darkset:
+        bg_color: "#14213D"
+        color: "#ffffff"
+        button: "#FCA311"
+        button_text: "#FCA311"
+        h2: "#FCA311"
+        h1: "#FFFFFF"
+        mask_color: "#14213D"
+        opacity:
+          button_highlighted: 0.8
+          button_table_bg: 0.2
+          button_hover: 0.9
+        text_highlighted: "#ffffff"
+        
+      coloriset:
+        bg_color: "#FCA311"
+        color: "#ffffff"
+        button: "#ffffff"
+        button_text: "#000000"
+        h2: "#ffffff"
+        h1: "#FFFFFF"
+        mask_color: "#14213D"
+        opacity:
+          button_highlighted: 0.9
+          button_table_bg: 0.1
+          button_hover: 0.8
+        text_highlighted: "#000000"
+
+  kaste:
+    name: "Kaste (Dew)"
+    description: "Teal and orange dew theme"
+    # PORTFOLIO COLORS - Kaikki teeman värit käyttöön
+    portfolio:
+      color1: "#2EC4B6"    # Teal (lightset button/h2)
+      color2: "#FFBF69"    # Oranssi (neutralset button)
+      color3: "#cbf3f0"    # Vaalea teal (neutralset bg)
+      color4: "#032320"    # Tumma teal (darkset bg/color)
+      color5: "#FFFFFF"    # Valkoinen (lightset bg)
+      gray: "#d5d5d5"      # Kiinteä harmaa (voi vaihtaa)
+    sectionsets:
+      lightset:
+        bg_color: "#FFFFFF"
+        color: "#032320"
+        button: "#2EC4B6"
+        button_text: "#032320"
+        mask_color: "#2EC4B6"
+        h2: "#2EC4B6"
+        h1: "#FFFFFF"
+        opacity:
+          button_highlighted: 0.2
+          button_table_bg: 0.1
+          button_hover: 0.8
+        text_highlighted: "#032320"
+        
+      neutralset:
+        bg_color: "#cbf3f0"
+        color: "#032320"
+        button: "#FFBF69"
+        button_text: "#000000"
+        h2: "#2EC4B6"
+        h1: "#FFFFFF"
+        mask_color: "#2EC4B6"
+        opacity:
+          button_highlighted: 0.3
+          button_table_bg: 0.15
+          button_hover: 0.8
+        text_highlighted: "#032320"
+        
+      darkset:
+        bg_color: "#032320"
+        color: "#ffffff"
+        button: "#2EC4B6"
+        button_text: "#000000"
+        h2: "#2EC4B6"
+        h1: "#FFFFFF"
+        mask_color: "#2EC4B6"
+        opacity:
+          button_highlighted: 0.8
+          button_table_bg: 0.2
+          button_hover: 0.9
+        text_highlighted: "#ffffff"
+        
+      coloriset:
+        bg_color: "#2EC4B6"
+        color: "#ffffff"
+        button: "#ffffff"
+        button_text: "#032320"
+        h2: "#ffffff"
+        h1: "#FFFFFF"
+        mask_color: "#2EC4B6"
+        opacity:
+          button_highlighted: 0.9
+          button_table_bg: 0.1
+          button_hover: 0.8
+        text_highlighted: "#032320"
+
+  korpi:
+    name: "Korpi (Wilderness)"
+    description: "Green wilderness theme"
+    # PORTFOLIO COLORS - Kaikki teeman värit käyttöön
+    portfolio:
+      color1: "#1fc41f"    # Kirkas vihreä (lightset button)
+      color2: "#055905"    # Tummanvihreä (lightset h2)
+      color3: "#e4e4e4"    # Vaalea harmaa (neutralset bg)
+      color4: "#000000"    # Musta (darkset bg)
+      color5: "#FFFFFF"    # Valkoinen (lightset bg)
+      gray: "#d5d5d5"      # Kiinteä harmaa (voi vaihtaa)
+    sectionsets:
+      lightset:
+        bg_color: "#FFFFFF"
+        color: "#032320"
+        button: "#1fc41f"
+        button_text: "#000000"
+        h2: "#055905"
+        h1: "#FFFFFF"
+        mask_color: "#3d1742"
+        opacity:
+          button_highlighted: 0.2
+          button_table_bg: 0.1
+          button_hover: 0.8
+        text_highlighted: "#032320"
+        
+      neutralset:
+        bg_color: "#f2f2f2"
+        color: "#000000"
+        button: "#1fc41f"
+        button_text: "#000000"
+        h2: "#055905"
+        h1: "#FFFFFF"
+        mask_color: "#3d1742"
+        opacity:
+          button_highlighted: 0.3
+          button_table_bg: 0.15
+          button_hover: 0.8
+        text_highlighted: "#032320"
+        
+      darkset:
+        bg_color: "#3d1742"
+        color: "#ffffff"
+        button: "#1fc41f"
+        button_text: "#ffffff"
+        h2: "#ffffff"
+        h1: "#FFFFFF" 
+        mask_color: "#3d1742"
+        opacity:
+          button_highlighted: 0.8
+          button_table_bg: 0.2
+          button_hover: 0.9
+        text_highlighted: "#ffffff"
+        
+      coloriset:
+        bg_color: "#055905"
+        color: "#ffffff"
+        button: "#ffffff"
+        button_text: "#ffffff"
+        h2: "#ffffff"
+        h1: "#FFFFFF"
+        mask_color: "#ffffff"
+        opacity:
+          button_highlighted: 0.9
+          button_table_bg: 0.1
+          button_hover: 0.8
+        text_highlighted: "#ffffff"
+
+  hiekka:
+    name: "Hiekka (Sand)"
+    description: "Warm browns and gold sand theme"
+    # PORTFOLIO COLORS - Kaikki teeman värit käyttöön
+    portfolio:
+      color1: "#e1a927"    # Kulta (mask_color/neutralset button)
+      color2: "#171717"    # Tumma (lightset button/h2)
+      color3: "#d2c5b3"    # Vaalea ruskea (neutralset bg)
+      color4: "#fefaf5"    # Kerma (lightset bg)
+      color5: "#A98E76"    # Ruskea (lightset color)
+      gray: "#d5d5d5"      # Kiinteä harmaa (voi vaihtaa)
+    sectionsets:
+      lightset:
+        bg_color: "#fefaf5"
+        color: "#A98E76"
+        button: "#171717"
+        h1: "#FFFFFF"
+        button_text: "#000000"
+        h2: "#171717"
+        mask_color: "#e1a927"
+        opacity:
+          button_highlighted: 0.2
+          button_table_bg: 0.1
+          button_hover: 0.8
+        text_highlighted: "#171717"
+        
+      neutralset:
+        bg_color: "#d2c5b3"
+        color: "#171717"
+        button: "#e1a927"
+        button_text: "#000000"
+        h2: "#A98E76"
+        h1: "#FFFFFF"
+        mask_color: "#e1a927"
+        member-name: "#171717"
+        opacity:
+          button_highlighted: 0.3
+          button_table_bg: 0.15
+          button_hover: 0.8
+        text_highlighted: "#171717"
+        
+      darkset:
+        bg_color: "#171717"
+        color: "#fefaf5"
+        button: "#fefaf5"
+        button_text: "#171717"
+        h2: "#fefaf5"
+        h1: "#FFFFFF"
+        mask_color: "#e1a927"
+        opacity:
+          button_highlighted: 0.8
+          button_table_bg: 0.2
+          button_hover: 0.9
+        text_highlighted: "#fefaf5"
+        
+      coloriset:
+        bg_color: "#e1a927"
+        color: "#fefaf5"
+        button: "#fefaf5"
+        button_text: "#171717"
+        h2: "#fefaf5"
+        h1: "#FFFFFF"
+        mask_color: "#e1a927"
+        opacity:
+          button_highlighted: 0.9
+          button_table_bg: 0.1
+          button_hover: 0.8
+        text_highlighted: "#171717"
+
+  loimu:
+    name: "Loimu (Flame)"
+    description: "Red and cream flame theme"
+    # PORTFOLIO COLORS - Kaikki teeman värit käyttöön
+    portfolio:
+      color1: "#F26A8D"    # Pinkki (lightset button/h2)
+      color2: "#F95738"    # Punainen (mask_color)
+      color3: "#B9F5FD"    # Vaalea sininen (neutralset bg)
+      color4: "#370321"    # Tumma punainen (darkset bg)
+      color5: "#ffffff"    # Valkoinen
+      gray: "#d5d5d5"      # Kiinteä harmaa (voi vaihtaa)
+    sectionsets:
+      lightset:
+        bg_color: "#ffffff"
+        color: "#370321"
+        button: "#F26A8D"
+        button_text: "#FFFFFF"
+        h2: "#F26A8D"
+        h1: "#F26A8D"
+        mask_color: "#F95738"
+        opacity:
+          button_highlighted: 0.2
+          button_table_bg: 0.1
+          button_hover: 0.8
+        text_highlighted: "#000000"
+        
+      neutralset:
+        bg_color: "#B9F5FD"
+        color: "#000000"
+        button: "#F26A8D"
+        button_text: "#FFFFFF"
+        h2: "#370321"
+        h1: "#FFFFFF"
+        mask_color: "#F95738"
+        opacity:
+          button_highlighted: 0.3
+          button_table_bg: 0.15
+          button_hover: 0.8
+        text_highlighted: "#000000"
+        
+      darkset:
+        bg_color: "#370321"
+        color: "#B9F5FD"
+        button: "#F49CBB"
+        button_text: "#ffffff"
+        h2: "#B9F5FD"
+        h1: "#FFFFFF"
+        mask_color: "#F95738"
+        opacity:
+          button_highlighted: 0.8
+          button_table_bg: 0.2
+          button_hover: 0.9
+        text_highlighted: "#B9F5FD"
+        
+      coloriset:
+        bg_color: "#F26A8D"
+        color: "#ffffff"
+        button: "#B9F5FD"
+        button_text: "#F95738"
+        h2: "#ffffff"
+        h1: "#FFFFFF"
+        mask_color: "#F95738"
+        opacity:
+          button_highlighted: 0.9
+          button_table_bg: 0.1
+          button_hover: 0.8
+        text_highlighted: "#000000"
+
+  viima:
+    name: "Viima (Frost Wind)"
+    description: "Deep blue frost wind theme"
+    # PORTFOLIO COLORS - Kaikki teeman värit käyttöön
+    portfolio:
+      color1: "#1282A2"    # Aamukoiton sininen (lightset button)
+      color2: "#001F54"    # Tumma tähdetön taivas (lightset h2)
+      color3: "#FEFCFB"    # Hohtava valkoinen (neutralset bg)
+      color4: "#0A1128"    # Syvä keskiyön sininen (darkset bg)
+      color5: "#FFFFFF"    # Valkoinen (lightset bg)
+      gray: "#034078"      # Keskiyön sininen (voi vaihtaa)
+    sectionsets:
+      lightset:
+        bg_color: "#FFFFFF"
+        color: "#0A1128"
+        button: "#1282A2"
+        button_text: "#FFFFFF"
+        h2: "#1282A2"
+        h1: "#FFFFFF"
+        mask_color: "#1282A2"
+        opacity:
+          button_highlighted: 0.2
+          button_table_bg: 0.1
+          button_hover: 0.8
+        text_highlighted: "#0A1128"
+        
+      neutralset:
+        bg_color: "#FEFCFB"
+        color: "#0A1128"
+        button: "#1282A2"
+        button_text: "#FFFFFF"
+        h2: "#001F54"
+        h1: "#FFFFFF"
+        mask_color: "#1282A2"
+        opacity:
+          button_highlighted: 0.3
+          button_table_bg: 0.15
+          button_hover: 0.8
+        text_highlighted: "#0A1128"
+        
+      darkset:
+        bg_color: "#0A1128"
+        color: "#FEFCFB"
+        button: "#1282A2"
+        button_text: "#FFFFFF"
+        h2: "#FEFCFB"
+        h1: "#FFFFFF"
+        mask_color: "#001F54"
+        opacity:
+          button_highlighted: 0.8
+          button_table_bg: 0.2
+          button_hover: 0.9
+        text_highlighted: "#FEFCFB"
+        
+      coloriset:
+        bg_color: "#001F54"
+        color: "#FEFCFB"
+        button: "#FEFCFB"
+        button_text: "#001F54"
+        h2: "#FEFCFB"
+        h1: "#FFFFFF"
+        mask_color: "#001F54"
+        opacity:
+          button_highlighted: 0.9
+          button_table_bg: 0.1
+          button_hover: 0.8
+        text_highlighted: "#FEFCFB"
+
+  verso:
+    name: "Verso (New Shoot)"
+    description: "Fresh green growth theme"
+    # PORTFOLIO COLORS - Kaikki teeman värit käyttöön
+    portfolio:
+      color1: "#4C956C"    # Keskivihreä (lightset button)
+      color2: "#2C6E49"    # Syvä sammakkovihreä (lightset h2)
+      color3: "#FEFEE3"    # Kellertävä valkoinen (neutralset bg)
+      color4: "#2C6E49"    # Syvä sammakkovihreä (darkset bg)
+      color5: "#FFFFFF"    # Valkoinen (lightset bg)
+      gray: "#D68C45"      # Syksyn kulta (voi vaihtaa)
+    sectionsets:
+      lightset:
+        bg_color: "#FFFFFF"
+        color: "#2C6E49"
+        button: "#4C956C"
+        button_text: "#FFFFFF"
+        h2: "#4C956C"
+        h1: "#FFFFFF"
+        mask_color: "#4C956C"
+        opacity:
+          button_highlighted: 0.2
+          button_table_bg: 0.1
+          button_hover: 0.8
+        text_highlighted: "#2C6E49"
+        
+      neutralset:
+        bg_color: "#FEFEE3"
+        color: "#2C6E49"
+        button: "#4C956C"
+        button_text: "#FFFFFF"
+        h2: "#2C6E49"
+        h1: "#FFFFFF"
+        mask_color: "#4C956C"
+        opacity:
+          button_highlighted: 0.3
+          button_table_bg: 0.15
+          button_hover: 0.8
+        text_highlighted: "#2C6E49"
+        
+      darkset:
+        bg_color: "#2C6E49"
+        color: "#FEFEE3"
+        button: "#4C956C"
+        button_text: "#FFFFFF"
+        h2: "#FEFEE3"
+        h1: "#FFFFFF"
+        mask_color: "#2C6E49"
+        opacity:
+          button_highlighted: 0.8
+          button_table_bg: 0.2
+          button_hover: 0.9
+        text_highlighted: "#FEFEE3"
+        
+      coloriset:
+        bg_color: "#D68C45"
+        color: "#FFFFFF"
+        button: "#FFFFFF"
+        button_text: "#2C6E49"
+        h2: "#FFFFFF"
+        h1: "#FFFFFF"
+        mask_color: "#2C6E49"
+        opacity:
+          button_highlighted: 0.9
+          button_table_bg: 0.1
+          button_hover: 0.8
+        text_highlighted: "#FFFFFF"
+
+  apila:
+    name: "Apila (Clover)"
+    description: "Soft natural clover theme"
+    # PORTFOLIO COLORS - Kaikki teeman värit käyttöön
+    portfolio:
+      color1: "#B0C4B1"    # Sammalvihreä (lightset button)
+      color2: "#4A5759"    # Tummanharmaa kivi (lightset h2)
+      color3: "#F7E1D7"    # Lämmin hiekkakivi (neutralset bg)
+      color4: "#4A5759"    # Tummanharmaa kivi (darkset bg)
+      color5: "#FFFFFF"    # Valkoinen (lightset bg)
+      gray: "#DEDBD2"      # Harmaa hiekkakivi (voi vaihtaa)
+    sectionsets:
+      lightset:
+        bg_color: "#FFFFFF"
+        color: "#4A5759"
+        button: "#B0C4B1"
+        button_text: "#4A5759"
+        h2: "#B0C4B1"
+        h1: "#FFFFFF"
+        mask_color: "#B0C4B1"
+        opacity:
+          button_highlighted: 0.2
+          button_table_bg: 0.1
+          button_hover: 0.8
+        text_highlighted: "#4A5759"
+        
+      neutralset:
+        bg_color: "#F7E1D7"
+        color: "#4A5759"
+        button: "#B0C4B1"
+        button_text: "#4A5759"
+        h2: "#4A5759"
+        h1: "#FFFFFF"
+        mask_color: "#B0C4B1"
+        opacity:
+          button_highlighted: 0.3
+          button_table_bg: 0.15
+          button_hover: 0.8
+        text_highlighted: "#4A5759"
+        
+      darkset:
+        bg_color: "#4A5759"
+        color: "#F7E1D7"
+        button: "#B0C4B1"
+        button_text: "#4A5759"
+        h2: "#F7E1D7"
+        h1: "#FFFFFF"
+        mask_color: "#4A5759"
+        opacity:
+          button_highlighted: 0.8
+          button_table_bg: 0.2
+          button_hover: 0.9
+        text_highlighted: "#F7E1D7"
+        
+      coloriset:
+        bg_color: "#EDAFB8"
+        color: "#4A5759"
+        button: "#4A5759"
+        button_text: "#FFFFFF"
+        h2: "#4A5759"
+        h1: "#FFFFFF"
+        mask_color: "#4A5759"
+        opacity:
+          button_highlighted: 0.9
+          button_table_bg: 0.1
+          button_hover: 0.8
+        text_highlighted: "#4A5759"
+
+  kipina:
+    name: "Kipinä (Spark)"
+    description: "Energetic spark theme"
+    # PORTFOLIO COLORS - Kaikki teeman värit käyttöön
+    portfolio:
+      color1: "#FF6B35"    # Kirkas oranssi (lightset button)
+      color2: "#004E89"    # Syvä iltataivas (lightset h2)
+      color3: "#EFEFD0"    # Vaalean keltainen (neutralset bg)
+      color4: "#004E89"    # Syvä iltataivas (darkset bg)
+      color5: "#FFFFFF"    # Valkoinen (lightset bg)
+      gray: "#1A659E"      # Illan sininen (voi vaihtaa)
+    sectionsets:
+      lightset:
+        bg_color: "#FFFFFF"
+        color: "#004E89"
+        button: "#FF6B35"
+        button_text: "#FFFFFF"
+        h2: "#FF6B35"
+        h1: "#FFFFFF"
+        mask_color: "#FF6B35"
+        opacity:
+          button_highlighted: 0.2
+          button_table_bg: 0.1
+          button_hover: 0.8
+        text_highlighted: "#004E89"
+        
+      neutralset:
+        bg_color: "#EFEFD0"
+        color: "#004E89"
+        button: "#FF6B35"
+        button_text: "#FFFFFF"
+        h2: "#004E89"
+        h1: "#FFFFFF"
+        mask_color: "#FF6B35"
+        opacity:
+          button_highlighted: 0.3
+          button_table_bg: 0.15
+          button_hover: 0.8
+        text_highlighted: "#004E89"
+        
+      darkset:
+        bg_color: "#004E89"
+        color: "#EFEFD0"
+        button: "#FF6B35"
+        button_text: "#FFFFFF"
+        h2: "#EFEFD0"
+        h1: "#FFFFFF"
+        mask_color: "#004E89"
+        opacity:
+          button_highlighted: 0.8
+          button_table_bg: 0.2
+          button_hover: 0.9
+        text_highlighted: "#EFEFD0"
+        
+      coloriset:
+        bg_color: "#F7C59F"
+        color: "#004E89"
+        button: "#004E89"
+        button_text: "#FFFFFF"
+        h2: "#004E89"
+        h1: "#FFFFFF"
+        mask_color: "#004E89"
+        opacity:
+          button_highlighted: 0.9
+          button_table_bg: 0.1
+          button_hover: 0.8
+        text_highlighted: "#004E89"
+  
+  helle:
+    name: "Helle (Heat Wave)"
+    description: "Warm summer heat theme"
+    # PORTFOLIO COLORS - Kaikki teeman värit käyttöön
+    portfolio:
+      color1: "#219EBC"    # Turkoosi (lightset button)
+      color2: "#023047"    # Tummansininen (lightset h2)
+      color3: "#FFB703"    # Keltainen (neutralset bg)
+      color4: "#023047"    # Tummansininen (darkset bg)
+      color5: "#FFFFFF"    # Valkoinen (lightset bg)
+      gray: "#5C8949"      # Vihreä (voi vaihtaa)
+    sectionsets:
+      lightset:
+        bg_color: "#FFFFFF"
+        color: "#023047"
+        button: "#219EBC"
+        button_text: "#FFFFFF"
+        h2: "#219EBC"
+        h1: "#FFFFFF"
+        mask_color: "#219EBC"
+        opacity:
+          button_highlighted: 0.2
+          button_table_bg: 0.1
+          button_hover: 0.8
+        text_highlighted: "#023047"
+        
+      neutralset:
+        bg_color: "#FFB703"
+        color: "#023047"
+        button: "#219EBC"
+        button_text: "#FFFFFF"
+        h2: "#023047"
+        h1: "#FFFFFF"
+        mask_color: "#219EBC"
+        opacity:
+          button_highlighted: 0.3
+          button_table_bg: 0.15
+          button_hover: 0.8
+        text_highlighted: "#023047"
+        
+      darkset:
+        bg_color: "#023047"
+        color: "#FFB703"
+        button: "#219EBC"
+        button_text: "#FFFFFF"
+        h2: "#FFB703"
+        h1: "#FFFFFF"
+        mask_color: "#023047"
+        opacity:
+          button_highlighted: 0.8
+          button_table_bg: 0.2
+          button_hover: 0.9
+        text_highlighted: "#FFB703"
+        
+      coloriset:
+        bg_color: "#FB8500"
+        color: "#FFFFFF"
+        button: "#FFFFFF"
+        button_text: "#023047"
+        h2: "#FFFFFF"
+        h1: "#FFFFFF"
+        mask_color: "#023047"
+        opacity:
+          button_highlighted: 0.9
+          button_table_bg: 0.1
+          button_hover: 0.8
+        text_highlighted: "#FFFFFF"
+
+  sahakka:
+    name: "Sähäkkä (Electric)"
+    description: "Electric neon theme"
+    # PORTFOLIO COLORS - Kaikki teeman värit käyttöön
+    portfolio:
+      color1: "#9CF945"    # Kirkas vihreä (lightset button)
+      color2: "#4A0D67"    # Tumma violetti (lightset h2)
+      color3: "#DAFFED"    # Vaalea minttu (neutralset bg)
+      color4: "#4A0D67"    # Tumma violetti (darkset bg)
+      color5: "#FFFFFF"    # Valkoinen (lightset bg)
+      gray: "#9BF3F0"      # Vaalea turkoosi (voi vaihtaa)
+    sectionsets:
+      lightset:
+        bg_color: "#FFFFFF"
+        color: "#4A0D67"
+        button: "#9CF945"
+        button_text: "#4A0D67"
+        h2: "#9CF945"
+        h1: "#FFFFFF"
+        mask_color: "#9CF945"
+        opacity:
+          button_highlighted: 0.2
+          button_table_bg: 0.1
+          button_hover: 0.8
+        text_highlighted: "#4A0D67"
+        
+      neutralset:
+        bg_color: "#DAFFED"
+        color: "#4A0D67"
+        button: "#9CF945"
+        button_text: "#4A0D67"
+        h2: "#4A0D67"
+        h1: "#FFFFFF"
+        mask_color: "#9CF945"
+        opacity:
+          button_highlighted: 0.3
+          button_table_bg: 0.15
+          button_hover: 0.8
+        text_highlighted: "#4A0D67"
+        
+      darkset:
+        bg_color: "#4A0D67"
+        color: "#DAFFED"
+        button: "#9CF945"
+        button_text: "#4A0D67"
+        h2: "#DAFFED"
+        h1: "#FFFFFF"
+        mask_color: "#4A0D67"
+        opacity:
+          button_highlighted: 0.8
+          button_table_bg: 0.2
+          button_hover: 0.9
+        text_highlighted: "#DAFFED"
+        
+      coloriset:
+        bg_color: "#9381FF"
+        color: "#FFFFFF"
+        button: "#FFFFFF"
+        button_text: "#4A0D67"
+        h2: "#FFFFFF"
+        h1: "#FFFFFF"
+        mask_color: "#4A0D67"
+        opacity:
+          button_highlighted: 0.9
+          button_table_bg: 0.1
+          button_hover: 0.8
+        text_highlighted: "#FFFFFF"
+
+  ruska:
+    name: "Ruska (Autumn Colors)"
+    description: "Autumn foliage theme"
+    # PORTFOLIO COLORS - Kaikki teeman värit käyttöön
+    portfolio:
+      color1: "#EB5E28"    # Ruskan oranssi (lightset button)
+      color2: "#252422"    # Musta ruskea (lightset h2)
+      color3: "#CCC5B9"    # Vaalea beige (neutralset bg)
+      color4: "#252422"    # Musta ruskea (darkset bg)
+      color5: "#FFFFFF"    # Valkoinen (lightset bg)
+      gray: "#403D39"      # Tumma ruskea (voi vaihtaa)
+    sectionsets:
+      lightset:
+        bg_color: "#FFFFFF"
+        color: "#252422"
+        button: "#EB5E28"
+        button_text: "#FFFFFF"
+        h2: "#EB5E28"
+        h1: "#FFFFFF"
+        mask_color: "#EB5E28"
+        opacity:
+          button_highlighted: 0.2
+          button_table_bg: 0.1
+          button_hover: 0.8
+        text_highlighted: "#252422"
+        
+      neutralset:
+        bg_color: "#CCC5B9"
+        color: "#252422"
+        button: "#EB5E28"
+        button_text: "#FFFFFF"
+        h2: "#252422"
+        h1: "#FFFFFF"
+        mask_color: "#EB5E28"
+        opacity:
+          button_highlighted: 0.3
+          button_table_bg: 0.15
+          button_hover: 0.8
+        text_highlighted: "#252422"
+        
+      darkset:
+        bg_color: "#252422"
+        color: "#CCC5B9"
+        button: "#EB5E28"
+        button_text: "#FFFFFF"
+        h2: "#CCC5B9"
+        h1: "#FFFFFF"
+        mask_color: "#252422"
+        opacity:
+          button_highlighted: 0.8
+          button_table_bg: 0.2
+          button_hover: 0.9
+        text_highlighted: "#CCC5B9"
+        
+      coloriset:
+        bg_color: "#FFFCF2"
+        color: "#252422"
+        button: "#252422"
+        button_text: "#FFFFFF"
+        h2: "#252422"
+        h1: "#FFFFFF"
+        mask_color: "#252422"
+        opacity:
+          button_highlighted: 0.9
+          button_table_bg: 0.1
+          button_hover: 0.8
+        text_highlighted: "#252422"
+
+  harmonia:
+    name: "Harmonia (Harmony)"
+    description: "Harmonious balance theme"
+    # PORTFOLIO COLORS - Kaikki teeman värit käyttöön
+    portfolio:
+      color1: "#9A8C98"    # Vaalea violettiharmaa (lightset button)
+      color2: "#22223B"    # Syvä tummansininen (lightset h2)
+      color3: "#F2E9E4"    # Hyvin vaalea beige (neutralset bg)
+      color4: "#22223B"    # Syvä tummansininen (darkset bg)
+      color5: "#FFFFFF"    # Valkoinen (lightset bg)
+      gray: "#4A4E69"      # Keskisininen (voi vaihtaa)
+    sectionsets:
+      lightset:
+        bg_color: "#FFFFFF"
+        color: "#22223B"
+        button: "#9A8C98"
+        button_text: "#FFFFFF"
+        h2: "#9A8C98"
+        h1: "#FFFFFF"
+        mask_color: "#9A8C98"
+        opacity:
+          button_highlighted: 0.2
+          button_table_bg: 0.1
+          button_hover: 0.8
+        text_highlighted: "#22223B"
+        
+      neutralset:
+        bg_color: "#F2E9E4"
+        color: "#22223B"
+        button: "#9A8C98"
+        button_text: "#FFFFFF"
+        h2: "#22223B"
+        h1: "#FFFFFF"
+        mask_color: "#9A8C98"
+        opacity:
+          button_highlighted: 0.3
+          button_table_bg: 0.15
+          button_hover: 0.8
+        text_highlighted: "#22223B"
+        
+      darkset:
+        bg_color: "#22223B"
+        color: "#F2E9E4"
+        button: "#9A8C98"
+        button_text: "#FFFFFF"
+        h2: "#F2E9E4"
+        h1: "#FFFFFF"
+        mask_color: "#22223B"
+        opacity:
+          button_highlighted: 0.8
+          button_table_bg: 0.2
+          button_hover: 0.9
+        text_highlighted: "#F2E9E4"
+        
+      coloriset:
+        bg_color: "#C9ADA7"
+        color: "#22223B"
+        button: "#22223B"
+        button_text: "#FFFFFF"
+        h2: "#22223B"
+        h1: "#FFFFFF"
+        mask_color: "#22223B"
+        opacity:
+          button_highlighted: 0.9
+          button_table_bg: 0.1
+          button_hover: 0.8
+        text_highlighted: "#22223B"
+
+  tuli:
+    name: "Tuli (Fire)"
+    description: "Fiery passion theme"
+    # PORTFOLIO COLORS - Kaikki teeman värit käyttöön
+    portfolio:
+      color1: "#D62828"    # Kirkas punainen (lightset button)
+      color2: "#003049"    # Syvä tummansininen (lightset h2)
+      color3: "#EAE2B7"    # Vaalea beige (neutralset bg)
+      color4: "#003049"    # Syvä tummansininen (darkset bg)
+      color5: "#FFFFFF"    # Valkoinen (lightset bg)
+      gray: "#F77F00"      # Kirkas oranssi (voi vaihtaa)
+    sectionsets:
+      lightset:
+        bg_color: "#FFFFFF"
+        color: "#003049"
+        button: "#D62828"
+        button_text: "#FFFFFF"
+        h2: "#D62828"
+        h1: "#FFFFFF"
+        mask_color: "#D62828"
+        opacity:
+          button_highlighted: 0.2
+          button_table_bg: 0.1
+          button_hover: 0.8
+        text_highlighted: "#003049"
+        
+      neutralset:
+        bg_color: "#EAE2B7"
+        color: "#003049"
+        button: "#D62828"
+        button_text: "#FFFFFF"
+        h2: "#003049"
+        h1: "#FFFFFF"
+        mask_color: "#D62828"
+        opacity:
+          button_highlighted: 0.3
+          button_table_bg: 0.15
+          button_hover: 0.8
+        text_highlighted: "#003049"
+        
+      darkset:
+        bg_color: "#003049"
+        color: "#EAE2B7"
+        button: "#D62828"
+        button_text: "#FFFFFF"
+        h2: "#EAE2B7"
+        h1: "#FFFFFF"
+        mask_color: "#003049"
+        opacity:
+          button_highlighted: 0.8
+          button_table_bg: 0.2
+          button_hover: 0.9
+        text_highlighted: "#EAE2B7"
+        
+      coloriset:
+        bg_color: "#F77F00"
+        color: "#FFFFFF"
+        button: "#FFFFFF"
+        button_text: "#003049"
+        h2: "#FFFFFF"
+        h1: "#FFFFFF"
+        mask_color: "#003049"
+        opacity:
+          button_highlighted: 0.9
+          button_table_bg: 0.1
+          button_hover: 0.8
+        text_highlighted: "#FFFFFF"
+
+  yo:
+    name: "Yö (Night)"
+    description: "Mysterious night theme"
+    # PORTFOLIO COLORS - Kaikki teeman värit käyttöön
+    portfolio:
+      color1: "#E6AF2E"    # Kultainen keltainen (lightset button)
+      color2: "#3D348B"    # Tumma violetti (lightset h2)
+      color3: "#E0E2DB"    # Vaalea harmaa (neutralset bg)
+      color4: "#191716"    # Musta (darkset bg)
+      color5: "#FFFFFF"    # Valkoinen (lightset bg)
+      gray: "#A197EA"      # Vaalea violetti (voi vaihtaa)
+    sectionsets:
+      lightset:
+        bg_color: "#FFFFFF"
+        color: "#191716"
+        button: "#E6AF2E"
+        button_text: "#191716"
+        h2: "#E6AF2E"
+        h1: "#FFFFFF"
+        mask_color: "#E6AF2E"
+        opacity:
+          button_highlighted: 0.2
+          button_table_bg: 0.1
+          button_hover: 0.8
+        text_highlighted: "#191716"
+        
+      neutralset:
+        bg_color: "#E0E2DB"
+        color: "#191716"
+        button: "#E6AF2E"
+        button_text: "#191716"
+        h2: "#3D348B"
+        h1: "#FFFFFF"
+        mask_color: "#E6AF2E"
+        opacity:
+          button_highlighted: 0.3
+          button_table_bg: 0.15
+          button_hover: 0.8
+        text_highlighted: "#191716"
+        
+      darkset:
+        bg_color: "#191716"
+        color: "#E0E2DB"
+        button: "#E6AF2E"
+        button_text: "#191716"
+        h2: "#E0E2DB"
+        h1: "#FFFFFF"
+        mask_color: "#191716"
+        opacity:
+          button_highlighted: 0.8
+          button_table_bg: 0.2
+          button_hover: 0.9
+        text_highlighted: "#E0E2DB"
+        
+      coloriset:
+        bg_color: "#3D348B"
+        color: "#E0E2DB"
+        button: "#E0E2DB"
+        button_text: "#3D348B"
+        h2: "#E0E2DB"
+        h1: "#FFFFFF"
+        mask_color: "#3D348B"
+        opacity:
+          button_highlighted: 0.9
+          button_table_bg: 0.1
+          button_hover: 0.8
+        text_highlighted: "#E0E2DB"
+
+  tiikeri:
+    name: "Tiikeri (Tiger)"
+    description: "Bold tiger stripe theme"
+    # PORTFOLIO COLORS - Kaikki teeman värit käyttöön
+    portfolio:
+      color1: "#F5CB5C"    # Keltainen (lightset button)
+      color2: "#242423"    # Musta (lightset h2)
+      color3: "#E8EDDF"    # Hyvin vaalea vihreä (neutralset bg)
+      color4: "#242423"    # Musta (darkset bg)
+      color5: "#FFFFFF"    # Valkoinen (lightset bg)
+      gray: "#333533"      # Tumma harmaa (voi vaihtaa)
+    sectionsets:
+      lightset:
+        bg_color: "#FFFFFF"
+        color: "#242423"
+        button: "#F5CB5C"
+        button_text: "#242423"
+        h2: "#F5CB5C"
+        h1: "#FFFFFF"
+        mask_color: "#F5CB5C"
+        opacity:
+          button_highlighted: 0.2
+          button_table_bg: 0.1
+          button_hover: 0.8
+        text_highlighted: "#242423"
+        
+      neutralset:
+        bg_color: "#E8EDDF"
+        color: "#242423"
+        button: "#F5CB5C"
+        button_text: "#242423"
+        h2: "#242423"
+        h1: "#FFFFFF"
+        mask_color: "#F5CB5C"
+        opacity:
+          button_highlighted: 0.3
+          button_table_bg: 0.15
+          button_hover: 0.8
+        text_highlighted: "#242423"
+        
+      darkset:
+        bg_color: "#242423"
+        color: "#E8EDDF"
+        button: "#F5CB5C"
+        button_text: "#242423"
+        h2: "#E8EDDF"
+        h1: "#FFFFFF"
+        mask_color: "#242423"
+        opacity:
+          button_highlighted: 0.8
+          button_table_bg: 0.2
+          button_hover: 0.9
+        text_highlighted: "#E8EDDF"
+        
+      coloriset:
+        bg_color: "#CFDBD5"
+        color: "#242423"
+        button: "#242423"
+        button_text: "#FFFFFF"
+        h2: "#242423"
+        h1: "#FFFFFF"
+        mask_color: "#242423"
+        opacity:
+          button_highlighted: 0.9
+          button_table_bg: 0.1
+          button_hover: 0.8
+        text_highlighted: "#242423"
+
+  syksy:
+    name: "Syksy (Autumn)"
+    description: "Vibrant autumn theme"
+    # PORTFOLIO COLORS - Kaikki teeman värit käyttöön
+    portfolio:
+      color1: "#D81159"    # Magenta (lightset button)
+      color2: "#218380"    # Tumma turkoosi (lightset h2)
+      color3: "#73D2DE"    # Vaalea turkoosi (neutralset bg)
+      color4: "#218380"    # Tumma turkoosi (darkset bg)
+      color5: "#FFFFFF"    # Valkoinen (lightset bg)
+      gray: "#8F2D56"      # Tumma magenta (voi vaihtaa)
+    sectionsets:
+      lightset:
+        bg_color: "#FFFFFF"
+        color: "#218380"
+        button: "#D81159"
+        button_text: "#FFFFFF"
+        h2: "#D81159"
+        h1: "#FFFFFF"
+        mask_color: "#D81159"
+        opacity:
+          button_highlighted: 0.2
+          button_table_bg: 0.1
+          button_hover: 0.8
+        text_highlighted: "#218380"
+        
+      neutralset:
+        bg_color: "#73D2DE"
+        color: "#218380"
+        button: "#D81159"
+        button_text: "#FFFFFF"
+        h2: "#218380"
+        h1: "#FFFFFF"
+        mask_color: "#D81159"
+        opacity:
+          button_highlighted: 0.3
+          button_table_bg: 0.15
+          button_hover: 0.8
+        text_highlighted: "#218380"
+        
+      darkset:
+        bg_color: "#218380"
+        color: "#73D2DE"
+        button: "#D81159"
+        button_text: "#FFFFFF"
+        h2: "#73D2DE"
+        h1: "#FFFFFF"
+        mask_color: "#218380"
+        opacity:
+          button_highlighted: 0.8
+          button_table_bg: 0.2
+          button_hover: 0.9
+        text_highlighted: "#73D2DE"
+        
+      coloriset:
+        bg_color: "#FFBC42"
+        color: "#218380"
+        button: "#218380"
+        button_text: "#FFFFFF"
+        h2: "#218380"
+        h1: "#FFFFFF"
+        mask_color: "#218380"
+        opacity:
+          button_highlighted: 0.9
+          button_table_bg: 0.1
+          button_hover: 0.8
+        text_highlighted: "#218380"
+
+  neon:
+    name: "Neon (Bright Lights)"
+    description: "Vibrant neon theme"
+    # PORTFOLIO COLORS - Kaikki teeman värit käyttöön
+    portfolio:
+      color1: "#FF70A6"    # Neonpinkki (lightset button)
+      color2: "#70D6FF"    # Neonsininen (lightset h2)
+      color3: "#E9FF70"    # Neonvihreä (neutralset bg)
+      color4: "#70D6FF"    # Neonsininen (darkset bg)
+      color5: "#FFFFFF"    # Valkoinen (lightset bg)
+      gray: "#FFD670"      # Neonkeltainen (voi vaihtaa)
+    sectionsets:
+      lightset:
+        bg_color: "#FFFFFF"
+        color: "#70D6FF"
+        button: "#FF70A6"
+        button_text: "#FFFFFF"
+        h2: "#FF70A6"
+        h1: "#FFFFFF"
+        mask_color: "#FF70A6"
+        opacity:
+          button_highlighted: 0.2
+          button_table_bg: 0.1
+          button_hover: 0.8
+        text_highlighted: "#70D6FF"
+        
+      neutralset:
+        bg_color: "#E9FF70"
+        color: "#70D6FF"
+        button: "#FF70A6"
+        button_text: "#FFFFFF"
+        h2: "#70D6FF"
+        h1: "#FFFFFF"
+        mask_color: "#FF70A6"
+        opacity:
+          button_highlighted: 0.3
+          button_table_bg: 0.15
+          button_hover: 0.8
+        text_highlighted: "#70D6FF"
+        
+      darkset:
+        bg_color: "#70D6FF"
+        color: "#E9FF70"
+        button: "#FF70A6"
+        button_text: "#FFFFFF"
+        h2: "#E9FF70"
+        h1: "#FFFFFF"
+        mask_color: "#70D6FF"
+        opacity:
+          button_highlighted: 0.8
+          button_table_bg: 0.2
+          button_hover: 0.9
+        text_highlighted: "#E9FF70"
+        
+      coloriset:
+        bg_color: "#FF9770"
+        color: "#FFFFFF"
+        button: "#FFFFFF"
+        button_text: "#70D6FF"
+        h2: "#FFFFFF"
+        h1: "#FFFFFF"
+        mask_color: "#70D6FF"
+        opacity:
+          button_highlighted: 0.9
+          button_table_bg: 0.1
+          button_hover: 0.8
+        text_highlighted: "#FFFFFF"
+
+  pinkki:
+    name: "Pinkki (Pink)"
+    description: "Soft pink theme"
+    # PORTFOLIO COLORS - Kaikki teeman värit käyttöön
+    portfolio:
+      color1: "#F4ACB7"    # Vaalea pinkki (lightset button)
+      color2: "#9D8189"    # Tumma pinkki-harmaa (lightset h2)
+      color3: "#FFE5D9"    # Hyvin vaalea persikka (neutralset bg)
+      color4: "#9D8189"    # Tumma pinkki-harmaa (darkset bg)
+      color5: "#FFFFFF"    # Valkoinen (lightset bg)
+      gray: "#D8E2DC"      # Vaalea vihreäharmaa (voi vaihtaa)
+    sectionsets:
+      lightset:
+        bg_color: "#FFFFFF"
+        color: "#9D8189"
+        button: "#F4ACB7"
+        button_text: "#FFFFFF"
+        h2: "#F4ACB7"
+        h1: "#FFFFFF"
+        mask_color: "#F4ACB7"
+        opacity:
+          button_highlighted: 0.2
+          button_table_bg: 0.1
+          button_hover: 0.8
+        text_highlighted: "#9D8189"
+        
+      neutralset:
+        bg_color: "#FFE5D9"
+        color: "#9D8189"
+        button: "#F4ACB7"
+        button_text: "#FFFFFF"
+        h2: "#9D8189"
+        h1: "#FFFFFF"
+        mask_color: "#F4ACB7"
+        opacity:
+          button_highlighted: 0.3
+          button_table_bg: 0.15
+          button_hover: 0.8
+        text_highlighted: "#9D8189"
+        
+      darkset:
+        bg_color: "#9D8189"
+        color: "#FFE5D9"
+        button: "#F4ACB7"
+        button_text: "#FFFFFF"
+        h2: "#FFE5D9"
+        h1: "#FFFFFF"
+        mask_color: "#9D8189"
+        opacity:
+          button_highlighted: 0.8
+          button_table_bg: 0.2
+          button_hover: 0.9
+        text_highlighted: "#FFE5D9"
+        
+      coloriset:
+        bg_color: "#FFCAD4"
+        color: "#9D8189"
+        button: "#9D8189"
+        button_text: "#FFFFFF"
+        h2: "#9D8189"
+        h1: "#FFFFFF"
+        mask_color: "#9D8189"
+        opacity:
+          button_highlighted: 0.9
+          button_table_bg: 0.1
+          button_hover: 0.8
+        text_highlighted: "#9D8189"
+
+  pastilli:
+    name: "Pastilli (Pastel)"
+    description: "Cool pastel theme"
+    # PORTFOLIO COLORS - Kaikki teeman värit käyttöön
+    portfolio:
+      color1: "#83C5BE"    # Vaalea turkoosi (lightset button)
+      color2: "#006D77"    # Tumma turkoosi (lightset h2)
+      color3: "#EDF6F9"    # Hyvin vaalea sininen (neutralset bg)
+      color4: "#006D77"    # Tumma turkoosi (darkset bg)
+      color5: "#FFFFFF"    # Valkoinen (lightset bg)
+      gray: "#E29578"      # Vaalea terrakotta (voi vaihtaa)
+    sectionsets:
+      lightset:
+        bg_color: "#FFFFFF"
+        color: "#006D77"
+        button: "#83C5BE"
+        button_text: "#006D77"
+        h2: "#83C5BE"
+        h1: "#FFFFFF"
+        mask_color: "#83C5BE"
+        opacity:
+          button_highlighted: 0.2
+          button_table_bg: 0.1
+          button_hover: 0.8
+        text_highlighted: "#006D77"
+        
+      neutralset:
+        bg_color: "#EDF6F9"
+        color: "#006D77"
+        button: "#83C5BE"
+        button_text: "#006D77"
+        h2: "#006D77"
+        h1: "#FFFFFF"
+        mask_color: "#83C5BE"
+        opacity:
+          button_highlighted: 0.3
+          button_table_bg: 0.15
+          button_hover: 0.8
+        text_highlighted: "#006D77"
+        
+      darkset:
+        bg_color: "#006D77"
+        color: "#EDF6F9"
+        button: "#83C5BE"
+        button_text: "#006D77"
+        h2: "#EDF6F9"
+        h1: "#FFFFFF"
+        mask_color: "#006D77"
+        opacity:
+          button_highlighted: 0.8
+          button_table_bg: 0.2
+          button_hover: 0.9
+        text_highlighted: "#EDF6F9"
+        
+      coloriset:
+        bg_color: "#FFDDD2"
+        color: "#006D77"
+        button: "#006D77"
+        button_text: "#FFFFFF"
+        h2: "#006D77"
+        h1: "#FFFFFF"
+        mask_color: "#006D77"
+        opacity:
+          button_highlighted: 0.9
+          button_table_bg: 0.1
+          button_hover: 0.8
+        text_highlighted: "#006D77"
+
+  terra:
+    name: "Terra (Earth)"
+    description: "Natural earth tone theme"
+    # PORTFOLIO COLORS - Kaikki teeman värit käyttöön
+    portfolio:
+      color1: "#bd4f34"    # Terrakotta (lightset button)
+      color2: "#030303"    # Musta (lightset h2)
+      color3: "#dde1e2"    # Vaalea harmaa (neutralset bg)
+      color4: "#030303"    # Musta (darkset bg)
+      color5: "#ffffff"    # Valkoinen (lightset bg)
+      gray: "#9aac96"      # Vihreäharmaa (voi vaihtaa)
+    sectionsets:
+      lightset:
+        bg_color: "#ffffff"
+        color: "#030303"
+        button: "#bd4f34"
+        button_text: "#ffffff"
+        h2: "#bd4f34"
+        h1: "#ffffff"
+        mask_color: "#bd4f34"
+        opacity:
+          button_highlighted: 0.2
+          button_table_bg: 0.1
+          button_hover: 0.8
+        text_highlighted: "#030303"
+        
+      neutralset:
+        bg_color: "#dde1e2"
+        color: "#030303"
+        button: "#bd4f34"
+        button_text: "#ffffff"
+        h2: "#030303"
+        h1: "#ffffff"
+        mask_color: "#bd4f34"
+        opacity:
+          button_highlighted: 0.3
+          button_table_bg: 0.15
+          button_hover: 0.8
+        text_highlighted: "#030303"
+        
+      darkset:
+        bg_color: "#030303"
+        color: "#dde1e2"
+        button: "#bd4f34"
+        button_text: "#ffffff"
+        h2: "#dde1e2"
+        h1: "#ffffff"
+        mask_color: "#030303"
+        opacity:
+          button_highlighted: 0.8
+          button_table_bg: 0.2
+          button_hover: 0.9
+        text_highlighted: "#dde1e2"
+        
+      coloriset:
+        bg_color: "#9aac96"
+        color: "#ffffff"
+        button: "#ffffff"
+        button_text: "#030303"
+        h2: "#ffffff"
+        h1: "#ffffff"
+        mask_color: "#030303"
+        opacity:
+          button_highlighted: 0.9
+          button_table_bg: 0.1
+          button_hover: 0.8
+        text_highlighted: "#ffffff"
+
+  onecolor:
+    name: "OneColor (Monochrome)"
+    description: "Simple monochrome theme"
+    # PORTFOLIO COLORS - Kaikki teeman värit käyttöön
+    portfolio:
+      color1: "#49a5af"    # Turkoosi (lightset button)
+      color2: "#030303"    # Musta (lightset h2)
+      color3: "#e1e1e1"    # Vaalea harmaa (neutralset bg)
+      color4: "#030303"    # Musta (darkset bg)
+      color5: "#ffffff"    # Valkoinen (lightset bg)
+      gray: "#a3a3a3"      # Keskiharmaa (voi vaihtaa)
+    sectionsets:
+      lightset:
+        bg_color: "#ffffff"
+        color: "#030303"
+        button: "#49a5af"
+        button_text: "#ffffff"
+        h2: "#49a5af"
+        h1: "#ffffff"
+        mask_color: "#49a5af"
+        opacity:
+          button_highlighted: 0.2
+          button_table_bg: 0.1
+          button_hover: 0.8
+        text_highlighted: "#030303"
+        
+      neutralset:
+        bg_color: "#e1e1e1"
+        color: "#030303"
+        button: "#49a5af"
+        button_text: "#ffffff"
+        h2: "#030303"
+        h1: "#ffffff"
+        mask_color: "#49a5af"
+        opacity:
+          button_highlighted: 0.3
+          button_table_bg: 0.15
+          button_hover: 0.8
+        text_highlighted: "#030303"
+        
+      darkset:
+        bg_color: "#030303"
+        color: "#e1e1e1"
+        button: "#49a5af"
+        button_text: "#ffffff"
+        h2: "#e1e1e1"
+        h1: "#ffffff"
+        mask_color: "#030303"
+        opacity:
+          button_highlighted: 0.8
+          button_table_bg: 0.2
+          button_hover: 0.9
+        text_highlighted: "#e1e1e1"
+        
+      coloriset:
+        bg_color: "#a3a3a3"
+        color: "#ffffff"
+        button: "#ffffff"
+        button_text: "#030303"
+        h2: "#ffffff"
+        h1: "#ffffff"
+        mask_color: "#030303"
+        opacity:
+          button_highlighted: 0.9
+          button_table_bg: 0.1
+          button_hover: 0.8
+        text_highlighted: "#ffffff"
+  jklav1:
+    name: "jklav1"
+    description: "Cool wave theme"
+    # PORTFOLIO COLORS - Kaikki teeman värit käyttöön
+    portfolio:
+      color1: "#22B7D2"    # Turkoosi (lightset button)
+      color2: "#232628"    # Tumma harmaa (lightset h2)
+      color3: "#e1e1e1"    # Vaalea harmaa (neutralset bg)
+      color4: "#232628"    # Tumma harmaa (darkset bg)
+      color5: "#ffffff"    # Valkoinen (lightset bg)
+      gray: "#4F6684"      # Siniharmaa (voi vaihtaa)
+    sectionsets:
+      lightset:
+        bg_color: "#ffffff"
+        color: "#232628"
+        button: "#22B7D2"
+        button_text: "#ffffff"
+        h2: "#22B7D2"
+        h1: "#ffffff"
+        mask_color: "#22B7D2"
+        opacity:
+          button_highlighted: 0.2
+          button_table_bg: 0.1
+          button_hover: 0.8
+        text_highlighted: "#232628"
+        
+      neutralset:
+        bg_color: "#e1e1e1"
+        color: "#232628"
+        button: "#22B7D2"
+        button_text: "#ffffff"
+        h2: "#232628"
+        h1: "#ffffff"
+        mask_color: "#22B7D2"
+        opacity:
+          button_highlighted: 0.3
+          button_table_bg: 0.15
+          button_hover: 0.8
+        text_highlighted: "#232628"
+        
+      darkset:
+        bg_color: "#232628"
+        color: "#e1e1e1"
+        button: "#22B7D2"
+        button_text: "#ffffff"
+        h2: "#e1e1e1"
+        h1: "#ffffff"
+        mask_color: "#232628"
+        opacity:
+          button_highlighted: 0.8
+          button_table_bg: 0.2
+          button_hover: 0.9
+        text_highlighted: "#e1e1e1"
+        
+      coloriset:
+        bg_color: "#4F6684"
+        color: "#ffffff"
+        button: "#ffffff"
+        button_text: "#232628"
+        h2: "#ffffff"
+        h1: "#ffffff"
+        mask_color: "#232628"
+        opacity:
+          button_highlighted: 0.9
+          button_table_bg: 0.1
+          button_hover: 0.8
+        text_highlighted: "#ffffff"
+        
+  jklav2:
+    name: "jklav2 (Cloud)"
+    description: "Soft cloud theme"
+    # PORTFOLIO COLORS - Kaikki teeman värit käyttöön
+    portfolio:
+      color1: "#6c98e1"    # Vaalea sininen (lightset button)
+      color2: "#232628"    # Tumma harmaa (lightset h2)
+      color3: "#e1e1e1"    # Vaalea harmaa (neutralset bg)
+      color4: "#232628"    # Tumma harmaa (darkset bg)
+      color5: "#ffffff"    # Valkoinen (lightset bg)
+      gray: "#4F6684"      # Siniharmaa (voi vaihtaa)
+    sectionsets:
+      lightset:
+        bg_color: "#ffffff"
+        color: "#232628"
+        button: "#6c98e1"
+        button_text: "#ffffff"
+        h2: "#6c98e1"
+        h1: "#ffffff"
+        mask_color: "#6c98e1"
+        opacity:
+          button_highlighted: 0.2
+          button_table_bg: 0.1
+          button_hover: 0.8
+        text_highlighted: "#232628"
+        
+      neutralset:
+        bg_color: "#e1e1e1"
+        color: "#232628"
+        button: "#6c98e1"
+        button_text: "#ffffff"
+        h2: "#232628"
+        h1: "#ffffff"
+        mask_color: "#6c98e1"
+        opacity:
+          button_highlighted: 0.3
+          button_table_bg: 0.15
+          button_hover: 0.8
+        text_highlighted: "#232628"
+        
+      darkset:
+        bg_color: "#232628"
+        color: "#e1e1e1"
+        button: "#6c98e1"
+        button_text: "#ffffff"
+        h2: "#e1e1e1"
+        h1: "#ffffff"
+        mask_color: "#232628"
+        opacity:
+          button_highlighted: 0.8
+          button_table_bg: 0.2
+          button_hover: 0.9
+        text_highlighted: "#e1e1e1"
+        
+      coloriset:
+        bg_color: "#4F6684"
+        color: "#ffffff"
+        button: "#ffffff"
+        button_text: "#232628"
+        h2: "#ffffff"
+        h1: "#ffffff"
+        mask_color: "#232628"
+        opacity:
+          button_highlighted: 0.9
+          button_table_bg: 0.1
+          button_hover: 0.8
+        text_highlighted: "#ffffff"

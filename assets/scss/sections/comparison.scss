@@ -1,0 +1,156 @@
+// =============================================================================
+// Comparison Table Section (simple)
+// =============================================================================
+
+.comparison-section {
+  .comparison-table-wrapper {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-top: 50px;
+
+    .table-responsive {
+      border-radius: 12px;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+
+  .comparison-table {
+    background: transparent;
+    margin-bottom: 0;
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+    min-width: 600px; // tarvitaan responsiivisuuteen
+    font-weight: 400;
+
+    th, td {
+      border: none;
+      padding: 20px 15px;
+      text-align: center;
+      vertical-align: middle;
+      font-weight: 400;
+
+      &:first-child {
+        text-align: left;
+        background-color: #ffffff; // valkoinen tausta aina
+      }
+    }
+
+    thead th {
+      padding: 25px 15px;
+      font-size: 1.1rem;
+      font-weight: 400;
+      border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    }
+
+    tbody tr {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.02);
+      }
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      td:nth-child(2) {
+        background-color: rgba(76, 175, 80, 0.08); // vihreä sävy
+      }
+    }
+
+    .feature-name {
+      background-color: rgba(0, 0, 0, 0.03);
+    }
+
+    .highlighted-column {
+      background-color: rgba(76, 175, 80, 0.1);
+      color: #2E7D32;
+    }
+
+    .highlighted-badge {
+      background-color: #4CAF50;
+      color: white;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+      margin-top: 8px;
+      display: inline-block;
+    }
+
+    .check-icon, .close-icon {
+      font-size: 16px !important;
+      font-weight: 400;
+
+      &.check-icon {
+        color: #4CAF50;
+      }
+
+      &.close-icon {
+        color: #e74c3c;
+        opacity: 0.7;
+      }
+    }
+  }
+
+  .comparison-cta {
+    margin-top: 40px;
+
+    .comparison-cta-btn {
+      padding: 15px 15px;
+      font-weight: 400;
+      letter-spacing: 1px;
+      text-decoration: none;
+      display: inline-block;
+    }
+  }
+}
+
+// =============================================================================
+// Responsive Design
+// =============================================================================
+
+@media (max-width: 768px) {
+  .comparison-section {
+    display: none;
+
+    .comparison-table-wrapper {
+      margin: 20px -15px 0;
+      border-radius: 0;
+      display: none;;
+    }
+
+    .comparison-table {
+      font-size: 0.85rem;
+
+      th, td {
+        padding: 12px 8px;
+
+        &:first-child {
+          min-width: 120px;
+          position: sticky;
+          left: 0;
+          background-color: #ffffff; // sticky sarake valkoisena
+          z-index: 2;
+        }
+      }
+
+      thead th:first-child {
+        background-color: #ffffff;
+      }
+    }
+
+    .comparison-cta {
+      margin-top: 30px;
+
+      .comparison-cta-btn {
+        padding: 12px 25px;
+        font-size: 0.9rem;
+      }
+    }
+  }
+}

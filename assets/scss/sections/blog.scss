@@ -1,0 +1,138 @@
+// =============================================================================
+// Blog Post Heading Styles - Dynamic Sectionset Color Support
+// =============================================================================
+
+// Base blog post heading styles - uses dynamic variable
+.post-block {
+  h4, h4 a {
+    color: var(--current-h2-color) !important;
+    text-decoration: none !important;
+    transition: color 0.3s ease;
+    
+    &:hover {
+      color: var(--current-h2-color) !important;
+      text-decoration: none !important;
+    }
+    
+    &:focus {
+      color: var(--current-h2-color) !important;
+      text-decoration: none !important;
+      outline: none;
+    }
+    
+    &:visited {
+      color: var(--current-h2-color) !important;
+    }
+  }
+}
+
+// =============================================================================
+// Read-more Link Dynamic Sectionset Color Support
+// =============================================================================
+
+// Base read-more link styles - uses dynamic variable
+.read-more-link {
+  color: var(--current-button-color) !important;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1em;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.3s ease;
+  margin-top: auto;
+  padding-left: 0;
+  
+  &:hover {
+    color: var(--current-button-color) !important;
+    text-decoration: none;
+    transform: translateX(4px);
+  }
+  
+  i {
+    font-size: 0.8em;
+    transition: transform 0.3s ease;
+  }
+  
+  &:hover i {
+    transform: translateX(3px);
+  }
+}
+
+// =============================================================================
+// Blog Title Styles - Dynamic Sectionset with Responsive
+// =============================================================================
+
+// Base blog title styles with spacing and dynamic color
+#blog {
+  .title.blogiotsikko,
+  .title .blogiotsikko {
+    color: var(--current-h2-color) !important;
+    margin-top: 0px !important;
+    margin-bottom: 40px !important;
+    
+    // Mobile responsive - match other h2 headings
+    @media (max-width: 768px) {
+      margin-top: 40px !important;
+      margin-bottom: 20px !important;
+    }
+    
+    @media (max-width: 576px) {
+      margin-top: 30px !important;
+      margin-bottom: 15px !important;
+    }
+  }
+}
+
+// =============================================================================
+// Dynamic sectionset support - sets the current color variables
+// =============================================================================
+
+.section-lightset {
+  --current-h2-color: var(--siteset-lightset-h2);
+  --current-button-color: var(--siteset-lightset-button);
+}
+
+.section-darkset {
+  --current-h2-color: var(--siteset-darkset-h2);
+  --current-button-color: var(--siteset-darkset-button);
+}
+
+.section-neutralset {
+  --current-h2-color: var(--siteset-neutralset-h2);
+  --current-button-color: var(--siteset-neutralset-button);
+}
+
+.section-coloriset {
+  --current-h2-color: var(--siteset-coloriset-h2);
+  --current-button-color: var(--siteset-coloriset-button);
+}
+
+// =============================================================================
+// Post Date Spacing
+// =============================================================================
+
+.post-block {
+  .post-meta {
+    margin-top: 15px !important;
+    
+    .post-date {
+      margin-top: 10px !important;
+    }
+  }
+}
+
+// Alternative if you want more spacing
+.post-block .post-date {
+  margin-top: 20px !important;
+}
+
+// =============================================================================
+// Fallback for Default Colors (if no section class is set)
+// =============================================================================
+
+// Default to lightset if no section class is present
+:root {
+  --current-h2-color: var(--siteset-lightset-h2);
+  --current-button-color: var(--siteset-lightset-button);
+}

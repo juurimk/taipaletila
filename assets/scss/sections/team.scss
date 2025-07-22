@@ -1,0 +1,117 @@
+// =============================================================================
+// Team section
+// =============================================================================
+
+// H2 otsikon väri team-sectionille
+.team-section .title h2 {
+  color: var(--siteset-lightset-button)!important;
+}
+
+.team-description{
+  color: var(--siteset-lightset-p) !important;
+}
+
+.team-member {
+  position: relative;
+  margin: 0 auto; // keskitys pienillä ruuduilla
+
+  .member-photo {
+    position: relative;
+    overflow: hidden;
+    margin-bottom:20px;
+
+    // Erillinen värikerros
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: var(--siteset-darkset-bg) ;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: 1;
+    }
+
+    // LinkedIn logo layer
+    .mask {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      opacity: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.3s ease;
+      z-index: 2;
+
+      ul {
+        list-style: none;
+        display: flex;
+        gap: 15px;
+        padding: 0;
+        margin: 0;
+
+        li a i {
+          color: #fff !important; // valkoinen ikoni
+          font-size: 24px;
+          transition: transform 0.2s ease;
+        }
+
+        li a:hover i {
+          transform: scale(1.1);
+        }
+      }
+    }
+
+    &:hover::before {
+      opacity: 0.4;
+    }
+
+    &:hover .mask {
+      opacity: 1;
+    }
+  }
+}
+
+// Responsiivinen asettelu: yksi kuva per rivi mobiilissa
+@media (max-width: 768px) {
+  .team-section .team-member {
+    max-width: 320px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; // Keskittää kuvan ja sisällön
+    justify-content: center;
+  }
+
+  .team-section .col-12,
+  .team-section .col-md-6,
+  .team-section .col-lg-3 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+
+  .team-section .member-photo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .team-section .member-photo .mask {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .team-section .member-name {
+    text-align: center;
+  }
+}

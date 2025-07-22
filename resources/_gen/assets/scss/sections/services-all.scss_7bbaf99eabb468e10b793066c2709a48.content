@@ -1,0 +1,443 @@
+.services-all-section {
+  background-color: var(--siteset-lightset-bg);
+  color: var(--siteset-lightset-color);
+  background-color: var(--siteset-lightset-bg);
+  color: var(--siteset-lightset-color);
+  background-color: var(--siteset-darkset-bg);
+  color: var(--siteset-darkset-color);
+  background-color: var(--siteset-coloriset-bg);
+  color: var(--siteset-coloriset-color);
+  background-color: var(--siteset-neutralset-bg);
+  color: var(--siteset-neutralset-color); }
+  .services-all-section .services-main-title {
+    color: var(--siteset-lightset-h2);
+    margin-top: 0px !important;
+    padding-top: 2rem;
+    margin-bottom: 1rem !important; }
+  .services-all-section.section-lightset .services-description p {
+    color: var(--siteset-lightset-color);
+    font-family: var(--sitefont);
+    line-height: 1.4;
+    max-width: 800px;
+    margin: 0 auto; }
+  .services-all-section.section-lightset .service-category {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 0rem !important;
+    padding-left: 0;
+    /* Remove extra padding */ }
+    .services-all-section.section-lightset .service-category:last-child {
+      border-bottom: none; }
+    .services-all-section.section-lightset .service-category .brand-split-title {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      margin-left: 0;
+      /* Align text to the left */
+      padding-left: 15px;
+      /* Match the card padding */ }
+      .services-all-section.section-lightset .service-category .brand-split-title .brand-part {
+        color: var(--siteset-lightset-button) !important;
+        font-weight: 700; }
+      .services-all-section.section-lightset .service-category .brand-split-title .rest-part {
+        color: var(--siteset-lightset-button) !important;
+        font-style: italic;
+        font-weight: 400; }
+    .services-all-section.section-lightset .service-category h4.service-subtitle {
+      color: var(--siteset-lightset-color);
+      font-family: var(--sitefont);
+      font-size: 1.2rem;
+      font-weight: 600;
+      font-style: italic;
+      margin-bottom: 1rem;
+      margin-left: 0;
+      /* Align text to the left */
+      padding-left: 15px;
+      /* Match the card padding */ }
+    .services-all-section.section-lightset .service-category .service-category-description {
+      color: var(--siteset-lightset-color);
+      font-family: var(--sitefont);
+      font-size: 1.1rem;
+      margin-left: 0;
+      /* Align text to the left */
+      padding-left: 15px;
+      /* Match the card padding */ }
+    .services-all-section.section-lightset .service-category .row {
+      margin-bottom: 0px;
+      margin-left: 0;
+      /* Align the row with the cards */ }
+      .services-all-section.section-lightset .service-category .row .service-item {
+        background: var(--siteset-lightset-bg);
+        border-radius: 0px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        margin-bottom: 30px;
+        display: flex;
+        flex-direction: column;
+        height: 400px; }
+        @media (min-width: 768px) {
+          .services-all-section.section-lightset .service-category .row .service-item {
+            height: 450px; } }
+        @media (min-width: 992px) {
+          .services-all-section.section-lightset .service-category .row .service-item {
+            height: 500px; } }
+        .services-all-section.section-lightset .service-category .row .service-item .service-image {
+          position: relative;
+          cursor: pointer;
+          margin: 0;
+          flex-shrink: 0; }
+          .services-all-section.section-lightset .service-category .row .service-item .service-image img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+            display: block; }
+          .services-all-section.section-lightset .service-category .row .service-item .service-image:hover img {
+            transform: scale(1.05); }
+        .services-all-section.section-lightset .service-category .row .service-item .service-content {
+          padding: 20px;
+          flex-grow: 1;
+          display: flex;
+          flex-direction: column; }
+          .services-all-section.section-lightset .service-category .row .service-item .service-content h4 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--siteset-lightset-color);
+            font-family: var(--sitefont);
+            font-weight: 600; }
+            .services-all-section.section-lightset .service-category .row .service-item .service-content h4 a {
+              color: inherit;
+              text-decoration: none;
+              font-family: var(--sitefont);
+              transition: color 0.3s ease; }
+              .services-all-section.section-lightset .service-category .row .service-item .service-content h4 a:hover {
+                color: var(--siteset-lightset-button); }
+          .services-all-section.section-lightset .service-category .row .service-item .service-content p {
+            color: var(--siteset-lightset-color);
+            font-size: 0.9rem;
+            font-family: var(--sitefont);
+            line-height: 1.6;
+            margin-bottom: 10px;
+            flex-grow: 1; }
+  .services-all-section .services-main-title {
+    color: var(--siteset-darkset-h2);
+    margin-top: 0px !important;
+    padding-top: 2rem;
+    margin-bottom: 1rem !important; }
+  .services-all-section.section-darkset .services-description p {
+    color: var(--siteset-darkset-color);
+    font-family: var(--sitefont);
+    line-height: 1.4;
+    max-width: 800px;
+    margin: 0 auto; }
+  .services-all-section.section-darkset .service-category {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 0rem !important;
+    padding-left: 0;
+    /* Remove extra padding */ }
+    .services-all-section.section-darkset .service-category:last-child {
+      border-bottom: none; }
+    .services-all-section.section-darkset .service-category .brand-split-title {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      margin-left: 0;
+      /* Align text to the left */
+      padding-left: 15px;
+      /* Match the card padding */ }
+      .services-all-section.section-darkset .service-category .brand-split-title .brand-part {
+        color: var(--siteset-lightset-button) !important;
+        font-weight: 700; }
+      .services-all-section.section-darkset .service-category .brand-split-title .rest-part {
+        color: var(--siteset-lightset-button) !important;
+        font-style: italic;
+        font-weight: 400; }
+    .services-all-section.section-darkset .service-category h4.service-subtitle {
+      color: var(--siteset-darkset-color);
+      font-family: var(--sitefont);
+      font-size: 1.2rem;
+      font-weight: 600;
+      font-style: italic;
+      margin-bottom: 1rem;
+      margin-left: 0;
+      /* Align text to the left */
+      padding-left: 15px;
+      /* Match the card padding */ }
+    .services-all-section.section-darkset .service-category .service-category-description {
+      color: var(--siteset-darkset-color);
+      font-family: var(--sitefont);
+      font-size: 1.1rem;
+      margin-left: 0;
+      /* Align text to the left */
+      padding-left: 15px;
+      /* Match the card padding */ }
+    .services-all-section.section-darkset .service-category .row {
+      margin-bottom: 0px;
+      margin-left: 0;
+      /* Align the row with the cards */ }
+      .services-all-section.section-darkset .service-category .row .service-item {
+        background: var(--siteset-darkset-bg);
+        border-radius: 0px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        margin-bottom: 30px;
+        display: flex;
+        flex-direction: column;
+        height: 400px; }
+        @media (min-width: 768px) {
+          .services-all-section.section-darkset .service-category .row .service-item {
+            height: 450px; } }
+        @media (min-width: 992px) {
+          .services-all-section.section-darkset .service-category .row .service-item {
+            height: 500px; } }
+        .services-all-section.section-darkset .service-category .row .service-item .service-image {
+          position: relative;
+          cursor: pointer;
+          margin: 0;
+          flex-shrink: 0; }
+          .services-all-section.section-darkset .service-category .row .service-item .service-image img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+            display: block; }
+          .services-all-section.section-darkset .service-category .row .service-item .service-image:hover img {
+            transform: scale(1.05); }
+        .services-all-section.section-darkset .service-category .row .service-item .service-content {
+          padding: 20px;
+          flex-grow: 1;
+          display: flex;
+          flex-direction: column; }
+          .services-all-section.section-darkset .service-category .row .service-item .service-content h4 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--siteset-darkset-color);
+            font-family: var(--sitefont);
+            font-weight: 600; }
+            .services-all-section.section-darkset .service-category .row .service-item .service-content h4 a {
+              color: inherit;
+              text-decoration: none;
+              font-family: var(--sitefont);
+              transition: color 0.3s ease; }
+              .services-all-section.section-darkset .service-category .row .service-item .service-content h4 a:hover {
+                color: var(--siteset-darkset-button); }
+          .services-all-section.section-darkset .service-category .row .service-item .service-content p {
+            color: var(--siteset-darkset-color);
+            font-size: 0.9rem;
+            font-family: var(--sitefont);
+            line-height: 1.6;
+            margin-bottom: 10px;
+            flex-grow: 1; }
+  .services-all-section .services-main-title {
+    color: var(--siteset-coloriset-h2);
+    margin-top: 0px !important;
+    padding-top: 2rem;
+    margin-bottom: 1rem !important; }
+  .services-all-section.section-coloriset .services-description p {
+    color: var(--siteset-coloriset-color);
+    font-family: var(--sitefont);
+    line-height: 1.4;
+    max-width: 800px;
+    margin: 0 auto; }
+  .services-all-section.section-coloriset .service-category {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 0rem !important;
+    padding-left: 0;
+    /* Remove extra padding */ }
+    .services-all-section.section-coloriset .service-category:last-child {
+      border-bottom: none; }
+    .services-all-section.section-coloriset .service-category .brand-split-title {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      margin-left: 0;
+      /* Align text to the left */
+      padding-left: 15px;
+      /* Match the card padding */ }
+      .services-all-section.section-coloriset .service-category .brand-split-title .brand-part {
+        color: var(--siteset-lightset-button) !important;
+        font-weight: 700; }
+      .services-all-section.section-coloriset .service-category .brand-split-title .rest-part {
+        color: var(--siteset-lightset-button) !important;
+        font-style: italic;
+        font-weight: 400; }
+    .services-all-section.section-coloriset .service-category h4.service-subtitle {
+      color: var(--siteset-coloriset-color);
+      font-family: var(--sitefont);
+      font-size: 1.2rem;
+      font-weight: 600;
+      font-style: italic;
+      margin-bottom: 1rem;
+      margin-left: 0;
+      /* Align text to the left */
+      padding-left: 15px;
+      /* Match the card padding */ }
+    .services-all-section.section-coloriset .service-category .service-category-description {
+      color: var(--siteset-coloriset-color);
+      font-family: var(--sitefont);
+      font-size: 1.1rem;
+      margin-left: 0;
+      /* Align text to the left */
+      padding-left: 15px;
+      /* Match the card padding */ }
+    .services-all-section.section-coloriset .service-category .row {
+      margin-bottom: 0px;
+      margin-left: 0;
+      /* Align the row with the cards */ }
+      .services-all-section.section-coloriset .service-category .row .service-item {
+        background: var(--siteset-coloriset-bg);
+        border-radius: 0px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        margin-bottom: 30px;
+        display: flex;
+        flex-direction: column;
+        height: 400px; }
+        @media (min-width: 768px) {
+          .services-all-section.section-coloriset .service-category .row .service-item {
+            height: 450px; } }
+        @media (min-width: 992px) {
+          .services-all-section.section-coloriset .service-category .row .service-item {
+            height: 500px; } }
+        .services-all-section.section-coloriset .service-category .row .service-item .service-image {
+          position: relative;
+          cursor: pointer;
+          margin: 0;
+          flex-shrink: 0; }
+          .services-all-section.section-coloriset .service-category .row .service-item .service-image img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+            display: block; }
+          .services-all-section.section-coloriset .service-category .row .service-item .service-image:hover img {
+            transform: scale(1.05); }
+        .services-all-section.section-coloriset .service-category .row .service-item .service-content {
+          padding: 20px;
+          flex-grow: 1;
+          display: flex;
+          flex-direction: column; }
+          .services-all-section.section-coloriset .service-category .row .service-item .service-content h4 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--siteset-coloriset-color);
+            font-family: var(--sitefont);
+            font-weight: 600; }
+            .services-all-section.section-coloriset .service-category .row .service-item .service-content h4 a {
+              color: inherit;
+              text-decoration: none;
+              font-family: var(--sitefont);
+              transition: color 0.3s ease; }
+              .services-all-section.section-coloriset .service-category .row .service-item .service-content h4 a:hover {
+                color: var(--siteset-coloriset-button); }
+          .services-all-section.section-coloriset .service-category .row .service-item .service-content p {
+            color: var(--siteset-coloriset-color);
+            font-size: 0.9rem;
+            font-family: var(--sitefont);
+            line-height: 1.6;
+            margin-bottom: 10px;
+            flex-grow: 1; }
+  .services-all-section .services-main-title {
+    color: var(--siteset-neutralset-h2);
+    margin-top: 0px !important;
+    padding-top: 2rem;
+    margin-bottom: 1rem !important; }
+  .services-all-section.section-neutralset .services-description p {
+    color: var(--siteset-neutralset-color);
+    font-family: var(--sitefont);
+    line-height: 1.4;
+    max-width: 800px;
+    margin: 0 auto; }
+  .services-all-section.section-neutralset .service-category {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 0rem !important;
+    padding-left: 0;
+    /* Remove extra padding */ }
+    .services-all-section.section-neutralset .service-category:last-child {
+      border-bottom: none; }
+    .services-all-section.section-neutralset .service-category .brand-split-title {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      margin-left: 0;
+      /* Align text to the left */
+      padding-left: 15px;
+      /* Match the card padding */ }
+      .services-all-section.section-neutralset .service-category .brand-split-title .brand-part {
+        color: var(--siteset-lightset-button) !important;
+        font-weight: 700; }
+      .services-all-section.section-neutralset .service-category .brand-split-title .rest-part {
+        color: var(--siteset-lightset-button) !important;
+        font-style: italic;
+        font-weight: 400; }
+    .services-all-section.section-neutralset .service-category h4.service-subtitle {
+      color: var(--siteset-neutralset-color);
+      font-family: var(--sitefont);
+      font-size: 1.2rem;
+      font-weight: 600;
+      font-style: italic;
+      margin-bottom: 1rem;
+      margin-left: 0;
+      /* Align text to the left */
+      padding-left: 15px;
+      /* Match the card padding */ }
+    .services-all-section.section-neutralset .service-category .service-category-description {
+      color: var(--siteset-neutralset-color);
+      font-family: var(--sitefont);
+      font-size: 1.1rem;
+      margin-left: 0;
+      /* Align text to the left */
+      padding-left: 15px;
+      /* Match the card padding */ }
+    .services-all-section.section-neutralset .service-category .row {
+      margin-bottom: 0px;
+      margin-left: 0;
+      /* Align the row with the cards */ }
+      .services-all-section.section-neutralset .service-category .row .service-item {
+        background: var(--siteset-neutralset-bg);
+        border-radius: 0px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        margin-bottom: 30px;
+        display: flex;
+        flex-direction: column;
+        height: 400px; }
+        @media (min-width: 768px) {
+          .services-all-section.section-neutralset .service-category .row .service-item {
+            height: 450px; } }
+        @media (min-width: 992px) {
+          .services-all-section.section-neutralset .service-category .row .service-item {
+            height: 500px; } }
+        .services-all-section.section-neutralset .service-category .row .service-item .service-image {
+          position: relative;
+          cursor: pointer;
+          margin: 0;
+          flex-shrink: 0; }
+          .services-all-section.section-neutralset .service-category .row .service-item .service-image img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+            display: block; }
+          .services-all-section.section-neutralset .service-category .row .service-item .service-image:hover img {
+            transform: scale(1.05); }
+        .services-all-section.section-neutralset .service-category .row .service-item .service-content {
+          padding: 20px;
+          flex-grow: 1;
+          display: flex;
+          flex-direction: column; }
+          .services-all-section.section-neutralset .service-category .row .service-item .service-content h4 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--siteset-neutralset-color);
+            font-family: var(--sitefont);
+            font-weight: 600; }
+            .services-all-section.section-neutralset .service-category .row .service-item .service-content h4 a {
+              color: inherit;
+              text-decoration: none;
+              font-family: var(--sitefont);
+              transition: color 0.3s ease; }
+              .services-all-section.section-neutralset .service-category .row .service-item .service-content h4 a:hover {
+                color: var(--siteset-neutralset-button); }
+          .services-all-section.section-neutralset .service-category .row .service-item .service-content p {
+            color: var(--siteset-neutralset-color);
+            font-size: 0.9rem;
+            font-family: var(--sitefont);
+            line-height: 1.6;
+            margin-bottom: 10px;
+            flex-grow: 1; }

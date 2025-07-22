@@ -1,0 +1,25 @@
+
+
+<article class="col-lg-4 col-md-6 col-12 clearfix mb-4">
+  <div class="post-block">
+    <div class="media-wrapper">
+      <img class="img-fluid lozad" data-src="{{ .Params.Image_webp | absURL }}" onerror="this.onerror=null;this.src='{{ .Params.image | absURL }}'">
+    </div>
+
+    <div class="content">
+      <!-- Päivämäärä -->
+      <div class="post-meta">
+        <span class="post-date">{{ .Date.Format "2.1.2006" }}</span>
+      </div>
+      
+      <!-- Otsikko -->
+      <h4><a href="{{ .Permalink }}">{{ .Title }}</a></h4>
+      
+      <!-- Lyhyt teksti (max 3 riviä) -->
+      <p class="post-excerpt">{{ .Summary | plainify | truncate 120 }}</p>
+      
+      <!-- Lue lisää linkki -->
+      <a class="read-more-link" href="{{ .Permalink }}">{{ i18n "readMore" }} <i class="ti-arrow-right"></i></a>
+    </div>
+  </div>
+</article>

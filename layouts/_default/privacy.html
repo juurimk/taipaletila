@@ -1,0 +1,46 @@
+{{ define "main" }}
+
+{{ partial "navigation.html" . }}
+
+{{ $data := index site.Data site.Language.Lang "privacy" }}
+{{ $privacy := $data.privacy }}
+
+{{/* Get sectionset for privacy page from config.toml */}}
+{{ $sectionset := index site.Params.sectionsets "privacy" | default "lightset" }}
+
+<section class="section section-{{ $sectionset }}">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-10">
+        <div class="privacy-content">
+
+          <h1 class="privacy-title mb-4">{{ $privacy.title }}</h1>
+
+          {{ if $privacy.company }}
+          <div class="privacy-company mb-4">
+            <p><strong>{{ $privacy.company.name }}</strong><br>
+            {{ $privacy.company.business_id }}<br>
+            {{ $privacy.company.location }}</p>
+          </div>
+          {{ end }}
+
+          <div class="privacy-intro mb-5">
+            <p>{{ $privacy.intro }}</p>
+          </div>
+
+          {{ range $privacy.sections }}
+          <div class="privacy-section mb-5">
+            <h2 class="privacy-heading">{{ .heading }}</h2>
+            <div class="privacy-text">
+              {{ .content | markdownify }}
+            </div>
+          </div>
+          {{ end }}
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ end }}

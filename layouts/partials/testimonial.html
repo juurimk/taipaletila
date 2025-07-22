@@ -1,0 +1,46 @@
+{{ $data := index site.Data site.Language.Lang }}
+
+{{/* Get sectionset for testimonial section */}}
+{{ $sectionset := index site.Params.sectionsets "testimonial" | default "neutralset" }}
+
+{{ if $data.testimonial.testimonial.enable }}
+{{ with $data.testimonial.testimonial }}
+{{"<!-- Start Testimonial -->" | safeHTML}}
+<section id="testimonial" class="testimonial-section section-{{ $sectionset }}">
+	<div class="container">
+		<div class="row">
+			<div class="col-xl-12">
+				{{"<!-- section title -->" | safeHTML}}
+				<div class="title text-center wow fadeInUp" data-wow-duration="500ms">
+					<h2>{{ with .title }} {{ index (split . " ") 0 | safeHTML }} {{ end }}<span class="color">
+						{{ with .title }} {{ after (len (index (split . " ") 0)) . | safeHTML }} {{ end }}</span></h2>
+					<!--<div class="border-meghna"></div> -->
+				</div>
+				{{"<!-- /section title -->" | safeHTML}}
+
+				{{"<!-- testimonial wrapper -->" | safeHTML}}
+				<div id="testimonials" class="testimonial-slider wow fadeInUp" data-wow-duration="500ms" data-wow-delay="100ms">
+					{{ range .testimonial_item }}
+					{{"<!-- testimonial single -->" | safeHTML}}
+					<div class="testimonial-item text-center">
+						{{"<!-- testimonial content -->" | safeHTML}}
+						<div class="testimonial-content">
+							<div class="testimonial-quote">
+								<p>{{ .content | markdownify }}</p>
+							</div>
+							<div class="testimonial-author">
+								<h4>{{ .name }}</h4>
+							</div>
+						</div>
+					</div>
+					{{"<!-- /testimonial single -->" | safeHTML}}
+					{{ end }}
+				</div>
+				{{"<!-- /testimonial wrapper -->" | safeHTML}}
+			</div>
+		</div>
+	</div>
+</section>
+{{"<!-- /testimonial -->" | safeHTML}}
+{{ end }}
+{{ end }}

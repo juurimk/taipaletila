@@ -1,0 +1,156 @@
+{{"<!-- end Contact Area -->" | safeHTML}}
+
+{{ $data := index site.Data site.Language.Lang }}
+
+{{ if $data.footer.footer.enable }}
+{{ with $data.footer.footer }}
+<footer id="footer" class="footer-section">
+	<div class="container">
+		
+		{{"<!-- First Row - Logo only -->" | safeHTML}}
+		<div class="row mb-4">
+			<div class="col-12">
+				<div class="footer-logo">
+					<a href="{{ site.Home.Permalink }}">
+						<img src="{{ .logo_webp | absURL }}" onerror="this.onerror=null;this.src='{{ .logo | absURL }}'" alt="{{ .logo_alt }}" />
+					</a>
+				</div>
+			</div>
+		</div>
+		
+		{{"<!-- Second Row - Description + Sitemap + Privacy -->" | safeHTML}}
+		<div class="row mb-4">
+			
+			{{"<!-- Col-6 - Description + Social -->" | safeHTML}}
+			<div class="col-lg-6 col-md-6">
+				<div class="footer-content">
+					{{"<!-- Description text -->" | safeHTML}}
+					<div class="footer-description mb-4">
+						{{ range (split .description "\n") }}
+<p>{{ . | markdownify }}</p>
+{{ end }}
+					</div>
+					
+					{{"<!-- Business name and number -->" | safeHTML}}
+					<div class="footer-business mt-4 mb-4">
+  {{ range (split .business_info "\n") }}
+    <p class="mb-1">{{ . | markdownify }}</p>
+  {{ end }}
+</div>
+					
+					{{"<!-- Social media links -->" | safeHTML}}
+					<div class="footer-social">
+						<!--<h6 class="mb-3">{{ .social_title | markdownify }}</h6>-->
+<ul class="social-icons list-inline">
+  {{ range .social_links }}
+  <li class="list-inline-item me-2">
+    <a href="{{ .link | safeURL }}"
+       {{ if .target }}target="{{ .target }}"{{ end }}
+       aria-label="Avaa {{ .label }}-profiilimme uudessa välilehdessä">
+      <i class="{{ .icon }}"></i>
+    </a>
+  </li>
+  {{ end }}
+</ul>
+      
+					</div>
+				</div>
+			</div>
+			
+			{{"<!-- Col-3 - Sitemap + Privacy -->" | safeHTML}}
+			<div class="col-lg-3 col-md-3 text-center text-lg-start">
+				<div class="footer-sitemap">
+					{{ if .footer_links }}
+					<ul class="footer-link-list list-unstyled">
+						{{ range .footer_links }}
+						<li class="mb-1"><a href="{{ .url | safeURL }}">{{ .name }}</a></li>
+						{{ end }}
+						{{ range .privacy_links }}
+						<li class="mb-1"><a href="{{ .url | safeURL }}">{{ .name }}</a></li>
+						{{ end }}
+					</ul>
+					{{ end }}
+				</div>
+			</div>
+			
+			<div class="col-lg-3 col-md-3 text-center">
+				<button style= "padding-top:0px!important; 
+  margin-top:0px!important;" id="scroll-to-top" 
+          class="scroll-to-top"
+          aria-label="Siirry sivun alkuun">
+          <i class="ti-angle-up"></i>
+      </button>
+			</div>
+		</div>
+	<div class="col-12 text-center">
+		
+		{{"<!-- Third Row - Brand text centered -->" | safeHTML}}
+		
+			<div class="col-12 text-center">
+				<p class="footer-brand-text">{{ .copyright | markdownify }}</p>
+			</div>
+		
+		
+	</div>
+</footer>
+{{ end }}
+{{ end }}
+
+
+{{"<!-- /footer -->" | safeHTML}}
+
+<script>
+document.getElementById('scroll-to-top').onclick = function() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+};
+</script>
+
+{{ "<!-- Google Map API -->" | safeHTML }}
+{{ if site.Params.map.enable }}
+<script src="{{ site.Params.map.gmap_api | safeURL }}"></script>
+{{ end }}
+
+{{ "<!-- JS Plugins -->" | safeHTML }}
+{{ range site.Params.plugins.js}}
+<script src="{{ .link | absURL }}"></script>
+{{ end }}
+
+{{ "<!-- Main Script -->" | safeHTML }}
+{{ $script := resources.Get "js/script.js" }}
+{{ if $script }}
+	{{ $script = $script | minify | fingerprint "sha384" }}
+	<script src="{{ $script.Permalink }}" integrity="{{ $script.Data.Integrity }}"></script>
+{{ end }}
+
+<!-- cookie 
+{{ if site.Params.cookies.enable }}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.1/js.cookie.min.js"></script>
+<div id="js-cookie-box" class="cookie-box cookie-box-hide">
+	Tämä sivusto käyttää evästeitä parhaan mahdollisen käyttökokemuksen takaamiseksi. Jatkamalla sivuston käyttöä hyväksyt evästeiden käytön.<span id="js-cookie-button"
+      class="btn btn-transparent"
+      role="button"
+      tabindex="0"
+      aria-label="Hyväksy evästeet"
+      aria-pressed="false">
+  Hyväksy evästeet
+</span>
+
+<script>
+	(function ($) {
+		const cookieBox = document.getElementById('js-cookie-box');
+		const cookieButton = document.getElementById('js-cookie-button');
+		if (!Cookies.get('cookie-box')) {
+			cookieBox.classList.remove('cookie-box-hide');
+			cookieButton.onclick = function () {
+				Cookies.set('cookie-box', true, {
+					expires: {{ site.Params.cookies.expire_days }}
+				});
+				cookieBox.classList.add('cookie-box-hide');
+			};
+		}
+	})(jQuery);
+</script>
+{{ end }}-->

@@ -1,0 +1,134 @@
+# Services All Section Configuration
+# Place in: data/fi/services-all.yml
+
+services_all:
+  enable: true
+  title: "Palvelut"
+  description: "Tälle sivulle on koottu Juuri.ai:n tuotteet ja palvelut. Palvelukuvaukset, voimassa olevat hinnastot ja palveluihin liittyvä dokumentointi"
+  
+  sections:
+    - title: "JuuriSyy - AI ja automaatiopalvelut"
+      brand_prefix: "Juuri"
+      brand_name: "Syy"
+      subtitle: "AI ja automaatiopalvelut"
+      description: "Tekoälyn avulla säästämme aikaa"
+      items:
+        - title: "Tekoälykoulutukset ja työpajat"
+          image: "/images/services/ai-koulutus.jpg"
+          alt: "Tekoälykoulutusta"
+          description: "Käytännön AI-osaamista yrityspäättäjille. Ota tekoäly haltuun yhdessä päivässä."
+          link: "/palvelut/tekoalykoulutukset"
+          
+        - title: "Älykkäät AI-automaatiot ja tekoälyratkaisut"
+          image: "/images/services/ai-automaatio.jpg"
+          alt: "Ai-automaatiot"
+          description: "Tekoälyagentit ja automaatioratkaisut yrityspäättäjille. Vapauta resursseja kasvuun."
+          link: "/palvelut/ai-automaatiot/"
+    
+    - title: "JuuriSinulle - Sisällöntuotannon palvelut"
+      brand_prefix: "Juuri"
+      brand_name: "Sinulle"
+      subtitle: "Sisällöntuotannon palvelut"
+      description: "Kasvatamme luottamusta ja sitoutamme laadukkaalla sisällöllä"
+      items:
+        - title: "Sisällöntuotanto"
+          image: "/images/services/sisallontuotanto.jpg"
+          alt: "Ammattitaitoista sisällöntuotantoa"
+          description: "Ammattimainen sisällöntuotanto, joka kasvattaa näkyvyyttä ja tuo tuloksia."
+          #link: "/services/juurisinulle/"
+          
+        - title: "Graafinen suunnittelu"
+          image: "/images/services/graafinen.png"
+          alt: "Teemme graafista suunnittelua brändisi mukaisesti"
+          description: ""
+         # link: "/services/juurisinulle/"
+          
+        - title: "Sosiaalisen median ylläpito"
+          image: "/images/services/some.png"
+          alt: "Ylläpidämme some-tilejä ja vapautamme aikaa muuhun luovaan."
+          description: ""
+         # link: "/services/juurisinulle/"
+    
+    - title: "JuuriOikea - Strategia ja suunnittelupalvelut"
+      brand_prefix: "Juuri"
+      brand_name: "Oikea"
+      subtitle: "Strategia ja suunnittelupalvelut"
+      description: "Rakennamme pohjan liiketoimintasi kasvulle"
+      items:
+        - title: "Brändistrategia"
+          image: "/images/services/brandi.jpg"
+          alt: "Brändin kehitys."
+          description: ""
+          #link: "/services/juurioikea/"
+          
+        - title: "Sisältöstrategia"
+          image: "/images/services/sisaltostrategia.jpg"
+          alt: "Sisältöstrategiat."
+          description: ""
+         # link: "/services/juurioikea/"
+          
+        - title: "Markkinointistrategia"
+          image: "/images/services/markkinointistrategia.jpg"
+          alt: "Markkinointistrategiat."
+          description: ""
+         # link: "/services/juurioikea/"
+          
+        - title: "Konsepti- ja kampanjasuunnittelu"
+          image: "/images/services/konsepti.jpg"
+          alt: "Konsepti- ja kampanjasuunnittelut."
+          description: ""
+         # link: "/services/juurioikea/"
+          
+        - title: "Asiakaskokemus ja palvelumuotoilu"
+          image: "/images/services/asiakaskokemus.jpg"
+          alt: "Asiakaskokemus ja palvelumuotoilua."
+          description: ""
+         # link: "/services/juurioikea/"
+          
+        - title: "Mittaaminen, analysointi ja kehitys"
+          image: "/images/services/analysointi.jpg"
+          alt: "Markkinoinnin vaikuttavuuden mittaaminen, analysointi ja kehitys."
+          description: ""
+         # link: "/services/juurioikea/"
+    
+    - title: "JuuriNyt - Markkinoinnin ja mainonnan palvelut"
+      brand_prefix: "Juuri"
+      brand_name: "Nyt"
+      subtitle: "Markkinoinnin ja mainonnan palvelut"
+      description: "Kasvatamme yrityksesi tunnettuutta ja tavoitamme yleisösi"
+      items:
+        - title: "Verkkosivustot"
+          image: "/images/services/verkkosivut.jpg"
+          alt: "Nopeat, tietoturvalliset, hakukoneoptimoidut ja modernit verkkosivut."
+          description: "Tietoturvalliset, nopeat ja modernit verkkosivut, jotka löytyvät helposti hakukoneista."
+         # link: "/services/juurinyt/"
+          
+        - title: "Display- ja mobiilimainonnan suunnittelu ja toteutus"
+          image: "/images/services/display.jpg"
+          alt: "Displaymainontaa."
+          description: ""
+         # link: "/services/juurinyt/"
+          
+        - title: "Markkinoinnin automaatio"
+          image: "/images/services/automaatio.jpg"
+          alt: "Markkinoinnin automaatiot."
+          description: ""
+         # link: "/services/juurinyt/"
+          
+        - title: "Hakukoneoptimointi, myös kielimalleille"
+          image: "/images/services/seo.jpg"
+          alt: "Hakukoneoptimointia, SEO ja GEO."
+          description: ""
+        #  link: "/services/juurinyt/"
+          
+        - title: "Maksettu mainonta"
+          image: "/images/services/mainonta.jpg"
+          alt: "Maksettua mainontaa."
+          description: ""
+         # link: "/services/juurinyt/"
+          
+        - title: "Web-analytiikka"
+          image: "/images/services/analytiikka.jpg"
+          alt: "Web-analytiikkaa."
+          description: ""
+         # link: "/services/juurinyt/"

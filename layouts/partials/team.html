@@ -1,0 +1,68 @@
+{{ $data := index site.Data site.Language.Lang }}
+
+{{/* Get sectionset for team section */}}
+{{ $sectionset := index site.Params.sectionsets "team" | default "lightset" }}
+
+{{ if $data.team.team.enable }}
+{{ with $data.team.team }}
+{{"<!-- Start Our Team -->" | safeHTML}}
+<section id="team" class="section team-section section-{{ $sectionset }}" aria-labelledby="team-heading">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-12">
+        {{"<!-- section title -->" | safeHTML}}
+        <header class="title section-title text-center">
+          <h2 id="team-heading" class="team-title">{{ .title }}</h2>
+          <!--<div class="border-meghna"></div>-->
+        
+          {{ if .team_description }}
+          {{"<!-- team description -->" | safeHTML}}
+          <div class="team-description text-center">
+          </br><p class="team-description">{{ .team_description | safeHTML }}</p>
+          </div>
+          {{"<!-- /team description -->" | safeHTML}}
+          {{ end }}
+        
+        </header>
+      </div>
+      {{"<!-- /section title -->" | safeHTML}}
+
+      <div class="row justify-content-center" role="list">
+      {{ range .team_member}}
+      {{"<!-- team member -->" | safeHTML}}
+      <div class="col-lg-3 col-md-6 col-12" role="listitem">
+        <article class="team-member" aria-label="{{ .name }} {{ .designation }}">
+          <div class="member-photo">
+            {{"<!-- member photo -->" | safeHTML}}
+            <img class="img-fluid lozad" data-src="{{ .image_webp | absURL }}" onerror="this.onerror=null;this.src='{{ .image | absURL }}'" alt="{{ .name }} {{ .designation }}">
+
+            {{"<!-- member social profile -->" | safeHTML}}
+            <div class="mask">
+              <ul class="list-inline">
+                {{ range .social }}
+                <li class="list-inline-item">
+                  <a href="{{ .link | safeURL }}" aria-label="{{ .icon | plainify }} profiili {{ .name }}">
+                    <i class="{{ .icon }}"></i>
+                  </a>
+                </li>
+                {{ end }}
+              </ul>
+            </div>
+          </div>
+
+          {{"<!-- member name & designation -->" | safeHTML}}
+          <div class="member-meta">
+            <h3 class="member-name">{{ .name }}</h3>
+            <span class="member-title">{{ .designation | markdownify}}</span>
+            <p style="font-size: 1.1rem;">{{ .content | markdownify }}</p>
+          </div>
+        </article>
+      </div>
+      {{"<!-- end team member -->" | safeHTML}}
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{"<!-- /team -->" | safeHTML}}
+{{ end }}
+{{ end }}

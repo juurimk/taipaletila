@@ -1,0 +1,80 @@
+{{ define "main" }} 
+{{ partial "navigation.html" . }} 
+
+{{ if site.Params.sections.banner.enable }}
+{{ partial "banner.html" . }} 
+{{ end }}
+
+{{ if site.Params.sections.services.enable }}
+{{ partial "services.html" . }} 
+{{ end }}
+
+{{ if site.Params.sections.team.enable }}
+{{ partial "team.html" . }} 
+{{ end }}
+
+{{ if site.Params.sections.feature.enable }}
+{{ partial "feature.html" . }}
+{{ end }}
+
+{{ if site.Params.sections.about.enable }}
+{{ partial "about.html" . }}
+{{ end }}
+
+{{ if site.Params.sections.cta.enable }}
+{{ partial "cta.html" . }} 
+{{ end }}
+
+{{ if site.Params.sections.service.enable }}
+{{ partial "service.html" . }}
+{{ end }}
+
+{{ if site.Params.sections.skill.enable }}
+{{ partial "skill.html" . }}
+{{ end }}
+
+{{ if site.Params.sections.portfolio.enable }}
+{{ partial "portfolio.html" . }}
+{{ end }}
+
+{{ if site.Params.sections.funfacts.enable }}
+{{ partial "funfacts.html" . }}
+{{ end }}
+
+{{ if site.Params.sections.comparison.enable }}
+{{ partial "comparison.html" . }} 
+{{ end }}
+
+{{ if site.Params.sections.pricing.enable }}
+{{ partial "pricing.html" . }}
+{{ end }}
+
+{{ if site.Params.sections.testimonial.enable }}
+{{ partial "testimonial.html" . }}
+{{ end }}
+
+{{ if site.Params.sections.blog.enable }}
+{{ partial "blog.html" . }}
+{{ end }}
+
+{{ if site.Params.sections.faq.enable }}
+{{ partial "faq.html" . }} 
+{{ end }}
+
+{{ if site.Params.sections.newsletter.enable }}
+{{ partial "newsletter.html" . }}
+{{ end }}
+
+{{ if site.Params.sections.gallery.enable }}
+{{ partial "gallery.html" . }}
+{{ end }}
+
+{{ if site.Params.sections.contact.enable }}
+{{ partial "contact.html" . }} 
+{{ end }}
+
+{{ if site.Params.sections.map.enable }}
+{{ partial "map.html" . }}
+{{ end }}
+
+{{ end }}

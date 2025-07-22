@@ -1,0 +1,87 @@
+{{ define "main" }}
+
+<!-- SCSS lataus -->
+{{ $singleCSS := resources.Get "scss/sections/single.scss" | toCSS }}
+<link rel="stylesheet" href="{{ $singleCSS.RelPermalink }}">
+
+{{ partial "navigation.html" . }}
+
+{{/* Get sectionset for blog pages */}}
+{{ $sectionset := index site.Params.sectionsets "blog_pages" | default "lightset" }}
+
+{{/* Blog Banner Section */}}
+{{ if or .Params.banner_image_webp .Params.banner_image }}
+<section class="service-hero">
+  <div class="service-hero-bg" style="background-image: url('{{ .Params.banner_image_webp | default .Params.banner_image | absURL }}');">
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2 text-center">
+        <h1 style="color: white; text-align: center;">{{ site.Params.blogBannerTitle }}</h1>
+        {{ if site.Params.blogBannerSubtitle }}
+        <p style="color: white; font-size: 1.2rem;">{{ site.Params.blogBannerSubtitle }}</p>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+
+<section class="section section-{{ $sectionset }}">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2">
+
+        <!-- Päivämäärä, kirjoittaja, blogikirjoituksen otsikko ja ingressi vasempaan reunaan -->
+        <div class="blog-meta mb-4">
+          <div class="blog-date text-muted">{{ .Date.Format "02.01.2006" }}</div>
+          {{ if .Params.author }}
+          <div class="blog-author text-muted">{{ .Params.author }}</div>
+          {{ end }}
+          <h1 class="blog-title mt-2">{{ .Title }}</h1>
+          {{ if or .Params.ingress .Params.description }}
+          <div class="blog-ingress text-muted" style="font-style: italic;">{{ .Params.ingress | default .Params.description | markdownify }}</div>
+          {{ end }}
+        </div>
+
+        <!-- Pääkuva -->
+        {{ if .Params.image_webp }}
+          <img class="img-fluid mb-50 lozad" data-src="{{ .Params.image_webp | absURL }}" alt="blog-image">
+        {{ else if .Params.image }}
+          <img class="img-fluid mb-50 lozad" data-src="{{ .Params.image | absURL }}" alt="blog-image">
+        {{ end }}
+      </div>
+
+      <div class="col-lg-8 offset-lg-2">
+        <div class="post-single-content">
+          {{ .Content }}
+        </div>
+
+        {{ if site.Params.post_share }}
+        {{ partial "post-share.html" . }}
+        {{ end }}
+
+        <!-- comments -->
+        <div class="mt-5">
+          {{ template "_internal/disqus.html" . }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pagination Section -->
+      <section class="pagination" style="background-color: var(--siteset-lightset-bg); border-radius: 0;">
+        <div class="col-lg-8 offset-lg-2 text-center">
+          <div class="btn-group" role="group" style="margin-top: 0px; margin-bottom:20px; gap: 1rem;">
+            {{ if .Prev }}
+            <a class="btn" href="{{ .Prev.Permalink }}">Edellinen</a>
+            {{ end }}
+            {{ if .Next }}
+            <a class="btn" href="{{ .Next.Permalink }}">Seuraava</a>
+            {{ end }}
+          </div>
+        </div>
+      </section>
+
+{{ end }}

@@ -1,0 +1,161 @@
+//  (/palvelut -sivu) Listattuna eri palvelut
+// data: services_all.yml ja template: servise-all-single.html
+
+.services-all-section {
+  background-color: var(--siteset-lightset-bg);
+  color: var(--siteset-lightset-color);
+  
+  // Dynamic sectionset styling
+  @each $sectionset in lightset, darkset, coloriset, neutralset {
+      background-color: var(--siteset-#{$sectionset}-bg);
+      color: var(--siteset-#{$sectionset}-color);
+      
+      .services-main-title {
+        color: var(--siteset-#{$sectionset}-h2);
+        margin-top: 0px !important;
+        padding-top: 2rem;
+        margin-bottom: 1rem !important;
+      }   &.section-#{$sectionset} {
+ 
+      
+      .services-description p {
+        color: var(--siteset-#{$sectionset}-color);
+        font-family: var(--sitefont);
+        line-height: 1.4;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      
+      .service-category {
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        margin-bottom: 0rem !important;
+        padding-left: 0; /* Remove extra padding */
+        
+        &:last-child {
+          border-bottom: none;
+        }
+       .brand-split-title {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+        margin-left: 0; /* Align text to the left */
+        padding-left: 15px; /* Match the card padding */
+
+        .brand-part {
+        color: var(--siteset-lightset-button)!important;
+        font-weight: 700;
+        }
+
+       .rest-part {
+        color: var(--siteset-lightset-button)!important;
+         font-style: italic;
+         font-weight: 400;
+        }
+      }
+ 
+
+        
+        h4.service-subtitle {
+          color: var(--siteset-#{$sectionset}-color);
+          font-family: var(--sitefont);
+          font-size: 1.2rem;
+          font-weight: 600;
+          font-style: italic;
+          margin-bottom: 1rem;
+          margin-left: 0; /* Align text to the left */
+          padding-left: 15px; /* Match the card padding */
+        }
+        
+        .service-category-description {
+          color: var(--siteset-#{$sectionset}-color);
+          font-family: var(--sitefont);
+          font-size: 1.1rem;
+          margin-left: 0; /* Align text to the left */
+          padding-left: 15px; /* Match the card padding */
+        }
+        
+        .row {
+          margin-bottom: 0px;
+          margin-left: 0; /* Align the row with the cards */
+          
+          .service-item {
+            background: var(--siteset-#{$sectionset}-bg);
+            border-radius: 0px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            height: 400px;
+            
+            @media (min-width: 768px) {
+              height: 450px;
+            }
+            
+            @media (min-width: 992px) {
+              height: 500px;
+            }
+            
+            .service-image {
+              position: relative;
+              cursor: pointer;
+              margin: 0;
+              flex-shrink: 0;
+              
+              img {
+                width: 100%;
+                height: 300px;
+                object-fit: cover;
+                transition: transform 0.3s ease;
+                display: block;
+              }
+              
+              &:hover img {
+                transform: scale(1.05);
+              }
+            }
+            
+            .service-content {
+              padding: 20px;
+              flex-grow: 1;
+              display: flex;
+              flex-direction: column;
+              
+              h4 {
+                font-size: 1.2rem;
+                margin-bottom: 10px;
+                color: var(--siteset-#{$sectionset}-color);
+                font-family: var(--sitefont);
+                font-weight: 600;
+                
+                a {
+                  color: inherit;
+                  text-decoration: none;
+                  font-family: var(--sitefont);
+                  transition: color 0.3s ease;
+                  
+                  &:hover {
+                    color: var(--siteset-#{$sectionset}-button);
+                  }
+                }
+              }
+              
+              p {
+                color: var(--siteset-#{$sectionset}-color);
+                font-size: 0.9rem;
+                font-family: var(--sitefont);
+                line-height: 1.6;
+                margin-bottom: 10px;
+                flex-grow: 1;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Responsive Design - Bootstrap grid hoitaa leveykset
+// col-12 = 100% leveys (mobiili)
+// col-md-6 = 50% leveys (tablet, 2 kuvaa rinnakkain)  
+// col-lg-4 = 33.33% leveys (desktop, 3 kuvaa rinnakkain)

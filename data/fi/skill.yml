@@ -1,0 +1,26 @@
+################################# Skill ##################################
+skill:
+  enable : true
+  title : Taitomme
+  subtitle : Hallitsemme laajan kirjon verkko- ja digitaalisen markkinoinnin työkaluja.
+  content : Tiimimme koostuu kokeneista ammattilaisista, jotka ovat syventyneet eri osa-alueisiin. Jatkuvasti kehitämme osaamistamme pysyäksemme teknologian kärjessä ja tarjotaksemme asiakkaillemme parhaat mahdolliset ratkaisut.
+  image : images/about/company-growth.webp
+  skill_item :
+    # skill item loop
+    - name :  Liiketoiminnan kehittäminen
+      percent : 90%
+      
+    # skill item loop
+    - name :  Analytiikka
+      percent : 70%
+      
+    # skill item loop
+    - name :  Suunnittelu
+      percent : 80%
+      
+    - name :  iOS-kehitys
+      percent : 95%
+      
+    # skill item loop
+    - name :  Android-kehitys
+      percent : 75%

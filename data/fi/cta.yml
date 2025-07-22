@@ -1,0 +1,11 @@
+############################# call to action ##############################
+cta:
+  enable : true
+  bg_image : "images/backgrounds/bg-juuriai.jpg"
+  bg_image_webp : "images/backgrounds/bg-juuriai.webp"
+  title : "Loistava muotoilu ja uskomattomia ominaisuuksia"
+  content : "Haluatko nostaa yrityksesi seuraavalle tasolle? Luomme digitaalisia ratkaisuja, jotka tuottavat todellisia tuloksia ja kasvattavat liiketoimintaasi."
+  button:
+    enable : true
+    label : "Aloita projekti kanssamme"
+    link : "#contact"

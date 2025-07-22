@@ -1,0 +1,71 @@
+{{/* Feature Section with Services-based CSS Structure */}}
+{{ $data := index site.Data site.Language.Lang }}
+
+{{/* Get sectionset for feature section */}}
+{{ $sectionset := index site.Params.sectionsets "feature" | default "lightset" }}
+
+{{ if $data.feature.feature.enable }}
+{{ with $data.feature.feature }}
+{{"<!-- Feature Section -->" | safeHTML}}
+<section class="section feature-section section-{{ $sectionset }}" id="feature"
+         style="background-color: var(--siteset-{{ $sectionset }}-bg); color: var(--siteset-{{ $sectionset }}-color);">
+  <div class="container">
+    <div class="row">
+      
+      {{/* Title Section - Full Width */}}
+      <div class="col-12">
+        <!--<div class="title text-center wow fadeInUp" data-wow-duration="500ms">
+          <h2 style="color: var(--siteset-{{ $sectionset }}-h2);">
+            {{ with .title }} {{ index (split . " ") 0 | safeHTML }} {{ end }}
+            <span class="color" style="color: var(--siteset-{{ $sectionset }}-h2);">
+              {{ with .title }} {{ after (len (index (split . " ") 0)) . | safeHTML }} {{ end }}
+            </span>
+          </h2>
+          <div class="border-meghna" style="background-color: var(--siteset-{{ $sectionset }}-h2);"></div>
+          
+          {{ if .content }}
+          <div class="feature-description">
+            <p style="color: var(--siteset-{{ $sectionset }}-color);">{{ .content | markdownify }}</p>
+          </div> 
+          {{ end }}-->
+        </div>
+      </div>
+      
+      {{/* Feature Items - Same structure as services */}}
+      <div class="col-12">
+        <div class="row feature-grid">
+          {{ range .feature_item }}
+          <div class="col-lg-4 col-md-6 col-12 mb-4 wow fadeInUp" data-wow-duration="500ms">
+            <div class="feature-card">
+              <div class="feature-card-inner">
+                
+                {{/* Feature Icon */}}
+                {{ with .icon }}
+                <div class="feature-logo-container">
+                  <div class="feature-icon">
+                    <i class="{{ . }}"></i>
+                  </div>
+                </div>
+                {{ end }}
+                
+                {{/* Feature Content */}}
+                <div class="feature-content">
+                  <div class="feature-text-area">
+                    <h4 class="feature-title">{{ .title | markdownify }}</h4>
+                    <p class="feature-description">{{ .content | markdownify }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{"<!-- /Feature Section -->" | safeHTML}}
+{{ end }}
+{{ end }}
+
+

@@ -1,0 +1,175 @@
+// =============================================================================
+// Team card Layout Styles
+// =============================================================================
+// LinkedIn Team Card Component
+.linkedin-team-card {
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+
+  // Hover effects for the entire card
+  &:hover {
+    //transform: translateY(-5px);
+    //box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+
+    .member-photo {
+      .linkedin-overlay {
+        opacity: 1;
+      }
+
+      .linkedin-logo {
+        opacity: 1;
+      }
+    }
+  }
+
+  // Active state (click effect)
+  &:active {
+    //transform: translateY(-3px) scale(0.98);
+  }
+
+  .member-photo {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+
+    // The image itself
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    // LinkedIn overlay layer
+    .linkedin-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(
+        135deg, 
+        rgba(34, 139, 34, 0.6), 
+        rgba(46, 125, 50, 0.5)
+      );
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      z-index: 1;
+      border-radius: 8px;
+    }
+
+    // LinkedIn logo styling
+    .linkedin-logo {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      z-index: 2;
+      width: 50px;
+      height: 50px;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+
+      svg {
+        width: 100%;
+        height: 100%;
+        fill: rgba(255, 255, 255, 0.85);
+        transition: fill 0.3s ease;
+      }
+
+      // Slightly brighten on hover
+      &:hover {
+        svg {
+          fill: rgba(255, 255, 255, 0.95);
+        }
+      }
+    }
+
+    // Remove the original mask styling or make it compatible
+    .mask {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: 0; // Keep it behind the LinkedIn overlay
+
+      ul {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin: 0;
+        padding: 0;
+
+        li {
+          a {
+            transition: all 0.3s ease;
+          }
+        }
+      }
+    }
+  }
+
+  // Member meta information styling
+  .member-meta {
+    padding-top: 20px;
+    text-align: center;
+
+    .member-name {
+      margin-bottom: 8px;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .member-title {
+      display: block;
+      margin-bottom: 12px;
+      font-size: 0.9em;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    p {
+      font-size: 0.9em;
+      line-height: 1.6;
+      transition: color 0.3s ease;
+    }
+  }
+
+  // Bootstrap responsive adjustments
+  @media (max-width: 767.98px) {
+    margin-bottom: 30px;
+
+    .member-photo {
+      .linkedin-logo {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  }
+
+  @media (max-width: 575.98px) {
+    .member-photo {
+      .linkedin-logo {
+        width: 35px;
+        height: 35px;
+      }
+    }
+  }
+}
+
+// Optional: Override existing team section styling if needed
+.team-section {
+  .team-member {
+    // Remove any conflicting styles from the original theme
+    .member-photo {
+      // Ensure compatibility with existing styles
+      position: relative;
+    }
+  }
+}

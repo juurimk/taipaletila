@@ -1,0 +1,65 @@
+############################## Footer #############################
+footer:
+  enable: true
+  description: |
+    Autamme yrityksiä kasvamaan digitaalisessa maailmassa tehostamalla toimintaa modernin markkinoinnin sekä tekoälyn ja automaation avulla. Keskitymme ratkaisuihin, jotka tekevät monimutkaisesta yksinkertaista ja vapauttavat aikaa siihen mikä todella vie liiketoimintaa eteenpäin.
+
+  business_info: |
+    Juuri.ai Oy
+    Y-tunnus: 3550186-8
+  
+  # Logo section
+  logo: "images/juuri-ai-logo-white.png"
+  # footer_logo: "images/juuri-ai-logo-white.png"  # POISTETTU TILAPÄISESTI
+  logo_webp: "images/juuri-ai-logo-white.webp"
+  logo_alt: "Juuri.ai"
+  
+  # Footer links section
+  footer_links:
+   # - name: "Palvelut"
+   #   url: "/services"
+   # - name: "JuuriSyy"
+    #  url: "/services/juurisyy"
+    #- name: "JuuriNyt"
+   #   url: "/services/juurinyt"
+    #- name: "JuuriOikea"
+    #  url: "/juurioikea"
+   # - name: "JuuriSivut"
+   #   url: "/services/juurisivut"
+    - name: "Ota yhteyttä"
+      url: "#otayhteytta"
+    
+  # Privacy and legal links section
+  privacy_links:
+    - name: "Tietosuojaseloste"
+      url: "/Privacy_Policy_JuuriAI_Tietosuojaseloste.pdf"
+      target: "_blank"
+    # - name: "Käyttöehdot"
+    #   url: "/kayttoehdot"
+    # - name: "Evästekäytäntö"
+    #   url: "/evastekaytanto"
+    
+  # Social media section
+  #social_title: "Seuraa meitä sosiaalisessa mediassa"
+  #social_subtitle: "Logot"
+  
+  # Social media links
+  social_links:
+  #  - icon: "ti-facebook"
+  #   link: "https://facebook.com/juuriai"
+  #    target: "_blank"
+      
+    - icon: "ti-linkedin" 
+      link: "https://www.linkedin.com/company/juuri-ai/"
+      target: "_blank"
+      
+  #  - icon: "ti-twitter-alt"
+  #    link: "https://twitter.com/juuriai"
+  #    target: "_blank"
+      
+   # - icon: "ti-instagram"
+  #    link: "https://instagram.com/juuriai"
+   #   target: "_blank"
+  
+  # Copyright text (appears under logo)
+  copyright: "© 2025 Juuri.ai. Kaikki oikeudet pidätetään."

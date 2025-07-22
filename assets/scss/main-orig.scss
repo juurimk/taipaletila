@@ -1,0 +1,367 @@
+{{/*
+====================================================================
+  Safe Hugo Template SCSS - Ultra-Clean Version
+  Minimal template to ensure compilation works
+====================================================================
+*/}}
+
+{{- $siteset := site.Params.siteset | default "korpi" -}}
+{{- $sitesetData := index site.Data "siteset-colors" -}}
+{{- $currentSiteset := index $sitesetData.sitesets $siteset -}}
+
+/* 
+ * Safe Generated SCSS
+ * Siteset: {{ $siteset }}
+ * Button Style: {{ site.Params.buttons.style | default "fill" }}
+ */
+
+// =============================================================================
+// CSS Custom Properties (Runtime Theming)
+// =============================================================================
+:root {
+{{ range $sectionsetName, $colors := $currentSiteset.sectionsets }}
+  --siteset-{{ $sectionsetName }}-bg: {{ $colors.bg_color }};
+  --siteset-{{ $sectionsetName }}-color: {{ $colors.color }};
+  --siteset-{{ $sectionsetName }}-button: {{ $colors.button }};
+  --siteset-{{ $sectionsetName }}-button-text: {{ $colors.button_text }};
+  --siteset-{{ $sectionsetName }}-h2: {{ $colors.h2 }};
+  --siteset-{{ $sectionsetName }}-mask-color: {{ $colors.mask_color }};
+  {{ if $colors.opacity }}
+  --opacity-{{ $sectionsetName }}-highlighted: {{ $colors.opacity.button_highlighted }};
+  --opacity-{{ $sectionsetName }}-table-bg: {{ $colors.opacity.button_table_bg }};
+  --opacity-{{ $sectionsetName }}-hover: {{ $colors.opacity.button_hover }};
+  {{ end }}
+  --text-{{ $sectionsetName }}-highlighted: {{ $colors.text_highlighted }};
+{{ end }}
+
+  /* Legacy compatibility */
+  {{ with index $currentSiteset.sectionsets "lightset" }}
+  --color-primary: {{ .button }};
+  --color-primary-dark: {{ .h2 }};
+  --color-text-primary: {{ .color }};
+  --color-text-dark: {{ .color }};
+  {{ end }}
+  {{ with index $currentSiteset.sectionsets "darkset" }}
+  --color-bg-primary: {{ .bg_color }};
+  --color-text-white: {{ .color }};
+  {{ end }}
+  {{ with index $currentSiteset.sectionsets "neutralset" }}
+  --color-bg-secondary: {{ .bg_color }};
+  --color-bg-light: {{ .bg_color }};
+  {{ end }}
+
+  /* Additional variables */
+  --color-border-light: #ddd;
+  --color-border-medium: rgba(255, 255, 255, 0.2);
+  --color-border-dark: #dedede;
+  --color-bg-tertiary: #2c2f36;
+  --color-bg-white: #ffffff;
+  --color-text-secondary: #888;
+  --color-text-tertiary: #cfcfcf;
+  --color-accent: #2795e9;
+  --color-success: #4CAF50;
+  --color-error: #e74c3c;
+  --sitefont: "{{ site.Params.sitefont | default "DM Sans" }}", sans-serif;
+}
+
+// =============================================================================
+// Navigation Icon Button Styles
+// =============================================================================
+.nav-icon-btn {
+  min-width: 40px !important;
+  height: 40px !important;
+  padding: 8px 12px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  
+  i {
+    font-size: 16px !important;
+    margin: 0 !important;
+  }
+}
+
+// =============================================================================
+// Base Styles
+// =============================================================================
+html {
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-secondary);
+  scroll-behavior: auto;
+}
+
+section[id] {
+  scroll-margin-top: 80px;
+}
+
+body {
+  background-color: var(--color-bg-primary);
+  font-family: var(--sitefont);
+  color: var(--color-text-secondary);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2 {
+  font-weight: 600;
+  font-family: var(--sitefont);
+  color: var(--color-text-primary);
+  margin-top: 40px;
+}
+
+h3, h4, h5, h6 {
+  font-weight: 600;
+  font-family: var(--sitefont);
+  color: var(--color-text-primary);
+}
+
+p {
+  font-family: var(--sitefont);
+  font-size: 1rem !important;
+  line-height: 1.5 !important;
+  margin-bottom: 1.2rem !important;
+}
+
+a {
+  color: var(--color-text-white);
+  transition: all 0.3s ease-in 0s;
+  text-decoration: none;
+  
+  &:focus, &:hover {
+    color: var(--color-primary-dark);
+    text-decoration: none;
+  }
+}
+
+// =============================================================================
+// Button System
+// =============================================================================
+.btn, .btn-main, .btn-transparent, .service-button, .newsletter-submit-btn, .btn-newsletter,
+.portfolio-filter .btn, input[type="submit"], button, .input-wrapper,
+.btn-hero-cta, .btn-contact-submit, .btn-back-services, .faq-filter-btn,
+.hero-area .btn, .banner-section .btn, .call-to-action .btn, .cta-section .btn {
+  
+  {{ if site.Params.buttons.custom_radius }}
+  border-radius: {{ site.Params.buttons.custom_radius }} !important;
+  {{ else if eq site.Params.buttons.corners "round" }}
+  border-radius: 50px !important;
+  {{ else if eq site.Params.buttons.corners "rounded" }}
+  border-radius: 8px !important;
+  {{ else }}
+  border-radius: 0px !important;
+  {{ end }}
+  
+  padding: 10px 30px;
+  border: 2px solid var(--siteset-lightset-button);
+  transition: all 0.3s ease !important;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  
+  {{ if eq site.Params.buttons.style "fill" }}
+  background-color: var(--siteset-lightset-button) !important;
+  color: var(--siteset-lightset-bg) !important;
+  
+  &:hover {
+    background-color: transparent !important;
+    color: var(--siteset-lightset-button) !important;
+  }
+  {{ else }}
+  background-color: transparent !important;
+  color: var(--siteset-lightset-button) !important;
+  
+  &:hover {
+    background-color: var(--siteset-lightset-button) !important;
+    color: var(--siteset-lightset-bg) !important;
+  }
+  {{ end }}
+}
+
+// =============================================================================
+// Sectionset Button Styles
+// =============================================================================
+{{ range $sectionsetName, $colors := $currentSiteset.sectionsets }}
+.section-{{ $sectionsetName }} {
+  background-color: var(--siteset-{{ $sectionsetName }}-bg);
+  color: var(--siteset-{{ $sectionsetName }}-color);
+  
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--siteset-{{ $sectionsetName }}-h2);
+  }
+  
+  .color {
+    color: var(--siteset-{{ $sectionsetName }}-h2) !important;
+  }
+  
+  .btn, .btn-main, .btn-transparent, .service-button, .newsletter-submit-btn, .btn-newsletter,
+  .btn-hero-cta, .btn-contact-submit, .btn-back-services, .faq-filter-btn {
+    border-color: var(--siteset-{{ $sectionsetName }}-button) !important;
+    
+    {{ if eq site.Params.buttons.style "fill" }}
+    background-color: var(--siteset-{{ $sectionsetName }}-button) !important;
+    color: var(--siteset-{{ $sectionsetName }}-bg) !important;
+    
+    &:hover {
+      background-color: transparent !important;
+      color: var(--siteset-{{ $sectionsetName }}-button) !important;
+    }
+    {{ else }}
+    background-color: transparent !important;
+    color: var(--siteset-{{ $sectionsetName }}-button) !important;
+    
+    &:hover {
+      background-color: var(--siteset-{{ $sectionsetName }}-button) !important;
+      color: var(--siteset-{{ $sectionsetName }}-bg) !important;
+    }
+    {{ end }}
+  }
+  
+  .member-meta .member-name {
+    color: var(--siteset-{{ $sectionsetName }}-button);
+  }
+  
+  .border-meghna {
+    background-color: var(--siteset-{{ $sectionsetName }}-h2);
+    
+    &:before {
+      background-color: var(--siteset-{{ $sectionsetName }}-h2);
+    }
+  }
+}
+{{ end }}
+
+// =============================================================================
+// Navigation
+// =============================================================================
+.navigation {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  margin-bottom: 0;
+  z-index: 1030;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  
+  .navbar-nav .nav-link {
+    color: var(--color-text-dark) !important;
+    padding: 15px 20px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+    
+    &:hover {
+      color: var(--color-primary) !important;
+    }
+  }
+}
+
+// =============================================================================
+// Responsive Typography
+// =============================================================================
+@media (min-width: 1200px) {
+  p {
+    font-size: 18px !important;
+    line-height: 1.8 !important;
+  }
+}
+
+@media (max-width: 768px) {
+  p {
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+  }
+  
+  .section {
+    padding: 80px 0;
+  }
+}
+
+@media (max-width: 576px) {
+  p {
+    font-size: 15px !important;
+    line-height: 1.5 !important;
+  }
+  
+  .section {
+    padding: 50px 0;
+  }
+}
+
+// =============================================================================
+// Essential Layout Styles
+// =============================================================================
+.section {
+  padding: 100px 0;
+}
+
+.section-sm {
+  padding: 70px 0;
+}
+
+.section-xs {
+  padding: 50px 0;
+}
+
+.bg-one {
+  background-color: var(--color-bg-primary);
+}
+
+.bg-dark {
+  background: var(--color-bg-tertiary);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mb-50 {
+  margin-bottom: 50px;
+}
+
+.title {
+  padding-bottom: 60px;
+  
+  h2 {
+    text-transform: none;
+    font-weight: 700;
+    font-size: 38px;
+    color: var(--color-text-white);
+    
+    span {
+      color: var(--color-primary);
+    }
+  }
+  
+  p {
+    color: var(--color-text-tertiary);
+  }
+}
+
+.border-meghna {
+  border-top: 0px solid var(--color-border-light);
+  height: 0px;
+  margin: 15px auto 0;
+  position: relative;
+  width: 30%;
+  
+  &:before {
+    background-color: var(--color-primary);
+    content: '';
+    height: 6px;
+    left: 50%;
+    margin-left: -20px;
+    position: absolute;
+    top: -4px;
+    width: 50px;
+  }
+}
+
+{{/*
+====================================================================
+  End Safe Hugo Template SCSS
+  This minimal version ensures compilation works while preserving
+  essential styling and Hugo template functionality
+====================================================================
+*/}}

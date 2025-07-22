@@ -1,0 +1,59 @@
+#################################### portfolio ###############################
+portfolio:
+  enable : true
+  # title : Työt
+  sectionset: lightset  # lightset, neutralset, darkset, coloriset
+  portfolio_item :
+    # portfolio item loop
+    - name : Tunnisteen suunnittelu
+      image : images/portfolio/portfolio-1.jpg
+      image_webp : images/portfolio/portfolio-1.webp
+      passive_color: "theme_color2"  # Korpi: kirkas vihreä #1fc41f
+      logo_white: "images/portfolio/juuri-ai-logo-white.svg"
+      logo_black: "images/portfolio/juuri-ai-logo-black.svg"
+      link : "https://themefisher.com"
+      
+    # portfolio item loop
+    - name : Äänijärjestelmä
+      image : images/portfolio/portfolio-2.jpg
+      image_webp : images/portfolio/portfolio-2.webp
+      passive_color: "theme_gray"  # Kiinteä harmaa #d5d5d5
+      logo_white: "images/portfolio/juuri-ai-logo-white.svg"
+      logo_black: "images/portfolio/juuri-ai-logo-black.svg"
+      # link : ""
+      
+    # portfolio item loop
+    - name : Kello-tuote
+      image : images/portfolio/portfolio-3.jpg
+      image_webp : images/portfolio/portfolio-3.webp
+      passive_color: "theme_color2"  # Korpi: tummanvihreä #055905
+      logo_white: "images/portfolio/juuri-ai-logo-white.svg"
+      logo_black: "images/portfolio/juuri-ai-logo-black.svg"
+      link : "#"
+      
+    # portfolio item loop
+    - name : Pullon etiketti
+      image : images/portfolio/portfolio-4.jpg
+      image_webp : images/portfolio/portfolio-4.webp
+      passive_color: "theme_gray"  # Korpi: vaalea harmaa #e4e4e4
+      logo_white: "images/portfolio/juuri-ai-logo-white.svg"
+      logo_black: "images/portfolio/juuri-ai-logo-black.svg"
+      link : "#"
+      
+    # portfolio item loop
+    - name : Ostoskassi
+      image : images/portfolio/portfolio-5.jpg
+      image_webp : images/portfolio/portfolio-5.webp
+      passive_color: "theme_color4"  # Korpi: musta #000000
+      logo_white: "images/portfolio/juuri-ai-logo-white.svg"
+      logo_black: "images/portfolio/juuri-ai-logo-black.svg"
+     # link : "#"
+      
+    # portfolio item loop
+    - name : Tagi-suunnittelu
+      image : images/portfolio/portfolio-6.jpg
+      image_webp : images/portfolio/portfolio-6.webp
+      passive_color: "theme_gray"  # Korpi: valkoinen #FFFFFF
+      logo_white: "images/portfolio/juuri-ai-logo-white.svg"
+      logo_black: "images/portfolio/juuri-ai-logo-black.svg"
+      # link : "#"

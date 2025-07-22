@@ -1,0 +1,29 @@
+############################### team ############################
+team:
+  enable : true
+  title : "Perustajat"
+  team_description: "Juuri.ai:n takana ovat Marko ja Marianne, jotka yhdistävät markkinoinnin ja mainonnan strategisen osaamisen, automaatioteknologian ja palvelumuotoilun yhdeksi kokonaisuudeksi. Tavoitteemme on yksinkertainen: Haluamme asiakkaillemme vähemmän teknistä puuhastelua, enemmän aikaa liiketoiminnan kasvattamiselle."
+  team_member :
+    
+    # team member loop
+    - name : Marko Kari
+
+      image_webp : images/team/team-marko-kari2.webp
+      image : images/team/team-marko-kari2.png
+      alt: "Marko Kari."
+      title : Perustaja, automaatioarkkitehti & sisältöstrategi
+      content : "Marko tuo Juuri.ai:hin yli 15 vuoden kokemuksen markkinoinnista ja teknisistä ratkaisuista. Stora Enson kaltaisissa yrityksissä hän on johtanut markkinointitiimejä ja oppinut rakentamaan systeemejä, jotka muuttavat monimutkaiset prosessit sujuviksi automaatioiksi. Sellaisiksi, jotka toimivat luotettavasti joka päivä."
+      social :
+        - icon : ti-linkedin # themify icon pack : https://themify.me/themify-icons
+          link : "https://www.linkedin.com/in/mkari/"
+        
+    # team member loop
+    - name : Marianne Littow
+      image_webp : images/team/team-marianne-littow2.webp
+      image : images/team/team-marianne-littow2.png
+      alt: "Marianne Littow."
+      title : Perustaja, AD & brändimuotoilija
+      content : "Mariannella on laaja kokemus visuaalisesta viestinnästä ja monipuolisesta sisällöntuotannosta. Hän on työskennellyt niin suuryrityksissä kuin kasvuyrityksissä, ja ymmärtää, miten visuaalisuus, brändi ja liiketoimintatavoitteet punotaan yhteen selkeäksi ja vaikuttavaksi kokonaisuudeksi."
+      social :
+        - icon : ti-linkedin # themify icon pack : https://themify.me/themify-icons
+          link : "https://www.linkedin.com/in/marianne-littow-01b5203a/"

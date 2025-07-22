@@ -1,0 +1,173 @@
+{{ $data := index site.Data site.Language.Lang }}
+
+{{/* Get sectionset for FAQ section */}}
+{{ $sectionset := index site.Params.sectionsets "faq" | default "lightset" }}
+
+{{ if $data.faq.faq.enable }}
+{{ with $data.faq.faq }}
+{{"<!-- Start FAQ Section -->" | safeHTML}}
+<section id="faq" class="section faq-section section-{{ $sectionset }}" style="background-color: var(--siteset-{{ $sectionset }}-bg); color: var(--siteset-{{ $sectionset }}-color);">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-12">
+        {{"<!-- section title -->" | safeHTML}}
+        <div class="title text-center">
+          <h2 style="color: var(--siteset-{{ $sectionset }}-h2);">{{ with .title }} {{ index (split . " ") 0 | safeHTML }} {{ end }}<span class="color" style="color: var(--siteset-{{ $sectionset }}-h2);">
+            {{ with .title }} {{ after (len (index (split . " ") 0)) . | safeHTML }} {{ end }}</span></h2>
+          <!--<div class="border-meghna" style="background-color: var(--siteset-{{ $sectionset }}-h2);"></div>-->
+
+          {{ if .subtitle }}
+          <h4 class="faq-subtitle" style="color: var(--siteset-{{ $sectionset }}-button); font-size: 1.5rem; font-weight: 500; margin-bottom: 20px; margin-top: 15px;">
+            {{ .subtitle }}
+          </h4>
+          {{ end }}
+
+          {{ if .faq_description }}
+          {{"<!-- faq description -->" | safeHTML}}
+          <div class="faq-description text-center" style="margin: 10px auto 40px; max-width: 700px;">
+            <p style="font-size: 16px; line-height: 1.6; color: var(--siteset-{{ $sectionset }}-color); margin-bottom: 0;">{{ .faq_description | safeHTML }}</p>
+          </div>
+          {{"<!-- /faq description -->" | safeHTML}}
+          {{ end }}
+        </div>
+      </div>
+      {{"<!-- /section title -->" | safeHTML}}
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        {{"<!-- FAQ Items -->" | safeHTML}}
+        <div class="faq-accordion" style="margin-bottom: 30px; margin-top:20px;">
+          {{ range $index, $item := .faq_items }}
+          {{"<!-- FAQ Item -->" | safeHTML}}
+          <div class="faq-item" style="margin-bottom: 20px;">
+            
+            {{"<!-- FAQ Question Button -->" | safeHTML}}
+            <button class="faq-question-btn" type="button" data-target="faqAnswer{{ $index }}" 
+                    style="background: #fff !important; color: var(--siteset-{{ $sectionset }}-h2) !important; border: none !important; border-radius: 25px; width: 100%; text-align: left; padding: 20px 25px; font-size: 16px; font-weight: 600; cursor: pointer; outline: none; display: flex; justify-content: space-between; align-items: center; transition: all 0.3s ease; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);">
+              <span class="faq-question-text" style="flex-grow: 1; line-height: 1.4; margin-right: 15px;">{{ .question }}</span>
+              <span class="faq-icon" style="display: flex; align-items: center; justify-content: center; width: 30px; height: 30px; background: transparent; border-radius: 50%; transition: all 0.3s ease; flex-shrink: 0;">
+                <i class="ti-plus" style="font-size: 16px; color: var(--siteset-{{ $sectionset }}-h2); opacity: 0.7; transition: all 0.3s ease;"></i>
+              </span>
+            </button>
+
+            {{"<!-- FAQ Answer -->" | safeHTML}}
+            <div id="faqAnswer{{ $index }}" class="faq-answer" style="display: none; padding: 10px 25px 0 25px; margin-top: 0px;">
+              <p style="color: var(--siteset-{{ $sectionset }}-color); line-height: 1.7; font-size: 15px; margin-bottom: 0; opacity: 0.9;">{{ .answer | markdownify }}</p>
+            </div>
+            
+          </div>
+          {{"<!-- /FAQ Item -->" | safeHTML}}
+          {{ end }}
+        </div>
+        {{"<!-- /FAQ Items -->" | safeHTML}}
+      </div>
+    </div>
+
+    {{ if .contact_cta.enable }}
+    {{"<!-- FAQ Contact CTA -->" | safeHTML}}
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="faq-contact-cta text-center" 
+             style="background: rgba(var(--siteset-{{ $sectionset }}-button), 0.1); border-radius: 15px; padding: 40px 30px; border: 1px solid rgba(var(--siteset-{{ $sectionset }}-button), 0.2);">
+          <h4 style="color: var(--siteset-{{ $sectionset }}-color); font-size: 1.5rem; font-weight: 600; margin-bottom: 15px;">{{ .contact_cta.title }}</h4>
+          <p style="color: var(--siteset-{{ $sectionset }}-color); font-size: 16px; margin-bottom: 25px; line-height: 1.6;">{{ .contact_cta.description }}</p>
+          <a href="{{ .contact_cta.button_link | safeURL }}" class="btn btn-main" 
+             style="background: var(--siteset-{{ $sectionset }}-button); color: var(--siteset-{{ $sectionset }}-bg); padding: 15px 35px; font-size: 16px; font-weight: 600; text-transform: none !important; letter-spacing: normal !important; border: none; border-radius: 0px; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(var(--siteset-{{ $sectionset }}-button), 0.3); text-decoration: none;">
+            {{ .contact_cta.button_text }}
+          </a>
+        </div>
+      </div>
+    </div>
+    {{"<!-- /FAQ Contact CTA -->" | safeHTML}}
+    {{ end }}
+  </div>
+</section>
+{{"<!-- /FAQ Section -->" | safeHTML}}
+
+{{"<!-- FAQ JavaScript -->" | safeHTML}}
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const faqButtons = document.querySelectorAll(".faq-question-btn");
+
+  faqButtons.forEach((button) => {
+    button.addEventListener("mouseenter", function() {
+      this.style.setProperty("background", "#fff", "important");
+      this.style.setProperty("color", "var(--siteset-{{ $sectionset }}-h2)", "important");
+      this.style.setProperty("border", "none", "important");
+      const icon = this.querySelector(".faq-icon");
+      icon.style.background = "transparent";
+      const iconI = icon.querySelector("i");
+      iconI.style.color = "var(--siteset-{{ $sectionset }}-h2)";
+      iconI.style.opacity = "0.7";
+    });
+
+    button.addEventListener("mouseleave", function() {
+      const targetId = this.getAttribute("data-target");
+      const answer = document.getElementById(targetId);
+      const isOpen = answer.style.display === "block";
+      const icon = this.querySelector(".faq-icon");
+      const iconI = icon.querySelector("i");
+      if (!isOpen) {
+        this.style.setProperty("background", "#fff", "important");
+        this.style.setProperty("color", "var(--siteset-{{ $sectionset }}-h2)", "important");
+        this.style.setProperty("border", "none", "important");
+        icon.style.background = "transparent";
+        iconI.style.color = "var(--siteset-{{ $sectionset }}-h2)";
+        iconI.style.opacity = "0.7";
+      }
+    });
+
+    button.addEventListener("click", function () {
+      const targetId = this.getAttribute("data-target");
+      const answer = document.getElementById(targetId);
+      const icon = this.querySelector(".faq-icon i");
+      const iconContainer = this.querySelector(".faq-icon");
+      const isOpen = answer.style.display === "block";
+
+      // Close all other answers
+      faqButtons.forEach((otherBtn) => {
+        if (otherBtn !== this) {
+          const otherTargetId = otherBtn.getAttribute("data-target");
+          const otherAnswer = document.getElementById(otherTargetId);
+          const otherIcon = otherBtn.querySelector(".faq-icon i");
+          const otherIconContainer = otherBtn.querySelector(".faq-icon");
+          otherAnswer.style.display = "none";
+          otherIcon.className = "ti-plus";
+          otherBtn.style.setProperty("background", "#fff", "important");
+          otherBtn.style.setProperty("color", "var(--siteset-{{ $sectionset }}-h2)", "important");
+          otherBtn.style.setProperty("border", "none", "important");
+          otherIcon.style.color = "var(--siteset-{{ $sectionset }}-h2)";
+          otherIcon.style.opacity = "0.7";
+          otherIconContainer.style.background = "transparent";
+        }
+      });
+
+      // Toggle current answer
+      if (isOpen) {
+        answer.style.display = "none";
+        icon.className = "ti-plus";
+        this.style.setProperty("background", "#fff", "important");
+        this.style.setProperty("color", "var(--siteset-{{ $sectionset }}-h2)", "important");
+        this.style.setProperty("border", "none", "important");
+        icon.style.color = "var(--siteset-{{ $sectionset }}-h2)";
+        icon.style.opacity = "0.7";
+        iconContainer.style.background = "transparent";
+      } else {
+        answer.style.display = "block";
+        icon.className = "ti-minus";
+        this.style.setProperty("background", "var(--siteset-{{ $sectionset }}-h2)", "important");
+        this.style.setProperty("color", "#fff", "important");
+        this.style.setProperty("border", "none", "important");
+        icon.style.color = "#fff";
+        icon.style.opacity = "1";
+        iconContainer.style.background = "rgba(0,0,0,0.10)";
+      }
+    });
+  });
+});
+</script>
+{{"<!-- /FAQ JavaScript -->" | safeHTML}}
+
+{{ end }}
+{{ end }}

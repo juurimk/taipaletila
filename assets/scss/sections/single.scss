@@ -1,0 +1,148 @@
+// =============================================================================
+// Social Share Styles - SCSS with Variables
+// =============================================================================
+
+.social-share {
+  .resp-sharing-button__link {
+    text-decoration: none !important;
+  }
+
+  .resp-sharing-button {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: auto !important;
+    height: auto !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    border: none !important;
+    color: var(--siteset-lightset-color) !important;
+    transition: all 0.3s ease !important;
+    margin: 20px !important;
+    padding: 0.25rem !important;
+
+    &:hover {
+      background: transparent !important;
+      color: var(--siteset-lightset-button) !important;
+    }
+
+    &__icon {
+      width: 24px !important;
+      height: 24px !important;
+      margin: 0 !important;
+      padding: 0 !important;
+
+      svg {
+        width: 24px !important;
+        height: 24px !important;
+        fill: currentColor !important;
+      }
+    }
+  }
+}
+
+// Sectionset support
+.section-lightset .social-share {
+  .resp-sharing-button {
+    color: var(--siteset-lightset-color) !important;
+
+    &:hover {
+      color: var(--siteset-lightset-button) !important;
+    }
+  }
+}
+
+.section-darkset .social-share {
+  border-top-color: rgba(255, 255, 255, 0.1) !important;
+
+  .resp-sharing-button {
+    color: var(--siteset-darkset-color) !important;
+
+    &:hover {
+      color: var(--siteset-darkset-button) !important;
+    }
+  }
+}
+
+.section-neutralset .social-share {
+  .resp-sharing-button {
+    color: var(--siteset-neutralset-color) !important;
+
+    &:hover {
+      color: var(--siteset-neutralset-button) !important;
+    }
+  }
+}
+
+.section-coloriset .social-share {
+  .resp-sharing-button {
+    color: var(--siteset-coloriset-color) !important;
+
+    &:hover {
+      color: var(--siteset-coloriset-button) !important;
+    }
+  }
+}
+
+// =============================================================================
+// Responsive Styles
+// =============================================================================
+
+// Blog banner responsive
+.blog-banner {
+  @media (max-width: 768px) {
+    min-height: 200px;
+  }
+
+  @media (max-width: 576px) {
+    min-height: 150px;
+  }
+}
+
+// Social share mobile
+.social-share {
+  @media (max-width: 576px) {
+    .resp-sharing-button__icon {
+      width: 20px !important;
+      height: 20px !important;
+
+      svg {
+        width: 20px !important;
+        height: 20px !important;
+      }
+    }
+  }
+}
+
+.blog-banner {
+  position: relative;
+  height: 300px;
+  background-color: var(--siteset-lightset-bg, #f8f8f8);
+
+  .blog-banner-bg {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+  }
+
+  .blog-banner-overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.3);
+    z-index: 2;
+  }
+}
+
+.section-lightset .post-single-content {
+  h2, h3, h4, h5, h6 {
+    font-size: 1.5rem !important;
+    color: #000 !important;
+    text-align: left;
+  }
+}

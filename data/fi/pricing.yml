@@ -1,0 +1,64 @@
+##################################### pricing ##############################
+pricing:
+  enable : true
+  title : Hinnastomme
+  pricing_table :
+    # pricing table loop
+    - name : Aloittelija
+      price : €199
+      unit : kuukausi
+      services:
+        - 5GB levytilaa
+        - 5 sähköpostitiliä
+        - Perusasennus
+        - 10 GB tallennustilaa
+        - 50 GB kaistanleveyttä
+        - Sähköpostituki
+      button:
+        label : "Tilaa"
+        link : "#"
+      
+    # pricing table loop
+    - name : Hopea
+      price : €399
+      unit : kuukausi
+      services:
+        - 20GB levytilaa
+        - 25 sähköpostitiliä
+        - Edistynyt asennus
+        - 50 GB tallennustilaa
+        - 200 GB kaistanleveyttä
+        - 24/7 puhelintuki
+      button:
+        label : "Tilaa"
+        link : "#"
+        
+    # pricing table loop
+    - name : Kulta
+      price : €699
+      unit : kuukausi
+      services:
+        - 100GB levytilaa
+        - 100 sähköpostitiliä
+        - Premium-asennukset
+        - 200 GB tallennustilaa
+        - 1TB kaistanleveyttä
+        - 24/7 priority-tuki
+      button:
+        label : "Tilaa"
+        link : "#"
+        
+    # pricing table loop
+    - name : Platina
+      price : €999
+      unit : kuukausi
+      services:
+        - Rajaton levytila
+        - Rajattomat sähköpostit
+        - Räätälöidyt ratkaisut
+        - 1TB tallennustilaa
+        - Rajaton kaistanleveys
+        - Oma tukihenkilö
+      button:
+        label : "Tilaa"
+        link : "#"

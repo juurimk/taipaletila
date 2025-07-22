@@ -1,0 +1,72 @@
+{{ $data := index site.Data site.Language.Lang }}
+
+{{/* Get sectionset for newsletter section */}}
+{{ $sectionset := index site.Params.sectionsets "newsletter" | default "lightset" }}
+
+{{ if $data.newsletter.newsletter.enable }}
+{{ with $data.newsletter.newsletter }}
+{{"<!-- Start Newsletter Subscription -->" | safeHTML}}
+<section id="newsletter" class="section newsletter-section section-{{ $sectionset }}" style="background-color: var(--siteset-{{ $sectionset }}-bg); color: var(--siteset-{{ $sectionset }}-color);">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-6 col-md-8 col-sm-10">
+        {{"<!-- newsletter content -->" | safeHTML}}
+        <div class="newsletter-content text-center wow fadeInUp" data-wow-duration="500ms">
+          
+          {{"<!-- newsletter title -->" | safeHTML}}
+          {{ if .title }}
+          <h2 class="newsletter-title" style="color: var(--siteset-{{ $sectionset }}-h2);">{{ .title | safeHTML }}</h2>
+          {{ end }}
+          
+          {{"<!-- newsletter subtitle -->" | safeHTML}}
+          {{ if .subtitle }}
+          <p class="newsletter-subtitle" style="color: var(--siteset-{{ $sectionset }}-color);">{{ .subtitle | safeHTML }}</p>
+          {{ end }}
+          
+          {{"<!-- newsletter description -->" | safeHTML}}
+          {{ if .description }}
+          <p class="newsletter-description" style="color: var(--siteset-{{ $sectionset }}-color);">{{ .description | safeHTML }}</p>
+          {{ end }}
+          
+          {{"<!-- modern inline newsletter form -->" | safeHTML}}
+          {{ if .form }}
+          {{ with .form }}
+          <div class="newsletter-form-wrapper">
+            <form class="newsletter-form-modern" action="#" method="post" name="newsletter-form" id="newsletter-form">
+              <div class="newsletter-input-container">
+                <input 
+                  type="email" 
+                  class="newsletter-input" 
+                  name="email" 
+                  placeholder="{{ .email_placeholder | default "Sähköposti" }}" 
+                  {{ if .email_required }}required{{ end }}
+                  aria-label="Sähköpostiosoite"
+                >
+                <button 
+                  type="submit" 
+                  class="newsletter-submit-arrow"
+                  aria-label="Tilaa uutiskirje"
+                >
+                  <i class="ti-arrow-right" aria-hidden="true"></i>
+                </button>
+              </div>
+            </form>
+          </div>
+          {{ end }}
+          {{ end }}
+          
+          {{"<!-- success message -->" | safeHTML}}
+          {{ if .success_message }}
+          <div class="newsletter-success-message" id="newsletter-success" style="display: none;">
+            <p style="color: var(--siteset-{{ $sectionset }}-button);"><i class="ti-check"></i> {{ .success_message | safeHTML }}</p>
+          </div>
+          {{ end }}
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{"<!-- End Newsletter Subscription -->" | safeHTML}}
+{{ end }}
+{{ end }}

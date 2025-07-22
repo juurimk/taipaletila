@@ -1,0 +1,234 @@
+// =============================================================================
+// Pagination Styles - Using Siteset Variables
+// =============================================================================
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem 0;
+  
+  .page-item {
+    margin: 0 0.25rem;
+    
+    .page-link {
+      display: block;
+      padding: 0.75rem 1rem;
+      margin: 0;
+      background-color: transparent;
+      border: 2px solid var(--color-border-light);
+      color: var(--color-text-primary);
+      text-decoration: none;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+      font-weight: 500;
+      
+      &:hover {
+        background-color: var(--siteset-lightset-button);
+        border-color: var(--siteset-lightset-button);
+        color: var(--siteset-lightset-bg);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+      }
+      
+      &:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+      }
+    }
+    
+    &.active .page-link {
+      background-color: var(--siteset-lightset-button);
+      border-color: var(--siteset-lightset-button);
+      color: var(--siteset-lightset-bg);
+      cursor: default;
+      
+      &:hover {
+        transform: none;
+      }
+    }
+    
+    &.disabled .page-link {
+      color: var(--color-text-secondary);
+      background-color: var(--color-bg-light);
+      border-color: var(--color-border-light);
+      cursor: not-allowed;
+      opacity: 0.6;
+      
+      &:hover {
+        background-color: var(--color-bg-light);
+        border-color: var(--color-border-light);
+        color: var(--color-text-secondary);
+        transform: none;
+        box-shadow: none;
+      }
+    }
+  }
+  
+  .page-item:first-child .page-link {
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+  }
+  
+  .page-item:last-child .page-link {
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+  }
+}
+
+// Sectionset-specific pagination styles
+.section-lightset .pagination {
+  .page-item {
+    .page-link {
+      border-color: var(--color-border-light);
+      color: var(--siteset-lightset-color);
+      
+      &:hover {
+        background-color: var(--siteset-lightset-button);
+        border-color: var(--siteset-lightset-button);
+        color: var(--siteset-lightset-bg);
+      }
+    }
+    
+    &.active .page-link {
+      background-color: var(--siteset-lightset-button);
+      border-color: var(--siteset-lightset-button);
+      color: var(--siteset-lightset-bg);
+    }
+  }
+}
+
+.section-darkset .pagination {
+  .page-item {
+    .page-link {
+      border-color: var(--color-border-medium);
+      color: var(--siteset-darkset-color);
+      
+      &:hover {
+        background-color: var(--siteset-darkset-button);
+        border-color: var(--siteset-darkset-button);
+        color: var(--siteset-darkset-bg);
+      }
+    }
+    
+    &.active .page-link {
+      background-color: var(--siteset-darkset-button);
+      border-color: var(--siteset-darkset-button);
+      color: var(--siteset-darkset-bg);
+    }
+  }
+}
+
+.section-neutralset .pagination {
+  .page-item {
+    .page-link {
+      border-color: var(--color-border-light);
+      color: var(--siteset-neutralset-color);
+      
+      &:hover {
+        background-color: var(--siteset-neutralset-button);
+        border-color: var(--siteset-neutralset-button);
+        color: var(--siteset-neutralset-bg);
+      }
+    }
+    
+    &.active .page-link {
+      background-color: var(--siteset-neutralset-button);
+      border-color: var(--siteset-neutralset-button);
+      color: var(--siteset-neutralset-bg);
+    }
+  }
+}
+
+// Alternative compact pagination style
+.pagination-compact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+  
+  .page-item {
+    margin: 0 0.125rem;
+    
+    .page-link {
+      padding: 0.5rem 0.75rem;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--color-bg-light);
+      border: 1px solid var(--color-border-light);
+      color: var(--color-text-secondary);
+      font-size: 0.9rem;
+      transition: all 0.25s ease;
+      
+      &:hover {
+        background-color: var(--siteset-lightset-button);
+        border-color: var(--siteset-lightset-button);
+        color: var(--siteset-lightset-bg);
+        transform: scale(1.1);
+      }
+    }
+    
+    &.active .page-link {
+      background-color: var(--siteset-lightset-button);
+      border-color: var(--siteset-lightset-button);
+      color: var(--siteset-lightset-bg);
+      font-weight: bold;
+    }
+  }
+}
+
+// Responsive pagination
+@media (max-width: 576px) {
+  .pagination {
+    .page-item {
+      margin: 0 0.125rem;
+      
+      .page-link {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.875rem;
+      }
+    }
+    
+    // Hide some page numbers on mobile
+    .page-item:not(.active):not(:first-child):not(:last-child) {
+      display: none;
+      
+      &:nth-child(-n+3),
+      &:nth-last-child(-n+3) {
+        display: block;
+      }
+    }
+  }
+}
+
+// Custom pagination with icons
+.pagination-with-icons {
+  .page-item {
+    .page-link {
+      &.prev::before {
+        content: "← ";
+        margin-right: 0.25rem;
+      }
+      
+      &.next::after {
+        content: " →";
+        margin-left: 0.25rem;
+      }
+    }
+  }
+}
+
+// Removed default blue border on hover and ensured buttons follow the color system
+.pagination .btn-primary {
+  border-color: var(--siteset-lightset-button) !important; // Ensure border matches the color system
+  outline: none !important; // Remove default browser outline
+}
+
+.pagination .btn-primary:hover {
+  border-color: var(--siteset-lightset-button) !important; // Ensure hover border matches the color system
+  outline: none !important; // Remove hover outline
+}

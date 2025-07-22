@@ -1,0 +1,230 @@
+// Gallery Section Styles
+.gallery-section {
+  background-color: var(--siteset-lightset-bg);
+  color: var(--siteset-lightset-color);
+  
+  // Dynamic sectionset styling
+  @each $sectionset in lightset, darkset, coloriset, neutralset {
+    &.section-#{$sectionset} {
+      background-color: var(--siteset-#{$sectionset}-bg);
+      color: var(--siteset-#{$sectionset}-color);
+      
+      .title h2 {
+        color: var(--siteset-#{$sectionset}-h2);
+        font-family: var(--sitefont);
+        font-weight: 700;
+      }
+      
+      .gallery-description p {
+        color: var(--siteset-#{$sectionset}-color);
+        font-family: var(--sitefont);
+        font-size: 1rem;
+        line-height: 1.3;
+      }
+      
+      .gallery-filter {
+        margin-bottom: 40px;
+        text-align: center;
+        
+        .filter-item {
+          display: inline-block;
+          margin: 5px;
+          cursor: pointer;
+          padding: 8px 16px;
+          border: 2px solid var(--siteset-#{$sectionset}-button);
+          background: transparent;
+          color: var(--siteset-#{$sectionset}-button);
+          text-transform: uppercase;
+          font-weight: 500;
+          font-family: var(--sitefont);
+          font-size: 0.9rem;
+          transition: all 0.3s ease;
+          
+          &.selected {
+            background: var(--siteset-#{$sectionset}-button);
+            color: var(--siteset-#{$sectionset}-bg);
+          }
+        }
+      }
+      
+      .gallery-grid,
+      .row {
+        margin-bottom: 50px;
+        
+        .gallery-item-hidden {
+          display: none;
+        }
+        
+        .gallery-item {
+          background: var(--siteset-#{$sectionset}-bg);
+          border-radius: 0px;
+          overflow: hidden;
+          box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+          margin-bottom: 30px;
+          display: flex;
+          flex-direction: column;
+          height: 400px;
+          
+          @media (min-width: 768px) {
+            height: 450px;
+          }
+          
+          @media (min-width: 992px) {
+            height: 500px;
+          }
+          
+          .gallery-image {
+            position: relative;
+            cursor: pointer;
+            margin: 0;
+            flex-shrink: 0;
+            
+            img {
+              width: 100%;
+              height: 300px;
+              object-fit: cover;
+              transition: transform 0.3s ease;
+              display: block;
+            }
+            
+            &:hover img {
+              transform: scale(1.05);
+            }
+          }
+          
+          .gallery-content {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            
+            h3 {
+              font-size: 1.2rem;
+              margin-bottom: 10px;
+              color: var(--siteset-#{$sectionset}-h2);
+              font-family: var(--sitefont);
+              font-weight: 600;
+              
+              a {
+                color: inherit;
+                text-decoration: none;
+                font-family: var(--sitefont);
+              }
+            }
+            
+            p {
+              color: var(--siteset-#{$sectionset}-color);
+              font-size: 0.9rem;
+              font-family: var(--sitefont);
+              line-height: 1.6;
+              margin-bottom: 10px;
+              flex-grow: 1;
+            }
+            
+            .category {
+              color: var(--siteset-#{$sectionset}-button);
+              font-size: 0.8rem;
+              font-weight: 500;
+              text-transform: uppercase;
+              font-family: var(--sitefont);
+              margin-bottom: 0;
+              margin-top: auto;
+            }
+          }
+        }
+      }
+      
+      .gallery-load-more {
+        text-align: center;
+        margin-top: 10px;
+        
+        // Button saa kaikki tyylinsä button-styles.html:stä
+        // koska sillä on luokat: btn btn-transparent
+      }
+    }
+  }
+}
+
+// Lightbox Modal Styles
+#galleryLightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  z-index: 9999;
+  cursor: pointer;
+  
+  .lightbox-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 90%;
+    max-height: 90%;
+    text-align: center;
+    
+    #lightboxImage {
+      max-width: 100%;
+      max-height: 70vh;
+      object-fit: contain;
+      display: block;
+    }
+    
+    #lightboxTextBox {
+      background: white;
+      padding: 20px;
+      text-align: left;
+      border-radius: 0 0 0px 0px;
+      
+      #lightboxTitle {
+        margin: 0 0 10px 0;
+        color: #333;
+        font-size: 1.5rem;
+        font-family: var(--sitefont);
+        font-weight: 600;
+      }
+      
+      #lightboxDescription {
+        margin: 0 0 10px 0;
+        color: #333;
+        line-height: 1.6;
+        font-family: var(--sitefont);
+        font-size: 1rem;
+      }
+      
+      #lightboxCategory {
+        color: #333;
+        font-size: 0.9rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        font-family: var(--sitefont);
+      }
+    }
+  }
+  
+  .lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(255,255,255,0.2);
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+// Responsive Design - ei tarvita, koska Bootstrap hoitaa
+// Bootstrap grid:
+// col-12 = 100% leveys (mobiili)
+// col-md-6 = 50% leveys (tablet, 2 kuvaa rinnakkain)  
+// col-lg-4 = 33.33% leveys (desktop, 3 kuvaa rinnakkain)

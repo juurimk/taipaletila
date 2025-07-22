@@ -1,0 +1,32 @@
+{{/* Minimalistinen Service Hero */}}
+{{ $service := .service }}
+{{ $sectionset := index site.Params.sectionsets "service_hero" | default "lightset" }}
+
+{{"<!-- Service Hero -->" | safeHTML}}
+<section class="service-hero section-{{ $sectionset }}">
+  
+  {{/* Taustakuva */}}
+  <div class="service-hero-bg" style="background-image: url('{{ $service.banner_image_webp | default $service.banner_image | default $service.image_webp | default $service.image | absURL }}');"></div>
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="service-hero-content">
+          
+          {{/* Otsikko */}}
+          <h1 class="service-hero-title">
+            <span class="brand-part">Juuri</span><span class="rest-part">{{ substr $service.name 5 }}</span>
+          </h1>
+          
+          {{/* Kuvaus */}}
+          <p class="service-hero-description">{{ $service.short_description }}</p>
+          
+          {{/* CTA Button */}}
+          <a href="#contact" class="btn btn-main">Ota yhteyttä</a>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{"<!-- /Service Hero -->" | safeHTML}}

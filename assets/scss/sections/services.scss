@@ -1,0 +1,605 @@
+// Services Section Styles etusivulla - alempana services/single sivun tyylit
+.services-section {
+  padding: 60px 0;
+  
+  .title {
+    margin-bottom: 40px;
+    color: var(--siteset-lightset-button) !important;
+    
+    .services-description p {
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+  }
+  
+  .services-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .service-card {
+    background: white;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    max-width: 350px;
+    width: 100%;
+    
+    .service-card-inner {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .service-image-area {
+      height: 200px;
+      overflow: hidden;
+      position: relative;
+      
+      .service-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }  
+    .service-overlay {
+      flex: 1;
+      padding: 30px 25px;
+      
+      .service-content {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        
+        .service-text-area {
+          flex: 1;
+        }
+        
+        .service-title {
+          margin-bottom: 8px;
+          
+          .brand-part {
+            font-weight: 700;
+            color: var(--siteset-lightset-button) !important;
+          }
+          
+          .rest-part {
+            font-style: italic;
+            font-weight: 400;
+            color: var(--siteset-lightset-button) !important;
+          }
+        }
+        
+        .service-subtitle {
+          font-weight: 600;
+          margin-bottom: 10px;
+          font-size: 1.1rem;
+          color: var(--color-button-primary);
+        }
+        
+        .service-short-description {
+          margin-bottom: 20px;
+          
+          p {
+          }
+        }
+        
+        .service-bullet-description {
+          margin-bottom: 25px;
+          font-size:1.1rem;
+          
+          ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            
+            li {
+              position: relative;
+              padding-left: 20px;
+              margin-bottom: 8px;
+              line-height: 1.5;
+              
+              &::before {
+                content: "•";
+                position: absolute;
+                left: 0;
+                font-weight: bold;
+              }
+            }
+          }
+        }
+        
+        .service-price {
+          font-weight: 700;
+          color: var(--color-button-primary);
+          margin-top: auto;
+          padding-top: 15px;
+          border-top: 1px solid #ecf0f1;
+        }
+      }
+    }
+  }
+}
+
+// Responsive Design
+@media (max-width: 991px) {
+  .services-section {
+    .services-grid {
+      gap: 20px;
+    }
+    
+    .service-card {
+      max-width: 400px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .services-section {
+    padding: 0px;
+    
+    .title {
+      margin-bottom: 0px;
+    }
+    
+    .services-grid {
+      gap: 15px;
+    }
+    
+    .service-card {
+      max-width: 100%;
+      
+      .service-overlay {
+        padding: 20px;
+      }
+      
+      .service-title {
+        font-size: 1.5rem;
+      }
+    }
+    
+    .service-title,
+    .service-subtitle,
+    .service-price{
+      text-align: center;
+    }
+  }
+}
+
+// Dark theme support
+.section-darkset {
+  .service-card {
+    background: #2c3e50;
+    
+    .service-title {
+      .rest-part {
+        color: white;
+      }
+    }
+    
+    .service-subtitle {
+      color: #bdc3c7;
+    }
+    
+    .service-short-p p,
+    .service-bullet-description li {
+      color: #bdc3c7;
+    }
+  }
+}
+
+// Tästä alkaa yksittäisen palvelusivun tyylit, sivulle tuleva data löytyy content/finnish/ alta
+
+//Minimalistinen Services Hero - services/single -sivulla 
+
+.service-hero {
+  position: relative;
+  height: 70vh;            // 70% näytön korkeudesta
+  display: flex;           // Flexbox keskitystä varten
+  align-items: center;     // Keskitä vertikaalisesti
+  
+  // Taustakuva
+.service-hero-bg {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-size: cover;
+   background-position: center;
+   z-index: 0;
+   
+   // Tumma overlay
+   &::after {
+     content: '';
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background: rgba(0, 0, 0, 0.3);
+     z-index: 1;
+   }
+ }
+  
+  // Sisältö keskitettynä
+  .service-hero-content {
+    text-align: center;      // Keskitä horisontaalisesti
+    z-index: 2;
+    position: relative;
+  }
+  
+  // Otsikko
+  .service-hero-title {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+    
+    .brand-part {
+      font-weight: 700;
+    }
+    
+    .rest-part {
+      font-style: italic;
+      font-weight: 400;
+    }
+  }
+  
+  // Kuvaus
+  .service-hero-description {
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    color:#ffffff;
+  }
+  
+  // Responsiivinen
+  @media (max-width: 768px) {
+    height: 60vh;           // Vielä pienempi mobiilissa
+    
+    .service-hero-title {
+      font-size: 2.5rem;
+    }
+    
+    .service-hero-description {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    height: 50vh;           // Pienimmissä ruuduissa
+    
+    .service-hero-title {
+      font-size: 2rem;
+    }
+    
+    .service-hero-description {
+      font-size: 1rem;
+    }
+  }
+}
+
+// Services/single-sivun pääsisältö main-text-section
+
+// Breadcrumbs SCSS - hyödyntää sectionsetin color-propertyä
+.breadcrumb-nav {
+  margin-top: 5px;
+  margin-bottom: 20px;
+  
+  @media (max-width: 768px) {
+    display: none;
+  }
+  
+  ol {
+    background: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.85rem;
+    
+    li {
+      display: inline;
+      
+      a {
+        color: inherit;
+        opacity: 0.6;
+        text-decoration: none;
+        
+        &:hover {
+          opacity: 1;
+          text-decoration: underline;
+        }
+      }
+      
+      .separator {
+        margin: 0 8px;
+        opacity: 0.3;
+      }
+      
+      &.active {
+        opacity: 0.8;
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+// Main text section styles services/single sivulla
+.main-text-section {
+  padding: 40px 0;
+  
+  @media (max-width: 768px) {
+    padding: 20px 0;
+  }
+}
+
+.main-text-title {
+  color: var(--siteset-lightset-h2);
+  text-align: center;
+  margin-top: 30px !important;
+  margin-bottom: 30px;
+}
+
+.main-text-content {
+  text-align: left;
+  color: var(--siteset-lightset-color);
+  hyphens: auto;
+  overflow-wrap: break-word;
+  widows: 2;
+  orphans: 2;
+  
+  p + p {
+    margin-top: 1.5rem;
+  }
+}
+// services/single sivulla paketit neljän rivissö
+
+.packages-section {
+  padding: 60px 0;
+  background-color: var(--siteset-lightset-bg);
+  color: var(--siteset-lightset-color);
+
+  &.section-darkset {
+    background-color: var(--siteset-darkset-bg);
+    color: var(--siteset-darkset-color);
+  }
+
+  &.section-neutralset {
+    background-color: var(--siteset-neutralset-bg);
+    color: var(--siteset-neutralset-color);
+  }
+
+  &.section-coloriset {
+    background-color: var(--siteset-coloriset-bg);
+    color: var(--siteset-coloriset-color);
+  }
+
+  .packages-title {
+    margin-bottom: 15px;
+    color: var(--siteset-lightset-h2);
+
+    .section-darkset & {
+      color: var(--siteset-darkset-h2);
+    }
+
+    .section-neutralset & {
+      color: var(--siteset-neutralset-h2);
+    }
+
+    .section-coloriset & {
+      color: var(--siteset-coloriset-h2);
+    }
+  }
+
+  .packages-description {
+    max-width: 700px;
+    margin: 0 auto 30px;
+    text-align: center;
+  }
+
+  .package-box {
+    background: #ffffff;
+    color:#000000;
+    padding: 25px 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 30px rgba(0, 0, 0, 0.12);
+    }
+
+    .package-box-title {
+      margin-bottom: 10px;
+      color: var(--siteset-lightset-button);
+
+      .section-darkset & {
+        color: var(--siteset-darkset-button);
+      }
+
+      .section-neutralset & {
+        color: var(--siteset-neutralset-button);
+      }
+
+      .section-coloriset & {
+        color: var(--siteset-coloriset-button);
+      }
+    }
+
+    .package-box-text {
+      line-height: 1.6;
+    }
+  }
+}
+
+.package-box-text {
+  ul {
+    list-style-type: disc;
+    list-style-position: inside;
+    padding-left: 0rem;
+    margin-left: 0;
+    margin-bottom: 1rem;
+
+    li {
+      margin-bottom: 0.4rem;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      word-break: break-word;
+    }
+  }
+
+  // Varmuuden vuoksi, jos muu sisältö venyttää
+  overflow-wrap: break-word;
+}
+
+
+.package-box-price {
+  font-weight: 700;
+  color: #000000;
+  margin-top: auto;
+  padding-top: 15px;
+  border-top: 1px solid #ecf0f1;
+  font-size: 1rem;
+  display: block;
+
+  .section-darkset & {
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+@media (max-width: 767px) {
+  .packages-section {
+    .packages-title {
+      font-size: 1.8rem;
+    }
+
+    .package-box {
+      padding: 20px 15px;
+    }
+  }
+}
+
+// services/single sivulla asiantuntija osio (expert)
+
+.expert-section {
+  padding: 60px 0;
+  background-color: var(--siteset-lightset-bg);
+  color: var(--siteset-lightset-color);
+
+  &.section-darkset {
+    background-color: var(--siteset-darkset-bg);
+    color: var(--siteset-darkset-color);
+  }
+
+  &.section-neutralset {
+    background-color: var(--siteset-neutralset-bg);
+    color: var(--siteset-neutralset-color);
+  }
+
+  &.section-coloriset {
+    background-color: var(--siteset-coloriset-bg);
+    color: var(--siteset-coloriset-color);
+  }
+
+  .expert-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+  }
+
+  .expert-title {
+    margin-bottom: 20px;
+    color: var(--siteset-lightset-button);
+    text-align: left;
+
+    @media (max-width: 767px) {
+      text-align: center;
+    }
+
+    .section-darkset & {
+      color: var(--siteset-darkset-h2);
+    }
+
+    .section-neutralset & {
+      color: var(--siteset-neutralset-h2);
+    }
+
+    .section-coloriset & {
+      color: var(--siteset-coloriset-h2);
+    }
+  }
+
+  .expert-content {
+    line-height: 1.7;
+    text-align: left;
+
+    @media (max-width: 767px) {
+      text-align: center;
+    }
+  }
+}
+
+
+// services/single sivulla ikonibanneri (benefits)
+.benefits {
+  padding: 40px 0;
+
+  .benefit-item {
+    text-align: center;
+
+    .benefit-icon {
+      i {
+        font-size: 2rem;
+        display: inline-block;
+        margin-bottom: 1rem;
+        color: var(--siteset-lightset-button);
+      }
+    }
+
+    .benefit-text {
+      h4 {
+        font-family: var(--sitefont);
+        color: var(--siteset-darkset-color);
+        margin-top: 1rem;
+        font-size: 1.1rem;
+
+      }
+
+      p {
+        color: var(--siteset-darkset-color);
+ 
+      }
+    }
+  }
+}
+
+
+// services/single sivulla contact
+.section-lightset {
+  .contact-link {
+    color: var(--siteset-lightset-color)!important;
+    
+    &:hover,
+    &:focus {
+      color: var(--siteset-lightset-button)!important;
+      text-decoration: none;
+    }
+  }
+}
+
+.section-neutralset {
+  .contact-link {
+    color: var(--siteset-neutralset-color);
+    
+    &:hover,
+    &:focus {
+      color: var(--siteset-neutralset-button);
+      text-decoration: none;
+    }
+  }
+}

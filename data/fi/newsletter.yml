@@ -1,0 +1,29 @@
+############################### newsletter ############################
+newsletter:
+  enable : true
+  title : Liity Juuri.ai:n sisäpiiriin
+  subtitle : Tilaa uutiskirjeemme ja saat ensimmäisenä tietoa uusista työkaluista.
+  description: ""  # Tyhjä - ei tarvita kolmatta tekstiriviä
+  
+  # Newsletter form
+  form:
+    email_placeholder : "anna@yritys.fi"
+    email_required : true
+    submit_text : "Liity mukaan"
+    
+  # Success message
+  success_message: "Kiitos! Olet nyt mukana Juuri.ai:n sisäpiirissä."
+  
+  # Optional privacy note - pidetään lyhyenä
+  privacy_note: ""  # Tyhjä - ei tarvita pitkää privacy tekstiä
+  
+  # Optional styling
+  styling:
+    centered : true
+    max_width : "600px"
+    button_style : "rounded" # options: rounded, square
+    
+  # Newsletter integrations (optional)
+  integrations:
+    mailchimp_action : "" # Add your Mailchimp form action URL
+    newsletter_service : "netlify" # options: mailchimp, netlify, custom

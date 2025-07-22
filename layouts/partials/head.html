@@ -1,0 +1,81 @@
+<head>
+	<meta charset="utf-8">
+	<title>{{ .Title }}</title>
+
+	{{ "<!-- mobile responsive meta -->" | safeHTML }}
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with site.Params.description }}{{ . }}{{ end }}{{ end }}">
+	{{ with site.Params.author }}
+	<meta name="author" content="{{ . }}">{{ end }}
+	{{ hugo.Generator }}
+
+	{{ "<!-- plugins -->" | safeHTML }}
+	{{ range site.Params.plugins.css }}
+	<link rel="stylesheet" href="{{ .link | absURL }}">
+	{{ end }}
+
+<!--Fonts-->
+	{{- if site.Params.sitefontlink -}}
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="{{ site.Params.sitefontlink }}" rel="stylesheet">
+	{{- end -}}
+	<style>
+	:root {
+	--sitefont: {{ site.Params.sitefont | default "\"Open Sans\", sans-serif" }};
+	}
+	</style>
+
+	{{"<!-- Method 2 Template SCSS - Hugo v0.128+ Compatible -->"|safeHTML}}
+	{{ $scss := resources.Get "scss/main.scss" }}
+	{{ $css := $scss | resources.ExecuteAsTemplate "css/complete-style.scss" . | css.Sass }}
+	{{ if hugo.IsProduction }}
+	{{ $css = $css | resources.Minify }}
+	{{ end }}
+	<link rel="stylesheet" href="{{ $css.Permalink }}" media="screen">
+
+	{{ "<!--Favicon-->" | safeHTML }}
+	<link rel="shortcut icon" href="{{ `images/favicon.png` | absURL }}" type="image/x-icon">
+	<link rel="icon" href="{{ `images/favicon.png` | absURL }}" type="image/x-icon">
+
+	{{ with site.Params.google_analytics_id }}
+	{{ "<!-- Global Site Tag (gtag.js) - Google Analytics -->" | safeHTML }}
+	<script async src="https://www.googletagmanager.com/gtag/js?id={{ . }}"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', '{{ . }}');
+	</script>
+	{{ end }}
+
+	<!-- Open Graph -->
+<meta property="og:title" content="{{ .Title }}">
+<meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ with site.Params.description }}{{ . }}{{ end }}{{ end }}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ .Permalink }}">
+{{ if .Params.og_image }}
+<meta property="og:image" content="{{ .Params.og_image | absURL }}">
+{{ else if site.Params.og_image }}
+<meta property="og:image" content="{{ site.Params.og_image | absURL }}">
+{{ end }}
+
+<!-- Open Graph extras -->
+<meta property="og:site_name" content="{{ .Site.Title }}">
+<meta property="og:locale" content="fi_FI">
+
+<!-- Canonical -->
+<link rel="canonical" href="{{ .Permalink }}">
+
+<!-- Twitter Card (optional) -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ .Title }}">
+<meta name="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{ with site.Params.description }}{{ . }}{{ end }}{{ end }}">
+{{ if .Params.og_image }}
+<meta name="twitter:image" content="{{ .Params.og_image | absURL }}">
+{{ else if site.Params.og_image }}
+<meta name="twitter:image" content="{{ site.Params.og_image | absURL }}">
+{{ end }}
+
+</head>

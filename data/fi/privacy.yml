@@ -1,0 +1,39 @@
+privacy:
+  title: "Tietosuojaseloste"
+  intro: "Tämä on Juuri.ai Oy:n tietosuojaseloste. Käsittelemme tietojasi huolellisesti ja vastuullisesti. Alla selvennämme, mitä tietoja keräämme ja mihin niitä käytämme."
+
+  company:
+    name: "Juuri.ai Oy"
+    business_id: "Y-tunnus: 3550186-8"
+    location: "Hämeenlinna, Suomi"
+
+  sections:
+    - heading: "Evästeet"
+      content: |
+        Verkkosivuillamme käytetään evästeitä. Eväste on tietokoneellesi, tabletillesi tai matkapuhelimeesi tallennettu pieni datatiedosto. Eväste ei ole ohjelma, joka voisi sisältää haittaohjelmia tai viruksia.
+
+        Verkkosivuillamme olevilla evästeillä seurataan käyttäjämääriä, käyttökokemusta ja mitä laitteita käyttäjät suosivat. Tallennamme seuraavat tiedot, kun asioit sivuillamme: IP-osoite, laitteen maantieteellinen sijainti, verkkoselain, verkkoselaimen kieli, tehdyn pyynnön päiväys ja aika, vierailujen ajankohta, sivunäytöt sekä sivuilla klikatut elementit, kuten linkit.
+
+    - heading: "Kuinka suojelemme henkilötietojasi"
+      content: |
+        Henkilötiedot säilytetään suojatussa tietokannassa, ja kaikki verkkosivuilla tapahtuva liikenne on salattu (SSL). Juuri.ai Oy:n järjestelmissä, joihin tieto on tallennettu, käyttäjä saa työtehtävänsä edellyttämän ylläpito- tai selausoikeuden tietoihin.
+
+    - heading: "Yhteydenottolomakkeet"
+      content: |
+        Verkkosivujen yhteydenottolomaketta käyttäessä tallennamme lomakkeessa olevat tiedot. Näitä tietoja ovat nimi, puhelinnumero, sähköpostiosoite, organisaatio sekä viesti. Tiedot käsitellään sähköpostitse ja säilytetään korkeintaan kuuden kuukauden ajan.
+
+    - heading: "Analytiikka"
+      content: |
+        Sivustolla käytetään ulkopuolisia palveluita, kuten Google Analyticsia, joiden avulla kerätään anonymisoitua tietoa kävijäliikenteestä. Tietoja ei voida yhdistää yksittäisiin henkilöihin.
+
+    - heading: "Mainonta ja kohdentaminen"
+      content: |
+        Käytämme Google Adsia mainosten näyttämiseen. Ads käyttää evästeitä käyttäjien toiminnan seuraamiseen ja mainonnan tehokkuuden mittaamiseen.
+
+    - heading: "Liidiseuranta"
+      content: |
+        Evästeet seuraavat istuntoja tilastointia ja liidien luomista varten.
+
+    - heading: "Tietojen jakaminen kolmansille osapuolille"
+      content: |
+        Voimme jakaa välttämättömiä tietoja kolmansien osapuolten kanssa esimerkiksi toimituksia varten. Tietoturvasta huolehditaan EU:n tietosuoja-asetuksen mukaisesti.

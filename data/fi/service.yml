@@ -1,0 +1,34 @@
+################################# Service #################################
+service:
+  enable : true
+  title : Palvelumme
+  service_item :
+    # service item loop
+    - name : WordPress-teemat
+      icon : ti-world # themify icon pack : https://themify.me/themify-icons
+      content : Luomme räätälöityjä WordPress-teemoja, jotka ovat sekä visuaalisesti näyttäviä että teknisesti kehittyneitä. Teemamme on optimoitu suorituskyvylle ja SEO:lle.
+      
+    # service item loop
+    - name : Responsiivinen suunnittelu
+      icon : ti-layout # themify icon pack : https://themify.me/themify-icons
+      content : Suunnittelemme verkkosivustoja, jotka toimivat täydellisesti kaikilla laitteilla. Mobiilioptimoidut sivustot tarjoavat erinomaisen käyttökokemuksen.
+      
+    # service item loop
+    - name : Media ja mainonta
+      icon : ti-blackboard # themify icon pack : https://themify.me/themify-icons
+      content : Tuotamme tehokasta digitaalista mediasisältöä ja mainoskampanjoita. Autamme brändejä tavoittamaan kohdeyleisönsä oikeassa paikassa oikeaan aikaan.
+      
+    # service item loop
+    - name : Graafinen suunnittelu
+      icon : ti-palette # themify icon pack : https://themify.me/themify-icons
+      content : Luomme visuaalisia identiteettejä ja graafisia materiaaleja, jotka kertovat yrityksesi tarinan tehokkaasti ja muistettavasti.
+      
+    # service item loop
+    - name : Sovellusten kehitys
+      icon : ti-package # themify icon pack : https://themify.me/themify-icons
+      content : Kehitämme mukautettuja web- ja mobiilisovelluksia, jotka ratkaisevat liiketoimintahaasteitasi ja parantavat asiakaskokemusta.
+      
+    # service item loop
+    - name : Verkottuminen
+      icon : ti-pulse # themify icon pack : https://themify.me/themify-icons
+      content : Tarjoamme verkkoinfrastruktuurin suunnittelua ja toteutusta. Varmistamme, että järjestelmäsi ovat turvallisia ja luotettavia.

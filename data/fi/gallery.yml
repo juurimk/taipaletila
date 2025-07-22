@@ -1,0 +1,92 @@
+# Gallery Section Configuration
+# Place in: data/fi/gallery.yml
+
+gallery:
+  enable: true
+  title: "Gallery"
+  description: "Our creative works and projects"
+  
+  filter:
+    enable: true
+    alignment: "text-center"  # text-center, text-start, text-end
+    all_text: "All"
+    items:
+      - name: "Branding"
+        slug: "branding"
+      - name: "Design" 
+        slug: "design"
+      - name: "Illustration"
+        slug: "illustration"
+      - name: "Photography"
+        slug: "photography"
+  
+  load_more:
+    enable: true
+    button_text: "Load More"
+    items_start: 6    # Show initially
+    items_load: 3     # Load when clicking button
+  
+  # Gallery items (kuvat ja tekstit)
+  items:
+    - title: "Cups Design Project"
+      image: "/images/gallery/gallery1.jpg"
+      description: "Created, likeness bring which in stars herb a is give you'll it life you'll. Whose..."
+      category: "Design"
+      category_slug: "design"
+      # link: "/portfolio/cups/"
+      
+    - title: "Cactus Photography"
+      image: "/images/gallery/gallery2.jpg"
+      description: "Beautiful cactus photography showcasing natural beauty and artistic composition..."
+      category: "Photography"
+      category_slug: "photography"
+      # link: "/portfolio/cactus/"
+      
+    - title: "Dance Movement"
+      image: "/images/gallery/gallery3.jpg"
+      description: "Capturing the essence of movement and grace in contemporary dance..."
+      category: "Photography"
+      category_slug: "photography"
+      # link: "/portfolio/dance/"
+      
+    - title: "Brand Identity Design"
+      image: "/images/gallery/gallery4.jpg"
+      description: "Complete brand identity package including logo design and brand guidelines..."
+      category: "Branding"
+      category_slug: "branding"
+      # link: "/portfolio/brand/"
+      
+    - title: "Book Cover Illustration"
+      image: "/images/gallery/gallery5.jpg"
+      description: "Custom illustration for book cover design with modern artistic approach..."
+      category: "Illustration"
+      category_slug: "illustration"
+      # link: "/portfolio/book/"
+      
+    - title: "Product Photography"
+      image: "/images/gallery/gallery6.jpg"
+      description: "Professional product photography for e-commerce and marketing materials..."
+      category: "Photography"
+      category_slug: "photography"
+      # link: "/portfolio/product/"
+      
+    - title: "Logo Design Collection"
+      image: "/images/gallery/gallery7.jpg"
+      description: "Collection of modern logo designs for various industries and businesses..."
+      category: "Branding"
+      category_slug: "branding"
+      # link: "/portfolio/logos/"
+      
+    - title: "Digital Artwork"
+      image: "/images/gallery/gallery8.jpg"
+      description: "Digital illustration combining traditional art techniques with modern tools..."
+      category: "Illustration"
+      category_slug: "illustration"
+      # link: "/portfolio/digital-art/"
+      
+    - title: "Package Design"
+      image: "/images/gallery/gallery9.jpg"
+      description: "Innovative package design that stands out on shelves and communicates brand values..."
+      category: "Design"
+      category_slug: "design"
+      # link: "/portfolio/package/"

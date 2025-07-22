@@ -1,0 +1,65 @@
+{{ $data := index site.Data site.Language.Lang }}
+
+{{- $siteset := site.Params.siteset | default "kaste" -}}
+{{- $sitesetData := index site.Data "siteset-colors" -}}
+{{- $currentSiteset := index $sitesetData.sitesets $siteset -}}
+{{- $portfolioColors := $currentSiteset.portfolio -}}
+
+{{ if $data.portfolio.portfolio.enable }}
+{{ with $data.portfolio.portfolio }}
+{{"<!-- Portfolio Section - No Title -->" | safeHTML}}
+<section class="portfolio section {{ with .sectionset }}section-{{ . }}{{ else }}section-lightset{{ end }}" id="portfolio">
+	{{"<!-- Portfolio Grid - Full Width, No Spacing -->" | safeHTML}}
+	<div class="container">
+		<div class="row shuffle-wrapper justify-content-center">
+			{{"<!-- portfolio item -->" | safeHTML}}
+			{{ range .portfolio_item }}
+			<div class="col-lg-4 col-md-6 col-sm-6 shuffle-item" data-groups="">
+				<div class="portfolio-block">
+					{{ if .link }}
+					<a href="{{ .link | safeURL }}"{{ if hasPrefix .link "http" }} target="_blank" rel="noopener"{{ end }}>
+					{{ end }}
+					<div class="portfolio-image-container">
+						{{"<!-- Portfolio card face - front (logo) -->" | safeHTML}}
+						{{ $bgColor := .passive_color }}
+						{{ if eq .passive_color "theme_color1" }}
+							{{ $bgColor = $portfolioColors.color1 }}
+						{{ else if eq .passive_color "theme_color2" }}
+							{{ $bgColor = $portfolioColors.color2 }}
+						{{ else if eq .passive_color "theme_color3" }}
+							{{ $bgColor = $portfolioColors.color3 }}
+						{{ else if eq .passive_color "theme_color4" }}
+							{{ $bgColor = $portfolioColors.color4 }}
+						{{ else if eq .passive_color "theme_color5" }}
+							{{ $bgColor = $portfolioColors.color5 }}
+						{{ else if eq .passive_color "theme_gray" }}
+							{{ $bgColor = $portfolioColors.gray }}
+						{{ end }}
+						<div class="portfolio-card-front" style="background-color: {{ with $bgColor }}{{ . }}{{ else }}#1fc41f{{ end }};">
+							<div class="portfolio-logo-wrapper">
+								{{ if .logo_white }}
+								<img class="portfolio-logo portfolio-logo-white" src="{{ .logo_white | absURL }}" alt="{{ .name }}">
+								{{ end }}
+								{{ if .logo_black }}
+								<img class="portfolio-logo portfolio-logo-black" src="{{ .logo_black | absURL }}" alt="{{ .name }}">
+								{{ end }}
+							</div>
+						</div>
+						
+						{{"<!-- Portfolio card face - back (image) -->" | safeHTML}}
+						<div class="portfolio-card-back">
+							<img class="img-fluid" src="{{ .image_webp | absURL }}" onerror="this.onerror=null;this.src='{{ .image | absURL }}'" alt="{{ .name }}">
+						</div>
+					</div>
+					{{ if .link }}
+					</a>
+					{{ end }}
+				</div>
+			</div>
+			{{ end }}
+		</div>
+	</div>
+</section>
+{{"<!-- /Portfolio -->" | safeHTML}}
+{{ end }}
+{{ end }}

@@ -1,0 +1,136 @@
+{{ $data := index site.Data site.Language.Lang }}
+
+{{/* Get sectionset for contact section */}}
+{{ $sectionset := index site.Params.sectionsets "contact" | default "lightset" }}
+
+{{ if $data.contact.contact.enable }}
+{{ with $data.contact.contact }}
+{{"<!-- Start Contact Us -->" | safeHTML}}
+<section id="otayhteytta" class="contact-us section-bg section-{{ $sectionset }}" aria-labelledby="contact-title">
+	<div class="container pb-5">
+		<div class="row">
+			<div class="col-lg-12">
+				{{"<!-- section title -->" | safeHTML}}
+				<div class="title text-center">
+					<div class="title text-center">
+          <h2 id="contact-title">{{ .title | safeHTML }}</h2>
+          </div>
+				</div>
+			</div>
+			{{"<!-- /section title -->" | safeHTML}}
+
+			{{"<!-- Contact Details -->" | safeHTML}}
+			<div class="contact-info col-lg-6">
+				<h3>{{ .subtitle | markdownify }}</h3>
+				<p> {{ .content | markdownify }} </p>
+
+				{{ if .contact_form.enable }}
+				<div class="contact-details">
+					
+					{{/* Henkilökohtaiset yhteystiedot */}}
+					{{ range .contact_people }}
+					<div class="contact-person mb-4">
+						<div class="con-info clearfix">
+							<strong>{{ .name }}</strong>
+						</div>
+						<div class="con-info clearfix">
+							<strong>{{ .person }}</strong>
+						</div>
+						<div class="con-info clearfix">
+							<i class="ti-mobile"></i>
+							<a href="tel:{{ .phone }}" class="contact-link">{{ .phone }}</a>
+						</div>
+						<div class="con-info clearfix">
+							<i class="ti-email"></i>
+							<a href="mailto:{{ .email }}" class="contact-link">{{ .email }}</a>
+						</div>
+					</div>
+					{{ end }}
+
+					{{/* Yleiset yhteystiedot (jos haluat säilyttää) */}}
+					{{ if .contact_list }}
+					<div class="general-contact mt-4">
+						{{ range .contact_list }}
+						<div class="con-info clearfix">
+							<i class="{{ .icon }}"></i>
+							<span>{{ .info }}</span>
+						</div>
+						{{ end }}
+					</div>
+					{{ end }}
+				</div>
+				
+				<!-- Ajanvarausnappi -->
+				<a href="{{ $.Site.Params.calendar_url }}"
+          class="btn-calendar-fill"
+          target="_blank"
+          role="button"
+          aria-label="{{ $.Site.Params.calendar_text }}">
+          {{ $.Site.Params.calendar_text }}
+         </a>
+				{{ end }}
+			</div>
+<!-- Contact Form -->
+{{ if .contact_form.enable }}
+{{ with .contact_form }}
+<div class="col-lg-6">
+	<form id="contact-form" class="form-meghna" method="post" action="{{ .form_action }}" role="form"> <!-- .form_action defined in conract.yml -->
+		<div class="form-group">
+			<input type="text" placeholder="{{ .name }}*" class="form-control" name="name" id="name" aria-label="{{ .name }} (pakollinen)" aria-required="true" required>
+		</div>
+		<div class="form-group">
+			<input type="email" placeholder="{{ .email }}*" class="form-control" name="email" id="email" aria-label="{{ .email }} (pakollinen)" aria-required="true" required>
+		</div>
+		<div class="form-group">
+			<input type="tel" placeholder="{{ .phonenumber }}*" class="form-control" name="phonenumber" id="phonenumber" aria-label="{{ .phonenumber }} (pakollinen)" aria-required="true" required>
+		</div>
+		<!-- Palveluvalinnat -->
+
+{{ if .services }}
+<div class="form-group" role="group" {{ if .services_title }}aria-labelledby="services-title"{{ else }}aria-label="Valitse kiinnostavat palvelut"{{ end }}>
+	{{ if .services_title }}
+	<strong id="services-title">{{ .services_title }}</strong>
+	{{ end }}
+	<div class="checkbox-group">
+		{{ range $index, $service := .services }}
+		<div class="checkbox-item">
+			<input type="checkbox" 
+				   id="service-{{ $index }}" 
+				   name="services[]" 
+				   value="{{ $service.value }}">
+			<label for="service-{{ $index }}">{{ $service.label }}</label>
+		</div>
+		{{ end }}
+	</div>
+</div>
+{{ end }}
+		<div class="form-group">
+			<textarea rows="6" placeholder="{{ .message }}*" class="form-control" name="message" id="message" aria-label="{{ .message }} (pakollinen)" aria-required="true" required></textarea>
+		</div>
+		<div id="cf-submit">
+			<button type="submit"
+         id="contact-submit"
+         class="btn btn-transparent btn-block"
+         aria-label="{{ .submit }}">
+        {{ .submit }}
+       </button>
+		</div>
+	</form>
+</div>
+{{ end }}
+{{ else }}
+			<div class="contact-details">
+				{{ range .contact_list }}
+				<div class="con-info clearfix">
+					<i class="{{ .icon }}"></i>
+					<span>{{ .info }}</span>
+				</div>
+				{{ end }}
+			</div>
+			{{ end }}
+		</div>
+	</div>
+</section>
+{{"<!-- /contact -->" | safeHTML}}
+{{ end }}
+{{ end }}

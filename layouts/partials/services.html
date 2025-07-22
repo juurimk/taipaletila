@@ -1,0 +1,80 @@
+{{ $data := index site.Data site.Language.Lang }}
+
+{{/* Get sectionset for services section */}}
+{{ $sectionset := index site.Params.sectionsets "services" | default "darkset" }}
+
+{{ if $data.services.services.enable }}
+{{ with $data.services.services }}
+{{"<!-- Start Services -->" | safeHTML}}
+<section id="palvelut" class="section services-section section-{{ $sectionset }}" style="background-color: var(--siteset-{{ $sectionset }}-bg); color: var(--siteset-{{ $sectionset }}-color);" aria-labelledby="services-heading">
+  <div class="container">
+    {{"<!-- Section Title & Description -->" | safeHTML}}
+    <header class="title text-center">
+      <h2 id="services-heading">{{ with .title }} {{ index (split . " ") 0 | safeHTML }} {{ end }}</h2>
+      {{ if .description }}
+      <div class="services-description">
+        <p>{{ .description | safeHTML }}</p>
+      </div>
+      {{ end }}
+    </header>
+
+    {{"<!-- Services Grid -->" | safeHTML}}
+    <div class="row services-grid" role="list">
+      {{ range $index, $service := .service_items }}
+      {{ $brandPrefix := site.Params.services.brand_prefix | default "Juuri" }}
+      <div class="col-lg-4 col-md-6 col-sm-6 col-12 mb-4" role="listitem">
+        <article class="service-card h-100" tabindex="0" aria-label="{{ $service.name }}" {{ if $service.link }}onclick="window.location.href='{{ $service.link | default "#contact" }}'" style="cursor: pointer;"{{ end }}>
+          <div class="service-card-inner">
+            {{"<!-- Service Image -->" | safeHTML}}
+            <div class="service-image-area">
+              <img class="service-image lozad" 
+                   data-src="{{ $service.image_webp | absURL }}" 
+                   onerror="this.onerror=null;this.src='{{ $service.image | absURL }}'" 
+                   alt="{{ $service.name }}" 
+                   style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            {{"<!-- Service Content Below Image -->" | safeHTML}}
+            <div class="service-overlay">
+              <div class="service-content">
+                <div class="service-text-area">
+                  {{"<!-- Muotoiltu otsikko brand prefix + seuraava sana -->" | safeHTML}}
+                  <h3 class="service-title">
+                    {{ if hasPrefix $service.name $brandPrefix }}
+                      <span class="brand-part">{{ $brandPrefix }}</span><span class="rest-part">{{ substr $service.name (len $brandPrefix) }}</span>
+                    {{ else }}
+                      {{ $service.name }}
+                    {{ end }}
+                  </h3>
+                  {{"<!-- Alaotsikko -->" | safeHTML}}
+                  {{ if $service.subtitle }}
+                  <h4 class="service-subtitle">{{ $service.subtitle }}</h4>
+                  {{ end }}
+                  {{"<!-- Lyhyt kuvaus ennen listaa -->" | safeHTML}}
+                  {{ if $service.short_description }}
+                  <div class="service-short-description">
+                    <p>{{ $service.short_description }}</p>
+                  </div>
+                  {{ end }}
+                  {{"<!-- Bullet-lista -->" | safeHTML}}
+                  {{ if $service.bullet_description }}
+                  <div class="service-bullet-description">
+                    {{ $service.bullet_description | markdownify }}
+                  </div>
+                  {{ end }}
+                  {{"<!-- Hinta -->" | safeHTML}}
+                  {{ if $service.price }}
+                  <div class="service-price">{{ $service.price }}</div>
+                  {{ end }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{"<!-- /services -->" | safeHTML}}
+{{ end }}
+{{ end }}

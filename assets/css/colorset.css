@@ -1,0 +1,268 @@
+/*=================================================================
+  Hugo Colorsets System - Five Harmonious Color Schemes
+  Based on Color Theory for Optimal Readability and Aesthetics
+==================================================================*/
+
+/* ===============================*/
+/* 1. FOREST GREEN (Default)     */
+/* ===============================*/
+.colorset-forest {
+  /* Primary Colors */
+  --color-primary: #89CC66;
+  --color-primary-dark: #6CB670;
+  --color-primary-light: #A8D984;
+  
+  /* Secondary Colors */
+  --color-secondary: #5A9A42;
+  --color-accent: #2c9091;
+  --color-highlight: #E8F5E8;
+  
+  /* Background Colors */
+  --color-bg-primary: #353b43;
+  --color-bg-secondary: #292F36;
+  --color-bg-tertiary: #242930;
+  --color-bg-light: #f9f9f9;
+  --color-bg-white: #ffffff;
+  
+  /* Text Colors */
+  --color-text-primary: #afbac4;
+  --color-text-secondary: #737f8a;
+  --color-text-tertiary: #666;
+  --color-text-white: #ffffff;
+  --color-text-dark: #333333;
+  
+  /* Border Colors */
+  --color-border-light: rgba(236, 239, 241, 0.07);
+  --color-border-medium: rgba(255, 255, 255, 0.1);
+  --color-border-dark: #4e595f;
+  --color-border-underline: #89CC66;
+  
+  /* Status Colors */
+  --color-success: #89CC66;
+  --color-warning: #f39c12;
+  --color-error: #e74c3c;
+  --color-info: #3498db;
+}
+
+/* ===============================*/
+/* 2. OCEAN BLUE (Trust/Tech)    */
+/* ===============================*/
+.colorset-ocean {
+  /* Primary Colors */
+  --color-primary: #3498db;
+  --color-primary-dark: #2980b9;
+  --color-primary-light: #5dade2;
+  
+  /* Secondary Colors */
+  --color-secondary: #1e6091;
+  --color-accent: #16a085;
+  --color-highlight: #EBF4FD;
+  
+  /* Background Colors */
+  --color-bg-primary: #2c3e50;
+  --color-bg-secondary: #34495e;
+  --color-bg-tertiary: #1a252f;
+  --color-bg-light: #f8fafc;
+  --color-bg-white: #ffffff;
+  
+  /* Text Colors */
+  --color-text-primary: #bdc3c7;
+  --color-text-secondary: #7f8c8d;
+  --color-text-tertiary: #6c757d;
+  --color-text-white: #ffffff;
+  --color-text-dark: #2c3e50;
+  
+  /* Border Colors */
+  --color-border-light: rgba(189, 195, 199, 0.07);
+  --color-border-medium: rgba(255, 255, 255, 0.1);
+  --color-border-dark: #4a5568;
+  --color-border-underline: #3498db;
+  
+  /* Status Colors */
+  --color-success: #16a085;
+  --color-warning: #f39c12;
+  --color-error: #e74c3c;
+  --color-info: #3498db;
+}
+
+/* ===============================*/
+/* 3. SUNSET ORANGE (Energy)     */
+/* ===============================*/
+.colorset-sunset {
+  /* Primary Colors */
+  --color-primary: #e67e22;
+  --color-primary-dark: #d35400;
+  --color-primary-light: #f39c12;
+  
+  /* Secondary Colors */
+  --color-secondary: #c0392b;
+  --color-accent: #8e44ad;
+  --color-highlight: #FDF2E9;
+  
+  /* Background Colors */
+  --color-bg-primary: #2c1810;
+  --color-bg-secondary: #3e2723;
+  --color-bg-tertiary: #1e0e08;
+  --color-bg-light: #fff8f0;
+  --color-bg-white: #ffffff;
+  
+  /* Text Colors */
+  --color-text-primary: #d7ccc8;
+  --color-text-secondary: #a1887f;
+  --color-text-tertiary: #8d6e63;
+  --color-text-white: #ffffff;
+  --color-text-dark: #3e2723;
+  
+  /* Border Colors */
+  --color-border-light: rgba(215, 204, 200, 0.07);
+  --color-border-medium: rgba(255, 255, 255, 0.1);
+  --color-border-dark: #5d4037;
+  --color-border-underline: #f39c12;
+  
+  /* Status Colors */
+  --color-success: #27ae60;
+  --color-warning: #f39c12;
+  --color-error: #c0392b;
+  --color-info: #8e44ad;
+}
+
+/* ===============================*/
+/* 4. ROYAL PURPLE (Luxury)      */
+/* ===============================*/
+.colorset-royal {
+  /* Primary Colors */
+  --color-primary: #8e44ad;
+  --color-primary-dark: #7d3c98;
+  --color-primary-light: #a569bd;
+  
+  /* Secondary Colors */
+  --color-secondary: #6c3483;
+  --color-accent: #e74c3c;
+  --color-highlight: #F4ECF7;
+  
+  /* Background Colors */
+  --color-bg-primary: #2c1810;
+  --color-bg-secondary: #3e2065;
+  --color-bg-tertiary: #1a0f2e;
+  --color-bg-light: #faf5ff;
+  --color-bg-white: #ffffff;
+  
+  /* Text Colors */
+  --color-text-primary: #d5b3e3;
+  --color-text-secondary: #b19cd9;
+  --color-text-tertiary: #9575cd;
+  --color-text-white: #ffffff;
+  --color-text-dark: #4a148c;
+  
+  /* Border Colors */
+  --color-border-light: rgba(213, 179, 227, 0.07);
+  --color-border-medium: rgba(255, 255, 255, 0.1);
+  --color-border-dark: #6a1b9a;
+  --color-border-underline: #8e44ad;
+  
+  /* Status Colors */
+  --color-success: #27ae60;
+  --color-warning: #f39c12;
+  --color-error: #e74c3c;
+  --color-info: #8e44ad;
+}
+
+/* ===============================*/
+/* 5. CHERRY RED (Bold/Passion)  */
+/* ===============================*/
+.colorset-cherry {
+  /* Primary Colors */
+  --color-primary: #e74c3c;
+  --color-primary-dark: #c0392b;
+  --color-primary-light: #ec7063;
+  
+  /* Secondary Colors */
+  --color-secondary: #a93226;
+  --color-accent: #f39c12;
+  --color-highlight: #FADBD8;
+  
+  /* Background Colors */
+  --color-bg-primary: #2c1a1a;
+  --color-bg-secondary: #3e1f1f;
+  --color-bg-tertiary: #1e0f0f;
+  --color-bg-light: #fdf2f2;
+  --color-bg-white: #ffffff;
+  
+  /* Text Colors */
+  --color-text-primary: #d7b3b3;
+  --color-text-secondary: #cd9b9b;
+  --color-text-tertiary: #a57c7c;
+  --color-text-white: #ffffff;
+  --color-text-dark: #641e16;
+  
+  /* Border Colors */
+  --color-border-light: rgba(215, 179, 179, 0.07);
+  --color-border-medium: rgba(255, 255, 255, 0.1);
+  --color-border-dark: #943126;
+  --color-border-underline: #f39c12;
+  
+  /* Status Colors */
+  --color-success: #27ae60;
+  --color-warning: #f39c12;
+  --color-error: #e74c3c;
+  --color-info: #3498db;
+}
+
+/* ===============================*/
+/* Default Colorset Application  */
+/* ===============================*/
+:root {
+  /* Default to Forest Green colorset */
+  --color-primary: #89CC66;
+  --color-primary-dark: #6CB670;
+  --color-primary-light: #A8D984;
+  --color-secondary: #5A9A42;
+  --color-accent: #2c9091;
+  --color-highlight: #E8F5E8;
+  --color-bg-primary: #353b43;
+  --color-bg-secondary: #292F36;
+  --color-bg-tertiary: #242930;
+  --color-bg-light: #f9f9f9;
+  --color-bg-white: #ffffff;
+  --color-text-primary: #afbac4;
+  --color-text-secondary: #737f8a;
+  --color-text-tertiary: #666;
+  --color-text-white: #ffffff;
+  --color-text-dark: #333333;
+  --color-border-light: rgba(236, 239, 241, 0.07);
+  --color-border-medium: rgba(255, 255, 255, 0.1);
+  --color-border-dark: #4e595f;
+  --color-border-underline: #89CC66;
+  --color-success: #89CC66;
+  --color-warning: #f39c12;
+  --color-error: #e74c3c;
+  --color-info: #3498db;
+}
+
+/* ===============================*/
+/* Color Usage Examples           */
+/* ===============================*/
+
+/* 
+USAGE EXAMPLES:
+
+1. Replace hardcoded colors with CSS variables:
+   OLD: background-color: #89CC66;
+   NEW: background-color: var(--color-primary);
+
+2. For hover effects:
+   OLD: background-color: #6CB670;
+   NEW: background-color: var(--color-primary-dark);
+
+3. For text colors:
+   OLD: color: #afbac4;
+   NEW: color: var(--color-text-primary);
+
+4. For backgrounds:
+   OLD: background: #353b43;
+   NEW: background: var(--color-bg-primary);
+
+5. For borders:
+   OLD: border: 1px solid #4e595f;
+   NEW: border: 1px solid var(--color-border-dark);
+*/

@@ -1,0 +1,102 @@
+{{ define "main" }}
+
+<!-- SCSS lataus -->
+{{ $servicesCSS := resources.Get "scss/sections/services-all.scss" | toCSS }}
+<link rel="stylesheet" href="{{ $servicesCSS.RelPermalink }}">
+
+{{ partial "navigation.html" . }}
+
+{{/* Get sectionset for services pages */}}
+{{ $sectionset := index site.Params.sectionsets "services_pages" | default "lightset" }}
+
+{{/* Services data from services_all.yml */}}
+{{ $data := index site.Data site.Language.Lang }}
+
+{{ if $data.services_all.services_all.enable }}
+{{ $currentPage := . }}
+{{ with $data.services_all.services_all }}
+
+<section class="section services-all-section section-{{ $sectionset }}">
+  <div class="container">
+    
+    <!-- Breadcrumbs -->
+    <div class="row">
+      <div class="col-12">
+        <nav aria-label="breadcrumb" class="breadcrumb-nav">
+          <ol>
+            <li>
+              <a href="{{ "/" | relURL }}">{{ $currentPage.Site.Title | default "Etusivu" }}</a>
+            </li>
+            
+            {{ range $index, $ancestor := $currentPage.Ancestors.Reverse }}
+              {{ if ne $ancestor.Kind "home" }}
+                <li>
+                  <span class="separator">/</span>
+                  <a href="{{ $ancestor.RelPermalink }}">{{ $ancestor.Title }}</a>
+                </li>
+              {{ end }}
+            {{ end }}
+            
+            <li class="active">
+              <span class="separator">/</span>
+              <span>{{ $currentPage.Title }}</span>
+            </li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+    
+    {{"<!-- Section Title & Description -->" | safeHTML}}
+    <div class="services-main-title text-center mb-5">
+      <h1>{{ .title }}</h1>
+      
+      {{ if .description }}
+      <div class="services-description">
+        <p>{{ .description | safeHTML }}</p>
+      </div>
+      {{ end }}
+    </div>
+
+    {{"<!-- Services Sections -->" | safeHTML}}
+    {{ range .sections }}
+    <div class="service-category mb-5">
+      <h2 class="brand-split-title">
+        <span class="brand-part">{{ .brand_prefix }}</span><span class="rest-part">{{ .brand_name }}</span>
+      </h2>
+
+      <h4 class="service-subtitle">{{ .subtitle }}</h4>
+      
+      {{ if .description }}
+      <p class="service-category-description mb-4">{{ .description }}</p>
+      {{ end }}
+      
+      {{"<!-- Service Items Grid -->" | safeHTML}}
+      <div class="row mb-5" role="list">
+        {{ range .items }}
+        <div class="col-12 col-md-6 col-lg-4 mb-4" role="listitem">
+          <div class="service-item">
+            <div class="service-image">
+              <a href="{{ .link | absURL }}" aria-label="{{ .title }} palvelusivu">
+                <img src="{{ .image | absURL }}" alt="{{ .title }}" class="img-fluid">
+              </a>
+            </div>
+            <div class="service-content">
+              <h4>
+                <a href="{{ .link | absURL }}" aria-label="{{ .title }} palvelusivu">{{ .title }}</a>
+              </h4>
+              {{ if .description }}<p>{{ .description }}</p>{{ end }}
+            </div>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+    {{ end }}
+
+  </div>
+</section>
+
+{{ end }}
+{{ end }}
+
+{{ end }}

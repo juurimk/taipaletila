@@ -1,0 +1,22 @@
+############################# feature ###################################
+feature:
+  enable: true
+  image: images/about/about-business-man.jpg
+  image_webp: images/about/about-business-man.webp
+  # title: 3 syytä valita Juuri.ai
+  #content: "Yhdistämme luovuuden ja teknologian luodaksemme ainutlaatuisia digitaalisia kokemuksia, jotka auttavat yrityksiäsi menestymään verkossa."
+  feature_item:
+    # feature item loop
+    - title: Inhimillinen automaatio
+      icon: ti-rocket # themify icon pack : https://themify.me/themify-icons
+      content: Hoidamme rutiinit puolestasi. Automatisoimme toistuvat työvaiheet ja työnkulut tekoälyn avulla, mutta säilytämme inhimillisen laadun. Näin sinulle jää aikaa olennaiseen.
+
+      # feature item loop
+    - title: Laadukas sisältö valmiina
+      icon: ti-star # themify icon pack : https://themify.me/themify-icons
+      content: Ei raakaversioita. Tuotamme tekstit, kuvat ja julkaisut alusta loppuun. Tiedät aina, että sisältö on brändisi näköistä ja ajallaan tehtyä.
+
+      # feature item loop
+    - title: Kustannustehokas kasvu
+      icon: ti-stats-up # themify icon pack : https://themify.me/themify-icons
+      content: Saat suuren toimiston jälkeä ilman perinteisen markkinointitoimiston hintaa.

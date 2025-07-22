@@ -1,0 +1,30 @@
+- id: blogTitle
+  translation: Uusimmat artikkelit
+- id: readMore
+  translation: Lue lisää
+- id: viewAllPost
+  translation: Näytä kaikki artikkelit
+- id: share
+  translation: Jaa
+- id: aboutAuthor
+  translation: Tietoa kirjoittajasta
+- id: authorsPosts
+  translation: Kirjoittajan artikkelit
+- id: all
+  translation: Kaikki
+- id: about
+  translation: Tietoa meistä
+- id: services
+  translation: Palvelut
+- id: portfolio
+  translation: Portfolio
+- id: team
+  translation: Tiimi
+- id: pricing
+  translation: Hinnat
+- id: blog
+  translation: Blogi
+- id: contact
+  translation: Yhteystiedot
+- id: themefisher
+  translation: Themefisher

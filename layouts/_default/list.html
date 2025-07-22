@@ -1,0 +1,32 @@
+{{ define "main" }}
+
+<!-- layouts/partials/pagination.html -->
+{{ $paginationCSS := resources.Get "scss/sections/pagination.scss" | toCSS }}
+<link rel="stylesheet" href="{{ $paginationCSS.RelPermalink }}">
+
+{{ partial "navigation.html" . }}
+
+{{"<!-- Start Blog Section -->" | safeHTML}}
+<section id="blogi" class="section section-lightset">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        {{"<!-- section title -->" | safeHTML}}
+        <div class="title text-center">
+          <h2 class="title blogiotsikko">{{ i18n "blogTitle" }}</h2>
+        </div>
+      </div>
+      {{"<!-- /section title -->" | safeHTML}}
+      {{ $paginator := .Paginate .Data.Pages }}
+      {{ range $paginator.Pages }}
+      {{ .Render "article" }}
+      {{ end }}
+      <div class="col-12">
+        {{ template "_internal/pagination.html" . }}
+      </div>
+    </div>
+  </div>
+</section>
+{{"<!-- /blog -->" | safeHTML}}
+
+{{ end }}

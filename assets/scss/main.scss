@@ -1,0 +1,938 @@
+/*
+====================================================================
+  Safe Hugo Template SCSS - Ultra-Clean Version
+  Minimal template to ensure compilation works
+====================================================================
+*/
+
+{{- $siteset := site.Params.siteset | default "korpi" -}}
+{{- $sitesetData := index site.Data "siteset-colors" -}}
+{{- $currentSiteset := index $sitesetData.sitesets $siteset -}}
+
+/* 
+ * Safe Generated SCSS
+ * Siteset: {{ $siteset }}
+ * Button Style: {{ site.Params.buttons.style | default "fill" }}
+ */
+
+// =============================================================================
+// CSS Custom Properties (Runtime Theming)
+// =============================================================================
+:root {
+{{ range $sectionsetName, $colors := $currentSiteset.sectionsets }}
+  --siteset-{{ $sectionsetName }}-bg: {{ $colors.bg_color }};
+  --siteset-{{ $sectionsetName }}-color: {{ $colors.color }};
+  --siteset-{{ $sectionsetName }}-button: {{ $colors.button }};
+  --siteset-{{ $sectionsetName }}-button-text: {{ $colors.button_text }};
+  --siteset-{{ $sectionsetName }}-h2: {{ $colors.h2 }};
+  --siteset-{{ $sectionsetName }}-mask-color: {{ $colors.mask_color }};
+  {{ if $colors.opacity }}
+  --opacity-{{ $sectionsetName }}-highlighted: {{ $colors.opacity.button_highlighted }};
+  --opacity-{{ $sectionsetName }}-table-bg: {{ $colors.opacity.button_table_bg }};
+  --opacity-{{ $sectionsetName }}-hover: {{ $colors.opacity.button_hover }};
+  {{ end }}
+  --text-{{ $sectionsetName }}-highlighted: {{ $colors.text_highlighted }};
+  --text-{{ $sectionsetName }}-section_description: {{ $colors.text_description }};
+{{ end }}
+
+  /* Legacy compatibility */
+  {{ with index $currentSiteset.sectionsets "lightset" }}
+  --color-primary: {{ .button }};
+  --color-primary-dark: {{ .h2 }};
+  --color-text-primary: {{ .color }};
+  --color-text-dark: {{ .color }};
+  {{ end }}
+  {{ with index $currentSiteset.sectionsets "darkset" }}
+  --color-bg-primary: {{ .bg_color }};
+  --color-text-white: {{ .color }};
+  {{ end }}
+  {{ with index $currentSiteset.sectionsets "neutralset" }}
+  --color-bg-secondary: {{ .bg_color }};
+  --color-bg-light: {{ .bg_color }};
+  {{ end }}
+
+  /* Additional variables */
+  --color-border-light: #ddd;
+  --color-border-medium: rgba(255, 255, 255, 0.2);
+  --color-border-dark: #dedede;
+  --color-bg-tertiary: #2c2f36;
+  --color-bg-white: #ffffff;
+  --color-text-secondary: #888;
+  --color-text-tertiary: #cfcfcf;
+  --color-accent: #2795e9;
+  --color-success: #4CAF50;
+  --color-error: #e74c3c;
+  --sitefont: "{{ site.Params.sitefont | default "DM Sans" }}", sans-serif;
+}
+
+// =============================================================================
+// Base Styles
+// =============================================================================
+
+html, body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+
+
+
+html {
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-secondary);
+  scroll-behavior: auto;
+}
+
+section[id] {
+  scroll-margin-top: 80px;
+}
+
+body {
+  background-color: var(--color-bg-primary);
+  font-family: var(--sitefont);
+  color: var(--color-text-secondary);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2 {
+  font-weight: 700 !important;
+  font-family: var(--sitefont);
+  color: var(--color-text-primary);
+  margin-top: 40px;
+}
+
+h3, h4, h5, h6 {
+  font-weight: 600;
+  font-family: var(--sitefont);
+  color: var(--color-text-primary);
+}
+
+p {
+  font-family: var(--sitefont);
+  font-size: 0.9rem !important;
+  line-height: 1.2 !important;
+  margin-bottom: 1.2rem !important;
+}
+
+a {
+  color: var(--color-text-white);
+  transition: all 0.3s ease-in 0s;
+  text-decoration: none;
+  
+  &:focus, &:hover {
+    color: var(--color-primary-dark);
+    text-decoration: none;
+  }
+}
+
+// =============================================================================
+// Button System
+// =============================================================================
+.btn, .btn-main, .btn-transparent, .service-button, .newsletter-submit-btn, .btn-newsletter,
+.portfolio-filter .btn, input[type="submit"], button, .input-wrapper,
+.btn-hero-cta, .btn-contact-submit, .btn-back-services, .faq-filter-btn,
+.hero-area .btn, .banner-section .btn, .call-to-action .btn, .cta-section .btn {
+  
+  {{ if site.Params.buttons.custom_radius }}
+  border-radius: {{ site.Params.buttons.custom_radius }} !important;
+  {{ else if eq site.Params.buttons.corners "round" }}
+  border-radius: 50px !important;
+  {{ else if eq site.Params.buttons.corners "rounded" }}
+  border-radius: 8px !important;
+  {{ else }}
+  border-radius: 0px !important;
+  {{ end }}
+  
+  padding: 10px 30px;
+  border: 2px solid var(--siteset-lightset-button);
+  transition: all 0.3s ease !important;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  
+  {{ if eq site.Params.buttons.style "fill" }}
+  background-color: var(--siteset-lightset-button) !important;
+  color: var(--siteset-lightset-bg) !important;
+  
+  &:hover {
+    background-color: transparent !important;
+    color: var(--siteset-lightset-button) !important;
+  }
+  {{ else }}
+  background-color: transparent !important;
+  color: var(--siteset-lightset-button) !important;
+  
+  &:hover {
+    background-color: var(--siteset-lightset-button) !important;
+    color: var(--siteset-lightset-bg) !important;
+  }
+  {{ end }}
+}
+
+// =============================================================================
+// Sectionset Button Styles
+// =============================================================================
+{{ range $sectionsetName, $colors := $currentSiteset.sectionsets }}
+.section-{{ $sectionsetName }} {
+  background-color: var(--siteset-{{ $sectionsetName }}-bg);
+  color: var(--siteset-{{ $sectionsetName }}-color);
+  
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--siteset-{{ $sectionsetName }}-h2);
+  }
+  
+  .color {
+    color: var(--siteset-{{ $sectionsetName }}-h2) !important;
+  }
+  
+  .btn, .btn-main, .btn-transparent, .service-button, .newsletter-submit-btn, .btn-newsletter,
+  .btn-hero-cta, .btn-contact-submit, .btn-back-services, .faq-filter-btn {
+    border-color: var(--siteset-{{ $sectionsetName }}-button) !important;
+    
+    {{ if eq site.Params.buttons.style "fill" }}
+    background-color: var(--siteset-{{ $sectionsetName }}-button) !important;
+    color: var(--siteset-{{ $sectionsetName }}-bg) !important;
+    
+    &:hover {
+      background-color: transparent !important;
+      color: var(--siteset-{{ $sectionsetName }}-button) !important;
+    }
+    {{ else }}
+    background-color: transparent !important;
+    color: var(--siteset-{{ $sectionsetName }}-button) !important;
+    
+    &:hover {
+      background-color: var(--siteset-{{ $sectionsetName }}-button) !important;
+      color: var(--siteset-{{ $sectionsetName }}-bg) !important;
+    }
+    {{ end }}
+  }
+  
+  .member-meta .member-name {
+    color: var(--siteset-{{ $sectionsetName }}-button);
+  }
+  
+  .border-meghna {
+    background-color: var(--siteset-{{ $sectionsetName }}-h2);
+    
+    &:before {
+      background-color: var(--siteset-{{ $sectionsetName }}-h2);
+    }
+  }
+}
+{{ end }}
+
+
+
+.btn-calendar-fill {
+  {{ if site.Params.buttons.custom_radius }}
+  border-radius: {{ site.Params.buttons.custom_radius }} !important;
+  {{ else if eq site.Params.buttons.corners "round" }}
+  border-radius: 50px !important;
+  {{ else if eq site.Params.buttons.corners "rounded" }}
+  border-radius: 8px !important;
+  {{ else }}
+  border-radius: 0px !important;
+  {{ end }}
+  
+  padding: 10px 30px;
+  border: 2px solid var(--siteset-lightset-button);
+  transition: all 0.3s ease !important;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  
+  // Aina fill-tyyli riippumatta site.Params.buttons.style asetuksesta
+  background-color: var(--siteset-lightset-button) !important;
+  color: var(--siteset-lightset-bg) !important;
+  
+  &:hover {
+    background-color: transparent !important;
+    color: var(--siteset-lightset-button) !important;
+  }
+}
+
+// Sectionset-versiot
+{{ range $sectionsetName, $colors := $currentSiteset.sectionsets }}
+.section-{{ $sectionsetName }} .btn-calendar-fill {
+  border-color: var(--siteset-{{ $sectionsetName }}-button) !important;
+  background-color: var(--siteset-{{ $sectionsetName }}-button) !important;
+  color: var(--siteset-{{ $sectionsetName }}-bg) !important;
+  
+  &:hover {
+    background-color: transparent !important;
+    color: var(--siteset-{{ $sectionsetName }}-button) !important;
+  }
+}
+{{ end }}
+
+// =============================================================================
+// Navigation
+// =============================================================================
+.navigation {
+  // background-color: rgba(255, 255, 255, 0.95) !important;
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  margin-bottom: 0;
+  z-index: 1030;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  
+  .navbar-nav .nav-link {
+    color: var(--color-text-dark) !important;
+    padding: 15px 20px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+    
+    &:hover {
+      color: var(--color-primary) !important;
+    }
+  }
+}
+
+.navbar-nav {
+  margin-left: auto !important;
+  margin-right: 0 !important;
+}
+.navbar-toggler {
+  border: none;
+  background-color: transparent;
+  padding: 10px; // Sama padding kaikille sivuille = neliö
+  width: 44px; // Kiinteä leveys
+  height: 44px; // Kiinteä korkeus = täydellinen neliö
+  transition: all 0.3s ease;
+  border-radius: 4px; // Normaali pyöristetty
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .navbar-toggler-icon {
+    background-image: none;
+    width: 24px;
+    height: 2px;
+    background-color: var(--color-primary-dark);
+    display: block;
+    position: relative;
+    transition: background-color 0.3s ease;
+
+    &::before,
+    &::after {
+      content: '';
+      background-color: var(--color-primary-dark);
+      width: 24px;
+      height: 2px;
+      position: absolute;
+      left: 0;
+      transition: background-color 0.3s ease;
+    }
+
+    &::before {
+      top: -7px;
+    }
+
+    &::after {
+      top: 7px;
+    }
+  }
+
+  // Hover tai valikko avoinna: vihreä tausta, valkoiset viivat
+  &:hover,
+  &.active,
+  &[aria-expanded="true"] {
+    background-color: var(--color-primary-dark);
+
+    .navbar-toggler-icon,
+    .navbar-toggler-icon::before,
+    .navbar-toggler-icon::after {
+      background-color: #fff;
+    }
+  }
+
+  // NELIÖMÄINEN MUOTO vain active-tilassa (painettu/valikko auki)
+  &:active,
+  &.active,
+  &[aria-expanded="true"] {
+    border-radius: 0px !important;
+  }
+}
+// =============================================================================
+// Responsive Typography
+// =============================================================================
+@media (min-width: 1200px) {
+  p {
+    font-size: 1.1rem !important;
+    line-height: 1.6 !important;
+  }
+}
+
+@media (max-width: 768px) {
+  p {
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+  }
+  
+  .section {
+    
+  }
+}
+
+@media (max-width: 576px) {
+  p {
+    font-size: 15px !important;
+    line-height: 1.5 !important;
+  }
+  
+  .section {
+    padding: 40px 0!important;
+  }
+  
+  .faq-section.section {
+    padding-bottom: 0px !important;
+  }
+}
+
+// =============================================================================
+// Essential Layout Styles
+// =============================================================================
+.section {
+  padding: 80px 0;
+}
+
+.section-sm {
+  padding: 70px 0;
+}
+
+.section-xs {
+  padding: 50px 0;
+}
+
+.bg-one {
+  background-color: var(--color-bg-primary);
+}
+
+.bg-dark {
+  background: var(--color-bg-tertiary);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mb-50 {
+  margin-bottom: 50px;
+}
+
+.title {
+  padding-bottom: 10px;
+  
+  h2 {
+    text-transform: none;
+    font-weight: 700;
+    font-size: 2.2rem;
+    color: var(--color-primary);
+    margin-top:0px;
+    
+    span {
+      color: var(--color-primary);
+    }
+  }
+  
+  p {
+    //color: var(--color-text-dark);
+    color: var(--color-text-primary);
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 992px) {
+  h1 {
+    font-size: 1.8rem !important;
+  }
+}
+
+
+@media (max-width: 576px) {
+  p {
+    font-size: 15px !important;
+    line-height: 1.5 !important;
+  }
+  
+  .section {
+    padding: 40px 0!important;
+  }
+  
+  .title h2,
+  h2 {
+    font-size: 1.7rem !important;
+  }
+}
+
+.border-meghna {
+  border-top: 0px solid var(--color-border-light)!important;
+  height: 0px;
+  margin: 15px auto 0;
+  position: relative;
+  width: 30%;
+  
+  &:before {
+    background-color: var(--color-primary);
+    content: '';
+    height: 6px;
+    left: 50%;
+    margin-left: -20px;
+    position: absolute;
+    top: -4px;
+    width: 50px;
+  }
+}
+
+// =============================================================================
+// Footer Styles - KORJATTU VERSIO
+// =============================================================================
+.footer-section {
+  padding: 80px 0 40px; // Vähennetty bottom-padding
+  background-color: #000000;
+  position: relative; // Varmistetaan että relative
+}
+
+@media (max-width: 768px) {
+  .footer-section {
+    padding: 65px 0 30px; // Vähennetty bottom-padding
+  }
+}
+
+@media (max-width: 576px) {
+  .footer-section {
+    padding: 40px 0 120px!important; // Vähennetty bottom-padding
+  }
+}
+
+.footer-content {
+  padding-right: 40px;
+  
+  @media (max-width: 992px) {
+    padding-right: 20px;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  
+  @media (max-width: 768px) {
+    padding-right: 0;
+    margin-bottom: 35px;
+    text-align: center;
+  }
+}
+
+.footer-description p {
+  color: #ffffff !important;
+  font-size: 0.9rem !important;
+  line-height: 1.5 !important;
+  margin-bottom: 30px !important;
+  font-weight: 400 !important;
+  
+  @media (max-width: 768px) {
+    text-align: center;
+  }
+}
+
+.footer-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center; // Keskitetty mobiilissa
+  
+  @media (min-width: 768px) {
+    align-items: flex-start; // Vasemmalla desktopissa
+  }
+  
+  img {
+    height: 45px !important;
+    max-height: 45px !important;
+    width: auto !important;
+  }
+}
+
+.footer-social {
+  text-align: left;
+  
+  @media (max-width: 768px) {
+    text-align: center;
+  }
+  
+  h6 {
+    color: #ffffff !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    margin-bottom: 25px !important;
+    text-transform: none !important;
+  }
+}
+
+// ✅ KORJATTU: Poistettu position: absolute
+
+
+.footer-social-subtitle {
+  color: #ffffff !important;
+  font-size: 16px !important;
+  font-weight: 300 !important;
+  margin-bottom: 0 !important;
+  text-transform: none !important;
+}
+
+// Footer-linkkien tyylit
+.footer-sitemap,
+.footer-privacy {
+  h6 {
+    color: #ffffff !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    margin-bottom: 25px !important;
+    text-transform: none !important;
+  }
+}
+
+.footer-link-list {
+  li a {
+    color: #ffffff !important;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 400;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      color: rgba(255, 255, 255, 0.7) !important;
+    }
+  }
+}
+
+.social-icons {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+  display: flex;
+  gap: 20px;
+  
+  @media (max-width: 768px) {
+    justify-content: center;
+    gap: 25px;
+  }
+  
+  li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    transition: all 0.3s ease;
+    
+    i {
+      color: #ffffff !important;
+      font-size: 24px !important;
+      transition: all 0.3s ease;
+    }
+    
+    &:hover i {
+      color: rgba(255, 255, 255, 0.7) !important;
+      transform: translateY(-2px);
+    }
+  }
+}
+
+footer {
+  flex-shrink: 0;
+  
+  .scroll-to-top {
+    width: 45px !important;
+    height: 45px !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    color: white !important;
+    font-size: 20px !important;
+    border: 1px solid white !important;
+    padding: 0 !important;
+    margin: 0px auto 0 !important; // Keep centered on desktop
+    cursor: pointer !important;
+    border-radius: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    
+    @media (min-width: 768px) {
+      margin: 15px auto 0 !important; // Keep centered on desktop
+    }
+  }
+}
+.footer-brand-text {
+  color: #ffffff !important;
+  font-size: 0.9rem !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.5px !important;
+  opacity: 0.85;
+  padding: 2rem 1rem 0.5rem;  /* ylös 32px, sivut 16px, alas 48px */
+  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+  text-align: center !important;
+}
+
+
+/* Mobiililaitteet */
+@media (max-width: 768px) {
+  .footer-brand-text {
+    padding: 1.5rem 0 10rem 0 !important;
+  }
+}
+
+
+
+// =============================================================================
+// KORJAUS: Tumman viivan poisto vasemmalta puolelta
+// =============================================================================
+
+
+
+// Container korjaukset - estä negatiiviset marginaalit
+.container,
+.container-fluid,
+.container-sm,
+.container-md,
+.container-lg,
+.container-xl {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+// Row korjaukset - estä negatiiviset marginaalit
+.row {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+// Hero-alueen erityiskorjaus
+.hero-area-video {
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  
+  // Poista negatiiviset marginaalit
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  width: 100% !important;
+}
+
+// Navigation korjaus
+.navigation {
+  border: none !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important; // Vain alareunaan
+  outline: none !important;
+}
+
+// Section korjaukset
+section {
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+// Kaikki elementit joilla saattaa olla border-left
+*[class*="border"],
+*[class*="shadow"] {
+  border-left: none !important;
+  box-shadow: none !important;
+}
+
+// Mobiili-spesifiset korjaukset
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden !important;
+  }
+  
+  .container {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    max-width: 100% !important;
+  }
+  
+  .hero-area-video {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
+
+// Varmista että viewport ei aiheuta ongelmia
+@media (max-width: 576px) {
+  * {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+}
+
+// =============================================================================
+// RESPONSIIVINEN FOOTER CSS
+// =============================================================================
+
+.footer-section {
+  padding: 40px 0 20px !important; // Pienempi padding
+  background-color: #000000 !important;
+  margin: 0 !important;
+  
+  // Varmista että footer on always visible
+  position: relative !important;
+  bottom: auto !important;
+  
+  .container {
+    margin-bottom: 0 !important;
+  }
+}
+
+// Logo responsiivisuus
+.footer-logo img {
+  height: 40px !important;
+  max-height: 40px !important;
+  width: auto !important;
+  
+  @media (max-width: 576px) {
+    height: 35px !important;
+    max-height: 35px !important;
+  }
+}
+
+// Description text
+.footer-description p {
+  color: #ffffff !important;
+  font-size: 0.9rem !important;
+  line-height: 1.5 !important;
+  margin-bottom: 0 !important;
+  
+  @media (max-width: 768px) {
+    font-size: 0.85rem !important;
+    text-align: center !important;
+  }
+}
+
+// Social icons responsiivuus
+.footer-social .social-icons {
+  margin: 15px 0 0 0 !important;
+  padding: 0 !important;
+  
+  li a {
+    color: #ffffff !important;
+    font-size: 22px !important;
+    transition: opacity 0.3s ease !important;
+    
+    &:hover {
+      opacity: 0.7 !important;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    justify-content: center !important;
+    margin: 10px 0 0 0 !important;
+    
+    li a {
+      font-size: 20px !important;
+    }
+  }
+}
+
+
+// Footer Business Info Styles
+.footer-business {
+  margin-top: 0px;
+  margin-bottom: 0px;
+
+  p {
+    color: #ffffff;
+    font-size: 0.85rem !important;
+    margin: 0;
+  }
+}
+
+// Footer links
+.footer-link-list {
+  li a {
+    color: #ffffff !important;
+    font-size: 0.85rem !important;
+    text-decoration: none !important;
+    transition: opacity 0.3s ease !important;
+    margin-bottom:20px;
+    
+    &:hover {
+      opacity: 0.7 !important;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    li a {
+      font-size: 0.8rem !important;
+    }
+  }
+}
+
+
+
+// Scroll button
+.scroll-to-top {
+  width: 40px !important;
+  height: 40px !important;
+  background: transparent !important;
+  border: 1px solid #ffffff !important;
+  color: #ffffff !important;
+  border-radius: 0 !important;
+  cursor: pointer !important;
+  transition: opacity 0.3s ease !important;
+  
+  &:hover {
+    opacity: 0.7 !important;
+  }
+  
+  i {
+    font-size: 16px !important;
+  }
+  
+  &:active {
+    border-color: transparent !important;
+  }
+}
+
+// Mobile optimointi - pienet paddingit
+@media (max-width: 768px) {
+  .footer-section {
+    padding: 30px 0 15px !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer-section {
+    padding: 25px 0 10px !important;
+  }
+}
+
+
+
+// =============================================================================
+// Conditional Section Imports
+// =============================================================================
+{{ if site.Params.sections }}
+  {{ range $sectionName, $sectionConfig := site.Params.sections }}
+    {{ if $sectionConfig.enable }}
+      {{ $scssPath := printf "scss/sections/%s.scss" $sectionName }}
+      {{ if resources.Get $scssPath }}
+/* Section: {{ $sectionName }} */
+@import "sections/{{ $sectionName }}";
+      {{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+

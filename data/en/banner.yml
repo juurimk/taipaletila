@@ -1,0 +1,12 @@
+############################### Banner ################################
+banner:
+  enable : true
+  bg_image_webp : "images/backgrounds/hero-area.webp"
+  bg_image : "images/backgrounds/hero-area.jpg"
+  icon : "" # themify icon pack : https://themify.me/themify-icons
+  title : "Welcome to juuri.ai"
+  content : "Experience our powerful multilingual Hugo website with Finnish and English language support. Built with the beautiful Meghna theme and optimized for modern web standards."
+  button:
+    enable : true
+    label : "Explore Features"
+    link : "#services"
