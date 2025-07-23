@@ -208,7 +208,7 @@ siteset = "korpi"
     [params.sections.testimonial]
       enable = false
     [params.sections.blog]
-      enable = true
+      enable = false
     [params.sections.faq]
       enable = true
     [params.sections.newsletter]
