@@ -853,6 +853,85 @@ section {
           margin-bottom: 1.2rem; }
         .hero-area-video .banner-content .video-button i {
           font-size: 1.5rem; } }
+/* Section: blog */
+.post-block h4, .post-block h4 a {
+  color: var(--current-h2-color) !important;
+  text-decoration: none !important;
+  transition: color 0.3s ease; }
+  .post-block h4:hover, .post-block h4 a:hover {
+    color: var(--current-h2-color) !important;
+    text-decoration: none !important; }
+  .post-block h4:focus, .post-block h4 a:focus {
+    color: var(--current-h2-color) !important;
+    text-decoration: none !important;
+    outline: none; }
+  .post-block h4:visited, .post-block h4 a:visited {
+    color: var(--current-h2-color) !important; }
+
+.read-more-link {
+  color: var(--current-button-color) !important;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1em;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.3s ease;
+  margin-top: auto;
+  padding-left: 0; }
+  .read-more-link:hover {
+    color: var(--current-button-color) !important;
+    text-decoration: none;
+    transform: translateX(4px); }
+  .read-more-link i {
+    font-size: 0.8em;
+    transition: transform 0.3s ease; }
+  .read-more-link:hover i {
+    transform: translateX(3px); }
+
+#blog .title.blogiotsikko,
+#blog .title .blogiotsikko {
+  color: var(--current-h2-color) !important;
+  margin-top: 0px !important;
+  margin-bottom: 40px !important; }
+  @media (max-width: 768px) {
+    #blog .title.blogiotsikko,
+    #blog .title .blogiotsikko {
+      margin-top: 40px !important;
+      margin-bottom: 20px !important; } }
+  @media (max-width: 576px) {
+    #blog .title.blogiotsikko,
+    #blog .title .blogiotsikko {
+      margin-top: 30px !important;
+      margin-bottom: 15px !important; } }
+.section-lightset {
+  --current-h2-color: var(--siteset-lightset-h2);
+  --current-button-color: var(--siteset-lightset-button); }
+
+.section-darkset {
+  --current-h2-color: var(--siteset-darkset-h2);
+  --current-button-color: var(--siteset-darkset-button); }
+
+.section-neutralset {
+  --current-h2-color: var(--siteset-neutralset-h2);
+  --current-button-color: var(--siteset-neutralset-button); }
+
+.section-coloriset {
+  --current-h2-color: var(--siteset-coloriset-h2);
+  --current-button-color: var(--siteset-coloriset-button); }
+
+.post-block .post-meta {
+  margin-top: 15px !important; }
+  .post-block .post-meta .post-date {
+    margin-top: 10px !important; }
+
+.post-block .post-date {
+  margin-top: 20px !important; }
+
+:root {
+  --current-h2-color: var(--siteset-lightset-h2);
+  --current-button-color: var(--siteset-lightset-button); }
+
 /* Section: comparison */
 .comparison-section .comparison-table-wrapper {
   background: rgba(255, 255, 255, 0.95);
