@@ -136,7 +136,7 @@ author = "Juuri.ai"
 google_analytics_id = "G-SFX2TLQLTE"
 # post share
 post_share = true
-calendar_url = "https://calendar.google.com/calendar/u/0?cid=Y182NTcxODRkYjgwNjI4MmYxMDIzOTBmMWFlZjRkNGNmMGFiODU3NGM0MDZiMWViMzBmNTc4NjM0YmM5MjUxMjVhQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20"
+calendar_url = "https://calendar.app.google/zeDfowAGrkcpjp9r9"
 calendar_text = "Varaa Aika"
 blogBannerTitle = "Juuri.ai artikkelit"
 blogBannerSubtitle = "Your Subtitle Here"
@@ -270,7 +270,7 @@ expire_days = 2
 # google map
 [params.map]
 enable = false
-gmap_api = "hthttps://calendar.google.com/calendar/u/0?cid=Y182NTcxODRkYjgwNjI4MmYxMDIzOTBmMWFlZjRkNGNmMGFiODU3NGM0MDZiMWViMzBmNTc4NjM0YmM5MjUxMjVhQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20"
+gmap_api = ""
 map_latitude = "60.976896"
 map_longitude = "24.467889"
 map_marker = "images/marker.png"
@@ -279,7 +279,7 @@ map_marker = "images/marker.png"
 [params.nav_button]
 enable = true
 label = "Varaa aika"
-link = "https://calendar.google.com/calendar/embed?src=c_657184db806282f102390f1aef4d4cf0ab8574c406b1eb30f578634bc925125a%40group.calendar.google.com&ctz=Europe%2FHelsinki"
+link = "https://calendar.app.google/zeDfowAGrkcpjp9r9"
 
 ############################# Button System Configuration ##########################
 # Yksinkertainen button määrittely - värimäärittelyjen mukaisesti
