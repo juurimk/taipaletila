@@ -4,8 +4,8 @@ banner:
   bg_image_webp : "images/backgrounds/hero-area.webp"
   bg_image : "images/backgrounds/hero-area.jpg"
   icon : "" # themify icon pack : https://themify.me/themify-icons
-  title : "Markkinointia kasvuhakuisille yrityksille"
-  content : "Yhdistämme tekoälyn, tehokkuuden ja markkinoinnin inhimillisyyden. Saat kasvua ja aikaa, kun ihmiset ja AI toimivat yhdessä liiketoimintasi hyväksi."
+  title : "Moderni markkinointi- ja automaatiotoimisto"
+  content : "Ihmislähtöistä kasvua, tekoälyn avustuksella. Tarjoamme markkinointi- ja automaatiopalveluita kasvuhakuisille yrityksille. "
   button:
     enable : true
     label : "Varaa esittely"
