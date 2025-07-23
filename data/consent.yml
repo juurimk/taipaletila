@@ -1,0 +1,22 @@
+items:
+  - title: Analytiikka
+    description: Keräämme anonyymia tietoa sivuston käytöstä, jotta voimme parantaa käyttäjäkokemusta ja kehittää palveluamme sinulle sopivammaksi.
+    is_functional: false
+    script_file: ga.js
+
+  - title: Remarketing
+    description: Näytämme sinulle kiinnostuksiasi vastaavia mainoksia ja mittaamme mainonnan tehokkuutta.
+    is_functional: false
+    script_file: remarketing.js
+
+texts:
+  notice_title: "Tietosuoja ja evästeet"
+  notice: "Käytämme tietoja ymmärtääksemme paremmin, miten sivustoamme käytetään. Voit antaa suostumuksesi kaikkiin tai valittuihin tarkoituksiin tai kieltää ne. Lisätietoja löydät "
+  manage_link_text: "tietosuojaselosteestamme"
+  manage: "Hallitse asetuksia"
+  deny: "Kiellä kaikki"
+  allow: "Hyväksy kaikki"
+  save: "Tallenna ja sulje"
+  allow_all: "Hyväksy kaikki"
+  privacy_link: "/Privacy_Policy_JuuriAI_Tietosuojaseloste.pdf"
+  privacy_text: "Tietosuojaseloste"
