@@ -133,7 +133,7 @@ description = "Yhdistämme tekoälyn ja inhimillisen markkinoinnin tuloksellisek
 og_image = "images/juuri_ai_og_1200x628.jpg"
 author = "Juuri.ai"
 # Google Analytics
-google_analytics_id = "" # Your ID
+google_analytics_id = "G-SFX2TLQLTE"
 # post share
 post_share = true
 calendar_url = "https://calendar.google.com/calendar/u/0?cid=Y182NTcxODRkYjgwNjI4MmYxMDIzOTBmMWFlZjRkNGNmMGFiODU3NGM0MDZiMWViMzBmNTc4NjM0YmM5MjUxMjVhQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20"
