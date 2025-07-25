@@ -1,0 +1,174 @@
+// Logoband Section Styles
+.logoband-section {
+  min-height: 30vh;
+  display: flex;
+  align-items: center;
+  padding: 40px 0;
+  overflow: hidden;
+  
+  @media (max-width: 768px) {
+    min-height: 25vh;
+    padding: 30px 0;
+  }
+  
+  // Dynamic sectionset styling
+  @each $sectionset in lightset, darkset, coloriset, neutralset {
+    &.section-#{$sectionset} {
+      background-color: var(--siteset-#{$sectionset}-bg);
+      color: var(--siteset-#{$sectionset}-color);
+      
+      .title h2 {
+        color: var(--siteset-#{$sectionset}-h2);
+        font-family: var(--sitefont);
+        font-weight: 700;
+        font-size: 2.2rem;
+        margin-bottom: 40px;
+        
+        @media (max-width: 768px) {
+          font-size: 1.8rem;
+          margin-bottom: 30px;
+        }
+      }
+      
+      // Logoband-spesifinen otsikkotyyli
+      .logoband-title h2 {
+        color: var(--siteset-#{$sectionset}-h2);
+        font-family: var(--sitefont);
+        font-weight: 700;
+        font-size: 2.2rem;
+        margin-bottom: 10px !important; // Hyvin pieni marginaali logoihin
+        
+        @media (max-width: 768px) {
+          font-size: 1.8rem;
+          margin-bottom: 8px !important;
+        }
+        
+        @media (max-width: 576px) {
+          margin-bottom: 5px !important;
+        }
+      }
+      
+      // Logo visibility handled by CSS custom properties
+      .logo-item {
+        a {
+          img.logo-light {
+            display: block;
+          }
+          img.logo-dark {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  
+  // Dark and colorful sectionsets use white logos
+  &.section-darkset,
+  &.section-coloriset {
+    .logo-item {
+      a {
+        img.logo-light {
+          display: none;
+        }
+        img.logo-dark {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+// Logo slider container
+.logoband-container {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+// Sliding track
+.logoband-track {
+  display: flex;
+  align-items: center;
+  animation: logoSlide 60s linear infinite;
+  width: calc(200%); // Double width for seamless loop
+  margin-bottom: 30px;
+}
+
+// Individual logo items
+.logo-item {
+  flex-shrink: 0;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  @media (max-width: 768px) {
+    padding: 0 30px;
+  }
+  
+  @media (max-width: 576px) {
+    padding: 0 20px;
+  }
+  
+  a {
+    display: block;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      transform: scale(1.05);
+      opacity: 0.8;
+    }
+  }
+  
+  img {
+    height: 60px;
+    width: auto;
+    max-width: 150px;
+    object-fit: contain;
+    filter: grayscale(0%);
+    transition: all 0.3s ease;
+    
+    @media (max-width: 768px) {
+      height: 50px;
+      max-width: 120px;
+    }
+    
+    @media (max-width: 576px) {
+      height: 40px;
+      max-width: 100px;
+    }
+  }
+}
+
+// Keyframe animation for sliding logos
+@keyframes logoSlide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); // Move by 50% to complete the loop
+  }
+}
+
+// Pause animation on hover
+.logoband-container:hover .logoband-track {
+  animation-play-state: paused;
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .logoband-section {
+    .title {
+      margin-bottom: 30px;
+    }
+  }
+  
+  @keyframes logoSlide {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+}

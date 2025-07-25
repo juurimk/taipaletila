@@ -62,7 +62,7 @@
       margin-bottom: 1.5rem;
       margin-left: 0;
       margin-right: 0;
-      color: var(--siteset-lightset-button) !important;
+      color: var(--siteset-lightset-bg) !important;
       font-size: 2.5rem;
       line-height: 1.2;
       word-break: break-word;
@@ -91,6 +91,9 @@
     margin-top: 1rem;
     z-index: 5;
     position: relative;
+    
+    // Pakota normaalitilassa valkoinen teksti
+    color: #fff !important;
   }
 
   @media (max-width: 992px) {

@@ -1,0 +1,113 @@
+// Fullshow Section Styles
+.fullshow-section {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  min-height: 55vh; // Hieman korkeampi
+  display: flex;
+  align-items: center;
+  padding: 50px 0 70px 0; // Hieman isommat paddingit
+  
+  @media (max-width: 768px) {
+    min-height: 45vh; // Hieman korkeampi mobiilissa
+    padding: 40px 0 50px 0; // Hieman isommat paddingit mobiilissa
+  }
+  
+  // Overlay for better text readability
+  .fullshow-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.0);
+    z-index: 1;
+  }
+  
+  .container {
+    position: relative;
+    z-index: 2;
+  }
+  
+  .min-vh-70 {
+    min-height: 55vh; // Vastaa section korkeutta
+    
+    @media (max-width: 768px) {
+      min-height: 45vh; // Mobiili korkeampi
+    }
+  }
+  
+  // Dynamic sectionset styling
+  @each $sectionset in lightset, darkset, coloriset, neutralset {
+    &.section-#{$sectionset} {
+      .fullshow-content {
+        h2 {
+          color: var(--siteset-#{$sectionset}-h2);
+          font-family: var(--sitefont);
+          font-weight: 700;
+          font-size: 2.5rem; // Pienempi otsikko
+          line-height: 1.2;
+          margin-bottom: 20px; // Pienempi marginaali
+          
+          @media (max-width: 992px) {
+            font-size: 2rem;
+          }
+          
+          @media (max-width: 768px) {
+            font-size: 1.8rem;
+            text-align: center;
+            margin-bottom: 15px;
+          }
+        }
+        
+        p {
+          color: var(--siteset-#{$sectionset}-color);
+          font-family: var(--sitefont);
+          font-size: 1.1rem; // Pienempi teksti
+          line-height: 1.5; // Tiiviimpi rivikorkeus
+          margin-bottom: 20px; // Pienempi marginaali
+          
+          @media (max-width: 768px) {
+            text-align: center;
+            font-size: 1rem;
+            margin-bottom: 15px;
+          }
+        }
+        
+        .btn {
+          margin-top: 20px;
+          
+          @media (max-width: 768px) {
+            display: block;
+            margin: 20px auto 0;
+          }
+        }
+      }
+    }
+  }
+  
+  // Content positioning
+  .fullshow-content {
+    padding: 30px; // Pienempi padding
+    
+    @media (max-width: 768px) {
+      padding: 20px 15px; // Pieni padding mobiilissa
+      text-align: center;
+    }
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .fullshow-section {
+    .row {
+      justify-content: center;
+    }
+    
+    .fullshow-content {
+      margin: 0 15px;
+    }
+  }
+}

@@ -6,6 +6,7 @@ banner_image_webp: images/blog/blog-banner-image1.webp
 image: images/blog/blog-post-3.jpg
 author: John Doe
 description : "Tämä on meta-kuvaus"
+tags: ["teknologia", "suunnittelu", "blogi"]
 ---
 
 Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vestibulum ante ipsum primis faucibuksessa orci luctus ja ultrices posuere cubilia Curae. Donec velit neque, auctor istuu amet aliquam vel, ullamcorper istuu amet ligula. Vestibulum ac diam istuu amet quam vehicula elementum sed istuu amet dui. Mauris blandit aliquet elit, saada tincidunt nibh pulvinar a.

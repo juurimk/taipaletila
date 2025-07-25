@@ -6,41 +6,32 @@
 
 {{ partial "navigation.html" . }}
 
-{{/* Get sectionset for blog pages */}}
-{{ $sectionset := index site.Params.sectionsets "blog_pages" | default "lightset" }}
-
-{{/* Blog Banner Section */}}
-{{ if or .Params.banner_image_webp .Params.banner_image }}
-<section class="service-hero">
-  <div class="service-hero-bg" style="background-image: url('{{ .Params.banner_image_webp | default .Params.banner_image | absURL }}');">
-  </div>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 offset-lg-2 text-center">
-        <h1 style="color: white; text-align: center;">{{ site.Params.blogBannerTitle }}</h1>
-        {{ if site.Params.blogBannerSubtitle }}
-        <p style="color: white; font-size: 1.2rem;">{{ site.Params.blogBannerSubtitle }}</p>
-        {{ end }}
-      </div>
-    </div>
-  </div>
-</section>
-{{ end }}
+{{/* Get sectionset for individual blog posts */}}
+{{ $sectionset := index site.Params.sectionsets "blog_single" | default "lightset" }}
 
 <section class="section section-{{ $sectionset }}">
   <div class="container">
     <div class="row">
       <div class="col-lg-8 offset-lg-2">
 
-        <!-- Päivämäärä, kirjoittaja, blogikirjoituksen otsikko ja ingressi vasempaan reunaan -->
+        <!-- Blogipostauksen otsikko, päivämäärä ja kirjoittaja -->
         <div class="blog-meta mb-4">
-          <div class="blog-date text-muted">{{ .Date.Format "02.01.2006" }}</div>
-          {{ if .Params.author }}
-          <div class="blog-author text-muted">{{ .Params.author }}</div>
-          {{ end }}
-          <h1 class="blog-title mt-2">{{ .Title }}</h1>
+          <h1 class="blog-title mb-3">{{ .Title }}</h1>
+          <div class="blog-meta-info">
+            <div class="blog-date text-muted d-inline-block" style="margin-right: 16px;">
+              <i class="fas fa-calendar-alt" style="font-size: 0.875rem; margin-right: 8px;"></i>{{ .Date.Format "02.01.2006" }}
+            </div>
+            {{ if .Params.author }}
+            <div class="blog-author text-muted d-inline-block" style="margin-right: 16px;">
+              <i class="fas fa-user" style="font-size: 0.875rem; margin-right: 8px;"></i>{{ .Params.author }}
+            </div>
+            {{ end }}
+            <div class="blog-tags text-muted d-inline-block">
+              <i class="fas fa-list" style="font-size: 0.875rem; margin-right: 8px;"></i>teknologia, suunnittelu, blogi
+            </div>
+          </div>
           {{ if or .Params.ingress .Params.description }}
-          <div class="blog-ingress text-muted" style="font-style: italic;">{{ .Params.ingress | default .Params.description | markdownify }}</div>
+          <div class="blog-ingress text-muted mt-3" style="font-style: italic;">{{ .Params.ingress | default .Params.description | markdownify }}</div>
           {{ end }}
         </div>
 
@@ -61,27 +52,33 @@
         {{ partial "post-share.html" . }}
         {{ end }}
 
-        <!-- comments -->
-        <div class="mt-5">
-          {{ template "_internal/disqus.html" . }}
-        </div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- Pagination Section -->
-      <section class="pagination" style="background-color: var(--siteset-lightset-bg); border-radius: 0;">
-        <div class="col-lg-8 offset-lg-2 text-center">
-          <div class="btn-group" role="group" style="margin-top: 0px; margin-bottom:20px; gap: 1rem;">
-            {{ if .Prev }}
-            <a class="btn" href="{{ .Prev.Permalink }}">Edellinen</a>
-            {{ end }}
-            {{ if .Next }}
-            <a class="btn" href="{{ .Next.Permalink }}">Seuraava</a>
-            {{ end }}
-          </div>
+{{ if or .Prev .Next }}
+<section class="pagination section-{{ $sectionset }}" style="border-radius: 0; padding-top: 0px;">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2">
+        <div class="d-flex justify-content-between align-items-center" style="margin-bottom: 40px;">
+          {{ if .Prev }}
+          <a class="btn" href="{{ .Prev.Permalink }}">← Edellinen</a>
+          {{ else }}
+          <div></div>
+          {{ end }}
+          {{ if .Next }}
+          <a class="btn" href="{{ .Next.Permalink }}">Seuraava →</a>
+          {{ else }}
+          <div></div>
+          {{ end }}
         </div>
-      </section>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
 
 {{ end }}

@@ -500,7 +500,7 @@ sitesets:
         button_text: "#4A5759"
         h2: "#B0C4B1"
         h1: "#FFFFFF"
-        mask_color: "#B0C4B1"
+        mask_color: "#F7E1D7"
         opacity:
           button_highlighted: 0.2
           button_table_bg: 0.1
@@ -536,7 +536,7 @@ sitesets:
         text_highlighted: "#F7E1D7"
         
       coloriset:
-        bg_color: "#EDAFB8"
+        bg_color: "#418b5182"
         color: "#4A5759"
         button: "#4A5759"
         button_text: "#FFFFFF"

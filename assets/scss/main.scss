@@ -35,6 +35,17 @@
   --text-{{ $sectionsetName }}-section_description: {{ $colors.text_description }};
 {{ end }}
 
+  /* Button Corner Radius System - käytettävissä kaikissa SCSS-tiedostoissa */
+  {{ if site.Params.buttons.custom_radius }}
+  --button-border-radius: {{ site.Params.buttons.custom_radius }};
+  {{ else if eq site.Params.buttons.corners "round" }}
+  --button-border-radius: 50px;
+  {{ else if eq site.Params.buttons.corners "rounded" }}
+  --button-border-radius: 8px;
+  {{ else }}
+  --button-border-radius: 0px;
+  {{ end }}
+
   /* Legacy compatibility */
   {{ with index $currentSiteset.sectionsets "lightset" }}
   --color-primary: {{ .button }};
@@ -155,6 +166,16 @@ a {
   text-decoration: none;
   display: inline-block;
   
+  // Poista selaimen oletustyyli
+  outline: none !important;
+  box-shadow: none !important;
+  
+  &:focus, &:active {
+    outline: none !important;
+    box-shadow: none !important;
+    border-color: var(--siteset-lightset-button) !important;
+  }
+  
   {{ if eq site.Params.buttons.style "fill" }}
   background-color: var(--siteset-lightset-button) !important;
   color: var(--siteset-lightset-bg) !important;
@@ -247,6 +268,16 @@ a {
   text-decoration: none;
   display: inline-block;
   
+  // Poista selaimen oletustyyli
+  outline: none !important;
+  box-shadow: none !important;
+  
+  &:focus, &:active {
+    outline: none !important;
+    box-shadow: none !important;
+    border-color: var(--siteset-lightset-button) !important;
+  }
+  
   // Aina fill-tyyli riippumatta site.Params.buttons.style asetuksesta
   background-color: var(--siteset-lightset-button) !important;
   color: var(--siteset-lightset-bg) !important;
@@ -271,6 +302,35 @@ a {
 }
 {{ end }}
 
+// Navigation-spesifiset .btn-calendar-fill tyylit - aina valkoinen teksti
+.navigation .btn-calendar-fill {
+  border-color: var(--siteset-lightset-button) !important;
+  background-color: var(--siteset-lightset-button) !important;
+  color: #ffffff !important;
+  padding: 6px 20px !important; // Pienempi padding navigaatiossa
+  
+  &:hover {
+    background-color: transparent !important;
+    color: var(--siteset-lightset-button) !important;
+  }
+}
+
+// Navigation sectionset-spesifiset .btn-calendar-fill tyylit
+{{ range $sectionsetName, $colors := $currentSiteset.sectionsets }}
+.section-{{ $sectionsetName }} ~ .navigation .btn-calendar-fill,
+.navigation.section-{{ $sectionsetName }} .btn-calendar-fill {
+  border-color: var(--siteset-{{ $sectionsetName }}-button) !important;
+  background-color: var(--siteset-{{ $sectionsetName }}-button) !important;
+  color: #ffffff !important;
+  padding: 6px 20px !important; // Pienempi padding navigaatiossa
+  
+  &:hover {
+    background-color: transparent !important;
+    color: var(--siteset-{{ $sectionsetName }}-button) !important;
+  }
+}
+{{ end }}
+
 // =============================================================================
 // Navigation
 // =============================================================================
@@ -286,18 +346,42 @@ a {
   transition: all 0.3s ease-in-out;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   
+  // Default navigation link styles (lightset/neutralset)
   .navbar-nav .nav-link {
-    color: var(--color-text-dark) !important;
+    color: var(--siteset-lightset-button) !important;
     padding: 15px 20px;
     font-weight: 500;
     transition: all 0.3s ease;
     position: relative;
     
     &:hover {
-      color: var(--color-primary) !important;
+      color: var(--siteset-lightset-h2) !important;
     }
   }
 }
+
+// Sectionset-spesifiset navigaation tyylit
+{{ range $sectionsetName, $colors := $currentSiteset.sectionsets }}
+{{ if or (eq $sectionsetName "coloriset") (eq $sectionsetName "darkset") }}
+.section-{{ $sectionsetName }} ~ .navigation .navbar-nav .nav-link,
+.navigation.section-{{ $sectionsetName }} .navbar-nav .nav-link {
+  color: #fff !important;
+  
+  &:hover {
+    color: var(--siteset-{{ $sectionsetName }}-button) !important;
+  }
+}
+{{ else }}
+.section-{{ $sectionsetName }} ~ .navigation .navbar-nav .nav-link,
+.navigation.section-{{ $sectionsetName }} .navbar-nav .nav-link {
+  color: var(--siteset-{{ $sectionsetName }}-button) !important;
+  
+  &:hover {
+    color: var(--siteset-{{ $sectionsetName }}-h2) !important;
+  }
+}
+{{ end }}
+{{ end }}
 
 .navbar-nav {
   margin-left: auto !important;
@@ -319,7 +403,7 @@ a {
     background-image: none;
     width: 24px;
     height: 2px;
-    background-color: var(--color-primary-dark);
+    background-color: var(--siteset-lightset-button);
     display: block;
     position: relative;
     transition: background-color 0.3s ease;
@@ -327,7 +411,7 @@ a {
     &::before,
     &::after {
       content: '';
-      background-color: var(--color-primary-dark);
+      background-color: var(--siteset-lightset-button);
       width: 24px;
       height: 2px;
       position: absolute;
@@ -344,11 +428,11 @@ a {
     }
   }
 
-  // Hover tai valikko avoinna: vihreä tausta, valkoiset viivat
+  // Hover tai valikko avoinna: button-väri tausta, valkoiset viivat
   &:hover,
   &.active,
   &[aria-expanded="true"] {
-    background-color: var(--color-primary-dark);
+    background-color: var(--siteset-lightset-button);
 
     .navbar-toggler-icon,
     .navbar-toggler-icon::before,
@@ -364,6 +448,51 @@ a {
     border-radius: 0px !important;
   }
 }
+
+// Sectionset-spesifiset toggler tyylit
+{{ range $sectionsetName, $colors := $currentSiteset.sectionsets }}
+{{ if or (eq $sectionsetName "coloriset") (eq $sectionsetName "darkset") }}
+.navigation.section-{{ $sectionsetName }} .navbar-toggler {
+  .navbar-toggler-icon,
+  .navbar-toggler-icon::before,
+  .navbar-toggler-icon::after {
+    background-color: #fff;
+  }
+  
+  &:hover,
+  &.active,
+  &[aria-expanded="true"] {
+    background-color: var(--siteset-{{ $sectionsetName }}-button);
+    
+    .navbar-toggler-icon,
+    .navbar-toggler-icon::before,
+    .navbar-toggler-icon::after {
+      background-color: #fff;
+    }
+  }
+}
+{{ else }}
+.navigation.section-{{ $sectionsetName }} .navbar-toggler {
+  .navbar-toggler-icon,
+  .navbar-toggler-icon::before,
+  .navbar-toggler-icon::after {
+    background-color: var(--siteset-{{ $sectionsetName }}-button);
+  }
+  
+  &:hover,
+  &.active,
+  &[aria-expanded="true"] {
+    background-color: var(--siteset-{{ $sectionsetName }}-button);
+    
+    .navbar-toggler-icon,
+    .navbar-toggler-icon::before,
+    .navbar-toggler-icon::after {
+      background-color: var(--siteset-{{ $sectionsetName }}-bg);
+    }
+  }
+}
+{{ end }}
+{{ end }}
 // =============================================================================
 // Responsive Typography
 // =============================================================================
@@ -404,7 +533,7 @@ a {
 // Essential Layout Styles
 // =============================================================================
 .section {
-  padding: 80px 0;
+  padding: 40px 0 30px 0;
 }
 
 .section-sm {
@@ -512,7 +641,7 @@ a {
 
 @media (max-width: 576px) {
   .footer-section {
-    padding: 40px 0 120px!important; // Vähennetty bottom-padding
+    padding: 40px 0 40px!important; // Vähennetty bottom-padding
   }
 }
 
@@ -659,7 +788,7 @@ footer {
     padding: 0 !important;
     margin: 0px auto 0 !important; // Keep centered on desktop
     cursor: pointer !important;
-    border-radius: 0 !important;
+    // border-radius poistettu - anna button-järjestelmän hoitaa
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -684,7 +813,7 @@ footer {
 /* Mobiililaitteet */
 @media (max-width: 768px) {
   .footer-brand-text {
-    padding: 1.5rem 0 10rem 0 !important;
+    padding: 1.5rem 0 2rem 0 !important;
   }
 }
 
@@ -783,7 +912,7 @@ section {
 
 .footer-section {
   padding: 40px 0 20px !important; // Pienempi padding
-  background-color: #000000 !important;
+  background-color: var(--siteset-darkset-bg) !important;
   margin: 0 !important;
   
   // Varmista että footer on always visible
@@ -879,31 +1008,6 @@ section {
   }
 }
 
-
-
-// Scroll button
-.scroll-to-top {
-  width: 40px !important;
-  height: 40px !important;
-  background: transparent !important;
-  border: 1px solid #ffffff !important;
-  color: #ffffff !important;
-  border-radius: 0 !important;
-  cursor: pointer !important;
-  transition: opacity 0.3s ease !important;
-  
-  &:hover {
-    opacity: 0.7 !important;
-  }
-  
-  i {
-    font-size: 16px !important;
-  }
-  
-  &:active {
-    border-color: transparent !important;
-  }
-}
 
 // Mobile optimointi - pienet paddingit
 @media (max-width: 768px) {

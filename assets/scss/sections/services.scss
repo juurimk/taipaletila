@@ -4,7 +4,7 @@
   
   .title {
     margin-bottom: 40px;
-    color: var(--siteset-lightset-button) !important;
+    color: var(--siteset-darkset-bg) !important;
     
     .services-description p {
       font-size: 1.1rem;
@@ -23,6 +23,7 @@
     background: white;
     overflow: hidden;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border-radius: var(--button-border-radius);
     max-width: 350px;
     width: 100%;
     
@@ -58,17 +59,7 @@
         
         .service-title {
           margin-bottom: 8px;
-          
-          .brand-part {
-            font-weight: 700;
-            color: var(--siteset-lightset-button) !important;
-          }
-          
-          .rest-part {
-            font-style: italic;
-            font-weight: 400;
-            color: var(--siteset-lightset-button) !important;
-          }
+          color: var(--siteset-lightset-button) !important;
         }
         
         .service-subtitle {
@@ -80,9 +71,6 @@
         
         .service-short-description {
           margin-bottom: 20px;
-          
-          p {
-          }
         }
         
         .service-bullet-description {
@@ -172,12 +160,6 @@
   .service-card {
     background: #2c3e50;
     
-    .service-title {
-      .rest-part {
-        color: white;
-      }
-    }
-    
     .service-subtitle {
       color: #bdc3c7;
     }
@@ -235,15 +217,6 @@
     font-size: 4rem;
     margin-bottom: 1.5rem;
     font-weight: bold;
-    
-    .brand-part {
-      font-weight: 700;
-    }
-    
-    .rest-part {
-      font-style: italic;
-      font-weight: 400;
-    }
   }
   
   // Kuvaus
@@ -554,7 +527,7 @@
 
     .benefit-icon {
       i {
-        font-size: 2rem;
+        font-size: 1.5rem;
         display: inline-block;
         margin-bottom: 1rem;
         color: var(--siteset-lightset-button);

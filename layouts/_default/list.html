@@ -6,8 +6,11 @@
 
 {{ partial "navigation.html" . }}
 
+{{/* Get sectionset for blog section */}}
+{{ $sectionset := index site.Params.sectionsets "blog" | default "lightset" }}
+
 {{"<!-- Start Blog Section -->" | safeHTML}}
-<section id="blogi" class="section section-lightset">
+<section id="blogi" class="section section-{{ $sectionset }}">
   <div class="container">
     <div class="row">
       <div class="col-12">

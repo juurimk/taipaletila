@@ -1,0 +1,158 @@
+// Showcase Section Styles
+.showcase-section {
+  
+  // Dynamic sectionset styling
+  @each $sectionset in lightset, darkset, coloriset, neutralset {
+    &.section-#{$sectionset} {
+      background-color: var(--siteset-#{$sectionset}-bg);
+      color: var(--siteset-#{$sectionset}-color);
+      
+      .showcase-content,
+      .showcase-content-mobile {
+        h2 {
+          color: var(--siteset-#{$sectionset}-h2);
+          font-family: var(--sitefont);
+          font-weight: 700;
+          font-size: 2.5rem;
+          line-height: 1.2;
+          margin-bottom: 25px;
+          
+          @media (max-width: 768px) {
+            font-size: 2rem;
+            text-align: center;
+          }
+        }
+        
+        p {
+          color: var(--siteset-#{$sectionset}-color);
+          font-family: var(--sitefont);
+          font-size: 1.1rem;
+          line-height: 1.6;
+          margin-bottom: 0;
+          
+          @media (max-width: 768px) {
+            text-align: center;
+            font-size: 1rem;
+          }
+        }
+      }
+      
+      // Image cards with border-radius system
+      .image-card {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        
+        // Border radius from button system using CSS custom property
+        border-radius: var(--button-border-radius) !important;
+      }
+    }
+  }
+}
+
+// Desktop Layout
+.showcase-desktop {
+  .showcase-images {
+    position: relative;
+    padding-right: 30px;
+    
+    // Single Image Layout
+    .showcase-image-single {
+      .image-card {
+        height: 400px;
+        width: 100%;
+      }
+    }
+    
+    // Two Images Layout
+    .showcase-images-two {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      
+      .showcase-image-half {
+        .image-card {
+          height: 280px;
+        }
+      }
+    }
+    
+    // Three Images Layout (original)
+    .showcase-image-top {
+      margin-bottom: 20px;
+      
+      .image-card {
+        height: 280px;
+      }
+    }
+    
+    .showcase-images-bottom {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      
+      .showcase-image-bottom {
+        .image-card {
+          height: 200px;
+        }
+      }
+    }
+  }
+  
+  .showcase-content {
+    padding-left: 40px;
+    margin-bottom:15px !important;
+    
+    @media (max-width: 992px) {
+      padding-left: 20px;
+    }
+  }
+  
+  // Right position: text left, images right
+  .showcase-content-right {
+    padding-right: 40px;
+    padding-left: 0;
+    
+    @media (max-width: 992px) {
+      padding-right: 20px;
+    }
+  }
+  
+  .showcase-images-right {
+    padding-left: 30px;
+    padding-right: 0;
+  }
+}
+
+// Mobile Layout
+.showcase-mobile {
+  .showcase-content-mobile {
+    margin-bottom: 40px;
+  }
+  
+  .showcase-images-mobile {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    
+    .showcase-image-mobile {
+      .image-card {
+        height: 250px;
+        
+        @media (max-width: 576px) {
+          height: 200px;
+        }
+      }
+    }
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .showcase-section {
+    padding: 60px 0;
+  }
+
+}

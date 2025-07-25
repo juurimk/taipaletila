@@ -37,10 +37,6 @@
 {{ partial "portfolio.html" . }}
 {{ end }}
 
-{{ if site.Params.sections.funfacts.enable }}
-{{ partial "funfacts.html" . }}
-{{ end }}
-
 {{ if site.Params.sections.comparison.enable }}
 {{ partial "comparison.html" . }} 
 {{ end }}
@@ -53,8 +49,24 @@
 {{ partial "testimonial.html" . }}
 {{ end }}
 
+{{ if site.Params.sections.showcase.enable }}
+{{ partial "showcase.html" . }}
+{{ end }}
+
+{{ if site.Params.sections.fullshow.enable }}
+{{ partial "fullshow.html" . }}
+{{ end }}
+
+{{ if site.Params.sections.logoband.enable }}
+{{ partial "logoband.html" . }}
+{{ end }}
+
 {{ if site.Params.sections.blog.enable }}
 {{ partial "blog.html" . }}
+{{ end }}
+
+{{ if site.Params.sections.funfacts.enable }}
+{{ partial "funfacts.html" . }}
 {{ end }}
 
 {{ if site.Params.sections.faq.enable }}

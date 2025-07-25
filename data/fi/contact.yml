@@ -1,23 +1,23 @@
 ############################## Contact #############################
 contact:
   enable : true
-  title : Pyydä esimerkki
+  title : Lorem Ipsum Dolor
   # subtitle : Yhteystiedot
   content : |
-     Olemme valmiita auttamaan sinua seuraavassa projektissasi. 
-     Ota rohkeasti yhteyttä, niin keskustellaan miten voimme auttaa liiketoimintasi kasvussa ja digitaalisen muutoksen toteuttamisessa.
+     Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+     Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
 
   # Contact details - henkilökohtaiset yhteystiedot
   contact_people:
-    - name: "Markkinointi ja mainonta, automaatiot ja koulutukset"
-      person: "Marko Kari"
-      phone: "+358 40 350 5591"  # Lisää oikea puhelinnumero
-      email: "marko.kari@juuri.ai"
+    - name: "Lorem ipsum dolor sit amet consectetur"
+      person: "Lorem Ipsum"
+      phone: "123 456 7890"
+      email: "lorem@lorem.com"
       
-    - name: "Verkkosivustot, sisällöntuotanto ja visuaalinen suunnittelu" 
-      person: "Marianne Littow"
-      phone: "+358 50 911 3171"  # Lisää oikea puhelinnumero
-      email: "marianne.littow@juuri.ai"
+    - name: "Adipiscing elit sed do eiusmod tempor" 
+      person: "Dolor Amet"
+      phone: "123 456 7890"
+      email: "dolor@lorem.com"
 
   # Yleiset yhteystiedot (jos haluat säilyttää)
   #contact_list:
@@ -39,9 +39,9 @@ contact:
     submit : "Lähetä"
     services_title: "Olen kiinnostunut"
     services:
-    - label: "Ai-automaatiot ja koulutukset"
-      value: "ai-automaatiot"
-    - label: "Markkinointi ja mainonta"
-      value: "markkinointi"
-    - label: "Sisällöntuotannon palvelut"
-      value: "sisallontuotanto"
+    - label: "Palvelu 1"
+      value: "palvelu-1"
+    - label: "Palvelu 2"
+      value: "palvelu-2"
+    - label: "Palvelu 3"
+      value: "palvelu-3"

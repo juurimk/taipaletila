@@ -3,10 +3,11 @@ banner:
   enable : true
   bg_image_webp : "images/backgrounds/hero-area.webp"
   bg_image : "images/backgrounds/hero-area.jpg"
+  video : "videos/testi_hero.mp4"
   icon : "" # themify icon pack : https://themify.me/themify-icons
-  title : "Moderni markkinointi- ja automaatiotoimisto"
-  content : "Ihmislähtöistä kasvua, tekoälyn avustuksella. Tarjoamme markkinointi- ja automaatiopalveluita kasvuhakuisille yrityksille. "
+  title : "Lorem Ipsum Dolor Sit Amet Consectetur"
+  content : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud."
   button:
     enable : true
-    label : "Varaa esittely"
+    label : "Lorem Ipsum"
     link : "#otayhteytta"

@@ -1,60 +1,60 @@
 ############################### services ############################
 services:
   enable: true
-  title: "Palvelut"
+  title: "Lorem Ipsum"
   
   # Service single page button (jos haluat näyttää yhteisen painikkeen)
   single_page_button:
     enable: false
-    label: "Kysy tarjous"
+    label: "Lorem Ipsum"
     link: "#palvelut"
   
   # Service single page contact section (ennen contact formia)
   contact_section:
     enable: true
-    title: "Aloitetaan yhdessä"
-    description: "Kerro meille projektistasi ja löydetään yhdessä paras ratkaisu tarpeisiisi. Vastaamme viesteihin nopeasti."
+    title: "Lorem Ipsum Dolor"
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
   
   # Service items - vain etusivun korttien tiedot
   service_items:
-    # Service 1 - JuuriSyy
-    - name: "JuuriSyy"
-      subtitle: "AI-automaatiot ja integraatiot"
-      price: "Kysy tarjous!"
-      slug: "juurisyy"
+    # Service 1
+    - name: "Lorem Ipsum"
+      subtitle: "Dolor sit amet consectetur"
+      price: "Lorem Ipsum!"
+      slug: "lorem-ipsum-1"
       link: "#otayhteytta"
       image: "images/services/service-juurisyy.png"
       image_webp: "images/services/service-juurisyy.webp"
-      short_description: "Vapauta työaikaa ja tuo työhön tehokkuutta ja kasvua inhimillisen automaation avulla."
+      short_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore."
       bullet_description: |
-        - Räätälöidyt automaatio- ja tekoälyratkaisut
-        - Liidien hankinnan automaatiot
-        - Tekoälykoulutukset ja työpajat tiimeille
+        - Lorem ipsum dolor sit amet consectetur
+        - Adipiscing elit sed do eiusmod tempor
+        - Incididunt ut labore et dolore magna
 
-    # Service 2 - JuuriNyt
-    - name: "JuuriNyt"
-      subtitle: "Markkinointi ja mainonta"
-      price: "Kysy tarjous!"
-      slug: "juurinyt"
+    # Service 2
+    - name: "Consectetur Adipiscing"
+      subtitle: "Sed do eiusmod tempor"
+      price: "Lorem Ipsum!"
+      slug: "consectetur-adipiscing"
       link: "#otayhteytta"
       image: "images/services/service-juurinyt.png"
       image_webp: "images/services/service-juurinyt.webp"
-      short_description: "Lisää tunnettuutta ja kysyntää systemaattisella markkinoinnilla."
+      short_description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi."
       bullet_description: |
-        - Markkinoinnin ja mainonnan kokonaisuudet
-        - Strategia
-        - Yritys- ja henkilöbrändäykset
+        - Duis aute irure dolor in reprehenderit
+        - Voluptate velit esse cillum dolore
+        - Fugiat nulla pariatur excepteur sint
 
-    # Service 3 - JuuriSinulle
-    - name: "JuuriSinulle"
-      subtitle: "Sisällöntuotannon palvelut"
-      price: "Alk. 80 €/h"
-      slug: "juurisinulle"
+    # Service 3
+    - name: "Ut Enim Minim"
+      subtitle: "Veniam quis nostrud"
+      price: "Lorem €/h"
+      slug: "ut-enim-minim"
       link: "#otayhteytta"
       image: "images/services/service-juurisinulle.png"
       image_webp: "images/services/service-juurisinulle.webp"
-      short_description: "Näytä ammattimaiselta ja pysy asiakkaidesi mielessä. Sisällöntuotantopalveluita, jotka tuottavat tulosta."
+      short_description: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim."
       bullet_description: |
-        - Modernit sisällöntuotannon työkalut
-        - Ammattilaisen viimeistelemät sisältöstrategiat ja sisällöntuotannot
-        - Laadukasta graafista suunnittelua
+        - Sed ut perspiciatis unde omnis iste
+        - Natus error sit voluptatem accusantium
+        - Doloremque laudantium totam rem aperiam

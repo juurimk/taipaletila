@@ -49,23 +49,23 @@ main_text:
 benefits:
   enable: true
   benefits_list:
-    - icon: ti-light-bulb
+    - icon: fas fa-lightbulb
       title: "Vapauta henkilöstösi strategiseen työhön"
       content: "AI-agentit hoitavat rutiinitehtävät, jolloin tiimisi voi keskittyä luovaan ja arvoa tuottavaan työhön."
 
-    - icon: ti-comment-alt
+    - icon: fas fa-comments
       title: "Paranna asiakaskokemusta"
       content: "Välittömät vastaukset ja henkilökohtainen palvelu 24/7 ilman odotusaikoja."
 
-    - icon: ti-bar-chart
+    - icon: fas fa-chart-bar
       title: "Kasvata liikevaihtoa automaatiolla"
       content: "Automaattinen myynnin ja markkinoinnin optimointi tuottaa enemmän tulosta."
 
-    - icon: ti-shield
+    - icon: fas fa-shield
       title: "Vähennä virheitä ja kustannuksia"
       content: "Järjestelmälliset prosessit minimoivat inhimilliset virheet ja alentavat toimintakuluja."
 
-    - icon: ti-stats-up
+    - icon: fas fa-arrows-alt
       title: "Skaalaa ilman henkilöstön lisäämistä"
       content: "Kasvattaa toimintaasi joustavasti kysynnän mukaan ilman rekrytointipainetta."
 

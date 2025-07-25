@@ -1,0 +1,69 @@
+{{ $data := index site.Data site.Language.Lang }}
+
+{{/* Get sectionset for logoband section */}}
+{{ $sectionset := index site.Params.sectionsets "logoband" | default "lightset" }}
+
+{{ if $data.logoband.logoband.enable }}
+{{ with $data.logoband.logoband }}
+{{"<!-- Start Logoband Section -->" | safeHTML}}
+<section id="logoband" class="section logoband-section section-{{ $sectionset }}">
+  <div class="container">
+    
+    {{"<!-- Section Title -->" | safeHTML}}
+    {{ if .title }}
+    <div class="row">
+      <div class="col-12">
+        <div class="logoband-title text-center mb-50">
+          <h2>{{ .title }}</h2>
+        </div>
+      </div>
+    </div>
+    {{ end }}
+    
+    {{"<!-- Logo Slider -->" | safeHTML}}
+    <div class="row">
+      <div class="col-12">
+        <div class="logoband-container">
+          <div class="logoband-track">
+            
+            {{"<!-- First set of logos -->" | safeHTML}}
+            {{ range .logos }}
+            <div class="logo-item">
+              <a href="{{ .link }}" target="_blank" rel="noopener">
+                {{"<!-- Light theme logo (for light/neutral backgrounds) -->" | safeHTML}}
+                <img src="{{ .image_light | absURL }}" 
+                     alt="{{ .title }}" 
+                     class="logo-light">
+                
+                {{"<!-- Dark theme logo (for dark/colorful backgrounds) -->" | safeHTML}}
+                <img src="{{ .image_dark | absURL }}" 
+                     alt="{{ .title }}" 
+                     class="logo-dark">
+              </a>
+            </div>
+            {{ end }}
+            
+            {{"<!-- Duplicate set for seamless loop -->" | safeHTML}}
+            {{ range .logos }}
+            <div class="logo-item">
+              <a href="{{ .link }}" target="_blank" rel="noopener">
+                <img src="{{ .image_light | absURL }}" 
+                     alt="{{ .title }}" 
+                     class="logo-light">
+                <img src="{{ .image_dark | absURL }}" 
+                     alt="{{ .title }}" 
+                     class="logo-dark">
+              </a>
+            </div>
+            {{ end }}
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</section>
+{{"<!-- /logoband -->" | safeHTML}}
+{{ end }}
+{{ end }}

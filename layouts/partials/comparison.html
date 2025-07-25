@@ -67,9 +67,9 @@
                   {{ $value := index .values $featureIndex }}
                   <td class="feature-value {{ if .highlighted }}highlighted-column{{ end }}">
                     {{ if $value }}
-                    <i class="ti-check check-icon"></i>
+                    <span class="check-icon">✓</span>
                     {{ else }}
-                    <i class="ti-close close-icon"></i>
+                    <span class="close-icon">✗</span>
                     {{ end }}
                   </td>
                   {{ end }}

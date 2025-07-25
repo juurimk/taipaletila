@@ -1,0 +1,58 @@
+# Logoband Section Configuration
+# Place in: data/fi/logoband.yml
+
+logoband:
+  enable: true
+  title: "Asiakkaitamme"
+  
+  # Logo slots - 10 paikkaa logoille
+  logos:
+    - title: "Juuri.ai"
+      image_light: "/images/juuridemo_logo.svg"        # Vaaleiden taustojen logo (musta)
+      image_dark: "/images/juuridemo_logo_white.svg"   # Tummien taustojen logo (valkoinen)
+      link: "https://juuri.ai"
+      
+    - title: "Juuri.ai"
+      image_light: "/images/juuridemo_logo.svg"
+      image_dark: "/images/juuridemo_logo_white.svg"
+      link: "https://juuri.ai"
+      
+    - title: "Juuri.ai"
+      image_light: "/images/juuridemo_logo.svg"
+      image_dark: "/images/juuridemo_logo_white.svg"
+      link: "https://juuri.ai"
+      
+    - title: "Juuri.ai"
+      image_light: "/images/juuridemo_logo.svg"
+      image_dark: "/images/juuridemo_logo_white.svg"
+      link: "https://juuri.ai"
+      
+    - title: "Juuri.ai"
+      image_light: "/images/juuridemo_logo.svg"
+      image_dark: "/images/juuridemo_logo_white.svg"
+      link: "https://juuri.ai"
+      
+    - title: "Juuri.ai"
+      image_light: "/images/juuridemo_logo.svg"
+      image_dark: "/images/juuridemo_logo_white.svg"
+      link: "https://juuri.ai"
+      
+    - title: "Juuri.ai"
+      image_light: "/images/juuridemo_logo.svg"
+      image_dark: "/images/juuridemo_logo_white.svg"
+      link: "https://juuri.ai"
+      
+    - title: "Juuri.ai"
+      image_light: "/images/juuridemo_logo.svg"
+      image_dark: "/images/juuridemo_logo_white.svg"
+      link: "https://juuri.ai"
+      
+    - title: "Juuri.ai"
+      image_light: "/images/juuridemo_logo.svg"
+      image_dark: "/images/juuridemo_logo_white.svg"
+      link: "https://juuri.ai"
+      
+    - title: "Juuri.ai"
+      image_light: "/images/juuridemo_logo.svg"
+      image_dark: "/images/juuridemo_logo_white.svg"
+      link: "https://juuri.ai"

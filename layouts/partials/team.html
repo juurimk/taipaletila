@@ -34,7 +34,7 @@
         <article class="team-member" aria-label="{{ .name }} {{ .designation }}">
           <div class="member-photo">
             {{"<!-- member photo -->" | safeHTML}}
-            <img class="img-fluid lozad" data-src="{{ .image_webp | absURL }}" onerror="this.onerror=null;this.src='{{ .image | absURL }}'" alt="{{ .name }} {{ .designation }}">
+            <img class="img-fluid lozad" data-src="{{ .image | absURL }}" onerror="this.onerror=null;this.src='{{ .image_webp | absURL }}'" alt="{{ .name }} {{ .designation }}">
 
             {{"<!-- member social profile -->" | safeHTML}}
             <div class="mask">

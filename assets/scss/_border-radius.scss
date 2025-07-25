@@ -1,0 +1,35 @@
+// =============================================================================
+// Component Border Radius System - käyttää button-järjestelmän corner-asetuksia
+// =============================================================================
+
+// Service Cards (etusivu)
+.service-card {
+  border-radius: var(--button-border-radius) !important;
+}
+
+// Team Member Photos
+.member-photo {
+  border-radius: var(--button-border-radius) !important;
+}
+
+// Gallery Items
+.gallery-item img {
+  border-radius: var(--button-border-radius) !important;
+}
+
+// Portfolio Items
+.portfolio-item img {
+  border-radius: var(--button-border-radius) !important;
+}
+
+// Blog Post Images
+.blog-post-image {
+  border-radius: var(--button-border-radius) !important;
+}
+
+// Card Components
+.card,
+.feature-card,
+.testimonial-card {
+  border-radius: var(--button-border-radius) !important;
+}

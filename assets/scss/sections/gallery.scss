@@ -27,22 +27,17 @@
         text-align: center;
         
         .filter-item {
-          display: inline-block;
           margin: 5px;
           cursor: pointer;
-          padding: 8px 16px;
-          border: 2px solid var(--siteset-#{$sectionset}-button);
-          background: transparent;
-          color: var(--siteset-#{$sectionset}-button);
-          text-transform: uppercase;
+          text-transform: none; // Ei uppercasea
           font-weight: 500;
-          font-family: var(--sitefont);
           font-size: 0.9rem;
-          transition: all 0.3s ease;
           
+          // Selected state (aktiivinen filtteri)
           &.selected {
-            background: var(--siteset-#{$sectionset}-button);
-            color: var(--siteset-#{$sectionset}-bg);
+            // Jos button on ghost-tyyli, selected näyttää fill-tyyliseltä
+            background: var(--siteset-#{$sectionset}-button) !important;
+            color: var(--siteset-#{$sectionset}-bg) !important;
           }
         }
       }
@@ -57,13 +52,16 @@
         
         .gallery-item {
           background: var(--siteset-#{$sectionset}-bg);
-          border-radius: 0px;
+          border-radius: var(--button-border-radius);
           overflow: hidden;
           box-shadow: 0 5px 15px rgba(0,0,0,0.1);
           margin-bottom: 30px;
           display: flex;
           flex-direction: column;
-          height: 400px;
+          
+          // Mobiili: joustava korkeus, jotta sisältö mahtuu
+          min-height: 350px;
+          height: auto;
           
           @media (min-width: 768px) {
             height: 450px;
@@ -85,6 +83,10 @@
               object-fit: cover;
               transition: transform 0.3s ease;
               display: block;
+              
+              @media (max-width: 767px) {
+                height: 220px; // Pienempi kuva mobiilissa = enemmän tilaa tekstille
+              }
             }
             
             &:hover img {
@@ -98,12 +100,21 @@
             display: flex;
             flex-direction: column;
             
+            @media (max-width: 767px) {
+              padding: 15px; // Pienempi padding mobiilissa
+            }
+            
             h3 {
               font-size: 1.2rem;
               margin-bottom: 10px;
               color: var(--siteset-#{$sectionset}-h2);
               font-family: var(--sitefont);
               font-weight: 600;
+              
+              @media (max-width: 767px) {
+                font-size: 1.1rem; // Pienempi otsikko mobiilissa
+                margin-bottom: 8px;
+              }
               
               a {
                 color: inherit;
@@ -119,16 +130,27 @@
               line-height: 1.6;
               margin-bottom: 10px;
               flex-grow: 1;
+              
+              @media (max-width: 767px) {
+                font-size: 0.85rem; // Pienempi teksti mobiilissa
+                line-height: 1.5;
+                margin-bottom: 8px;
+              }
             }
             
             .category {
               color: var(--siteset-#{$sectionset}-button);
               font-size: 0.8rem;
               font-weight: 500;
-              text-transform: uppercase;
+              text-transform: none; // Ei uppercasea
               font-family: var(--sitefont);
               margin-bottom: 0;
               margin-top: auto;
+              text-align: center;
+              
+              @media (max-width: 767px) {
+                font-size: 0.75rem; // Pienempi kategoria mobiilissa
+              }
             }
           }
         }
@@ -199,7 +221,7 @@
         color: #333;
         font-size: 0.9rem;
         font-weight: 500;
-        text-transform: uppercase;
+        text-transform: none; // Ei uppercasea
         font-family: var(--sitefont);
       }
     }

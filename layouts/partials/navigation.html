@@ -3,7 +3,12 @@
 		<nav class="navbar navbar-expand-lg navbar-dark">
 			<a class="navbar-brand p-0" href="{{ .Site.BaseURL | relLangURL }}">
 				{{ if site.Params.logo }}
+				{{ $navSectionset := site.Params.sectionsets.navigation | default "lightset" }}
+				{{ if or (eq $navSectionset "coloriset") (eq $navSectionset "darkset") }}
+				<img src="{{ site.Params.logo_white | absURL }}" alt="{{ .Site.Title }}" height="50">
+				{{ else }}
 				<img src="{{ site.Params.logo | absURL }}" alt="{{ .Site.Title }}" height="42">
+				{{ end }}
 				{{ else }}
 				{{ site.Title }}
 				{{ end }}
@@ -73,7 +78,7 @@
 				<!--<a href="#contact" class="btn btn-transparent page-scroll ml-3">Varaa Aika</a>-->
 				<!--<a href="{{ .Site.Params.calendar_url }}" class="btn btn-transparent ml-3" target="_blank">{{ .Site.Params.calendar_text }}</a> -->
 
-				<a href="{{ .Site.Params.calendar_url }}" class="btn-calendar-fill ml-3" target="_blank">{{ .Site.Params.calendar_text }}</a>
+				<a href="{{ .Site.Params.calendar_url }}" class="btn btn-calendar-fill page-scroll" target="_blank">{{ .Site.Params.calendar_text }}</a>
 
 			</div>
 		</nav>

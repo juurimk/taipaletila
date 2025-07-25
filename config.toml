@@ -1,5 +1,5 @@
 ################################# Default configuration ###################
-baseURL = "http://localhost:1313/"
+baseURL = "https://juuridemo.netlify.app/"
 title = "juuri.ai"
 #theme = "Juuri.ai"
 # default language
@@ -14,20 +14,22 @@ summaryLength = "15"
 # disable language - disable French to keep only Finnish and English
 disableLanguages = ["fr"]
 
+# Taxonomies
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
 ############################# Plugins ##########################
 # css plugins
 [[params.plugins.css]]
 link = "plugins/bootstrap/bootstrap.min.css"
 [[params.plugins.css]]
-link = "plugins/themify-icons/themify-icons.css"
-[[params.plugins.css]]
 link = "plugins/magnific-popup/magnific-popup.css"
 [[params.plugins.css]]
 link = "plugins/slick/slick.css"
 [[params.plugins.css]]
-# link = "https://fonts.googleapis.com/css?family=Anaheim|Quattrocento+Sans:400,700&display=swap"
-# link = "https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
-link = "https://fonts.googleapis.com/css2?family=Open+Sans:400,700&display=swap"
+link = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+
 # js plugins
 [[params.plugins.js]]
 link = "plugins/jquery/jquery.min.js"
@@ -126,7 +128,8 @@ weight = 8
 ############################# Default Parameters ##########################
 [params]
 enable = true
-logo = "images/juuri-ai-logo-rgb.svg"
+logo = "images/juuridemo_logo.svg"
+logo_white = "images/juuridemo_logo_white.svg"  # Valkoinen logo tumville taustoille
 # Meta data
 description = "Yhdistämme tekoälyn ja inhimillisen markkinoinnin tulokselliseksi kokonaisuudeksi. Vapauta kasvu – ota AI osaksi liiketoimintaasi jo tänään."
 # og kuva
@@ -147,12 +150,12 @@ blogBannerSubtitle = "Your Subtitle Here"
 # Popular font combinations you can copy/paste:
 
 # Open Sans (current - clean, professional)
-# sitefontlink = "https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap"
-# sitefont = "Open Sans"
+sitefontlink = "https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+sitefont = "Open Sans"
 
 # Inter (modern interface font - excellent for digital products)
-#sitefontlink = "https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,700;1,400&display=swap"
-#sitefont = "Inter"
+# sitefontlink = "https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,700;1,400&display=swap"
+# sitefont = "Inter"
 
 # Poppins (persoonallisempi mutta trendikäs - friendly, rounded)
 # sitefontlink = "https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400&display=swap"
@@ -171,8 +174,8 @@ blogBannerSubtitle = "Your Subtitle Here"
 # sitefont = "Manrope"
 
 # DM Sans (versatile - perfect for UI and content)
-sitefontlink = "https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,700;1,400&display=swap"
-sitefont = "DM Sans"
+# sitefontlink = "https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+# sitefont = "DM Sans"
 
 # System fonts (fastest - no web loading)
 # sitefontlink = ""
@@ -180,7 +183,7 @@ sitefont = "DM Sans"
 
 ############################# Siteset Colors Configuration ##########################
 # Choose siteset colors from available options: saaristo, kaste, korpi, hiekka, loimu, viima, verso, kipina, apila, helle, sahakka, ruska, harmonia, tuli, yo, tiikeri, syksy, neon, pastilli, pinkki, onecolor, terra, jklav1, jklav2
-siteset = "korpi"
+siteset = "viima"
 
 [params.sections]
     [params.sections.banner]
@@ -200,15 +203,15 @@ siteset = "korpi"
     [params.sections.portfolio]
       enable = false
     [params.sections.funfacts]
-      enable = false
-    [params.sections.comparison]
       enable = true
+    [params.sections.comparison]
+      enable = false
     [params.sections.pricing]
       enable = false
     [params.sections.testimonial]
       enable = false
     [params.sections.blog]
-      enable = false
+      enable = true
     [params.sections.faq]
       enable = true
     [params.sections.newsletter]
@@ -216,11 +219,18 @@ siteset = "korpi"
     [params.sections.contact]
       enable = true
     [params.sections.gallery]
-      enable = false
+      enable = true
     [params.sections.map]
       enable = false
     [params.sections.footer]
       enable = true
+    [params.sections.showcase]
+      enable = true
+    [params.sections.fullshow]
+      enable = true
+    [params.sections.logoband]
+      enable = true
+    
 
 
 
@@ -228,7 +238,7 @@ siteset = "korpi"
 # Each section can use different sectionsets within the same siteset
 # Available sectionsets: lightset, neutralset, darkset, coloriset
 [params.sectionsets]
-  banner = "lightset"        # Hero/banner section
+  banner = "darkset"        # Hero/banner section
   about = "darkset"        # About section
   services = "neutralset"   # Services section
   service_pages = "lightset"  # Individual service pages 
@@ -237,10 +247,11 @@ siteset = "korpi"
   team = "lightset"        # Team section
   pricing = "lightset"    # Pricing section
   blog = "coloriset"         # Blog section
+  blog_single = "lightset"   # Individual blog posts
   contact = "lightset"       # Contact section
   comparison = "lightset" # Comparison section
   faq = "neutralset"         # FAQ section
-  funfacts = "lightset"   # Funfacts section
+  funfacts = "darkset"   # Funfacts section (tumma teksti valkoiselle taustakuvalle)
   testimonial = "coloriset" # Testimonial section
   cta = "coloriset"          # Call-to-action section
   newsletter = "coloriset"   # Newsletter section 
@@ -248,13 +259,17 @@ siteset = "korpi"
   article = "coloriset"   # blogit
   gallery = "lightset"   # gridilistaus tuotteista
   services-hero = "lightset"   # Services hero single sivuilla (tuotesivut)
-  navigation = "neutralset"   # navbar
+  navigation = "darkset"   # navbar
   main_text = "lightset"   # service-single sivun ensimmäinen palvelukuvaus
-  packages = "neutralset"       # services singlesivun main teksti osio
+  packages = "coloriset"       # services singlesivun main teksti osio
   expert = "darkset"     # singlesivulla kouluttaja osio
   benefits = "darkset"    # ikonibanneri singlesivulla
   service_faq = "neutralset" # services single sivun faq
-  privacy = "neutralset" # 
+  footer = "darkset" # footer section
+  privacy = "neutralset" # privacy, jos ei pdf
+  showcase = "coloriset" # mainososio
+  fullshow = "lightset" # fullscreen taustakuva osio
+  logoband = "darkset" # asiakaslogot osio
 
 
 # preloader
@@ -301,32 +316,32 @@ link = "https://calendar.app.google/zeDfowAGrkcpjp9r9"
 ############################# social icons ##########################
 [[params.social]]
 enable = true
-icon = "ti-facebook" # themify icon pack : https://themify.me/themify-icons
+icon = "fab fa-facebook" # Font Awesome icon
 link = "#"
 
 [[params.social]]
 enable = true
-icon = "ti-twitter-alt" # themify icon pack : https://themify.me/themify-icons
+icon = "fab fa-twitter" # Font Awesome icon
 link = "#"
 
 [[params.social]]
 enable = false
-icon = "ti-youtube" # themify icon pack : https://themify.me/themify-icons
+icon = "fab fa-youtube" # Font Awesome icon
 link = "#"
 
 [[params.social]]
 enable = true
-icon = "ti-linkedin" # themify icon pack : https://themify.me/themify-icons
+icon = "fab fa-linkedin" # Font Awesome icon
 link = "#"
 
 [[params.social]]
 enable = false
-icon = "ti-dribbble" # themify icon pack : https://themify.me/themify-icons
+icon = "fab fa-dribbble" # Font Awesome icon
 link = "#"
 
 [[params.social]]
 enable = false
-icon = "ti-pinterest" # themify icon pack : https://themify.me/themify-icons
+icon = "fab fa-pinterest" # Font Awesome icon
 link = "#"
 
 

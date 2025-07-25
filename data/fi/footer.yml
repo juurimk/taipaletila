@@ -2,16 +2,16 @@
 footer:
   enable: true
   description: |
-    Autamme yrityksiä kasvamaan digitaalisessa maailmassa tehostamalla toimintaa modernin markkinoinnin sekä tekoälyn ja automaation avulla. Keskitymme ratkaisuihin, jotka tekevät monimutkaisesta yksinkertaista ja vapauttavat aikaa siihen mikä todella vie liiketoimintaa eteenpäin.
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
   business_info: |
-    Juuri.ai Oy
-    Y-tunnus: 3550186-8
+    Lorem Oy
+    Y-tunnus: 123456-7
   
   # Logo section
-  logo: "images/juuri-ai-logo-white.png"
+  logo: "images/juuridemo_logo_white.png"
   # footer_logo: "images/juuri-ai-logo-white.png"  # POISTETTU TILAPÄISESTI
-  logo_webp: "images/juuri-ai-logo-white.webp"
+  logo_webp: "images/juuridemo_logo_white.webp"
   logo_alt: "Juuri.ai"
   
   # Footer links section
@@ -45,21 +45,21 @@ footer:
   
   # Social media links
   social_links:
-  #  - icon: "ti-facebook"
+  #  - icon: "fab fa-facebook"
   #   link: "https://facebook.com/juuriai"
   #    target: "_blank"
       
-    - icon: "ti-linkedin" 
+    - icon: "fab fa-linkedin" 
       link: "https://www.linkedin.com/company/juuri-ai/"
       target: "_blank"
       
-  #  - icon: "ti-twitter-alt"
+  #  - icon: "fab fa-twitter"
   #    link: "https://twitter.com/juuriai"
   #    target: "_blank"
       
-   # - icon: "ti-instagram"
+   # - icon: "fab fa-instagram"
   #    link: "https://instagram.com/juuriai"
    #   target: "_blank"
   
   # Copyright text (appears under logo)
-  copyright: "© 2025 Juuri.ai. Kaikki oikeudet pidätetään."
+  copyright: "© 2025 Lorem Oy. Kaikki oikeudet pidätetään."

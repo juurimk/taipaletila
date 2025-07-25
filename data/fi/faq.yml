@@ -1,47 +1,47 @@
 ############################### FAQ ############################
 faq:
   enable: true
-  title: Usein kysytyt kysymykset
+  title: Lorem Ipsum Dolor Sit
   # subtitle: Vastauksia yleisimpiin kysymyksiin
   # faq_description: Tässä löydät vastaukset yleisimpiin kysymyksiin palveluistamme. Jos et löydä vastausta kysymykseesi, ota rohkeasti yhteyttä - autamme mielellämme!
 
   # FAQ Items (ilman kategorioita)
   faq_items:
     # FAQ item 1
-    - question: Miten hyödynnämme tekoälyä markkinoinnissa?
+    - question: Lorem ipsum dolor sit amet consectetur adipiscing elit?
       answer: | 
-        **Räätälöidyt tekoälyagentit, jotka tuntevat yrityksesi**
-        Rakennamme älykkäitä avustajia, jotka tuntevat yrityksesi tavat toimia. Luomme markkinointitiimiin kampanjamanagereita, HR tiimille älykkäitä Tekoälyavustajia ja muita kokonaisuuksia, jotka tehostavat toimintaanne.
+        **Lorem ipsum dolor sit amet consectetur**
+        Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
  
-        Tekoäly on loistava sisällön tuottamisessa ideointivaiheessa. Se voi ehdottaa otsikoita, hahmotella tekstirunkoja ja tuottaa variaatioita tai tuottaa suoraan hakukoneoptimoitua sisältöä. Prosessimme, jokainen julkaistava sana käy ihmisen tarkistuksen läpi. Ihmisyys ei katoa.
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum.
 
     # FAQ item 2
-    - question: Mitä työkaluja hyödynnämme?
+    - question: Sed do eiusmod tempor incididunt ut labore?
       answer: |
-        **Uusimmat kielimallit**  
-        Käytämme markkinoiden kehittyneimpiä AI-kielimalleja, mutta aina selkeällä strategialla. Emme anna tekoälyn improvisoida. Se toimii tarkkojen ohjeiden mukaan. Näin varmistamme laadun. Koulutamme mallit ymmärtämään juuri  yrityksen kieltä ja arvoja.
+        **Ut enim ad minim veniam**  
+        Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
 
-        **Automaatioalustat, joiden avulla saadaan aikaiseksi**  
-        Hyödynnämme kokemustamme N8N:stä, Make.com:sta ja Zapierista rakentaaksemme kokonaisuuksia, jotka toimivat. Asiakastieto liikkuu järjestelmästä toiseen saumattomasti, kampanjat käynnistyvät oikeaan aikaan ja seuranta tapahtuu automaattisesti. Mutta aina niin, että ihminen näkee mitä tapahtuu ja voi puuttua asiaan tarvittaessa.
+        **Excepteur sint occaecat cupidatat**  
+        Non proident sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam.
 
     # FAQ item 3
-    - question: Tekoäly kuulostaa kylmältä. Häviääkö inhimillisyys?
-      answer: Päinvastoin. Kun tekoäly hoitaa tylsimmät rutiinit, ihmisille jää   enemmän aikaa olla ihmisiä. Asiakaspalvelija voi kuunnella asiakasta paremmin, kun ei tarvitse etsiä tietoja kymmenestä järjestelmästä. Markkinoija voi keskittyä tarinankerrontaan, kun esivalmisteluvaiheet tapahtuvat automaattisesti. Tekoäly tekee tilaa inhimillisyydelle - ei vie sitä pois.
+    - question: Quis nostrud exercitation ullamco laboris nisi?
+      answer: Ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia deserunt mollit anim id est laborum.
   
     # FAQ item 4
-    - question: Kuinka nopeasti nähdään todellisia tuloksia?
+    - question: Excepteur sint occaecat cupidatat non proident?
       answer: |
-        Riippuu täysin siitä, mitä ongelmaa ratkotaan. Yksinkertainen chatbot voi alkaa säästää aikaa heti. Monimutkaisempi asiakkuudenhallinta vaatii vähän enemmän hiomista. Olemme rehellisiä: aitoa kasvua ei synny yhdessä yössä, mutta aikaa alkaa säästymään heti. Varmistamme, että jokainen askel vie oikeaan suuntaan ja että näet edistymisen matkan varrella.
+        Sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium. Totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
 
     # FAQ item 5
-    - question: Entä, jos tilaajalla ei ole teknistä osaamista omassa tiimissään?
+    - question: Nemo enim ipsam voluptatem quia voluptas sit aspernatur?
       answer: |
-        Sitä varten me olemme olemassa. Selitämme kaiken selkokielellä, koulutamme tiimiäsi käyttämään ratkaisuja ja olemme tukena aina kun tarvitset. Tavoite on, että sinä hallitset lopputuloksen et ole riippuvainen meistä päivittäisessä toiminnassa. Mutta kun tarvitset apua, olemme puhelun päässä. Ja jos teiltä löytyykin sitä teknistä osaamista, vielä parempi. Kaikki ratkaisumme voimme rakentaa niin, että ne ovat täysin teidän ylläpitämiä ja hallinnoimia.
+        Aut odit aut fugit sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est qui dolorem ipsum quia dolor sit amet consectetur adipisci velit sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
 
     # FAQ item 6
-    - question: Miten varmistatte, että ratkaisu toimii juuri meidän yrityksessämme?
+    - question: Ut enim ad minima veniam quis nostrum exercitationem?
       answer: |
-        Emme tule valmiilla sapluunoilla. Jokainen ala on erilainen, jokainen yritys on ainutlaatuinen. Siksi vietämme aikaa ymmärtääksemme toimintaanne. Yleisratkaisut harvoin toimivat ja sen vuoksi räätälöinti on usein välttämätöntä. 
+        Ullam corporis suscipit laboriosam nisi ut aliquid ex ea commodi consequatur. Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur vel illum qui dolorem eum fugiat quo voluptas nulla pariatur. 
 
   # Contact CTA section
   # contact_cta:

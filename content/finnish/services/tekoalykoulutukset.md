@@ -52,23 +52,23 @@ benefits:
   enable: true
  # title: "Koulutuksen hyödyt"
   benefits_list:
-    - icon: ti-pencil-alt
+    - icon: far fa-edit
       title: "Räätälöity strategia"
       content: "Räätälöity AI-strategia liiketoimintaanne varten."
 
-    - icon: ti-settings
+    - icon: far fa-file-alt
       title: "Käytännön työkalut"
       content: "Konkreettiset työkalut liiketoimintanne prosesseihinne."
 
-    - icon: ti-timer
+    - icon: far fa-clock
       title: "Ajan säästö"
       content: "Aikaavievien rutiinitehtävien automatinointi."
 
-    - icon: ti-rocket
+    - icon: far fa-gem
       title: "Kilpailuetu"
       content: "Merkittävää kilpailuetua AI:n avulla."
 
-    - icon: ti-check-box
+    - icon: far fa-check-circle
       title: "Valmiit mallit"
       content: "Valmiit ohjeet ja mallit käyttöönottoon heti koulutuksen jälkeen."
 

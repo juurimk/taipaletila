@@ -1,9 +1,12 @@
 {{ $data := index site.Data site.Language.Lang }}
 
+{{/* Get sectionset for funfacts section */}}
+{{ $sectionset := index site.Params.sectionsets "funfacts" | default "lightset" }}
+
 {{ if $data.funfacts.funfacts.enable }}
 {{ with $data.funfacts.funfacts }}
 {{"<!-- Start Counter Section -->" | safeHTML}}
-<section id="counter" class="parallax-section bg-1 section overly" style='background-image: url("{{ .bg_image_webp | absURL }}")'>
+<section id="counter" class="parallax-section bg-1 section overly section-{{ $sectionset }}" style='background-image: url("{{ .bg_image_webp | absURL }}")'>
 	<!-- this image is for trigger this section fallback background image -->
 	<img class="lozad" style="display: none;" onerror="this.onerror=null;this.parentElement.style.backgroundImage= 'url({{ .bg_image | absURL }})'" data-src="{{ .bg_image_webp | absURL }}" />
 	<div class="container">

@@ -145,4 +145,35 @@
     color: #000 !important;
     text-align: left;
   }
+  
+  p {
+    color: #000 !important;
+  }
+}
+
+// Blog meta styles for single page
+.section-lightset .blog-meta {
+  .blog-title {
+    font-size: 2.5rem !important;
+    line-height: 1.2 !important;
+    margin-bottom: 1rem !important;
+    margin-top: 80px !important;
+    padding-top: 0 !important;
+  }
+  
+  .blog-meta-info {
+    .blog-date, .blog-author, .blog-tags {
+      color: #000 !important;
+      font-size: 0.8rem !important;
+      
+      i {
+        color: #000 !important;
+        font-size: 0.75rem !important;
+      }
+    }
+  }
+  
+  .blog-ingress {
+    color: #000 !important;
+  }
 }

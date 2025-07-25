@@ -1,11 +1,11 @@
-.about {
+#about {
   .block {
     .icon-box {
       i {
-        font-size: 2rem;
+        font-size: 1.5rem;
         display: inline-block;
         margin-bottom: 1rem;
-        color: var(--siteset-lightset-button);
+        color: var(--siteset-darkset-button);
 
         @media (max-width: 576px) {
           margin-top: 1.2rem;
@@ -20,7 +20,7 @@
         font-weight: 700;
         font-family: var(--sitefont);
         color: var(--siteset-darkset-color);
-        margin-top: 1rem;
+        margin-top: 0.5rem; // Pienempi margin = lähempänä ikonia
         text-align: center;
       }
 
@@ -46,8 +46,19 @@
   }
 }
 
+// About section padding
+#about.section {
+  padding: 60px 0 70px 0 !important;
+}
+
+@media (max-width: 768px) {
+  #about.section {
+    padding: 45px 0 60px 0 !important;
+  }
+}
+
 @media (max-width: 576px) {
   #about.section {
-    padding: 40px 0px 70px 0px !important;
+    padding: 35px 0 50px 0 !important;
   }
 }

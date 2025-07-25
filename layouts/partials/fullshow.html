@@ -1,0 +1,58 @@
+{{ $data := index site.Data site.Language.Lang }}
+
+{{/* Get sectionset for fullshow section */}}
+{{ $sectionset := index site.Params.sectionsets "fullshow" | default "lightset" }}
+
+{{ if $data.fullshow.fullshow.enable }}
+{{ with $data.fullshow.fullshow }}
+{{"<!-- Start Fullshow Section -->" | safeHTML}}
+<section id="fullshow" class="section fullshow-section section-{{ $sectionset }}" style="background-image: url('{{ .background_image | absURL }}');">
+  <div class="fullshow-overlay"></div>
+  <div class="container">
+    <div class="row align-items-center min-vh-70">
+      
+      {{ if eq .text_position "left" }}
+      {{"<!-- Text Left Layout -->" | safeHTML}}
+      <div class="col-lg-6">
+        <div class="fullshow-content">
+          <h2>{{ .title }}</h2>
+          {{ if .description }}
+          <p>{{ .description }}</p>
+          {{ end }}
+          {{ if .button.enable }}
+          {{ with .button }}
+          <a href="{{ .link }}" class="btn btn-calendar-fill page-scroll" role="button" aria-label="{{ .label }}">
+            {{ .label }}
+          </a>
+          {{ end }}
+          {{ end }}
+        </div>
+      </div>
+      <div class="col-lg-6"></div>
+      
+      {{ else }}
+      {{"<!-- Text Right Layout -->" | safeHTML}}
+      <div class="col-lg-6"></div>
+      <div class="col-lg-6">
+        <div class="fullshow-content">
+          <h2>{{ .title }}</h2>
+          {{ if .description }}
+          <p>{{ .description }}</p>
+          {{ end }}
+          {{ if .button.enable }}
+          {{ with .button }}
+          <a href="{{ .link }}" class="btn btn-calendar-fill page-scroll" role="button" aria-label="{{ .label }}">
+            {{ .label }}
+          </a>
+          {{ end }}
+          {{ end }}
+        </div>
+      </div>
+      {{ end }}
+      
+    </div>
+  </div>
+</section>
+{{"<!-- /fullshow -->" | safeHTML}}
+{{ end }}
+{{ end }}

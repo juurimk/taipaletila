@@ -3,16 +3,16 @@ about:
   enable : true
   # title : 3 syytä valita Juuri.ai
   about_item :
-  - icon : ti-ruler-pencil # themify icon pack : https://themify.me/themify-icons
-    title : Inhimillinen automaatio
-    content : Ihminen tekee tärkeimmän työn ja automaatio hoitaa loput. Kun rutiinit pyörivät itsestään, tiimisi voi käyttää osaamisensa ja intohimonsa siihen, mikä tekee yrityksestänne ainutlaatuisen.
+  - icon : far fa-edit # Font Awesome regular icon (design/planning)
+    title : Lorem Ipsum Dolor
+    content : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
 
-  - icon : ti-cup # themify icon pack : https://themify.me/themify-icons
-    title : Olemme ammattilaisia
-    content : Tuotamme tekstit, kuvat ja julkaisut alusta loppuun. Tiedät aina, että sisältö on brändisi näköistä ja ajallaan tehtyä.
+  - icon : far fa-lightbulb # Font Awesome regular icon (ideas/service)
+    title : Consectetur Adipiscing
+    content : Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.
 
-  - icon : ti-stats-up # themify icon pack : https://themify.me/themify-icons
-    title : Kustannustehokas kasvu
-    content : Saat suuren toimiston jälkeä ilman perinteisen markkinointitoimiston hintaa.
+  - icon : far fa-chart-bar # Font Awesome regular icon (growth/stats)
+    title : Sed Do Eiusmod
+    content : Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet consectetur adipiscing elit.
 
   

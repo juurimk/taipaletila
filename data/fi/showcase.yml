@@ -1,0 +1,21 @@
+# Showcase Section Configuration
+# Place in: data/fi/showcase.yml
+
+showcase:
+  enable: true
+  title: "Juuri.ai ja saat aikaa olennaiseen."
+  description: "Keskity siihen mikä on tärkeää. Automatisoimme rutiinit, analysoimme dataa ja koulutamme tiimisi."
+  
+  # Layout position: "left" = images left, text right | "right" = text left, images right
+  position: "left"
+  
+  # Kuvat layoutille
+  images:
+    - title: "AI-automatisoitu asiakaspalvelu"
+      image: "/images/showcase/showcase1.png"
+      
+    - title: "Tekoälykoulutus tiimille"
+      image: "/images/showcase/showcase2.png"
+      
+    - title: "Dataan perustuva päätöksenteko"
+      image: "/images/showcase/showcase3.png"

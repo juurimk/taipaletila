@@ -23,9 +23,9 @@
     {{"<!-- Gallery Filter -->" | safeHTML}}
     {{ if .filter.enable }}
     <div class="gallery-filter">
-      <div class="filter-item selected" data-filter="*">{{ .filter.all_text | default "All" }}</div>
+      <div class="btn btn-transparent filter-item selected" data-filter="*">{{ .filter.all_text | default "All" }}</div>
       {{ range .filter.items }}
-      <div class="filter-item" data-filter=".{{ .slug }}">{{ .name }}</div>
+      <div class="btn btn-transparent filter-item" data-filter=".{{ .slug }}">{{ .name }}</div>
       {{ end }}
     </div>
     {{ end }}

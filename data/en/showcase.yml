@@ -1,0 +1,21 @@
+# Showcase Section Configuration
+# Place in: data/en/showcase.yml
+
+showcase:
+  enable: true
+  title: "Juuri.ai - Focus on what matters."
+  description: "Focus on what's important. We automate routines, analyze data and train your team."
+  
+  # Layout position: "left" = images left, text right | "right" = text left, images right
+  position: "right"
+  
+  # Kuvat layoutille
+  images:
+    - title: "AI-automated customer service"
+      image: "/images/showcase/showcase1.png"
+      
+    - title: "AI training for teams"
+      image: "/images/showcase/showcase2.png"
+      
+    - title: "Data-driven decision making"
+      image: "/images/showcase/showcase3.png"

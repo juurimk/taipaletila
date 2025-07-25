@@ -2,9 +2,12 @@
 
 {{ $data := index site.Data site.Language.Lang }}
 
+{{/* Get sectionset for footer section */}}
+{{ $sectionset := index site.Params.sectionsets "footer" | default "darkset" }}
+
 {{ if $data.footer.footer.enable }}
 {{ with $data.footer.footer }}
-<footer id="footer" class="footer-section">
+<footer id="footer" class="footer-section section-{{ $sectionset }}">
 	<div class="container">
 		
 		{{"<!-- First Row - Logo only -->" | safeHTML}}
@@ -74,11 +77,10 @@
 			</div>
 			
 			<div class="col-lg-3 col-md-3 text-center">
-				<button style= "padding-top:0px!important; 
-  margin-top:0px!important;" id="scroll-to-top" 
-          class="scroll-to-top"
+				<button id="scroll-to-top" 
+          class="btn btn-transparent scroll-to-top"
           aria-label="Siirry sivun alkuun">
-          <i class="ti-angle-up"></i>
+          <i class="fas fa-chevron-up"></i>
       </button>
 			</div>
 		</div>

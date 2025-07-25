@@ -1,0 +1,155 @@
+{{ $data := index site.Data site.Language.Lang }}
+
+{{/* Get sectionset for showcase section */}}
+{{ $sectionset := index site.Params.sectionsets "showcase" | default "lightset" }}
+
+{{ if $data.showcase.showcase.enable }}
+{{ with $data.showcase.showcase }}
+{{"<!-- Start Showcase Section -->" | safeHTML}}
+<section id="showcase" class="section showcase-section section-{{ $sectionset }}">
+  <div class="container">
+    
+    {{"<!-- Desktop Layout -->" | safeHTML}}
+    <div class="showcase-desktop d-none d-md-block">
+      <div class="row align-items-center">
+        
+        {{ $position := .position | default "left" }}
+        {{ if eq $position "left" }}
+        
+        {{"<!-- Left Side - Images -->" | safeHTML}}
+        <div class="col-md-7">
+          <div class="showcase-images">
+            
+            {{ $imageCount := len $data.showcase.showcase.images }}
+            {{ if eq $imageCount 1 }}
+            {{"<!-- Single Image Layout -->" | safeHTML}}
+            {{ with index $data.showcase.showcase.images 0 }}
+            <div class="showcase-image-single">
+              <img src="{{ .image | absURL }}" alt="{{ .title }}" class="image-card">
+            </div>
+            {{ end }}
+            
+            {{ else if eq $imageCount 2 }}
+            {{"<!-- Two Images Layout -->" | safeHTML}}
+            <div class="showcase-images-two">
+              {{ range $index, $item := $data.showcase.showcase.images }}
+              <div class="showcase-image-half">
+                <img src="{{ $item.image | absURL }}" alt="{{ $item.title }}" class="image-card">
+              </div>
+              {{ end }}
+            </div>
+            
+            {{ else if ge $imageCount 3 }}
+            {{"<!-- Three Images Layout -->" | safeHTML}}
+            {{ with index $data.showcase.showcase.images 0 }}
+            <div class="showcase-image-top">
+              <img src="{{ .image | absURL }}" alt="{{ .title }}" class="image-card">
+            </div>
+            {{ end }}
+            
+            <div class="showcase-images-bottom">
+              {{ range $index, $item := after 1 $data.showcase.showcase.images }}
+              <div class="showcase-image-bottom">
+                <img src="{{ $item.image | absURL }}" alt="{{ $item.title }}" class="image-card">
+              </div>
+              {{ end }}
+            </div>
+            {{ end }}
+            
+          </div>
+        </div>
+        
+        {{"<!-- Right Side - Text -->" | safeHTML}}
+        <div class="col-md-5">
+          <div class="showcase-content">
+            <h2>{{ .title }}</h2>
+            {{ if .description }}
+            <p>{{ .description }}</p>
+            {{ end }}
+          </div>
+        </div>
+        
+        {{ else }}
+        
+        {{"<!-- Left Side - Text -->" | safeHTML}}
+        <div class="col-md-5">
+          <div class="showcase-content showcase-content-right">
+            <h2>{{ .title }}</h2>
+            {{ if .description }}
+            <p>{{ .description }}</p>
+            {{ end }}
+          </div>
+        </div>
+        
+        {{"<!-- Right Side - Images -->" | safeHTML}}
+        <div class="col-md-7">
+          <div class="showcase-images showcase-images-right">
+            
+            {{ $imageCount := len $data.showcase.showcase.images }}
+            {{ if eq $imageCount 1 }}
+            {{"<!-- Single Image Layout -->" | safeHTML}}
+            {{ with index $data.showcase.showcase.images 0 }}
+            <div class="showcase-image-single">
+              <img src="{{ .image | absURL }}" alt="{{ .title }}" class="image-card">
+            </div>
+            {{ end }}
+            
+            {{ else if eq $imageCount 2 }}
+            {{"<!-- Two Images Layout -->" | safeHTML}}
+            <div class="showcase-images-two">
+              {{ range $index, $item := $data.showcase.showcase.images }}
+              <div class="showcase-image-half">
+                <img src="{{ $item.image | absURL }}" alt="{{ $item.title }}" class="image-card">
+              </div>
+              {{ end }}
+            </div>
+            
+            {{ else if ge $imageCount 3 }}
+            {{"<!-- Three Images Layout -->" | safeHTML}}
+            {{ with index $data.showcase.showcase.images 0 }}
+            <div class="showcase-image-top">
+              <img src="{{ .image | absURL }}" alt="{{ .title }}" class="image-card">
+            </div>
+            {{ end }}
+            
+            <div class="showcase-images-bottom">
+              {{ range $index, $item := after 1 $data.showcase.showcase.images }}
+              <div class="showcase-image-bottom">
+                <img src="{{ $item.image | absURL }}" alt="{{ $item.title }}" class="image-card">
+              </div>
+              {{ end }}
+            </div>
+            {{ end }}
+            
+          </div>
+        </div>
+        
+        {{ end }}
+        
+      </div>
+    </div>
+    
+    {{"<!-- Mobile Layout -->" | safeHTML}}
+    <div class="showcase-mobile d-block d-md-none">
+      <div class="showcase-content-mobile">
+        <h2>{{ .title }}</h2>
+        {{ if .description }}
+        <p>{{ .description }}</p>
+        {{ end }}
+      </div>
+      
+      {{"<!-- Mobile Images Grid -->" | safeHTML}}
+      <div class="showcase-images-mobile">
+        {{ range .images }}
+        <div class="showcase-image-mobile">
+          <img src="{{ .image | absURL }}" alt="{{ .title }}" class="image-card">
+        </div>
+        {{ end }}
+      </div>
+    </div>
+    
+  </div>
+</section>
+{{"<!-- /showcase -->" | safeHTML}}
+{{ end }}
+{{ end }}
