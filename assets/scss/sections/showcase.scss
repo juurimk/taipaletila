@@ -44,9 +44,7 @@
         object-fit: cover;
         display: block;
         box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-        
-        // Border radius from button system using CSS custom property
-        border-radius: var(--button-border-radius) !important;
+        border-radius: var(--button-border-radius);
       }
     }
   }

@@ -6,17 +6,14 @@
 
 {{ partial "navigation.html" . }}
 
-{{/* Get sectionset for blog section */}}
-{{ $sectionset := index site.Params.sectionsets "blog" | default "lightset" }}
-
 {{"<!-- Start Blog Section -->" | safeHTML}}
-<section id="blogi" class="section section-{{ $sectionset }}">
+<section id="blogi" class="section {{ with site.Params.sectionsets.blog }}section-{{ . }}{{ else }}section-lightset{{ end }}">
   <div class="container">
     <div class="row">
       <div class="col-12">
         {{"<!-- section title -->" | safeHTML}}
         <div class="title text-center">
-          <h2 class="title blogiotsikko">{{ i18n "blogTitle" }}</h2>
+          <h1 class="blog_list_main_h1">{{ i18n "blogTitle" }}</h1>
         </div>
       </div>
       {{"<!-- /section title -->" | safeHTML}}

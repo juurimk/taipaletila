@@ -1490,7 +1490,7 @@ sitesets:
       coloriset:
         bg_color: "#a3a3a3"
         color: "#ffffff"
-        button: "#ffffff"
+        button: "#49a5af"
         button_text: "#030303"
         h2: "#ffffff"
         h1: "#ffffff"

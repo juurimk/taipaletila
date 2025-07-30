@@ -17,7 +17,7 @@ portfolio:
     - name : Äänijärjestelmä
       image : images/portfolio/portfolio-2.jpg
       image_webp : images/portfolio/portfolio-2.webp
-      passive_color: "theme_gray"  # Kiinteä harmaa #d5d5d5
+      passive_color: "#d5d5d5"  # Kiinteä vaalea harmaa
       logo_white: "images/portfolio/juuri-ai-logo-white.svg"
       logo_black: "images/portfolio/juuri-ai-logo-black.svg"
       # link : ""
@@ -35,7 +35,7 @@ portfolio:
     - name : Pullon etiketti
       image : images/portfolio/portfolio-4.jpg
       image_webp : images/portfolio/portfolio-4.webp
-      passive_color: "theme_gray"  # Korpi: vaalea harmaa #e4e4e4
+      passive_color: "#e4e4e4"  # Kiinteä vaalea harmaa
       logo_white: "images/portfolio/juuri-ai-logo-white.svg"
       logo_black: "images/portfolio/juuri-ai-logo-black.svg"
       link : "#"
@@ -53,7 +53,7 @@ portfolio:
     - name : Tagi-suunnittelu
       image : images/portfolio/portfolio-6.jpg
       image_webp : images/portfolio/portfolio-6.webp
-      passive_color: "theme_gray"  # Korpi: valkoinen #FFFFFF
+      passive_color: "#FFFFFF"  # Kiinteä valkoinen
       logo_white: "images/portfolio/juuri-ai-logo-white.svg"
       logo_black: "images/portfolio/juuri-ai-logo-black.svg"
       # link : "#"

@@ -1,5 +1,6 @@
 {{ define "main" }}
 
+
 <!-- SCSS lataus -->
 {{ $singleCSS := resources.Get "scss/sections/single.scss" | toCSS }}
 <link rel="stylesheet" href="{{ $singleCSS.RelPermalink }}">
@@ -15,61 +16,65 @@
       <div class="col-lg-8 offset-lg-2">
 
         <!-- Blogipostauksen otsikko, päivämäärä ja kirjoittaja -->
-        <div class="blog-meta mb-4">
-          <h1 class="blog-title mb-3">{{ .Title }}</h1>
+        <div class="blog-meta">
+          <h1 class="blog_single_main_h1">{{ .Title }}</h1>
           <div class="blog-meta-info">
-            <div class="blog-date text-muted d-inline-block" style="margin-right: 16px;">
-              <i class="fas fa-calendar-alt" style="font-size: 0.875rem; margin-right: 8px;"></i>{{ .Date.Format "02.01.2006" }}
+            <div class="blog-date text-muted d-inline-block">
+              <i class="fas fa-calendar-alt"></i>{{ .Date.Format "02.01.2006" }}
             </div>
             {{ if .Params.author }}
-            <div class="blog-author text-muted d-inline-block" style="margin-right: 16px;">
-              <i class="fas fa-user" style="font-size: 0.875rem; margin-right: 8px;"></i>{{ .Params.author }}
+            <div class="blog-author text-muted d-inline-block">
+              <i class="fas fa-user"></i>{{ .Params.author }}
             </div>
             {{ end }}
+            {{ with .Params.tags }}
             <div class="blog-tags text-muted d-inline-block">
-              <i class="fas fa-list" style="font-size: 0.875rem; margin-right: 8px;"></i>teknologia, suunnittelu, blogi
+              <i class="fas fa-list"></i>
+              {{ range $i, $tag := . }}{{ if $i }}, {{ end }}{{ $tag }}{{ end }}
             </div>
+            {{ end }}
           </div>
           {{ if or .Params.ingress .Params.description }}
-          <div class="blog-ingress text-muted mt-3" style="font-style: italic;">{{ .Params.ingress | default .Params.description | markdownify }}</div>
+          <div class="blog-ingress text-muted mt-3">{{ .Params.ingress | default .Params.description | markdownify }}</div>
           {{ end }}
         </div>
 
-        <!-- Pääkuva -->
-        {{ if .Params.image_webp }}
-          <img class="img-fluid mb-50 lozad" data-src="{{ .Params.image_webp | absURL }}" alt="blog-image">
-        {{ else if .Params.image }}
-          <img class="img-fluid mb-50 lozad" data-src="{{ .Params.image | absURL }}" alt="blog-image">
-        {{ end }}
       </div>
 
       <div class="col-lg-8 offset-lg-2">
         <div class="post-single-content">
           {{ .Content }}
+          {{ if site.Params.post_share }}
+          {{ partial "post-share.html" . }}
+          {{ end }}
+          <div class="blog-post-footer" style="margin-top:2.5rem; font-weight:700;">
+            {{ with .Params.blogfooter }}{{ . | markdownify }}{{ end }}
+          </div>
+          {{ with .Params.blogcta }}
+        <div class="blog-post-cta">
+          {{ $re := `\[([^\]]+)\]\(([^\)]+)\)` }}
+          {{ . | replaceRE $re `<a href="$2" class="btn btn-calendar-fill" target="_blank">$1</a>` | safeHTML }}
         </div>
-
-        {{ if site.Params.post_share }}
-        {{ partial "post-share.html" . }}
-        {{ end }}
+          {{ end }}
+        </div>
 
       </div>
     </div>
   </div>
 </section>
 
-<!-- Pagination Section -->
 {{ if or .Prev .Next }}
 <section class="pagination section-{{ $sectionset }}" style="border-radius: 0; padding-top: 0px;">
   <div class="container">
     <div class="row">
       <div class="col-lg-8 offset-lg-2">
         <div class="d-flex justify-content-between align-items-center" style="margin-bottom: 40px;">
-          {{ if .Prev }}
+          {{ if and .Prev (eq .Prev.Section "blog") (ne .Permalink .Prev.Permalink) }}
           <a class="btn" href="{{ .Prev.Permalink }}">← Edellinen</a>
           {{ else }}
           <div></div>
           {{ end }}
-          {{ if .Next }}
+          {{ if and .Next (eq .Next.Section "blog") (ne .Permalink .Next.Permalink) }}
           <a class="btn" href="{{ .Next.Permalink }}">Seuraava →</a>
           {{ else }}
           <div></div>

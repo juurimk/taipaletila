@@ -1,3 +1,12 @@
+    // Some-ikoni mask-linkin sisällä
+    .mask i {
+      color: #fff !important;
+      font-size: 24px;
+    }
+// Varmistetaan että team-henkilökuvausten p-elementin fonttikoko on 0.95rem
+.team-section .member-meta p {
+  font-size: 0.95rem !important;
+}
 // =============================================================================
 // Team section
 // =============================================================================
@@ -18,10 +27,20 @@
   .member-photo {
     position: relative;
     overflow: hidden;
-    border-radius: var(--button-border-radius);
     margin-bottom:20px;
-    // Pysyvä taustaväri siteset-värin mukaan (coloriset riippumatta team-osion sectionset:istä)
-    background-color: var(--siteset-coloriset-bg);
+    border-radius: var(--button-border-radius); // LISÄÄ TÄMÄ RIVI
+
+    // Alimmainen taustakerros - näkyy aina
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: var(--siteset-darkset-bg);
+      z-index: 0;
+    }
 
     // Erillinen värikerros hover-efektille
     &::before {
@@ -34,7 +53,7 @@
       background-color: var(--siteset-darkset-bg) ;
       opacity: 0;
       transition: opacity 0.3s ease;
-      z-index: 1;
+      z-index: 2;
     }
 
     // LinkedIn logo layer
@@ -49,7 +68,7 @@
       align-items: center;
       justify-content: center;
       transition: opacity 0.3s ease;
-      z-index: 2;
+      z-index: 3;
 
       ul {
         list-style: none;
@@ -70,12 +89,38 @@
       }
     }
 
+    // Kuva tulee taustakerrosten päälle
+    img {
+      position: relative;
+      z-index: 1;
+    }
+
     &:hover::before {
       opacity: 0.4;
     }
 
     &:hover .mask {
       opacity: 1;
+    }
+  }
+
+  // Nimi- ja tittelityylit
+  .member-meta {
+    // Ei keskitystä desktopilla, vain mobiilissa
+    
+    .member-name {
+      font-size: 1.4rem; // Pienempi kuin alkuperäinen h3 mutta suurempi kuin ennen
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--siteset-lightset-button); // Palauta väri
+    }
+    
+    .member-title {
+      font-size: 1rem; // Sama koko kuin p-elementti
+      font-weight: 700; // Strong/lihavoitu
+      color: var(--siteset-lightset-button); // Sama väri kuin nimellä
+      display: block;
+      margin-bottom: 1rem;
     }
   }
 }
@@ -115,6 +160,10 @@
   }
 
   .team-section .member-name {
+    text-align: center;
+  }
+  
+  .team-section .member-meta {
     text-align: center;
   }
 }

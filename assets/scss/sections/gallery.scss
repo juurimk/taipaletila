@@ -18,7 +18,7 @@
       .gallery-description p {
         color: var(--siteset-#{$sectionset}-color);
         font-family: var(--sitefont);
-        font-size: 1rem;
+        font-size: 0.95rem;
         line-height: 1.3;
       }
       
@@ -99,6 +99,7 @@
             flex-grow: 1;
             display: flex;
             flex-direction: column;
+            font-size: 0.95rem;
             
             @media (max-width: 767px) {
               padding: 15px; // Pienempi padding mobiilissa
@@ -125,7 +126,7 @@
             
             p {
               color: var(--siteset-#{$sectionset}-color);
-              font-size: 0.9rem;
+              font-size: 0.95rem;
               font-family: var(--sitefont);
               line-height: 1.6;
               margin-bottom: 10px;

@@ -7,8 +7,10 @@
 
 {{ if $data.portfolio.portfolio.enable }}
 {{ with $data.portfolio.portfolio }}
+{{/* Get sectionset for portfolio section */}}
+{{ $sectionset := index site.Params.sectionsets "portfolio" | default "lightset" }}
 {{"<!-- Portfolio Section - No Title -->" | safeHTML}}
-<section class="portfolio section {{ with .sectionset }}section-{{ . }}{{ else }}section-lightset{{ end }}" id="portfolio">
+<section class="portfolio section section-{{ $sectionset }}" id="portfolio">
 	{{"<!-- Portfolio Grid - Full Width, No Spacing -->" | safeHTML}}
 	<div class="container">
 		<div class="row shuffle-wrapper justify-content-center">

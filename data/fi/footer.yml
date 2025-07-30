@@ -9,7 +9,11 @@ footer:
     Y-tunnus: 123456-7
   
   # Logo section
-  logo: "images/juuridemo_logo_white.png"
+  logo_white: "images/juuridemo_logo_white.png"
+  logo_white_webp: "images/juuridemo_logo_white.webp"
+  logo_black: "images/juuridemo_logo.png"        # tai juuridemo_logo_black.png jos on
+  logo_black_webp: "images/juuridemo_logo.webp"  # tai juuridemo_logo_black.webp jos on
+  logo_alt: "Juuri.ai"
   # footer_logo: "images/juuri-ai-logo-white.png"  # POISTETTU TILAPÄISESTI
   logo_webp: "images/juuridemo_logo_white.webp"
   logo_alt: "Juuri.ai"

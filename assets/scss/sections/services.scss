@@ -4,7 +4,13 @@
   
   .title {
     margin-bottom: 40px;
-    color: var(--siteset-darkset-bg) !important;
+    color: var(--siteset-lightset-button) !important;
+    
+    .services-description p {
+      font-size: 0.95rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
     
     .services-description p {
       font-size: 1.1rem;

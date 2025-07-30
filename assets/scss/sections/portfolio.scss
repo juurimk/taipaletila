@@ -1,0 +1,269 @@
+// ===============================
+// Portfolio Section - Modern Grid
+// ===============================
+
+.portfolio.section {
+  padding: 0 !important;
+  margin: 0 !important;
+
+  &.section-lightset {
+    background-color: var(--siteset-lightset-bg);
+  }
+
+  &.section-neutralset {
+    background-color: var(--siteset-neutralset-bg);
+  }
+
+  &.section-darkset {
+    background-color: var(--siteset-darkset-bg);
+  }
+
+  &.section-coloriset {
+    background-color: var(--siteset-coloriset-bg);
+  }
+
+  .container {
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .row {
+    margin: 0 !important;
+    gap: 0 !important;
+  }
+}
+
+// ===============================
+// Grid Layout - No Gaps
+// ===============================
+
+.shuffle-wrapper {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+
+  // Responsive breakpoints
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 992px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.shuffle-item {
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+}
+
+// ===============================
+// Portfolio Card - Original Fade Effect
+// ===============================
+
+.portfolio-block {
+  position: relative;
+  width: 100% !important;
+  height: 350px !important; // Isompi korkeus
+  margin-bottom: 0 !important; // Ei marginaalia
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 0 !important; // Ei pyöristettyjä kulmia
+  box-shadow: none !important; // Ei varjoja
+  transition: all 0.3s ease;
+  border: none !important;
+
+  &:hover {
+    box-shadow: none !important;
+    transform: none !important; // Poista hover-efekti kortilta
+
+    .portfolio-card-front {
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .portfolio-card-back {
+      opacity: 1;
+      transition: opacity 0.4s ease;
+    }
+  }
+}
+
+// ===============================
+// Portfolio Image Container
+// ===============================
+
+.portfolio-image-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  // Ei efektejä containerille
+}
+
+// ===============================
+// Card Faces - Simple Fade
+// ===============================
+
+// KORTIN ETUPUOLI - LOGO + TAUSTAVÄRI
+.portfolio-card-front {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  transition: opacity 0.4s ease;
+  // Taustaväri asetetaan inline-stylellä template:ssa
+}
+
+// KORTIN TAKAPUOLI - KUVA
+.portfolio-card-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+// ===============================
+// Logo System - Original Settings
+// ===============================
+
+// LOGO WRAPPER - SUUREMPI KOKO
+.portfolio-logo-wrapper {
+  position: relative;
+  width: 33% !important; // 1/3 kuvan leveydestä
+  height: 33% !important; // Suhteessa korkeuteen
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 200px !important; // Maksimikoko
+  max-height: 120px !important;
+}
+
+// LOGO KUVAT - EI LIIKETTÄ
+.portfolio-logo {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  // Ei transition:ia - logo pysyy paikallaan
+}
+
+// ===============================
+// Logo Color Logic - Mixed Colors
+// ===============================
+
+.portfolio-logo-white {
+  opacity: 0;
+}
+
+.portfolio-logo-black {
+  opacity: 1;
+}
+
+// TUMMAT TAUSTAT - VALKOINEN LOGO
+.portfolio-card-front {
+  // Viima sectionset theme colors (dark)
+  &[style*="#0A1128"],  // Viima color4: Syvä keskiyön sininen
+  &[style*="#001F54"],  // Viima color2: Tumma tähdetön taivas
+  &[style*="#034078"],  // Viima gray: Keskiyön sininen
+  &[style*="#1282A2"],  // Viima color1: Aamukoiton sininen
+  // Kiinteät tummat värit
+  &[style*="#000000"],  // Musta
+  &[style*="#333333"],  // Tumma harmaa
+  &[style*="#666666"] { // Keskiharmaa
+    .portfolio-logo-white {
+      opacity: 1;
+    }
+    .portfolio-logo-black {
+      opacity: 0;
+    }
+  }
+
+  // VAALEAT TAUSTAT - MUSTA LOGO
+  &[style*="#FFFFFF"],  // Valkoinen (kiinteä)
+  &[style*="#FEFCFB"],  // Viima color3: Hohtava valkoinen
+  &[style*="#d5d5d5"],  // Vaalea harmaa (kiinteä)
+  &[style*="#e4e4e4"],  // Vaalea harmaa (kiinteä)
+  &[style*="#f0f0f0"],  // Hyvin vaalea harmaa
+  &[style*="#cccccc"] { // Keskivaalea harmaa
+    .portfolio-logo-white {
+      opacity: 0;
+    }
+    .portfolio-logo-black {
+      opacity: 1;
+    }
+  }
+}
+
+// ===============================
+// Enhanced Hover Effects - Removed
+// ===============================
+
+// Ei hover-efektejä - yksinkertainen fade
+
+// ===============================
+// Responsive Adjustments - Original
+// ===============================
+
+@media (max-width: 767px) {
+  .portfolio-block {
+    height: 300px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .portfolio-block {
+    height: 250px !important;
+  }
+  
+  .portfolio-logo-wrapper {
+    width: 40% !important;
+    height: 40% !important;
+  }
+}
+
+// ===============================
+// Cleanup - Hide Unwanted Elements
+// ===============================
+
+.portfolio-title,
+.portfolio-content,
+.caption {
+  display: none !important;
+}
+
+.portfolio-block {
+  .caption,
+  .search-icon {
+    display: none !important;
+    visibility: hidden !important;
+  }
+}

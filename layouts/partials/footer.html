@@ -14,9 +14,14 @@
 		<div class="row mb-4">
 			<div class="col-12">
 				<div class="footer-logo">
-					<a href="{{ site.Home.Permalink }}">
-						<img src="{{ .logo_webp | absURL }}" onerror="this.onerror=null;this.src='{{ .logo | absURL }}'" alt="{{ .logo_alt }}" />
-					</a>
+ 				 <a href="{{ site.Home.Permalink }}">
+    				{{ $sectionset := index site.Params.sectionsets "footer" | default "darkset" }}
+    				{{ if or (eq $sectionset "coloriset") (eq $sectionset "darkset") }}
+    					<img src="{{ .logo_white_webp | absURL }}" onerror="this.onerror=null;this.src='{{ .logo_white | absURL }}'" alt="{{ .logo_alt }}" />
+    				{{ else }}
+    					<img src="{{ .logo_black_webp | absURL }}" onerror="this.onerror=null;this.src='{{ .logo_black | absURL }}'" alt="{{ .logo_alt }}" />
+   				 {{ end }}
+ 				 </a>
 				</div>
 			</div>
 		</div>

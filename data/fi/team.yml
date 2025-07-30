@@ -1,29 +1,29 @@
 ############################### team ############################
 team:
   enable : true
-  title : "Lorem Ipsum"
-  team_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+  title : "Tutustu tekijöihin"
+  team_description: "Yhdistämme markkinoinnin ja mainonnan strategisen osaamisen, automaatioteknologian ja palvelumuotoilun yhdeksi kokonaisuudeksi. Tavoitteemme on yksinkertainen: Haluamme asiakkaillemme vähemmän teknistä puuhastelua, enemmän aikaa liiketoiminnan kasvattamiselle."
   team_member :
     
     # team member loop
-    - name : Lorem Ipsum
+    - name : Marko Kari
 
       image_webp : images/team/team-marko-kari2.webp
       image : images/team/team-marko-kari2.png
-      alt: "Lorem Ipsum."
-      title : Lorem Dolor Sit Amet
-      content : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit."
+      alt: "Marko Kari."
+      designation : Co-Founder, Growth Strategist
+      content : "Marko tuo Juuri.ai:hin yli 15 vuoden kokemuksen markkinoinnista ja teknisistä ratkaisuista. Stora Enson kaltaisissa yrityksissä hän on johtanut markkinointitiimejä ja oppinut rakentamaan systeemejä, jotka muuttavat monimutkaiset prosessit sujuviksi automaatioiksi. Sellaisiksi, jotka toimivat luotettavasti joka päivä."
       social :
         - icon : fab fa-linkedin # Font Awesome LinkedIn icon
           link : "https://www.linkedin.com/in/mkari/"
         
     # team member loop
-    - name : Lorem ipsum
+    - name : Marianne Littow
       image_webp : images/team/team-marianne-littow2.webp
       image : images/team/team-marianne-littow2.png
-      alt: "Consectetur Adipiscing."
-      title : Sed Do Eiusmod Tempor
-      content : "Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate."
+      alt: "Marianne Littow."
+      designation : Co-Founder, Creative Lead
+      content : "Mariannella on laaja kokemus visuaalisesta viestinnästä ja monipuolisesta sisällöntuotannosta. Hän on työskennellyt niin suuryrityksissä kuin kasvuyrityksissä, ja ymmärtää, miten visuaalisuus, brändi ja liiketoimintatavoitteet punotaan yhteen selkeäksi ja vaikuttavaksi kokonaisuudeksi."
       social :
         - icon : fab fa-linkedin # Font Awesome LinkedIn icon
           link : "https://www.linkedin.com/in/marianne-littow-01b5203a/"

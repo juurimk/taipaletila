@@ -129,7 +129,7 @@ weight = 8
 [params]
 enable = true
 logo = "images/juuridemo_logo.svg"
-logo_white = "images/juuridemo_logo_white.svg"  # Valkoinen logo tumville taustoille
+logo_white = "images/juuridemo_logo_white.svg"  # Valkoinen logo tummille taustoille
 # Meta data
 description = "Yhdistämme tekoälyn ja inhimillisen markkinoinnin tulokselliseksi kokonaisuudeksi. Vapauta kasvu – ota AI osaksi liiketoimintaasi jo tänään."
 # og kuva
@@ -183,13 +183,15 @@ sitefont = "Open Sans"
 
 ############################# Siteset Colors Configuration ##########################
 # Choose siteset colors from available options: saaristo, kaste, korpi, hiekka, loimu, viima, verso, kipina, apila, helle, sahakka, ruska, harmonia, tuli, yo, tiikeri, syksy, neon, pastilli, pinkki, onecolor, terra, jklav1, jklav2
-siteset = "viima"
+siteset = "kaste"
 
 [params.sections]
     [params.sections.banner]
       enable = true
     [params.sections.team]
       enable = true
+    [params.sections.service]
+      enable = false
     [params.sections.services]
       enable = true
     [params.sections.feature]
@@ -259,13 +261,13 @@ siteset = "viima"
   article = "coloriset"   # blogit
   gallery = "lightset"   # gridilistaus tuotteista
   services-hero = "lightset"   # Services hero single sivuilla (tuotesivut)
-  navigation = "darkset"   # navbar
+  navigation = "lightset"   # navbar
   main_text = "lightset"   # service-single sivun ensimmäinen palvelukuvaus
   packages = "coloriset"       # services singlesivun main teksti osio
   expert = "darkset"     # singlesivulla kouluttaja osio
   benefits = "darkset"    # ikonibanneri singlesivulla
   service_faq = "neutralset" # services single sivun faq
-  footer = "darkset" # footer section
+  footer = "neutralset" # footer section
   privacy = "neutralset" # privacy, jos ei pdf
   showcase = "coloriset" # mainososio
   fullshow = "lightset" # fullscreen taustakuva osio
@@ -303,15 +305,35 @@ link = "https://calendar.app.google/zeDfowAGrkcpjp9r9"
   # "ghost" = läpinäkyvä pohja, täytetty hover
   # "fill"  = täytetty pohja, läpinäkyvä hover
   style = "ghost"
+ 
   
   # Button corner style
   # "square"  = 0px (suorakulmainen)
   # "rounded" = 8px (lievästi pyöristetty)  
   # "round"   = 50px (täysin pyöreä)
   corners = "round"
-  
+
   # Valinnainen mukautettu pyöristys (ohittaa corners asetuksen)
   # custom_radius = "0px"
+
+############################# Image System Configuration ##########################
+
+ # img corner style
+image_corners = "follow"  # tai "follow" tai "none" Follow seuraa valittua buttonia, none -> square
+
+############################# Markdown Configuration ###################
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+    [markup.goldmark.parser]
+      attribute = true
+      autoHeadingID = true
+  [markup.highlight]
+    style = "github"
+    lineNos = false
+    tabWidth = 2
+
 
 ############################# social icons ##########################
 [[params.social]]

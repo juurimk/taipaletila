@@ -8,6 +8,7 @@
     color: var(--current-h2-color) !important;
     text-decoration: none !important;
     transition: color 0.3s ease;
+    font-size: 1.2rem !important;
     
     &:hover {
       color: var(--current-h2-color) !important;
@@ -23,11 +24,6 @@
     &:visited {
       color: var(--current-h2-color) !important;
     }
-  }
-  
-  // Blog post images follow button corner system
-  img {
-    border-radius: var(--button-border-radius);
   }
 }
 
@@ -68,42 +64,22 @@
 // Blog Title Styles - Dynamic Sectionset with Responsive
 // =============================================================================
 
-// Blog listing page spacing
-#blogi.section {
-  padding-top: 80px !important;
-  
-  // Mobile responsive padding
-  @media (max-width: 768px) {
-    padding-top: 60px !important;
-  }
-  
-  @media (max-width: 576px) {
-    padding-top: 40px !important;
-  }
-  
-  // Force the title spacing on listing page
-  .title.text-center {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
-  }
-}
-
 // Base blog title styles with spacing and dynamic color
-#blog, #blogi {
+#blog {
   .title.blogiotsikko,
   .title .blogiotsikko {
     color: var(--current-h2-color) !important;
-    margin-top: 40px !important;
+    margin-top: 0px !important;
     margin-bottom: 40px !important;
     
     // Mobile responsive - match other h2 headings
     @media (max-width: 768px) {
-      margin-top: 20px !important;
+      margin-top: 40px !important;
       margin-bottom: 20px !important;
     }
     
     @media (max-width: 576px) {
-      margin-top: 10px !important;
+      margin-top: 30px !important;
       margin-bottom: 15px !important;
     }
   }
@@ -160,4 +136,44 @@
 :root {
   --current-h2-color: var(--siteset-lightset-h2);
   --current-button-color: var(--siteset-lightset-button);
+}
+
+// Lisää blog.scss:n loppuun
+
+// =============================================================================
+// Blog Card Text Size Fix - Match Team Section Size
+// =============================================================================
+
+.post-block {
+  p, 
+  .post-excerpt {
+    font-size: 0.95rem !important;
+    line-height: 1.6 !important;
+  }
+}
+
+// =============================================================================
+// Blog Card Layout - Equal Height Content with Aligned Read More Links
+// =============================================================================
+
+// Make blog cards equal height
+.post-block {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  
+  .content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    
+    .post-excerpt {
+      flex-grow: 1;
+    }
+    
+    .read-more-link {
+      margin-top: auto;
+      padding-top: 0rem;
+    }
+  }
 }

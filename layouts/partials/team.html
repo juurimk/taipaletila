@@ -34,27 +34,21 @@
         <article class="team-member" aria-label="{{ .name }} {{ .designation }}">
           <div class="member-photo">
             {{"<!-- member photo -->" | safeHTML}}
-            <img class="img-fluid lozad" data-src="{{ .image | absURL }}" onerror="this.onerror=null;this.src='{{ .image_webp | absURL }}'" alt="{{ .name }} {{ .designation }}">
+            <img class="img-fluid lozad" data-src="{{ .image_webp | absURL }}" onerror="this.onerror=null;this.src='{{ .image | absURL }}'" alt="{{ .name }} {{ .designation }}">
 
             {{"<!-- member social profile -->" | safeHTML}}
-            <div class="mask">
-              <ul class="list-inline">
-                {{ range .social }}
-                <li class="list-inline-item">
-                  <a href="{{ .link | safeURL }}" aria-label="{{ .icon | plainify }} profiili {{ .name }}">
-                    <i class="{{ .icon }}"></i>
-                  </a>
-                </li>
-                {{ end }}
-              </ul>
-            </div>
+            {{ range .social }}
+            <a class="mask" href="{{ .link | safeURL }}" aria-label="{{ .icon | plainify }} profiili {{ .name }}">
+              <i class="{{ .icon }}"></i>
+            </a>
+            {{ end }}
           </div>
 
           {{"<!-- member name & designation -->" | safeHTML}}
           <div class="member-meta">
             <h3 class="member-name">{{ .name }}</h3>
             <span class="member-title">{{ .designation | markdownify}}</span>
-            <p style="font-size: 1.1rem;">{{ .content | markdownify }}</p>
+            <p>{{ .content | markdownify }}</p>
           </div>
         </article>
       </div>

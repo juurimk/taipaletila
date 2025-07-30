@@ -35,17 +35,6 @@
   --text-{{ $sectionsetName }}-section_description: {{ $colors.text_description }};
 {{ end }}
 
-  /* Button Corner Radius System - käytettävissä kaikissa SCSS-tiedostoissa */
-  {{ if site.Params.buttons.custom_radius }}
-  --button-border-radius: {{ site.Params.buttons.custom_radius }};
-  {{ else if eq site.Params.buttons.corners "round" }}
-  --button-border-radius: 50px;
-  {{ else if eq site.Params.buttons.corners "rounded" }}
-  --button-border-radius: 8px;
-  {{ else }}
-  --button-border-radius: 0px;
-  {{ end }}
-
   /* Legacy compatibility */
   {{ with index $currentSiteset.sectionsets "lightset" }}
   --color-primary: {{ .button }};
@@ -74,8 +63,18 @@
   --color-success: #4CAF50;
   --color-error: #e74c3c;
   --sitefont: "{{ site.Params.sitefont | default "DM Sans" }}", sans-serif;
-}
 
+    /* Button Corner Radius System */
+  {{ if site.Params.buttons.custom_radius }}
+  --button-border-radius: {{ site.Params.buttons.custom_radius }};
+  {{ else if eq site.Params.buttons.corners "round" }}
+  --button-border-radius: 50px;
+  {{ else if eq site.Params.buttons.corners "rounded" }}
+  --button-border-radius: 8px;
+  {{ else }}
+  --button-border-radius: 0px;
+  {{ end }}
+}
 // =============================================================================
 // Base Styles
 // =============================================================================
@@ -118,19 +117,23 @@ h1, h2 {
 }
 
 h3, h4, h5, h6 {
-  font-weight: 600;
+  font-weight: 700;
   font-family: var(--sitefont);
   color: var(--color-text-primary);
 }
 
 p {
   font-family: var(--sitefont);
-  font-size: 0.9rem !important;
-  line-height: 1.2 !important;
+  font-size: 0.95rem !important;
+  line-height: 1.6 !important;
   margin-bottom: 1.2rem !important;
 }
 
-a {
+// UUSI (vähemmän tärkeä):
+.navigation a,
+.hero-area a,
+.footer-section a,
+.social-icons a {
   color: var(--color-text-white);
   transition: all 0.3s ease-in 0s;
   text-decoration: none;
@@ -266,6 +269,7 @@ a {
   transition: all 0.3s ease !important;
   cursor: pointer;
   text-decoration: none;
+  font-size: 0.95rem;
   display: inline-block;
   
   // Poista selaimen oletustyyli
@@ -302,18 +306,8 @@ a {
 }
 {{ end }}
 
-// Navigation-spesifiset .btn-calendar-fill tyylit - aina valkoinen teksti
-.navigation .btn-calendar-fill {
-  border-color: var(--siteset-lightset-button) !important;
-  background-color: var(--siteset-lightset-button) !important;
-  color: #ffffff !important;
-  padding: 6px 20px !important; // Pienempi padding navigaatiossa
-  
-  &:hover {
-    background-color: transparent !important;
-    color: var(--siteset-lightset-button) !important;
-  }
-}
+
+
 
 // Navigation sectionset-spesifiset .btn-calendar-fill tyylit
 {{ range $sectionsetName, $colors := $currentSiteset.sectionsets }}
@@ -331,6 +325,27 @@ a {
 }
 {{ end }}
 
+
+.navigation.section-lightset .btn-calendar-fill {
+  background-color: var(--siteset-lightset-button) !important;
+  color: var(--siteset-lightset-bg) !important;
+}
+
+.navigation.section-darkset .btn-calendar-fill {
+  background-color: var(--siteset-darkset-button) !important;
+  color: var(--siteset-darkset-bg) !important;
+}
+
+.navigation.section-neutralset .btn-calendar-fill {
+  background-color: var(--siteset-neutralset-button) !important;
+  color: var(--siteset-neutralset-bg) !important;
+}
+
+.navigation.section-coloriset .btn-calendar-fill {
+  background-color: var(--siteset-coloriset-button) !important;
+  color: var(--siteset-coloriset-bg) !important;
+}
+
 // =============================================================================
 // Navigation
 // =============================================================================
@@ -346,17 +361,82 @@ a {
   transition: all 0.3s ease-in-out;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   
-  // Default navigation link styles (lightset/neutralset)
   .navbar-nav .nav-link {
-    color: var(--siteset-lightset-button) !important;
+    color: var(--color-text-dark) !important;
     padding: 15px 20px;
     font-weight: 500;
     transition: all 0.3s ease;
     position: relative;
     
     &:hover {
-      color: var(--siteset-lightset-h2) !important;
+      color: var(--color-primary) !important;
     }
+  }
+}
+
+.navbar-nav {
+  margin-left: auto !important;
+  margin-right: 0 !important;
+}
+.navbar-toggler {
+  border: none;
+  background-color: transparent;
+  padding: 10px; // Sama padding kaikille sivuille = neliö
+  width: 44px; // Kiinteä leveys
+  height: 44px; // Kiinteä korkeus = täydellinen neliö
+  transition: all 0.3s ease;
+  border-radius: 4px; // Normaali pyöristetty
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .navbar-toggler-icon {
+    background-image: none;
+    width: 24px;
+    height: 2px;
+    background-color: var(--color-primary-dark);
+    display: block;
+    position: relative;
+    transition: background-color 0.3s ease;
+
+    &::before,
+    &::after {
+      content: '';
+      background-color: var(--color-primary-dark);
+      width: 24px;
+      height: 2px;
+      position: absolute;
+      left: 0;
+      transition: background-color 0.3s ease;
+    }
+
+    &::before {
+      top: -7px;
+    }
+
+    &::after {
+      top: 7px;
+    }
+  }
+
+  // Hover tai valikko avoinna: vihreä tausta, valkoiset viivat
+  &:hover,
+  &.active,
+  &[aria-expanded="true"] {
+    background-color: var(--color-primary-dark);
+
+    .navbar-toggler-icon,
+    .navbar-toggler-icon::before,
+    .navbar-toggler-icon::after {
+      background-color: #fff;
+    }
+  }
+
+  // NELIÖMÄINEN MUOTO vain active-tilassa (painettu/valikko auki)
+  &:active,
+  &.active,
+  &[aria-expanded="true"] {
+    border-radius: 0px !important;
   }
 }
 
@@ -383,72 +463,6 @@ a {
 {{ end }}
 {{ end }}
 
-.navbar-nav {
-  margin-left: auto !important;
-  margin-right: 0 !important;
-}
-.navbar-toggler {
-  border: none;
-  background-color: transparent;
-  padding: 10px; // Sama padding kaikille sivuille = neliö
-  width: 44px; // Kiinteä leveys
-  height: 44px; // Kiinteä korkeus = täydellinen neliö
-  transition: all 0.3s ease;
-  border-radius: 4px; // Normaali pyöristetty
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  .navbar-toggler-icon {
-    background-image: none;
-    width: 24px;
-    height: 2px;
-    background-color: var(--siteset-lightset-button);
-    display: block;
-    position: relative;
-    transition: background-color 0.3s ease;
-
-    &::before,
-    &::after {
-      content: '';
-      background-color: var(--siteset-lightset-button);
-      width: 24px;
-      height: 2px;
-      position: absolute;
-      left: 0;
-      transition: background-color 0.3s ease;
-    }
-
-    &::before {
-      top: -7px;
-    }
-
-    &::after {
-      top: 7px;
-    }
-  }
-
-  // Hover tai valikko avoinna: button-väri tausta, valkoiset viivat
-  &:hover,
-  &.active,
-  &[aria-expanded="true"] {
-    background-color: var(--siteset-lightset-button);
-
-    .navbar-toggler-icon,
-    .navbar-toggler-icon::before,
-    .navbar-toggler-icon::after {
-      background-color: #fff;
-    }
-  }
-
-  // NELIÖMÄINEN MUOTO vain active-tilassa (painettu/valikko auki)
-  &:active,
-  &.active,
-  &[aria-expanded="true"] {
-    border-radius: 0px !important;
-  }
-}
-
 // Sectionset-spesifiset toggler tyylit
 {{ range $sectionsetName, $colors := $currentSiteset.sectionsets }}
 {{ if or (eq $sectionsetName "coloriset") (eq $sectionsetName "darkset") }}
@@ -471,28 +485,9 @@ a {
     }
   }
 }
-{{ else }}
-.navigation.section-{{ $sectionsetName }} .navbar-toggler {
-  .navbar-toggler-icon,
-  .navbar-toggler-icon::before,
-  .navbar-toggler-icon::after {
-    background-color: var(--siteset-{{ $sectionsetName }}-button);
-  }
-  
-  &:hover,
-  &.active,
-  &[aria-expanded="true"] {
-    background-color: var(--siteset-{{ $sectionsetName }}-button);
-    
-    .navbar-toggler-icon,
-    .navbar-toggler-icon::before,
-    .navbar-toggler-icon::after {
-      background-color: var(--siteset-{{ $sectionsetName }}-bg);
-    }
-  }
-}
 {{ end }}
 {{ end }}
+
 // =============================================================================
 // Responsive Typography
 // =============================================================================
@@ -533,7 +528,7 @@ a {
 // Essential Layout Styles
 // =============================================================================
 .section {
-  padding: 40px 0 30px 0;
+  padding: 80px 0;
 }
 
 .section-sm {
@@ -624,24 +619,90 @@ a {
   }
 }
 
+
 // =============================================================================
-// Footer Styles - KORJATTU VERSIO
+// Universal Border Radius System
 // =============================================================================
-.footer-section {
-  padding: 80px 0 40px; // Vähennetty bottom-padding
-  background-color: #000000;
-  position: relative; // Varmistetaan että relative
+
+{{ if eq site.Params.buttons.image_corners "follow" }}
+// Kortit ja kuvat seuraavat button corners -asetusta
+.service-card, 
+.member-photo, 
+.image-card,
+.gallery-item, 
+.portfolio-item, 
+.blog-post-image, 
+.post-block, 
+.card, 
+.feature-card, 
+.testimonial-card, 
+.expert-image,
+.post-block .media-wrapper img {
+  border-radius: var(--button-border-radius) !important;
 }
 
+// Blog single sivun kuvat - spesifimpi sääntö
+.post-single-content img,
+.section .post-single-content img,
+.section_single_blog .post-single-content img,
+.section-lightset .post-single-content img {
+  border-radius: var(--button-border-radius) !important;
+}
+
+{{ else }}
+// Kortit ja kuvat ovat suorakulmaiset
+.service-card, 
+.image-card,
+.member-photo, 
+.gallery-item, 
+.portfolio-item, 
+.blog-post-image, 
+.showcase-image-top,
+.showcase-image-bottom,
+.post-block, 
+.card, 
+.feature-card, 
+.testimonial-card, 
+.expert-image,
+.post-block .media-wrapper img {
+  border-radius: 0px !important;
+}
+
+// Blog single sivun kuvat - spesifimpi sääntö
+.post-single-content img,
+.section .post-single-content img,
+.section_single_blog .post-single-content img,
+.section-lightset .post-single-content img {
+  border-radius: 0px !important;
+}
+
+{{ end }}
+// =============================================================================
+// Footer Styles
+// =============================================================================
+.footer-section {
+  padding: 40px 0 20px !important; // Pienempi padding
+  margin: 0 !important;
+  
+  // Varmista että footer on always visible
+  position: relative !important;
+  bottom: auto !important;
+  
+  .container {
+    margin-bottom: 0 !important;
+  }
+}
+
+// Mobile optimointi - pienet paddingit
 @media (max-width: 768px) {
   .footer-section {
-    padding: 65px 0 30px; // Vähennetty bottom-padding
+    padding: 30px 0 15px !important;
   }
 }
 
 @media (max-width: 576px) {
   .footer-section {
-    padding: 40px 0 40px!important; // Vähennetty bottom-padding
+    padding: 25px 0 10px !important;
   }
 }
 
@@ -683,8 +744,8 @@ a {
   }
   
   img {
-    height: 45px !important;
-    max-height: 45px !important;
+    height: 35px !important;
+    max-height: 35px !important;
     width: auto !important;
   }
 }
@@ -778,6 +839,16 @@ footer {
   flex-shrink: 0;
   
   .scroll-to-top {
+    {{ if site.Params.buttons.custom_radius }}
+    border-radius: {{ site.Params.buttons.custom_radius }} !important;
+    {{ else if eq site.Params.buttons.corners "round" }}
+    border-radius: 50px !important;
+    {{ else if eq site.Params.buttons.corners "rounded" }}
+    border-radius: 8px !important;
+    {{ else }}
+    border-radius: 0px !important;
+    {{ end }}
+    
     width: 45px !important;
     height: 45px !important;
     background-color: transparent !important;
@@ -788,10 +859,19 @@ footer {
     padding: 0 !important;
     margin: 0px auto 0 !important; // Keep centered on desktop
     cursor: pointer !important;
-    // border-radius poistettu - anna button-järjestelmän hoitaa
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
+    
+    // Poista selaimen oletustyyli
+    outline: none !important;
+    box-shadow: none !important;
+    
+    &:focus, &:active {
+      outline: none !important;
+      box-shadow: none !important;
+      border-color: white !important;
+    }
     
     @media (min-width: 768px) {
       margin: 15px auto 0 !important; // Keep centered on desktop
@@ -817,13 +897,82 @@ footer {
   }
 }
 
+// =============================================================================
+// Footer Sectionset-spesifiset tyylit (kuten navigationissa)  
+// =============================================================================
+
+{{ range $sectionsetName, $colors := $currentSiteset.sectionsets }}
+{{ if or (eq $sectionsetName "coloriset") (eq $sectionsetName "darkset") }}
+.footer-section.section-{{ $sectionsetName }} {
+  .footer-description p,
+  .footer-link-list li a,
+  .social-icons li a,
+  .footer-business p,
+  .footer-brand-text {
+    color: #ffffff !important;
+  }
+  
+  // LinkedIn logo valkoinen coloriset/darkset footerissa
+  .social-icons li a i {
+    color: #ffffff !important;
+  }
+  
+  // Scroll-to-top button: valkoinen border + nuoli, transparent bg
+  .scroll-to-top {
+    border: 1px solid #ffffff !important;
+    color: #ffffff !important;
+    background-color: transparent !important;
+    
+    &:hover,
+    &:active,
+    &:focus {
+      opacity: 0.7 !important;
+      border: 1px solid #ffffff !important;
+      color: #ffffff !important;
+      background-color: transparent !important;
+    }
+  }
+}
+{{ else }}
+.footer-section.section-{{ $sectionsetName }} {
+  .footer-description p,
+  .footer-link-list li a,
+  .social-icons li a,
+  .footer-business p,
+  .footer-brand-text {
+    color: var(--siteset-{{ $sectionsetName }}-color) !important;
+  }
+  
+  // LinkedIn logo musta lightset/neutralset footerissa
+  .social-icons li a i {
+    color: var(--siteset-{{ $sectionsetName }}-color) !important;
+  }
+  
+  // Scroll-to-top button: vihreä border + nuoli, transparent bg
+  .scroll-to-top {
+    border: 1px solid var(--siteset-{{ $sectionsetName }}-button) !important;
+    color: var(--siteset-{{ $sectionsetName }}-button) !important;
+    background-color: transparent !important;
+    
+    &:hover,
+    &:active,
+    &:focus {
+      opacity: 0.7 !important;
+      border: 1px solid var(--siteset-{{ $sectionsetName }}-button) !important;
+      color: var(--siteset-{{ $sectionsetName }}-button) !important;
+      background-color: transparent !important;
+    }
+  }
+}
+{{ end }}
+{{ end }}
+
+
 
 
 // =============================================================================
 // KORJAUS: Tumman viivan poisto vasemmalta puolelta
 // =============================================================================
-
-
 
 // Container korjaukset - estä negatiiviset marginaalit
 .container,
@@ -906,123 +1055,45 @@ section {
   }
 }
 
+
+
+
 // =============================================================================
-// RESPONSIIVINEN FOOTER CSS
+// Remove Blue Text Decoration Color from All Links
 // =============================================================================
 
-.footer-section {
-  padding: 40px 0 20px !important; // Pienempi padding
-  background-color: var(--siteset-darkset-bg) !important;
-  margin: 0 !important;
-  
-  // Varmista että footer on always visible
-  position: relative !important;
-  bottom: auto !important;
-  
-  .container {
-    margin-bottom: 0 !important;
-  }
+// Target all links and remove blue text-decoration-color
+a,
+a:link,
+a:visited,
+a:hover,
+a:active,
+a:focus {
+  text-decoration-color: transparent !important;
+  // tai vaihtoehtoisesti:
+  // text-decoration-color: currentColor !important;
 }
 
-// Logo responsiivisuus
-.footer-logo img {
-  height: 40px !important;
-  max-height: 40px !important;
-  width: auto !important;
-  
-  @media (max-width: 576px) {
-    height: 35px !important;
-    max-height: 35px !important;
-  }
+// Specifically target social links and team member links
+.mask,
+a.mask,
+a.mask:hover {
+  text-decoration-color: transparent !important;
 }
 
-// Description text
-.footer-description p {
-  color: #ffffff !important;
-  font-size: 0.9rem !important;
-  line-height: 1.5 !important;
-  margin-bottom: 0 !important;
-  
-  @media (max-width: 768px) {
-    font-size: 0.85rem !important;
-    text-align: center !important;
-  }
+// All links in team section
+.team-member a,
+.team-member a:hover {
+  text-decoration-color: transparent !important;
 }
 
-// Social icons responsiivuus
-.footer-social .social-icons {
-  margin: 15px 0 0 0 !important;
-  padding: 0 !important;
-  
-  li a {
-    color: #ffffff !important;
-    font-size: 22px !important;
-    transition: opacity 0.3s ease !important;
-    
-    &:hover {
-      opacity: 0.7 !important;
-    }
-  }
-  
-  @media (max-width: 768px) {
-    justify-content: center !important;
-    margin: 10px 0 0 0 !important;
-    
-    li a {
-      font-size: 20px !important;
-    }
-  }
+// Blog links
+.post-block a,
+.post-block a:hover,
+.read-more-link,
+.read-more-link:hover {
+  text-decoration-color: transparent !important;
 }
-
-
-// Footer Business Info Styles
-.footer-business {
-  margin-top: 0px;
-  margin-bottom: 0px;
-
-  p {
-    color: #ffffff;
-    font-size: 0.85rem !important;
-    margin: 0;
-  }
-}
-
-// Footer links
-.footer-link-list {
-  li a {
-    color: #ffffff !important;
-    font-size: 0.85rem !important;
-    text-decoration: none !important;
-    transition: opacity 0.3s ease !important;
-    margin-bottom:20px;
-    
-    &:hover {
-      opacity: 0.7 !important;
-    }
-  }
-  
-  @media (max-width: 768px) {
-    li a {
-      font-size: 0.8rem !important;
-    }
-  }
-}
-
-
-// Mobile optimointi - pienet paddingit
-@media (max-width: 768px) {
-  .footer-section {
-    padding: 30px 0 15px !important;
-  }
-}
-
-@media (max-width: 576px) {
-  .footer-section {
-    padding: 25px 0 10px !important;
-  }
-}
-
-
 
 // =============================================================================
 // Conditional Section Imports
