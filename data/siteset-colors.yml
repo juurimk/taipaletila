@@ -78,7 +78,7 @@ sitesets:
     # PORTFOLIO COLORS - Kaikki teeman värit käyttöön
     portfolio:
       color1: "#2EC4B6"    # Teal (lightset button/h2)
-      color2: "#FFBF69"    # Oranssi (neutralset button)
+      color2: "#2EC4B6"    # Oranssi (neutralset button)
       color3: "#cbf3f0"    # Vaalea teal (neutralset bg)
       color4: "#032320"    # Tumma teal (darkset bg/color)
       color5: "#FFFFFF"    # Valkoinen (lightset bg)
@@ -101,7 +101,7 @@ sitesets:
       neutralset:
         bg_color: "#cbf3f0"
         color: "#032320"
-        button: "#FFBF69"
+        button: "#2EC4B6"
         button_text: "#000000"
         h2: "#2EC4B6"
         h1: "#FFFFFF"

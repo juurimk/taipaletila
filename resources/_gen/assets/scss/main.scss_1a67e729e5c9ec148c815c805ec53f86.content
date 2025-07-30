@@ -46,7 +46,7 @@
   --text-lightset-section_description: <no value>;
   --siteset-neutralset-bg: #cbf3f0;
   --siteset-neutralset-color: #032320;
-  --siteset-neutralset-button: #FFBF69;
+  --siteset-neutralset-button: #2EC4B6;
   --siteset-neutralset-button-text: #000000;
   --siteset-neutralset-h2: #2EC4B6;
   --siteset-neutralset-mask-color: #2EC4B6;
