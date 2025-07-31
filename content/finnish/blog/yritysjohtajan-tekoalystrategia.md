@@ -1,5 +1,5 @@
 ---
-tags: ["tekoäly", "markkinointi"]
+# tags: ["tekoäly", "markkinointi"]
 title: "Yritysjohtajan tekoälystrategia - Miten valjastat tekoälyn käyttöön ilman IT-projektia"
 date: 2025-07-28
 # banner_image_webp: images/blog/markkinointi-tekoalytyokalut.webp

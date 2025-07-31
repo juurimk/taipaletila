@@ -9,12 +9,12 @@ contact:
 
   # Contact details - henkilökohtaiset yhteystiedot
   contact_people:
-    - name: "Lorem ipsum dolor sit amet consectetur"
+    - #name: "Lorem Ipsum"
       person: "Lorem Ipsum"
       phone: "123 456 7890"
       email: "lorem@lorem.com"
       
-    - name: "Adipiscing elit sed do eiusmod tempor" 
+    - #name: "" 
       person: "Dolor Amet"
       phone: "123 456 7890"
       email: "dolor@lorem.com"

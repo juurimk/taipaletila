@@ -6,20 +6,20 @@ funfacts:
   counter_item:
     # counter item loop
     - title : "Tyytyväisiä asiakkaita"
-      icon : "ti-face-smile" # themify icon pack : https://themify.me/themify-icons
+      icon : "far fa-face-smile" # Font Awesome
       count : "320"
     
     # counter item loop
     - title : "Valmistunutta projektia"
-      icon : "ti-archive" # themify icon pack : https://themify.me/themify-icons
+      icon : "fas fa-tasks" # Font Awesome
       count : "350"
     
     # counter item loop
     - title : "Positiivista palautetta"
-      icon : "ti-thumb-up" # themify icon pack : https://themify.me/themify-icons
+      icon : "far fa-thumbs-up" # Font Awesome
       count : "158"
     
     # counter item loop
     - title : "Kuppia kahvia"
-      icon : "ti-gift" # themify icon pack : https://themify.me/themify-icons
+      icon : "fas fa-mug-hot" # Font Awesome
       count : "250"

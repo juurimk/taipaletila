@@ -1,5 +1,5 @@
 ---
-tags: ["tekoäly", "myynti", "markkinointi"]
+# tags: ["tekoäly", "myynti", "markkinointi"]
 title: "5 Esimerkkiä myynnin ja markkinoinnin tekoälyagenteista"
 date: 2025-07-29
 image_webp: images/blog/5-tekoalytyokalua.webp

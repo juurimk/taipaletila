@@ -27,12 +27,6 @@
               <i class="fas fa-user"></i>{{ .Params.author }}
             </div>
             {{ end }}
-            {{ with .Params.tags }}
-            <div class="blog-tags text-muted d-inline-block">
-              <i class="fas fa-list"></i>
-              {{ range $i, $tag := . }}{{ if $i }}, {{ end }}{{ $tag }}{{ end }}
-            </div>
-            {{ end }}
           </div>
           {{ if or .Params.ingress .Params.description }}
           <div class="blog-ingress text-muted mt-3">{{ .Params.ingress | default .Params.description | markdownify }}</div>

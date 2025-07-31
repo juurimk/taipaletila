@@ -13,8 +13,8 @@
 				{{"<!-- section title -->" | safeHTML}}
 				<div class="title text-center">
 					<div class="title text-center">
-          <h2 id="contact-title">{{ .title | safeHTML }}</h2>
-          </div>
+		  <h2 id="contact-title">{{ .title | safeHTML }}</h2>
+		  </div>
 				</div>
 			</div>
 			{{"<!-- /section title -->" | safeHTML}}
@@ -29,13 +29,13 @@
 					
 					{{/* Henkilökohtaiset yhteystiedot */}}
 					{{ range .contact_people }}
-					<div class="contact-person mb-4">
-						<div class="con-info clearfix">
-							<strong>{{ .name }}</strong>
-						</div>
-						<div class="con-info clearfix">
-							<strong>{{ .person }}</strong>
-						</div>
+			<div class="contact-person mb-4">
+				<div class="con-info clearfix">
+	<h5>{{ .name }}</h5>
+				</div>
+				<div class="con-info clearfix">
+	<h5>{{ .person }}</h5>
+				</div>
 						<div class="con-info clearfix">
 							<i class="fas fa-mobile-alt"></i>
 							<a href="tel:{{ .phone }}" class="contact-link">{{ .phone }}</a>
@@ -62,12 +62,12 @@
 				
 				<!-- Ajanvarausnappi -->
 				<a href="{{ $.Site.Params.calendar_url }}"
-          class="btn-calendar-fill"
-          target="_blank"
-          role="button"
-          aria-label="{{ $.Site.Params.calendar_text }}">
-          {{ $.Site.Params.calendar_text }}
-         </a>
+		  class="btn-calendar-fill"
+		  target="_blank"
+		  role="button"
+		  aria-label="{{ $.Site.Params.calendar_text }}">
+		  {{ $.Site.Params.calendar_text }}
+		 </a>
 				{{ end }}
 			</div>
 <!-- Contact Form -->
@@ -89,7 +89,7 @@
 {{ if .services }}
 <div class="form-group" role="group" {{ if .services_title }}aria-labelledby="services-title"{{ else }}aria-label="Valitse kiinnostavat palvelut"{{ end }}>
 	{{ if .services_title }}
-	<strong id="services-title">{{ .services_title }}</strong>
+	<h5 id="services-title">{{ .services_title }}</h5>
 	{{ end }}
 	<div class="checkbox-group">
 		{{ range $index, $service := .services }}
@@ -109,11 +109,11 @@
 		</div>
 		<div id="cf-submit">
 			<button type="submit"
-         id="contact-submit"
-         class="btn btn-transparent btn-block"
-         aria-label="{{ .submit }}">
-        {{ .submit }}
-       </button>
+		 id="contact-submit"
+		 class="btn btn-transparent btn-block"
+		 aria-label="{{ .submit }}">
+		{{ .submit }}
+	   </button>
 		</div>
 	</form>
 </div>

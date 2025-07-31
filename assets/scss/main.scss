@@ -109,19 +109,37 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-h1, h2 {
-  font-weight: 700 !important;
+h1 {
+  font-weight: 400 !important;
   font-family: var(--sitefont);
   color: var(--color-text-primary);
   margin-top: 40px;
+  font-family: "Comfortaa", serif;
+  font-size: 2.4rem;
+  line-height: 1.2;
 }
 
-h3, h4, h5, h6 {
-  font-weight: 700;
-  font-family: var(--sitefont);
+ h2 {
+  font-weight: 400 !important;
+  color: var(--color-text-primary);
+  margin-top:0px;
+  font-family: "Comfortaa", serif;
+  font-size: 2.1rem;
+  line-height: 1.2;
+  text-transform: none;
+}
+
+h3, h4 {
+  font-weight: 400;
+  font-family: "Comfortaa", serif;
   color: var(--color-text-primary);
 }
 
+h5, h6 {
+  font-weight: 400;
+  font-family: var(--sitefont);
+  color: var(--color-text-primary);
+}
 p {
   font-family: var(--sitefont);
   font-size: 0.95rem !important;
@@ -143,6 +161,7 @@ p {
     text-decoration: none;
   }
 }
+
 
 // =============================================================================
 // Button System
@@ -558,21 +577,7 @@ p {
 .title {
   padding-bottom: 10px;
   
-  h2 {
-    text-transform: none;
-    font-weight: 700;
-    font-size: 2.2rem;
-    color: var(--color-primary);
-    margin-top:0px;
-    
-    span {
-      color: var(--color-primary);
-    }
-  }
-  
   p {
-    //color: var(--color-text-dark);
-    color: var(--color-text-primary);
     font-size: 1.2rem;
   }
 }
@@ -806,7 +811,7 @@ p {
 .social-icons {
   list-style: none;
   padding: 0;
-  margin: 20px 0;
+  margin: 0px 0;
   display: flex;
   gap: 20px;
   
@@ -916,6 +921,7 @@ footer {
   .social-icons li a i {
     color: #ffffff !important;
   }
+
   
   // Scroll-to-top button: valkoinen border + nuoli, transparent bg
   .scroll-to-top {
@@ -941,6 +947,8 @@ footer {
   .footer-business p,
   .footer-brand-text {
     color: var(--siteset-{{ $sectionsetName }}-color) !important;
+    font-size: 0.9rem !important;
+
   }
   
   // LinkedIn logo musta lightset/neutralset footerissa
@@ -953,11 +961,12 @@ footer {
     border: 1px solid var(--siteset-{{ $sectionsetName }}-button) !important;
     color: var(--siteset-{{ $sectionsetName }}-button) !important;
     background-color: transparent !important;
+    margin-top: 0px!important;
     
     &:hover,
     &:active,
     &:focus {
-      opacity: 0.7 !important;
+      opacity: 1 !important;
       border: 1px solid var(--siteset-{{ $sectionsetName }}-button) !important;
       color: var(--siteset-{{ $sectionsetName }}-button) !important;
       background-color: transparent !important;

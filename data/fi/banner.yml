@@ -1,11 +1,13 @@
 ############################### Banner ################################
 banner:
   enable : true
-  bg_image_webp : "images/backgrounds/hero-area.webp"
-  bg_image : "images/backgrounds/hero-area.jpg"
+  media_type: "video"   # vaihtoehdot: "video", "image"
+  text_align: "center"  # vaihtoehdot: "left", "center", "right"
+  bg_image_webp : "images/backgrounds/hero-area_signing.webp"
+  bg_image : "images/backgrounds/hero-area_signing.jpg"
   video : "videos/testi_hero.mp4"
-  icon : "" # themify icon pack : https://themify.me/themify-icons
-  title : "Lorem Ipsum Dolor Sit Amet Consectetur"
+  icon : ""
+  title : "Lorem Ipsum Dolor Sit"
   content : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud."
   button:
     enable : true

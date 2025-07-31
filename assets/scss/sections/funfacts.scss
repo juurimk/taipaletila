@@ -45,7 +45,7 @@
         }
         
         i {
-          font-size: 2rem; // Pienempi ikoni
+          font-size: 1.7rem; // Pienempi ikoni
           color: var(--siteset-#{$sectionset}-button);
           margin-bottom: 12px; // Pienempi marginaali
           display: block;
@@ -62,10 +62,9 @@
         }
         
         .count {
-          font-size: 2.2rem; // Pienempi numero
+          font-size: 2rem; // Pienempi numero
           font-weight: 700;
           color: var(--siteset-#{$sectionset}-h2);
-          font-family: var(--sitefont);
           display: block;
           margin-bottom: 8px;
           

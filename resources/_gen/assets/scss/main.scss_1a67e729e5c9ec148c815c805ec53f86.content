@@ -7,63 +7,63 @@
 */
 /* 
  * Safe Generated SCSS
- * Siteset: kaste
+ * Siteset: pastilli
  * Button Style: ghost
  */
 :root {
-  --siteset-coloriset-bg: #2EC4B6;
-  --siteset-coloriset-color: #ffffff;
-  --siteset-coloriset-button: #ffffff;
-  --siteset-coloriset-button-text: #032320;
-  --siteset-coloriset-h2: #ffffff;
-  --siteset-coloriset-mask-color: #2EC4B6;
+  --siteset-coloriset-bg: #FFDDD2;
+  --siteset-coloriset-color: #006D77;
+  --siteset-coloriset-button: #006D77;
+  --siteset-coloriset-button-text: #FFFFFF;
+  --siteset-coloriset-h2: #006D77;
+  --siteset-coloriset-mask-color: #006D77;
   --opacity-coloriset-highlighted: 0.9;
   --opacity-coloriset-table-bg: 0.1;
   --opacity-coloriset-hover: 0.8;
-  --text-coloriset-highlighted: #032320;
+  --text-coloriset-highlighted: #006D77;
   --text-coloriset-section_description: <no value>;
-  --siteset-darkset-bg: #032320;
-  --siteset-darkset-color: #ffffff;
-  --siteset-darkset-button: #2EC4B6;
-  --siteset-darkset-button-text: #000000;
-  --siteset-darkset-h2: #2EC4B6;
-  --siteset-darkset-mask-color: #2EC4B6;
+  --siteset-darkset-bg: #006D77;
+  --siteset-darkset-color: #EDF6F9;
+  --siteset-darkset-button: #83C5BE;
+  --siteset-darkset-button-text: #006D77;
+  --siteset-darkset-h2: #EDF6F9;
+  --siteset-darkset-mask-color: #006D77;
   --opacity-darkset-highlighted: 0.8;
   --opacity-darkset-table-bg: 0.2;
   --opacity-darkset-hover: 0.9;
-  --text-darkset-highlighted: #ffffff;
+  --text-darkset-highlighted: #EDF6F9;
   --text-darkset-section_description: <no value>;
   --siteset-lightset-bg: #FFFFFF;
-  --siteset-lightset-color: #032320;
-  --siteset-lightset-button: #2EC4B6;
-  --siteset-lightset-button-text: #032320;
-  --siteset-lightset-h2: #2EC4B6;
-  --siteset-lightset-mask-color: #2EC4B6;
+  --siteset-lightset-color: #006D77;
+  --siteset-lightset-button: #83C5BE;
+  --siteset-lightset-button-text: #006D77;
+  --siteset-lightset-h2: #83C5BE;
+  --siteset-lightset-mask-color: #83C5BE;
   --opacity-lightset-highlighted: 0.2;
   --opacity-lightset-table-bg: 0.1;
   --opacity-lightset-hover: 0.8;
-  --text-lightset-highlighted: #032320;
+  --text-lightset-highlighted: #006D77;
   --text-lightset-section_description: <no value>;
-  --siteset-neutralset-bg: #cbf3f0;
-  --siteset-neutralset-color: #032320;
-  --siteset-neutralset-button: #2EC4B6;
-  --siteset-neutralset-button-text: #000000;
-  --siteset-neutralset-h2: #2EC4B6;
-  --siteset-neutralset-mask-color: #2EC4B6;
+  --siteset-neutralset-bg: #EDF6F9;
+  --siteset-neutralset-color: #006D77;
+  --siteset-neutralset-button: #83C5BE;
+  --siteset-neutralset-button-text: #006D77;
+  --siteset-neutralset-h2: #006D77;
+  --siteset-neutralset-mask-color: #83C5BE;
   --opacity-neutralset-highlighted: 0.3;
   --opacity-neutralset-table-bg: 0.15;
   --opacity-neutralset-hover: 0.8;
-  --text-neutralset-highlighted: #032320;
+  --text-neutralset-highlighted: #006D77;
   --text-neutralset-section_description: <no value>;
   /* Legacy compatibility */
-  --color-primary: #2EC4B6;
-  --color-primary-dark: #2EC4B6;
-  --color-text-primary: #032320;
-  --color-text-dark: #032320;
-  --color-bg-primary: #032320;
-  --color-text-white: #ffffff;
-  --color-bg-secondary: #cbf3f0;
-  --color-bg-light: #cbf3f0;
+  --color-primary: #83C5BE;
+  --color-primary-dark: #83C5BE;
+  --color-text-primary: #006D77;
+  --color-text-dark: #006D77;
+  --color-bg-primary: #006D77;
+  --color-text-white: #EDF6F9;
+  --color-bg-secondary: #EDF6F9;
+  --color-bg-light: #EDF6F9;
   /* Additional variables */
   --color-border-light: #ddd;
   --color-border-medium: rgba(255, 255, 255, 0.2);
@@ -75,7 +75,7 @@
   --color-accent: #2795e9;
   --color-success: #4CAF50;
   --color-error: #e74c3c;
-  --sitefont: "Open Sans", sans-serif;
+  --sitefont: "DM Sans, Comfortaa", sans-serif;
   /* Button Corner Radius System */
   --button-border-radius: 50px; }
 
@@ -101,14 +101,31 @@ body {
   color: var(--color-text-secondary);
   -webkit-font-smoothing: antialiased; }
 
-h1, h2 {
-  font-weight: 700 !important;
+h1 {
+  font-weight: 400 !important;
   font-family: var(--sitefont);
   color: var(--color-text-primary);
-  margin-top: 40px; }
+  margin-top: 40px;
+  font-family: "Comfortaa", serif;
+  font-size: 2.4rem;
+  line-height: 1.2; }
 
-h3, h4, h5, h6 {
-  font-weight: 700;
+h2 {
+  font-weight: 400 !important;
+  color: var(--color-text-primary);
+  margin-top: 0px;
+  font-family: "Comfortaa", serif;
+  font-size: 2.1rem;
+  line-height: 1.2;
+  text-transform: none; }
+
+h3, h4 {
+  font-weight: 400;
+  font-family: "Comfortaa", serif;
+  color: var(--color-text-primary); }
+
+h5, h6 {
+  font-weight: 400;
   font-family: var(--sitefont);
   color: var(--color-text-primary); }
 
@@ -541,16 +558,7 @@ p {
 
 .title {
   padding-bottom: 10px; }
-  .title h2 {
-    text-transform: none;
-    font-weight: 700;
-    font-size: 2.2rem;
-    color: var(--color-primary);
-    margin-top: 0px; }
-    .title h2 span {
-      color: var(--color-primary); }
   .title p {
-    color: var(--color-text-primary);
     font-size: 1.2rem; }
 
 @media (max-width: 992px) {
@@ -691,7 +699,7 @@ p {
 .social-icons {
   list-style: none;
   padding: 0;
-  margin: 20px 0;
+  margin: 0px 0;
   display: flex;
   gap: 20px; }
   @media (max-width: 768px) {
@@ -799,7 +807,8 @@ footer {
 .footer-section.section-lightset .social-icons li a,
 .footer-section.section-lightset .footer-business p,
 .footer-section.section-lightset .footer-brand-text {
-  color: var(--siteset-lightset-color) !important; }
+  color: var(--siteset-lightset-color) !important;
+  font-size: 0.9rem !important; }
 
 .footer-section.section-lightset .social-icons li a i {
   color: var(--siteset-lightset-color) !important; }
@@ -807,9 +816,10 @@ footer {
 .footer-section.section-lightset .scroll-to-top {
   border: 1px solid var(--siteset-lightset-button) !important;
   color: var(--siteset-lightset-button) !important;
-  background-color: transparent !important; }
+  background-color: transparent !important;
+  margin-top: 0px !important; }
   .footer-section.section-lightset .scroll-to-top:hover, .footer-section.section-lightset .scroll-to-top:active, .footer-section.section-lightset .scroll-to-top:focus {
-    opacity: 0.7 !important;
+    opacity: 1 !important;
     border: 1px solid var(--siteset-lightset-button) !important;
     color: var(--siteset-lightset-button) !important;
     background-color: transparent !important; }
@@ -819,7 +829,8 @@ footer {
 .footer-section.section-neutralset .social-icons li a,
 .footer-section.section-neutralset .footer-business p,
 .footer-section.section-neutralset .footer-brand-text {
-  color: var(--siteset-neutralset-color) !important; }
+  color: var(--siteset-neutralset-color) !important;
+  font-size: 0.9rem !important; }
 
 .footer-section.section-neutralset .social-icons li a i {
   color: var(--siteset-neutralset-color) !important; }
@@ -827,9 +838,10 @@ footer {
 .footer-section.section-neutralset .scroll-to-top {
   border: 1px solid var(--siteset-neutralset-button) !important;
   color: var(--siteset-neutralset-button) !important;
-  background-color: transparent !important; }
+  background-color: transparent !important;
+  margin-top: 0px !important; }
   .footer-section.section-neutralset .scroll-to-top:hover, .footer-section.section-neutralset .scroll-to-top:active, .footer-section.section-neutralset .scroll-to-top:focus {
-    opacity: 0.7 !important;
+    opacity: 1 !important;
     border: 1px solid var(--siteset-neutralset-button) !important;
     color: var(--siteset-neutralset-button) !important;
     background-color: transparent !important; }
@@ -927,7 +939,6 @@ a.mask:hover {
 #about .block .content h3 {
   font-size: 1.25rem;
   font-weight: 700;
-  font-family: var(--sitefont);
   color: var(--siteset-darkset-color);
   margin-top: 0.5rem;
   text-align: center; }
@@ -992,40 +1003,6 @@ a.mask:hover {
     max-width: 100%;
     padding: 0;
     margin: 0; }
-  .hero-area-video .banner-content {
-    position: relative;
-    z-index: 4;
-    max-width: 900px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 3rem 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 40vh;
-    text-align: center; }
-    .hero-area-video .banner-content h1 {
-      margin-bottom: 1.5rem;
-      margin-left: 0;
-      margin-right: 0;
-      color: var(--siteset-lightset-bg) !important;
-      font-size: 2.5rem;
-      line-height: 1.2;
-      word-break: break-word; }
-    .hero-area-video .banner-content p, .hero-area-video .banner-content .hero-p {
-      margin-bottom: 2rem;
-      font-size: 1.3rem;
-      color: #fff;
-      font-weight: 400;
-      margin-left: 0;
-      margin-right: 0;
-      line-height: 1.5; }
-    .hero-area-video .banner-content .video-button {
-      margin-bottom: 2rem; }
-      .hero-area-video .banner-content .video-button i {
-        font-size: 2.2rem;
-        color: inherit; }
   .hero-area-video .btn, .hero-area-video .banner-button {
     margin-top: 1rem;
     z-index: 5;
@@ -1057,6 +1034,132 @@ a.mask:hover {
           margin-bottom: 1.2rem; }
         .hero-area-video .banner-content .video-button i {
           font-size: 1.5rem; } }
+.hero-area-video {
+  position: relative;
+  width: 100vw;
+  min-height: 75vh;
+  height: auto;
+  overflow: hidden;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  display: flex;
+  align-items: center; }
+  .hero-area-video .hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 75vh;
+    width: auto;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    object-fit: cover; }
+  .hero-area-video .image-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 75vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1; }
+  .hero-area-video .video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 2; }
+  .hero-area-video .container-fluid {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    margin: 0; }
+  .hero-area-video .banner-content {
+    position: relative;
+    z-index: 4;
+    max-width: 700px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 40vh; }
+    .hero-area-video .banner-content h1 {
+      margin-bottom: 1.5rem;
+      color: var(--siteset-lightset-bg) !important; }
+    .hero-area-video .banner-content p, .hero-area-video .banner-content .hero-p {
+      margin-bottom: 2rem;
+      font-size: 1.3rem;
+      color: #fff;
+      font-weight: 400;
+      line-height: 1.5; }
+    .hero-area-video .banner-content .video-button {
+      margin-bottom: 2rem; }
+      .hero-area-video .banner-content .video-button i {
+        font-size: 2.2rem;
+        color: inherit; }
+    .hero-area-video .banner-content.text-left {
+      text-align: left;
+      align-items: flex-start; }
+    .hero-area-video .banner-content.text-center {
+      text-align: center;
+      align-items: center; }
+    .hero-area-video .banner-content.text-right {
+      text-align: right;
+      align-items: flex-end; }
+  .hero-area-video .btn, .hero-area-video .banner-button {
+    margin-top: 1rem;
+    z-index: 5;
+    position: relative;
+    color: #fff !important; }
+  @media (max-width: 992px) {
+    .hero-area-video {
+      min-height: 50vh; }
+      .hero-area-video .banner-content {
+        padding: 2rem 1rem; }
+        .hero-area-video .banner-content h1 {
+          font-size: 1.7rem !important; }
+        .hero-area-video .banner-content p, .hero-area-video .banner-content .hero-p {
+          font-size: 1.1rem; }
+      .hero-area-video .hero-video,
+      .hero-area-video .image-background {
+        min-height: 50vh; } }
+  @media (max-width: 576px) {
+    .hero-area-video {
+      min-height: 28vh; }
+      .hero-area-video .hero-video,
+      .hero-area-video .image-background {
+        min-height: 28vh; }
+      .hero-area-video .banner-content {
+        padding: 5rem 0.5rem 2rem; }
+        .hero-area-video .banner-content h1 {
+          font-size: 1.5rem;
+          margin-top: 1.2rem; }
+        .hero-area-video .banner-content p, .hero-area-video .banner-content .hero-p {
+          font-size: 0.95rem;
+          margin-bottom: 1.2rem; }
+        .hero-area-video .banner-content .video-button i {
+          font-size: 1.5rem; } }
+.image-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 75vh;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1;
+  transform: none !important; }
+
 /* Section: blog */
 .post-block h4, .post-block h4 a {
   color: var(--current-h2-color) !important;
@@ -1126,9 +1229,11 @@ a.mask:hover {
   --current-button-color: var(--siteset-coloriset-button); }
 
 .post-block .post-meta {
-  margin-top: 15px !important; }
+  margin-top: 15px !important;
+  margin-bottom: 10px !important; }
   .post-block .post-meta .post-date {
-    margin-top: 10px !important; }
+    margin-top: 10px !important;
+    font-size: 0.85rem !important; }
 
 .post-block .post-date {
   margin-top: 20px !important; }
@@ -1157,6 +1262,13 @@ a.mask:hover {
       padding-top: 0rem; }
 
 /* Section: contact */
+.contact-person h5,
+#services-title {
+  font-size: 1.1rem;
+  color: var(--siteset-sectionset-color);
+  font-weight: 400;
+  line-height: 1.4 !important; }
+
 .contact-us {
   padding-top: 60px;
   padding-bottom: 0px; }
@@ -1289,125 +1401,103 @@ a.mask:hover {
   margin-bottom: 10px; }
 
 /* Section: faq */
-.faq-section .faq-answer p {
-  font-size: 0.95rem !important; }
-
-.faq-section .faq-description p {
-  font-size: 0.95rem !important; }
-
 .faq-section {
   background-color: var(--siteset-neutralset-bg);
-  color: var(--siteset-lightset-color); }
-
-.faq-title, .faq-title .color {
-  color: var(--siteset-lightset-h2); }
-
-.faq-subtitle {
-  color: var(--siteset-lightset-button);
-  font-size: 1.5rem;
-  font-weight: 500;
-  margin-bottom: 20px;
-  margin-top: 15px; }
-
-.faq-description {
-  margin: 10px auto 40px;
-  max-width: 700px; }
-
-.faq-description p {
-  line-height: 1.6;
   color: var(--siteset-lightset-color);
-  margin-bottom: 0; }
-
-.faq-accordion {
-  margin-bottom: 30px;
-  margin-top: 20px; }
-
-.faq-item {
-  margin-bottom: 20px; }
-
-.faq-question-btn {
-  background: #fff !important;
-  color: var(--siteset-lightset-h2) !important;
-  border: none !important;
-  border-radius: 25px;
-  width: 100%;
-  text-align: left;
-  padding: 20px 25px;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  outline: none;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); }
-
-.faq-question-text {
-  flex-grow: 1;
-  line-height: 1.4;
-  margin-right: 15px; }
-
-.faq-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 30px;
-  height: 30px;
-  background: transparent;
-  border-radius: 50%;
-  transition: all 0.3s ease;
-  flex-shrink: 0; }
-
-.faq-icon i {
-  font-size: 16px;
-  color: var(--siteset-lightset-h2);
-  opacity: 0.7;
-  transition: all 0.3s ease; }
-
-.faq-answer {
-  display: none;
-  padding: 10px 25px 0 25px;
-  margin-top: 0px; }
-
-.faq-answer p {
-  color: var(--siteset-lightset-color);
-  line-height: 1.7;
-  margin-bottom: 0;
-  opacity: 0.9; }
-
-.faq-contact-cta {
-  background: rgba(var(--siteset-lightset-button), 0.1);
-  border-radius: 15px;
-  padding: 40px 30px;
-  border: 1px solid rgba(var(--siteset-lightset-button), 0.2); }
-
-.faq-contact-title {
-  color: var(--siteset-lightset-color);
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 15px; }
-
-.faq-contact-desc {
-  color: var(--siteset-lightset-color);
-  margin-bottom: 25px;
-  line-height: 1.6; }
-
-.faq-contact-btn {
-  background: var(--siteset-lightset-button);
-  color: var(--siteset-lightset-bg);
-  padding: 15px 35px;
-  font-size: 16px;
-  font-weight: 600;
-  text-transform: none !important;
-  letter-spacing: normal !important;
-  border: none;
-  border-radius: 0px;
-  transition: all 0.3s ease;
-  box-shadow: 0 5px 15px rgba(var(--siteset-lightset-button), 0.3);
-  text-decoration: none; }
+  font-family: var(--sitefont) !important; }
+  .faq-section .faq-description,
+  .faq-section .faq-accordion,
+  .faq-section .faq-item,
+  .faq-section .faq-subtitle,
+  .faq-section .faq-contact-title,
+  .faq-section .faq-question-btn,
+  .faq-section .faq-question-text,
+  .faq-section .faq-answer p,
+  .faq-section .faq-description p {
+    font-family: var(--sitefont) !important; }
+  .faq-section .faq-title,
+  .faq-section .faq-title .color {
+    color: var(--siteset-lightset-h2); }
+  .faq-section .faq-subtitle {
+    color: var(--siteset-lightset-button);
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin: 15px 0 20px; }
+  .faq-section .faq-description {
+    margin: 10px auto 40px;
+    max-width: 700px; }
+    .faq-section .faq-description p {
+      line-height: 1.6;
+      color: var(--siteset-lightset-color);
+      margin-bottom: 0; }
+  .faq-section .faq-question-btn {
+    background: #fff !important;
+    color: var(--siteset-lightset-h2) !important;
+    border: none !important;
+    border-radius: 25px;
+    width: 100%;
+    text-align: left;
+    padding: 20px 25px;
+    font-size: 16px;
+    font-weight: 600 !important;
+    cursor: pointer;
+    outline: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); }
+  .faq-section .faq-question-text {
+    flex-grow: 1;
+    line-height: 1.4;
+    margin-right: 15px; }
+  .faq-section .faq-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    border-radius: 50%;
+    transition: all 0.3s ease; }
+    .faq-section .faq-icon i {
+      font-size: 16px;
+      color: var(--siteset-lightset-h2);
+      opacity: 0.7;
+      transition: all 0.3s ease; }
+  .faq-section .faq-answer {
+    display: none;
+    padding: 10px 25px 0;
+    margin-top: 0; }
+    .faq-section .faq-answer p {
+      color: var(--siteset-lightset-color);
+      line-height: 1.7;
+      margin-bottom: 0;
+      opacity: 0.9; }
+  .faq-section .faq-contact-cta {
+    background: rgba(var(--siteset-lightset-button), 0.1);
+    border-radius: 15px;
+    padding: 40px 30px;
+    border: 1px solid rgba(var(--siteset-lightset-button), 0.2); }
+  .faq-section .faq-contact-desc {
+    color: var(--siteset-lightset-color);
+    margin-bottom: 25px;
+    line-height: 1.6; }
+  .faq-section .faq-contact-btn {
+    background: var(--siteset-lightset-button);
+    color: var(--siteset-lightset-bg);
+    padding: 15px 35px;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: none !important;
+    letter-spacing: normal !important;
+    border: none;
+    border-radius: 0px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(var(--siteset-lightset-button), 0.3);
+    text-decoration: none; }
 
 /* Section: fullshow */
 .fullshow-section {
@@ -1442,7 +1532,6 @@ a.mask:hover {
         min-height: 45vh; } }
   .fullshow-section.section-lightset .fullshow-content h2 {
     color: var(--siteset-lightset-h2);
-    font-family: var(--sitefont);
     font-weight: 700;
     font-size: 2.5rem;
     line-height: 1.2;
@@ -1457,7 +1546,6 @@ a.mask:hover {
         margin-bottom: 15px; } }
   .fullshow-section.section-lightset .fullshow-content p {
     color: var(--siteset-lightset-color);
-    font-family: var(--sitefont);
     font-size: 1.1rem;
     line-height: 1.5;
     margin-bottom: 20px; }
@@ -1474,7 +1562,6 @@ a.mask:hover {
         margin: 20px auto 0; } }
   .fullshow-section.section-darkset .fullshow-content h2 {
     color: var(--siteset-darkset-h2);
-    font-family: var(--sitefont);
     font-weight: 700;
     font-size: 2.5rem;
     line-height: 1.2;
@@ -1489,7 +1576,6 @@ a.mask:hover {
         margin-bottom: 15px; } }
   .fullshow-section.section-darkset .fullshow-content p {
     color: var(--siteset-darkset-color);
-    font-family: var(--sitefont);
     font-size: 1.1rem;
     line-height: 1.5;
     margin-bottom: 20px; }
@@ -1506,7 +1592,6 @@ a.mask:hover {
         margin: 20px auto 0; } }
   .fullshow-section.section-coloriset .fullshow-content h2 {
     color: var(--siteset-coloriset-h2);
-    font-family: var(--sitefont);
     font-weight: 700;
     font-size: 2.5rem;
     line-height: 1.2;
@@ -1521,7 +1606,6 @@ a.mask:hover {
         margin-bottom: 15px; } }
   .fullshow-section.section-coloriset .fullshow-content p {
     color: var(--siteset-coloriset-color);
-    font-family: var(--sitefont);
     font-size: 1.1rem;
     line-height: 1.5;
     margin-bottom: 20px; }
@@ -1538,7 +1622,6 @@ a.mask:hover {
         margin: 20px auto 0; } }
   .fullshow-section.section-neutralset .fullshow-content h2 {
     color: var(--siteset-neutralset-h2);
-    font-family: var(--sitefont);
     font-weight: 700;
     font-size: 2.5rem;
     line-height: 1.2;
@@ -1553,7 +1636,6 @@ a.mask:hover {
         margin-bottom: 15px; } }
   .fullshow-section.section-neutralset .fullshow-content p {
     color: var(--siteset-neutralset-color);
-    font-family: var(--sitefont);
     font-size: 1.1rem;
     line-height: 1.5;
     margin-bottom: 20px; }
@@ -1615,7 +1697,7 @@ a.mask:hover {
         padding: 20px 15px;
         margin-bottom: 20px; } }
     .parallax-section.section-lightset .counters-item i {
-      font-size: 2rem;
+      font-size: 1.7rem;
       color: var(--siteset-lightset-button);
       margin-bottom: 12px;
       display: block; }
@@ -1628,10 +1710,9 @@ a.mask:hover {
           font-size: 1.4rem;
           margin-bottom: 8px; } }
     .parallax-section.section-lightset .counters-item .count {
-      font-size: 2.2rem;
+      font-size: 2rem;
       font-weight: 700;
       color: var(--siteset-lightset-h2);
-      font-family: var(--sitefont);
       display: block;
       margin-bottom: 8px; }
       @media (max-width: 768px) {
@@ -1664,7 +1745,7 @@ a.mask:hover {
         padding: 20px 15px;
         margin-bottom: 20px; } }
     .parallax-section.section-darkset .counters-item i {
-      font-size: 2rem;
+      font-size: 1.7rem;
       color: var(--siteset-darkset-button);
       margin-bottom: 12px;
       display: block; }
@@ -1677,10 +1758,9 @@ a.mask:hover {
           font-size: 1.4rem;
           margin-bottom: 8px; } }
     .parallax-section.section-darkset .counters-item .count {
-      font-size: 2.2rem;
+      font-size: 2rem;
       font-weight: 700;
       color: var(--siteset-darkset-h2);
-      font-family: var(--sitefont);
       display: block;
       margin-bottom: 8px; }
       @media (max-width: 768px) {
@@ -1713,7 +1793,7 @@ a.mask:hover {
         padding: 20px 15px;
         margin-bottom: 20px; } }
     .parallax-section.section-coloriset .counters-item i {
-      font-size: 2rem;
+      font-size: 1.7rem;
       color: var(--siteset-coloriset-button);
       margin-bottom: 12px;
       display: block; }
@@ -1726,10 +1806,9 @@ a.mask:hover {
           font-size: 1.4rem;
           margin-bottom: 8px; } }
     .parallax-section.section-coloriset .counters-item .count {
-      font-size: 2.2rem;
+      font-size: 2rem;
       font-weight: 700;
       color: var(--siteset-coloriset-h2);
-      font-family: var(--sitefont);
       display: block;
       margin-bottom: 8px; }
       @media (max-width: 768px) {
@@ -1762,7 +1841,7 @@ a.mask:hover {
         padding: 20px 15px;
         margin-bottom: 20px; } }
     .parallax-section.section-neutralset .counters-item i {
-      font-size: 2rem;
+      font-size: 1.7rem;
       color: var(--siteset-neutralset-button);
       margin-bottom: 12px;
       display: block; }
@@ -1775,10 +1854,9 @@ a.mask:hover {
           font-size: 1.4rem;
           margin-bottom: 8px; } }
     .parallax-section.section-neutralset .counters-item .count {
-      font-size: 2.2rem;
+      font-size: 2rem;
       font-weight: 700;
       color: var(--siteset-neutralset-h2);
-      font-family: var(--sitefont);
       display: block;
       margin-bottom: 8px; }
       @media (max-width: 768px) {
@@ -1825,11 +1903,9 @@ a.mask:hover {
     color: var(--siteset-lightset-color); }
     .gallery-section.section-lightset .title h2 {
       color: var(--siteset-lightset-h2);
-      font-family: var(--sitefont);
       font-weight: 700; }
     .gallery-section.section-lightset .gallery-description p {
       color: var(--siteset-lightset-color);
-      font-family: var(--sitefont);
       font-size: 0.95rem;
       line-height: 1.3; }
     .gallery-section.section-lightset .gallery-filter {
@@ -1905,7 +1981,6 @@ a.mask:hover {
             font-size: 1.2rem;
             margin-bottom: 10px;
             color: var(--siteset-lightset-h2);
-            font-family: var(--sitefont);
             font-weight: 600; }
             @media (max-width: 767px) {
               .gallery-section.section-lightset .gallery-grid .gallery-item .gallery-content h3,
@@ -1920,10 +1995,6 @@ a.mask:hover {
           .gallery-section.section-lightset .gallery-grid .gallery-item .gallery-content p,
           .gallery-section.section-lightset .row .gallery-item .gallery-content p {
             color: var(--siteset-lightset-color);
-            font-size: 0.95rem;
-            font-family: var(--sitefont);
-            line-height: 1.6;
-            margin-bottom: 10px;
             flex-grow: 1; }
             @media (max-width: 767px) {
               .gallery-section.section-lightset .gallery-grid .gallery-item .gallery-content p,
@@ -1953,11 +2024,9 @@ a.mask:hover {
     color: var(--siteset-darkset-color); }
     .gallery-section.section-darkset .title h2 {
       color: var(--siteset-darkset-h2);
-      font-family: var(--sitefont);
       font-weight: 700; }
     .gallery-section.section-darkset .gallery-description p {
       color: var(--siteset-darkset-color);
-      font-family: var(--sitefont);
       font-size: 0.95rem;
       line-height: 1.3; }
     .gallery-section.section-darkset .gallery-filter {
@@ -2033,7 +2102,6 @@ a.mask:hover {
             font-size: 1.2rem;
             margin-bottom: 10px;
             color: var(--siteset-darkset-h2);
-            font-family: var(--sitefont);
             font-weight: 600; }
             @media (max-width: 767px) {
               .gallery-section.section-darkset .gallery-grid .gallery-item .gallery-content h3,
@@ -2048,10 +2116,6 @@ a.mask:hover {
           .gallery-section.section-darkset .gallery-grid .gallery-item .gallery-content p,
           .gallery-section.section-darkset .row .gallery-item .gallery-content p {
             color: var(--siteset-darkset-color);
-            font-size: 0.95rem;
-            font-family: var(--sitefont);
-            line-height: 1.6;
-            margin-bottom: 10px;
             flex-grow: 1; }
             @media (max-width: 767px) {
               .gallery-section.section-darkset .gallery-grid .gallery-item .gallery-content p,
@@ -2081,11 +2145,9 @@ a.mask:hover {
     color: var(--siteset-coloriset-color); }
     .gallery-section.section-coloriset .title h2 {
       color: var(--siteset-coloriset-h2);
-      font-family: var(--sitefont);
       font-weight: 700; }
     .gallery-section.section-coloriset .gallery-description p {
       color: var(--siteset-coloriset-color);
-      font-family: var(--sitefont);
       font-size: 0.95rem;
       line-height: 1.3; }
     .gallery-section.section-coloriset .gallery-filter {
@@ -2161,7 +2223,6 @@ a.mask:hover {
             font-size: 1.2rem;
             margin-bottom: 10px;
             color: var(--siteset-coloriset-h2);
-            font-family: var(--sitefont);
             font-weight: 600; }
             @media (max-width: 767px) {
               .gallery-section.section-coloriset .gallery-grid .gallery-item .gallery-content h3,
@@ -2176,10 +2237,6 @@ a.mask:hover {
           .gallery-section.section-coloriset .gallery-grid .gallery-item .gallery-content p,
           .gallery-section.section-coloriset .row .gallery-item .gallery-content p {
             color: var(--siteset-coloriset-color);
-            font-size: 0.95rem;
-            font-family: var(--sitefont);
-            line-height: 1.6;
-            margin-bottom: 10px;
             flex-grow: 1; }
             @media (max-width: 767px) {
               .gallery-section.section-coloriset .gallery-grid .gallery-item .gallery-content p,
@@ -2209,11 +2266,9 @@ a.mask:hover {
     color: var(--siteset-neutralset-color); }
     .gallery-section.section-neutralset .title h2 {
       color: var(--siteset-neutralset-h2);
-      font-family: var(--sitefont);
       font-weight: 700; }
     .gallery-section.section-neutralset .gallery-description p {
       color: var(--siteset-neutralset-color);
-      font-family: var(--sitefont);
       font-size: 0.95rem;
       line-height: 1.3; }
     .gallery-section.section-neutralset .gallery-filter {
@@ -2289,7 +2344,6 @@ a.mask:hover {
             font-size: 1.2rem;
             margin-bottom: 10px;
             color: var(--siteset-neutralset-h2);
-            font-family: var(--sitefont);
             font-weight: 600; }
             @media (max-width: 767px) {
               .gallery-section.section-neutralset .gallery-grid .gallery-item .gallery-content h3,
@@ -2304,10 +2358,6 @@ a.mask:hover {
           .gallery-section.section-neutralset .gallery-grid .gallery-item .gallery-content p,
           .gallery-section.section-neutralset .row .gallery-item .gallery-content p {
             color: var(--siteset-neutralset-color);
-            font-size: 0.95rem;
-            font-family: var(--sitefont);
-            line-height: 1.6;
-            margin-bottom: 10px;
             flex-grow: 1; }
             @media (max-width: 767px) {
               .gallery-section.section-neutralset .gallery-grid .gallery-item .gallery-content p,
@@ -2411,7 +2461,6 @@ a.mask:hover {
     color: var(--siteset-lightset-color); }
     .logoband-section.section-lightset .title h2 {
       color: var(--siteset-lightset-h2);
-      font-family: var(--sitefont);
       font-weight: 700;
       font-size: 2.2rem;
       margin-bottom: 40px; }
@@ -2421,7 +2470,6 @@ a.mask:hover {
           margin-bottom: 30px; } }
     .logoband-section.section-lightset .logoband-title h2 {
       color: var(--siteset-lightset-h2);
-      font-family: var(--sitefont);
       font-weight: 700;
       font-size: 2.2rem;
       margin-bottom: 10px !important; }
@@ -2441,7 +2489,6 @@ a.mask:hover {
     color: var(--siteset-darkset-color); }
     .logoband-section.section-darkset .title h2 {
       color: var(--siteset-darkset-h2);
-      font-family: var(--sitefont);
       font-weight: 700;
       font-size: 2.2rem;
       margin-bottom: 40px; }
@@ -2451,7 +2498,6 @@ a.mask:hover {
           margin-bottom: 30px; } }
     .logoband-section.section-darkset .logoband-title h2 {
       color: var(--siteset-darkset-h2);
-      font-family: var(--sitefont);
       font-weight: 700;
       font-size: 2.2rem;
       margin-bottom: 10px !important; }
@@ -2471,7 +2517,6 @@ a.mask:hover {
     color: var(--siteset-coloriset-color); }
     .logoband-section.section-coloriset .title h2 {
       color: var(--siteset-coloriset-h2);
-      font-family: var(--sitefont);
       font-weight: 700;
       font-size: 2.2rem;
       margin-bottom: 40px; }
@@ -2481,7 +2526,6 @@ a.mask:hover {
           margin-bottom: 30px; } }
     .logoband-section.section-coloriset .logoband-title h2 {
       color: var(--siteset-coloriset-h2);
-      font-family: var(--sitefont);
       font-weight: 700;
       font-size: 2.2rem;
       margin-bottom: 10px !important; }
@@ -2501,7 +2545,6 @@ a.mask:hover {
     color: var(--siteset-neutralset-color); }
     .logoband-section.section-neutralset .title h2 {
       color: var(--siteset-neutralset-h2);
-      font-family: var(--sitefont);
       font-weight: 700;
       font-size: 2.2rem;
       margin-bottom: 40px; }
@@ -2511,7 +2554,6 @@ a.mask:hover {
           margin-bottom: 30px; } }
     .logoband-section.section-neutralset .logoband-title h2 {
       color: var(--siteset-neutralset-h2);
-      font-family: var(--sitefont);
       font-weight: 700;
       font-size: 2.2rem;
       margin-bottom: 10px !important; }
@@ -2668,7 +2710,7 @@ a.mask:hover {
                 left: 0;
                 font-weight: bold; }
         .services-section .service-card .service-overlay .service-content .service-price {
-          font-weight: 700;
+          font-weight: 600;
           color: var(--color-button-primary);
           margin-top: auto;
           padding-top: 15px;
@@ -2959,7 +3001,6 @@ a.mask:hover {
   .showcase-section.section-lightset .showcase-content h2,
   .showcase-section.section-lightset .showcase-content-mobile h2 {
     color: var(--siteset-lightset-h2);
-    font-family: var(--sitefont);
     font-weight: 700;
     font-size: 2.5rem;
     line-height: 1.2;
@@ -2972,7 +3013,6 @@ a.mask:hover {
   .showcase-section.section-lightset .showcase-content p,
   .showcase-section.section-lightset .showcase-content-mobile p {
     color: var(--siteset-lightset-color);
-    font-family: var(--sitefont);
     font-size: 1.1rem;
     line-height: 1.6;
     margin-bottom: 0; }
@@ -2995,7 +3035,6 @@ a.mask:hover {
   .showcase-section.section-darkset .showcase-content h2,
   .showcase-section.section-darkset .showcase-content-mobile h2 {
     color: var(--siteset-darkset-h2);
-    font-family: var(--sitefont);
     font-weight: 700;
     font-size: 2.5rem;
     line-height: 1.2;
@@ -3008,7 +3047,6 @@ a.mask:hover {
   .showcase-section.section-darkset .showcase-content p,
   .showcase-section.section-darkset .showcase-content-mobile p {
     color: var(--siteset-darkset-color);
-    font-family: var(--sitefont);
     font-size: 1.1rem;
     line-height: 1.6;
     margin-bottom: 0; }
@@ -3031,7 +3069,6 @@ a.mask:hover {
   .showcase-section.section-coloriset .showcase-content h2,
   .showcase-section.section-coloriset .showcase-content-mobile h2 {
     color: var(--siteset-coloriset-h2);
-    font-family: var(--sitefont);
     font-weight: 700;
     font-size: 2.5rem;
     line-height: 1.2;
@@ -3044,7 +3081,6 @@ a.mask:hover {
   .showcase-section.section-coloriset .showcase-content p,
   .showcase-section.section-coloriset .showcase-content-mobile p {
     color: var(--siteset-coloriset-color);
-    font-family: var(--sitefont);
     font-size: 1.1rem;
     line-height: 1.6;
     margin-bottom: 0; }
@@ -3067,7 +3103,6 @@ a.mask:hover {
   .showcase-section.section-neutralset .showcase-content h2,
   .showcase-section.section-neutralset .showcase-content-mobile h2 {
     color: var(--siteset-neutralset-h2);
-    font-family: var(--sitefont);
     font-weight: 700;
     font-size: 2.5rem;
     line-height: 1.2;
@@ -3080,7 +3115,6 @@ a.mask:hover {
   .showcase-section.section-neutralset .showcase-content p,
   .showcase-section.section-neutralset .showcase-content-mobile p {
     color: var(--siteset-neutralset-color);
-    font-family: var(--sitefont);
     font-size: 1.1rem;
     line-height: 1.6;
     margin-bottom: 0; }
@@ -3226,8 +3260,8 @@ a.mask:hover {
     .team-member .member-photo:hover .mask {
       opacity: 1; }
   .team-member .member-meta .member-name {
-    font-size: 1.4rem;
-    font-weight: 600;
+    font-size: 1.2rem;
+    font-weight: 700;
     margin-bottom: 0.5rem;
     color: var(--siteset-lightset-button); }
   .team-member .member-meta .member-title {

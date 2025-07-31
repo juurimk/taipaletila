@@ -150,8 +150,8 @@ blogBannerSubtitle = "Your Subtitle Here"
 # Popular font combinations you can copy/paste:
 
 # Open Sans (current - clean, professional)
-sitefontlink = "https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
-sitefont = "Open Sans"
+# sitefontlink = "https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+# sitefont = "Open Sans"
 
 # Inter (modern interface font - excellent for digital products)
 # sitefontlink = "https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,700;1,400&display=swap"
@@ -174,16 +174,20 @@ sitefont = "Open Sans"
 # sitefont = "Manrope"
 
 # DM Sans (versatile - perfect for UI and content)
-# sitefontlink = "https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,700;1,400&display=swap"
-# sitefont = "DM Sans"
+ sitefontlink = "https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,700;1,400&family=Comfortaa:wght@300..700&display=swap"
+ sitefont = "DM Sans, Comfortaa"
 
 # System fonts (fastest - no web loading)
 # sitefontlink = ""
 # sitefont = "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
 
+# Comfortaa (asiakas)
+# sitefontlink = "https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Comfortaa:wght@300..700&display=swap"
+# sitefont = "Open Sans, Comfortaa"
+
 ############################# Siteset Colors Configuration ##########################
 # Choose siteset colors from available options: saaristo, kaste, korpi, hiekka, loimu, viima, verso, kipina, apila, helle, sahakka, ruska, harmonia, tuli, yo, tiikeri, syksy, neon, pastilli, pinkki, onecolor, terra, jklav1, jklav2
-siteset = "kaste"
+siteset = "pastilli"
 
 [params.sections]
     [params.sections.banner]
@@ -261,7 +265,7 @@ siteset = "kaste"
   article = "coloriset"   # blogit
   gallery = "lightset"   # gridilistaus tuotteista
   services-hero = "lightset"   # Services hero single sivuilla (tuotesivut)
-  navigation = "lightset"   # navbar
+  navigation = "darkset"   # navbar
   main_text = "lightset"   # service-single sivun ensimmäinen palvelukuvaus
   packages = "coloriset"       # services singlesivun main teksti osio
   expert = "darkset"     # singlesivulla kouluttaja osio
@@ -270,7 +274,7 @@ siteset = "kaste"
   footer = "neutralset" # footer section
   privacy = "neutralset" # privacy, jos ei pdf
   showcase = "coloriset" # mainososio
-  fullshow = "lightset" # fullscreen taustakuva osio
+  fullshow = "coloriset" # fullscreen taustakuva osio
   logoband = "darkset" # asiakaslogot osio
 
 

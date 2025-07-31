@@ -18,7 +18,7 @@ services:
   # Service items - vain etusivun korttien tiedot
   service_items:
     # Service 1
-    - name: "Lorem Ipsum"
+    - name: "Palvelu 1"
       subtitle: "Dolor sit amet consectetur"
       price: "Lorem Ipsum!"
       slug: "lorem-ipsum-1"
@@ -32,7 +32,7 @@ services:
         - Incididunt ut labore et dolore magna
 
     # Service 2
-    - name: "Consectetur Adipiscing"
+    - name: "Palvelu 2"
       subtitle: "Sed do eiusmod tempor"
       price: "Lorem Ipsum!"
       slug: "consectetur-adipiscing"
@@ -46,7 +46,7 @@ services:
         - Fugiat nulla pariatur excepteur sint
 
     # Service 3
-    - name: "Ut Enim Minim"
+    - name: "Palvelu 3"
       subtitle: "Veniam quis nostrud"
       price: "Lorem €/h"
       slug: "ut-enim-minim"

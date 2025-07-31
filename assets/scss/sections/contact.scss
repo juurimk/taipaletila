@@ -1,3 +1,11 @@
+// Contact section h5-otsikot kuten p-tekstit
+.contact-person h5,
+#services-title {
+  font-size: 1.1rem;
+  color: var(--siteset-sectionset-color);
+  font-weight: 400;
+  line-height: 1.4!important;
+}
 // Contact Section SCSS Muokkaukset
 
 .contact-us {

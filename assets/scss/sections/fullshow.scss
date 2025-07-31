@@ -45,7 +45,6 @@
       .fullshow-content {
         h2 {
           color: var(--siteset-#{$sectionset}-h2);
-          font-family: var(--sitefont);
           font-weight: 700;
           font-size: 2.5rem; // Pienempi otsikko
           line-height: 1.2;
@@ -64,7 +63,6 @@
         
         p {
           color: var(--siteset-#{$sectionset}-color);
-          font-family: var(--sitefont);
           font-size: 1.1rem; // Pienempi teksti
           line-height: 1.5; // Tiiviimpi rivikorkeus
           margin-bottom: 20px; // Pienempi marginaali

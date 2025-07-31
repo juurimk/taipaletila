@@ -1,5 +1,5 @@
 ---
-tags: ["tekoäly", "hr"]
+# tags: ["tekoäly", "hr"]
 title: "Tekoälyä HR-osastolle - Näin tekoälyä voidaan hyödyntää henkilöstöhallinnossa"
 date: 2025-07-29
 image_webp: images/blog/tekoaly-hr.webp
