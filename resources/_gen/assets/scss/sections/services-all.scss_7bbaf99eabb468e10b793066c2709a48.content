@@ -66,7 +66,7 @@
       /* Align the row with the cards */ }
       .services-all-section.section-lightset .service-category .row .service-item {
         background: var(--siteset-lightset-bg);
-        border-radius: 0px;
+        border-radius: var(--button-border-radius);
         overflow: hidden;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         margin-bottom: 30px;
@@ -174,7 +174,7 @@
       /* Align the row with the cards */ }
       .services-all-section.section-darkset .service-category .row .service-item {
         background: var(--siteset-darkset-bg);
-        border-radius: 0px;
+        border-radius: var(--button-border-radius);
         overflow: hidden;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         margin-bottom: 30px;
@@ -282,7 +282,7 @@
       /* Align the row with the cards */ }
       .services-all-section.section-coloriset .service-category .row .service-item {
         background: var(--siteset-coloriset-bg);
-        border-radius: 0px;
+        border-radius: var(--button-border-radius);
         overflow: hidden;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         margin-bottom: 30px;
@@ -390,7 +390,7 @@
       /* Align the row with the cards */ }
       .services-all-section.section-neutralset .service-category .row .service-item {
         background: var(--siteset-neutralset-bg);
-        border-radius: 0px;
+        border-radius: var(--button-border-radius);
         overflow: hidden;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         margin-bottom: 30px;

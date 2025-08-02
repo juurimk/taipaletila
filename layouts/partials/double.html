@@ -1,0 +1,61 @@
+{{ $data := index site.Data site.Language.Lang }}
+
+{{/* Get sectionset for double section */}}
+{{ $sectionset := index site.Params.sectionsets "double" | default "darkset" }}
+
+{{ if $data.double.double.enable }}
+{{ with $data.double.double }}
+{{ $imagePosition := .image_position | default "left" }}
+
+{{"<!-- Start Double Section -->" | safeHTML}}
+<section id="double-section" 
+         class="section double-section section-{{ $sectionset }} image-{{ $imagePosition }}" 
+         role="region" 
+         aria-labelledby="double-title">
+  <div class="container">
+    <div class="row align-items-center">
+      
+      {{ if .image }}
+      <div class="col-md-6 double-image-col">
+        <div class="double-image-container">
+          <img src="{{ .image | absURL }}" 
+               alt="{{ .alt_text | default .title }}" 
+               class="double-image img-fluid"
+               loading="lazy">
+        </div>
+      </div>
+      {{ end }}
+
+      <div class="col-md-6 double-content-col">
+        <div class="double-content-wrapper">
+          {{ if .title }}
+          <h2 id="double-title" class="double-title">{{ .title }}</h2>
+          {{ end }}
+          
+          {{ if .content }}
+          <div class="double-content" role="text">
+            {{ .content | markdownify }}
+          </div>
+          {{ end }}
+          
+          {{ if and .button .button.enable }}
+          {{ with .button }}
+          <div class="double-button-wrapper">
+            <a href="{{ .link }}" 
+               class="btn btn-calendar-fill" 
+               role="button" 
+               aria-label="{{ .label }}">
+              {{ .label }}
+            </a>
+          </div>
+          {{ end }}
+          {{ end }}
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+{{"<!-- /Double Section -->" | safeHTML}}
+{{ end }}
+{{ end }}

@@ -1,0 +1,155 @@
+// Fullshow2 Section Styles
+.fullshow2-section {
+  
+  // Dynamic sectionset styling
+  @each $sectionset in lightset, darkset, coloriset, neutralset {
+    &.section-#{$sectionset} {
+      background-color: var(--siteset-#{$sectionset}-bg);
+      color: var(--siteset-#{$sectionset}-color);
+      position: relative;
+      min-height: 55vh;
+      display: flex;
+      align-items: center;
+      padding: 50px 0 70px 0;
+      
+      @media (max-width: 768px) {
+        min-height: 45vh;
+        padding: 40px 0 50px 0;
+      }
+
+      // Background image styling - yliajaa sectionset-taustavärin
+      &.bg-image {
+        background-image: var(--bg-image);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+      }
+
+      // SVG pattern background styling - säilyttää sectionset-taustavärin + valkoinen SVG
+      &.bg-svg {    
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          z-index: 0;
+          background-image: var(--svg-pattern);
+          opacity: var(--svg-opacity);
+          background-repeat: var(--svg-repeat);
+          background-size: var(--svg-size);
+          background-position: var(--svg-position);
+          background-attachment: var(--svg-attachment);
+        }
+      }
+      
+      .fullshow2-content {
+        padding: 30px;
+        
+        h2 {
+          color: var(--siteset-#{$sectionset}-h2);
+          font-weight: 700;
+          font-size: 2.5rem;
+          line-height: 1.2;
+          margin-bottom: 20px;
+          
+          @media (max-width: 992px) {
+            font-size: 2rem;
+          }
+          
+          @media (max-width: 768px) {
+            font-size: 1.8rem;
+            text-align: center !important;
+            margin-bottom: 15px;
+          }
+        }
+        
+        p {
+          color: var(--siteset-#{$sectionset}-color);
+          font-size: 1.1rem;
+          line-height: 1.5;
+          margin-bottom: 20px;
+          
+          @media (max-width: 768px) {
+            text-align: center !important;
+            font-size: 1rem;
+            margin-bottom: 15px;
+          }
+        }
+        
+        .btn {
+          margin-top: 20px;
+          
+          @media (max-width: 768px) {
+            display: block;
+            margin: 20px auto 0 !important;
+          }
+        }
+        
+        &.text-center {
+          text-align: center;
+          
+          h2, p {
+            text-align: center;
+          }
+          
+          .btn {
+            margin: 20px auto 0;
+            display: inline-block;
+          }
+        }
+        
+        @media (max-width: 768px) {
+          padding: 20px 15px;
+          text-align: center !important;
+          
+          h2, p {
+            text-align: center !important;
+          }
+          
+          .btn {
+            display: block !important;
+            margin: 20px auto 0 !important;
+          }
+        }
+      }
+
+      .fullshow2-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.0);
+        z-index: 1;
+      }
+      
+      .container {
+        position: relative;
+        z-index: 2;
+      }
+      
+      .min-vh-70 {
+        min-height: 55vh;
+        
+        @media (max-width: 768px) {
+          min-height: 45vh;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .fullshow2-section {
+    .row {
+      justify-content: center;
+    }
+    
+    .fullshow-content {
+      margin: 0 15px;
+    }
+  }
+}

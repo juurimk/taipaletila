@@ -1,0 +1,150 @@
+// double Section Styles
+.double-section {
+  
+  // Dynamic sectionset styling
+  @each $sectionset in lightset, darkset, coloriset, neutralset {
+    &.section-#{$sectionset} {
+      background-color: var(--siteset-#{$sectionset}-bg);
+      color: var(--siteset-#{$sectionset}-color);
+      padding: 80px 0;
+      
+      @media (max-width: 768px) {
+        padding: 60px 0;
+      }
+
+      @media (max-width: 576px) {
+        padding: 40px 0;
+      }
+      
+      .double-image-container {
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        margin-bottom: 2rem;
+
+        @media (min-width: 768px) {
+          margin-bottom: 0;
+        }
+      }
+
+      .double-image {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+      
+      .double-title {
+        margin-bottom: 24px;
+        color: var(--siteset-#{$sectionset}-h2);
+        position: relative;
+        text-align: center;
+
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: -8px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 100px;
+          height: 0px;
+          background: linear-gradient(90deg, var(--siteset-#{$sectionset}-button), transparent);
+          border-radius: 2px;
+        }
+
+        @media (min-width: 768px) {
+          text-align: left;
+          
+          &::after {
+            left: 0;
+            transform: none;
+          }
+        }
+        
+        @media (max-width: 992px) {
+          font-size: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+          font-size: 1.8rem;
+          margin-bottom: 20px;
+        }
+      }
+
+      .double-content {
+        font-size: 1.125rem;
+        line-height: 1.8;
+        color: inherit;
+        margin-bottom: 30px;
+        text-align: center;
+
+        @media (min-width: 768px) {
+          text-align: left;
+        }
+
+        @media (max-width: 768px) {
+          font-size: 1rem;
+          margin-bottom: 20px;
+        }
+
+        p {
+          margin-bottom: 1.5rem;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+
+      .double-button-wrapper {
+        text-align: center;
+
+        @media (min-width: 768px) {
+          text-align: left;
+        }
+
+        .btn {
+          margin-top: 20px;
+
+          @media (max-width: 768px) {
+            display: block;
+            margin: 20px auto 0;
+          }
+        }
+      }
+      
+      // Mobile ordering - image first, then content
+      @media (max-width: 767.98px) {
+        .double-image-col {
+          order: 1;
+        }
+
+        .double-content-col {
+          order: 2;
+        }
+      }
+
+      // Desktop ordering based on image position
+      @media (min-width: 768px) {
+        &.image-right {
+          .double-content-col {
+            order: 1;
+          }
+
+          .double-image-col {
+            order: 2;
+          }
+        }
+
+        &.image-left {
+          .double-image-col {
+            order: 1;
+          }
+
+          .double-content-col {
+            order: 2;
+          }
+        }
+      }
+    }
+  }
+}

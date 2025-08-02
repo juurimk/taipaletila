@@ -1,0 +1,27 @@
+fullshow2:
+  enable: true
+  title: "Fullshow Title"
+  description: "This is a fullshow section with background image. The text can be positioned on the left or right side."
+  text_position: "left" # "left", "right" or "center"
+  
+  # Background configuration
+  background:
+    type: "svg" # "image" or "svg" or "color"
+    
+    # For background image
+    # image: "images/backgrounds/fullshow.jpg"
+    
+    # For SVG pattern background (valkoinen SVG + opacity + teeman taustaväri)
+    # HUOM: Taustaväri tulee aina teemasta, SVG on valkoinen overlay
+    svg:
+      pattern: "images/backgrounds/bg-logo.svg"
+      opacity: 0.09 # 0.0 - 1.0
+      repeat: "no-repeat" # "no-repeat", "repeat", "repeat-x", "repeat-y"
+      size: "cover" # "cover", "contain", "auto", or specific size like "100px 100px"
+      position: "right" # "center", "top", "bottom", "left", "right", "top left", etc.
+      attachment: "fixed" # "scroll" or "fixed"
+  
+  button:
+    enable: true
+    label: "Kysy tarjous"
+    link: "#contact"

@@ -27,13 +27,11 @@
         .filter-item {
           margin: 5px;
           cursor: pointer;
-          text-transform: none; // Ei uppercasea
+          text-transform: none;
           font-weight: 500;
           font-size: 0.9rem;
           
-          // Selected state (aktiivinen filtteri)
           &.selected {
-            // Jos button on ghost-tyyli, selected näyttää fill-tyyliseltä
             background: var(--siteset-#{$sectionset}-button) !important;
             color: var(--siteset-#{$sectionset}-bg) !important;
           }
@@ -56,53 +54,89 @@
           margin-bottom: 30px;
           display: flex;
           flex-direction: column;
+          cursor: pointer;
           
-          // Mobiili: joustava korkeus, jotta sisältö mahtuu
-          min-height: 350px;
-          height: auto;
-          
-          @media (min-width: 768px) {
-            height: 450px;
+          // TAVALLINEN GALLERY (tekstillä)
+          &:not(.gallery-item-image-only) {
+            min-height: 350px;
+            height: auto;
+            
+            @media (min-width: 768px) {
+              height: 450px;
+            }
+            
+            @media (min-width: 992px) {
+              height: 500px;
+            }
+            
+            .gallery-image {
+              flex-shrink: 0;
+              
+              img {
+                width: 100%;
+                height: 300px;
+                object-fit: cover;
+                transition: opacity 0.2s ease;
+                
+                @media (max-width: 767px) {
+                  height: 220px;
+                }
+              }
+            }
+            
+            .gallery-content {
+              padding: 20px;
+              flex-grow: 1;
+              display: flex;
+              flex-direction: column;
+              font-size: 0.95rem;
+              
+              @media (max-width: 767px) {
+                padding: 15px;
+              }
+            }
           }
           
-          @media (min-width: 992px) {
-            height: 500px;
+          // KUVA-ONLY GALLERY (ei tekstiä)
+          &.gallery-item-image-only {
+            height: auto;
+            min-height: auto;
+            
+            .gallery-image {
+              margin: 0;
+              
+              img {
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+                aspect-ratio: 4/3; // Yhtenäinen kuvasuhde
+                transition: opacity 0.2s ease;
+                
+                @media (max-width: 767px) {
+                  aspect-ratio: 1/1; // Neliömäiset mobiilissa
+                }
+              }
+            }
+          }
+          
+          // Hover-efekti - vain opacity
+          &:hover {
+            .gallery-image img {
+              opacity: 0.85;
+            }
           }
           
           .gallery-image {
             position: relative;
             cursor: pointer;
             margin: 0;
-            flex-shrink: 0;
             
             img {
-              width: 100%;
-              height: 300px;
-              object-fit: cover;
-              transition: transform 0.3s ease;
               display: block;
-              
-              @media (max-width: 767px) {
-                height: 220px; // Pienempi kuva mobiilissa = enemmän tilaa tekstille
-              }
-            }
-            
-            &:hover img {
-              transform: scale(1.05);
             }
           }
           
           .gallery-content {
-            padding: 20px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            font-size: 0.95rem;
-            
-            @media (max-width: 767px) {
-              padding: 15px; // Pienempi padding mobiilissa
-            }
-            
             h3 {
               font-size: 1.2rem;
               margin-bottom: 10px;
@@ -110,7 +144,7 @@
               font-weight: 600;
               
               @media (max-width: 767px) {
-                font-size: 1.1rem; // Pienempi otsikko mobiilissa
+                font-size: 1.1rem;
                 margin-bottom: 8px;
               }
               
@@ -126,7 +160,7 @@
               flex-grow: 1;
               
               @media (max-width: 767px) {
-                font-size: 0.85rem; // Pienempi teksti mobiilissa
+                font-size: 0.85rem;
                 line-height: 1.5;
                 margin-bottom: 8px;
               }
@@ -136,14 +170,14 @@
               color: var(--siteset-#{$sectionset}-button);
               font-size: 0.8rem;
               font-weight: 500;
-              text-transform: none; // Ei uppercasea
+              text-transform: none;
               font-family: var(--sitefont);
               margin-bottom: 0;
               margin-top: auto;
               text-align: center;
               
               @media (max-width: 767px) {
-                font-size: 0.75rem; // Pienempi kategoria mobiilissa
+                font-size: 0.75rem;
               }
             }
           }
@@ -153,15 +187,12 @@
       .gallery-load-more {
         text-align: center;
         margin-top: 10px;
-        
-        // Button saa kaikki tyylinsä button-styles.html:stä
-        // koska sillä on luokat: btn btn-transparent
       }
     }
   }
 }
 
-// Lightbox Modal Styles
+// Lightbox Modal Styles  
 #galleryLightbox {
   display: none;
   position: fixed;
@@ -215,7 +246,7 @@
         color: #333;
         font-size: 0.9rem;
         font-weight: 500;
-        text-transform: none; // Ei uppercasea
+        text-transform: none;
         font-family: var(--sitefont);
       }
     }
@@ -238,9 +269,3 @@
     justify-content: center;
   }
 }
-
-// Responsive Design - ei tarvita, koska Bootstrap hoitaa
-// Bootstrap grid:
-// col-12 = 100% leveys (mobiili)
-// col-md-6 = 50% leveys (tablet, 2 kuvaa rinnakkain)  
-// col-lg-4 = 33.33% leveys (desktop, 3 kuvaa rinnakkain)

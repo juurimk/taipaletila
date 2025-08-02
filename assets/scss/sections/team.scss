@@ -13,7 +13,7 @@
 
 // H2 otsikon väri team-sectionille
 .team-section .title h2 {
-  color: var(--siteset-lightset-button)!important;
+  color: var(--siteset-lightset-h2)!important;
 }
 
 .team-description{
@@ -38,7 +38,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background-color: var(--siteset-darkset-bg);
+      background-color: var(--siteset-coloriset-bg);
       z-index: 0;
     }
 
@@ -112,13 +112,13 @@
       font-size: 1.2rem; // Pienempi kuin alkuperäinen h3 mutta suurempi kuin ennen
       font-weight: 700;
       margin-bottom: 0.5rem;
-      color: var(--siteset-lightset-button); // Palauta väri
+      color: var(--siteset-lightset-h2); // Palauta väri
     }
     
     .member-title {
       font-size: 1rem; // Sama koko kuin p-elementti
       font-weight: 700; // Strong/lihavoitu
-      color: var(--siteset-lightset-button); // Sama väri kuin nimellä
+      color: var(--siteset-lightset-h2); // Sama väri kuin nimellä
       display: block;
       margin-bottom: 1rem;
     }

@@ -186,8 +186,8 @@ blogBannerSubtitle = "Your Subtitle Here"
 # sitefont = "Open Sans, Comfortaa"
 
 ############################# Siteset Colors Configuration ##########################
-# Choose siteset colors from available options: saaristo, kaste, korpi, hiekka, loimu, viima, verso, kipina, apila, helle, sahakka, ruska, harmonia, tuli, yo, tiikeri, syksy, neon, pastilli, pinkki, onecolor, terra, jklav1, jklav2
-siteset = "pastilli"
+# Choose siteset colors from available options: saaristo, kaste, korpi, hiekka, loimu, viima, verso, kipina, apila, helle, sahakka, ruska, harmonia, tuli, yo, tiikeri, syksy, neon, pastilli, pinkki, onecolor, terra, jklav1, jklav2, cp
+siteset = "cp"
 
 [params.sections]
     [params.sections.banner]
@@ -233,8 +233,14 @@ siteset = "pastilli"
     [params.sections.showcase]
       enable = true
     [params.sections.fullshow]
-      enable = true
+      enable = false
     [params.sections.logoband]
+      enable = true
+    [params.sections.fullshow2]
+      enable = true
+    [params.sections.double]
+      enable = true
+    [params.sections.double2]
       enable = true
     
 
@@ -244,7 +250,7 @@ siteset = "pastilli"
 # Each section can use different sectionsets within the same siteset
 # Available sectionsets: lightset, neutralset, darkset, coloriset
 [params.sectionsets]
-  banner = "darkset"        # Hero/banner section
+  banner = "lightset"        # Hero/banner section
   about = "darkset"        # About section
   services = "neutralset"   # Services section
   service_pages = "lightset"  # Individual service pages 
@@ -252,12 +258,12 @@ siteset = "pastilli"
   portfolio = "lightset"    # Portfolio section
   team = "lightset"        # Team section
   pricing = "lightset"    # Pricing section
-  blog = "coloriset"         # Blog section
+  blog = "lightset"         # Blog section
   blog_single = "lightset"   # Individual blog posts
   contact = "lightset"       # Contact section
   comparison = "lightset" # Comparison section
   faq = "neutralset"         # FAQ section
-  funfacts = "darkset"   # Funfacts section (tumma teksti valkoiselle taustakuvalle)
+  funfacts = "neutralset"   # Funfacts section (tumma teksti valkoiselle taustakuvalle)
   testimonial = "coloriset" # Testimonial section
   cta = "coloriset"          # Call-to-action section
   newsletter = "coloriset"   # Newsletter section 
@@ -265,17 +271,20 @@ siteset = "pastilli"
   article = "coloriset"   # blogit
   gallery = "lightset"   # gridilistaus tuotteista
   services-hero = "lightset"   # Services hero single sivuilla (tuotesivut)
-  navigation = "darkset"   # navbar
+  navigation = "coloriset"   # navbar
   main_text = "lightset"   # service-single sivun ensimmäinen palvelukuvaus
   packages = "coloriset"       # services singlesivun main teksti osio
   expert = "darkset"     # singlesivulla kouluttaja osio
   benefits = "darkset"    # ikonibanneri singlesivulla
   service_faq = "neutralset" # services single sivun faq
-  footer = "neutralset" # footer section
+  footer = "coloriset" # footer section
   privacy = "neutralset" # privacy, jos ei pdf
-  showcase = "coloriset" # mainososio
+  showcase = "lightset" # mainososio
   fullshow = "coloriset" # fullscreen taustakuva osio
-  logoband = "darkset" # asiakaslogot osio
+  logoband = "coloriset" # asiakaslogot osio
+  fullshow2 = "darkset" # fullscreen taustakuva osio
+  double = "darkset" # kaksi tasa divia ja button
+  double2 = "lightset" # kaksi tasa divia ja button, jos käytössä enemmän kuin 1 doublea
 
 
 # preloader
@@ -323,7 +332,7 @@ link = "https://calendar.app.google/zeDfowAGrkcpjp9r9"
 ############################# Image System Configuration ##########################
 
  # img corner style
-image_corners = "follow"  # tai "follow" tai "none" Follow seuraa valittua buttonia, none -> square
+image_corners = "none"  # tai "follow" tai "none" Follow seuraa valittua buttonia, none -> square
 
 ############################# Markdown Configuration ###################
 [markup]

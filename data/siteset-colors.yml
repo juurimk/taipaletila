@@ -22,7 +22,7 @@ sitesets:
         button_text: "#000000"
         h2: "#14213D"
         h1: "#FFFFFF"
-        mask_color: "#14213D"
+        mask_color: "#FCA311" 
         opacity:
           button_highlighted: 0.2
           button_table_bg: 0.1
@@ -1237,13 +1237,13 @@ sitesets:
       color1: "#F4ACB7"    # Vaalea pinkki (lightset button)
       color2: "#9D8189"    # Tumma pinkki-harmaa (lightset h2)
       color3: "#FFE5D9"    # Hyvin vaalea persikka (neutralset bg)
-      color4: "#9D8189"    # Tumma pinkki-harmaa (darkset bg)
+      color4: "#a3a3a3"    # Tumma harmaa (darkset bg)
       color5: "#FFFFFF"    # Valkoinen (lightset bg)
       gray: "#D8E2DC"      # Vaalea vihreäharmaa (voi vaihtaa)
     sectionsets:
       lightset:
         bg_color: "#FFFFFF"
-        color: "#9D8189"
+        color: "#a3a3a3" 
         button: "#F4ACB7"
         button_text: "#FFFFFF"
         h2: "#F4ACB7"
@@ -1253,24 +1253,24 @@ sitesets:
           button_highlighted: 0.2
           button_table_bg: 0.1
           button_hover: 0.8
-        text_highlighted: "#9D8189"
+        text_highlighted: "#a3a3a3" 
         
       neutralset:
         bg_color: "#FFE5D9"
-        color: "#9D8189"
+        color: "#a3a3a3" 
         button: "#F4ACB7"
         button_text: "#FFFFFF"
-        h2: "#9D8189"
+        h2: "#a3a3a3" 
         h1: "#FFFFFF"
         mask_color: "#F4ACB7"
         opacity:
           button_highlighted: 0.3
           button_table_bg: 0.15
           button_hover: 0.8
-        text_highlighted: "#9D8189"
+        text_highlighted: "#a3a3a3" 
         
       darkset:
-        bg_color: "#9D8189"
+        bg_color: "#a3a3a3" 
         color: "#FFE5D9"
         button: "#F4ACB7"
         button_text: "#FFFFFF"
@@ -1285,10 +1285,10 @@ sitesets:
         
       coloriset:
         bg_color: "#FFCAD4"
-        color: "#9D8189"
-        button: "#9D8189"
+        color: "#ffffff"
+        button: "#F4ACB7"
         button_text: "#FFFFFF"
-        h2: "#9D8189"
+        h2: "#F4ACB7"
         h1: "#FFFFFF"
         mask_color: "#9D8189"
         opacity:
@@ -1635,3 +1635,70 @@ sitesets:
           button_table_bg: 0.1
           button_hover: 0.8
         text_highlighted: "#ffffff"
+  cp:
+    name: "CP (Creative Palette)"
+    description: "Creative color palette theme"
+    # PORTFOLIO COLORS - Kaikki teeman värit käyttöön
+    portfolio:
+      color1: "#ffa22c"    # Oranssi/keltainen (button väri)
+      color2: "#282523"    # Tummin sävy
+      color3: "#f7ebdd"    # Vaaleankeltainen 
+      color4: "#4e8d9e"    # Sininen
+      color5: "#f2f2f2"    # Vaalein
+      gray: "#f2f2f2"      # Vaalein harmaa (voi vaihtaa)
+    sectionsets:
+      lightset:
+        bg_color: "#f2f2f2"
+        color: "#282523"
+        button: "#4e8d9e"
+        button_text: "#282523"
+        h2: "#4e8d9e"
+        h1: "#f2f2f2"
+        mask_color: "#ffa22c"
+        opacity:
+          button_highlighted: 0.2
+          button_table_bg: 0.1
+          button_hover: 0.8
+        text_highlighted: "#282523"
+        
+      neutralset:
+        bg_color: "#f7ebdd"
+        color: "#282523"
+        button: "#4e8d9e"
+        button_text: "#282523"
+        h2: "#4e8d9e"
+        h1: "#f2f2f2"
+        mask_color: "#ffa22c"
+        opacity:
+          button_highlighted: 0.3
+          button_table_bg: 0.15
+          button_hover: 0.8
+        text_highlighted: "#282523"
+        
+      darkset:
+        bg_color: "#282523"
+        color: "#f7ebdd"
+        button: "#ffa22c"
+        button_text: "#282523"
+        h2: "#f7ebdd"
+        h1: "#f2f2f2"
+        mask_color: "#282523"
+        opacity:
+          button_highlighted: 0.8
+          button_table_bg: 0.2
+          button_hover: 0.9
+        text_highlighted: "#f7ebdd"
+        
+      coloriset:
+        bg_color: "#4e8d9e"
+        color: "#f2f2f2"
+        button: "#ffffff"
+        button_text: "#282523"
+        h2: "#f2f2f2"
+        h1: "#f2f2f2"
+        mask_color: "#282523"
+        opacity:
+          button_highlighted: 0.9
+          button_table_bg: 0.1
+          button_hover: 0.8
+        text_highlighted: "#f2f2f2"

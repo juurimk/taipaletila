@@ -632,6 +632,8 @@ p {
 {{ if eq site.Params.buttons.image_corners "follow" }}
 // Kortit ja kuvat seuraavat button corners -asetusta
 .service-card, 
+.double-image,
+.double-image-container,
 .member-photo, 
 .image-card,
 .gallery-item, 
@@ -656,9 +658,11 @@ p {
 
 {{ else }}
 // Kortit ja kuvat ovat suorakulmaiset
+.service-item,
 .service-card, 
 .image-card,
 .member-photo, 
+.double-image-container,
 .gallery-item, 
 .portfolio-item, 
 .blog-post-image, 
@@ -682,14 +686,13 @@ p {
 }
 
 {{ end }}
+
 // =============================================================================
 // Footer Styles
 // =============================================================================
 .footer-section {
-  padding: 40px 0 20px !important; // Pienempi padding
+  padding: 40px 0 20px !important;
   margin: 0 !important;
-  
-  // Varmista että footer on always visible
   position: relative !important;
   bottom: auto !important;
   
@@ -698,7 +701,6 @@ p {
   }
 }
 
-// Mobile optimointi - pienet paddingit
 @media (max-width: 768px) {
   .footer-section {
     padding: 30px 0 15px !important;
@@ -742,10 +744,10 @@ p {
 .footer-logo {
   display: flex;
   flex-direction: column;
-  align-items: center; // Keskitetty mobiilissa
+  align-items: center;
   
   @media (min-width: 768px) {
-    align-items: flex-start; // Vasemmalla desktopissa
+    align-items: flex-start;
   }
   
   img {
@@ -771,9 +773,6 @@ p {
   }
 }
 
-// ✅ KORJATTU: Poistettu position: absolute
-
-
 .footer-social-subtitle {
   color: #ffffff !important;
   font-size: 16px !important;
@@ -782,7 +781,6 @@ p {
   text-transform: none !important;
 }
 
-// Footer-linkkien tyylit
 .footer-sitemap,
 .footer-privacy {
   h6 {
@@ -840,144 +838,76 @@ p {
   }
 }
 
-footer {
-  flex-shrink: 0;
-  
-  .scroll-to-top {
-    {{ if site.Params.buttons.custom_radius }}
-    border-radius: {{ site.Params.buttons.custom_radius }} !important;
-    {{ else if eq site.Params.buttons.corners "round" }}
-    border-radius: 50px !important;
-    {{ else if eq site.Params.buttons.corners "rounded" }}
-    border-radius: 8px !important;
-    {{ else }}
-    border-radius: 0px !important;
-    {{ end }}
-    
-    width: 45px !important;
-    height: 45px !important;
-    background-color: transparent !important;
-    background-image: none !important;
-    color: white !important;
-    font-size: 20px !important;
-    border: 1px solid white !important;
-    padding: 0 !important;
-    margin: 0px auto 0 !important; // Keep centered on desktop
-    cursor: pointer !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    
-    // Poista selaimen oletustyyli
-    outline: none !important;
-    box-shadow: none !important;
-    
-    &:focus, &:active {
-      outline: none !important;
-      box-shadow: none !important;
-      border-color: white !important;
-    }
-    
-    @media (min-width: 768px) {
-      margin: 15px auto 0 !important; // Keep centered on desktop
-    }
-  }
-}
 .footer-brand-text {
   color: #ffffff !important;
   font-size: 0.9rem !important;
   font-weight: 400 !important;
   letter-spacing: 0.5px !important;
   opacity: 0.85;
-  padding: 2rem 1rem 0.5rem;  /* ylös 32px, sivut 16px, alas 48px */
+  padding: 2rem 1rem 0.5rem;
   border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
   text-align: center !important;
-}
-
-
-/* Mobiililaitteet */
-@media (max-width: 768px) {
-  .footer-brand-text {
+  
+  @media (max-width: 768px) {
     padding: 1.5rem 0 2rem 0 !important;
   }
 }
 
-// =============================================================================
-// Footer Sectionset-spesifiset tyylit (kuten navigationissa)  
-// =============================================================================
+footer {
+  flex-shrink: 0;
+}
 
+// Scroll-to-top button
+.scroll-to-top {
+  {{ if site.Params.buttons.custom_radius }}
+  border-radius: {{ site.Params.buttons.custom_radius }} !important;
+  {{ else if eq site.Params.buttons.corners "round" }}
+  border-radius: 50px !important;
+  {{ else if eq site.Params.buttons.corners "rounded" }}
+  border-radius: 8px !important;
+  {{ else }}
+  border-radius: 0px !important;
+  {{ end }}
+  
+  width: 45px !important;
+  height: 45px !important;
+  font-size: 20px !important;
+  padding: 0 !important;
+  margin: 0px auto 0 !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  outline: none !important;
+  box-shadow: none !important;
+  opacity: 1 !important; // Varmista että oletuksena on 1
+  transition: opacity 0.2s ease !important; // Lisää transition
+  
+  @media (min-width: 768px) {
+    margin: 15px auto 0 !important;
+  }
+}
+
+// =============================================================================
+// Footer Sectionset-spesifiset tyylit
+// =============================================================================
 {{ range $sectionsetName, $colors := $currentSiteset.sectionsets }}
 {{ if or (eq $sectionsetName "coloriset") (eq $sectionsetName "darkset") }}
 .footer-section.section-{{ $sectionsetName }} {
-  .footer-description p,
-  .footer-link-list li a,
-  .social-icons li a,
-  .footer-business p,
-  .footer-brand-text {
-    color: #ffffff !important;
-  }
-  
-  // LinkedIn logo valkoinen coloriset/darkset footerissa
-  .social-icons li a i {
-    color: #ffffff !important;
-  }
-
-  
-  // Scroll-to-top button: valkoinen border + nuoli, transparent bg
-  .scroll-to-top {
-    border: 1px solid #ffffff !important;
-    color: #ffffff !important;
-    background-color: transparent !important;
-    
-    &:hover,
-    &:active,
-    &:focus {
-      opacity: 0.7 !important;
-      border: 1px solid #ffffff !important;
-      color: #ffffff !important;
-      background-color: transparent !important;
-    }
-  }
-}
-{{ else }}
-.footer-section.section-{{ $sectionsetName }} {
-  .footer-description p,
-  .footer-link-list li a,
-  .social-icons li a,
-  .footer-business p,
-  .footer-brand-text {
-    color: var(--siteset-{{ $sectionsetName }}-color) !important;
-    font-size: 0.9rem !important;
-
-  }
-  
-  // LinkedIn logo musta lightset/neutralset footerissa
-  .social-icons li a i {
-    color: var(--siteset-{{ $sectionsetName }}-color) !important;
-  }
-  
-  // Scroll-to-top button: vihreä border + nuoli, transparent bg
   .scroll-to-top {
     border: 1px solid var(--siteset-{{ $sectionsetName }}-button) !important;
     color: var(--siteset-{{ $sectionsetName }}-button) !important;
     background-color: transparent !important;
-    margin-top: 0px!important;
+    margin-top: 0px !important;
     
     &:hover,
-    &:active,
-    &:focus {
-      opacity: 1 !important;
-      border: 1px solid var(--siteset-{{ $sectionsetName }}-button) !important;
-      color: var(--siteset-{{ $sectionsetName }}-button) !important;
-      background-color: transparent !important;
+    &:active {
+      opacity: 0.5 !important;
     }
   }
 }
 {{ end }}
 {{ end }}
-
-
-
 
 // =============================================================================
 // KORJAUS: Tumman viivan poisto vasemmalta puolelta

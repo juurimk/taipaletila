@@ -79,13 +79,14 @@
           
           .service-item {
             background: var(--siteset-#{$sectionset}-bg);
-            border-radius: 0px;
+            border-radius: var(--button-border-radius);
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             margin-bottom: 30px;
             display: flex;
             flex-direction: column;
             height: 400px;
+    
             
             @media (min-width: 768px) {
               height: 450px;

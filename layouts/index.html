@@ -61,6 +61,10 @@
 {{ partial "logoband.html" . }}
 {{ end }}
 
+{{ if site.Params.sections.fullshow2.enable }}
+{{ partial "fullshow2.html" . }}
+{{ end }}
+
 {{ if site.Params.sections.blog.enable }}
 {{ partial "blog.html" . }}
 {{ end }}
@@ -71,6 +75,14 @@
 
 {{ if site.Params.sections.faq.enable }}
 {{ partial "faq.html" . }} 
+{{ end }}
+
+{{ if site.Params.sections.double.enable }}
+{{ partial "double.html" . }} 
+{{ end }}
+
+{{ if site.Params.sections.double2.enable }}
+{{ partial "double2.html" . }} 
 {{ end }}
 
 {{ if site.Params.sections.newsletter.enable }}

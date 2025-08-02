@@ -1,0 +1,17 @@
+# double Section Configuration
+# Lisää tämä content/finnish/services/ tiedostojesi front matteriin
+
+double:
+  enable: true
+  title: "Kuva vasemmalla"
+  image: "images/showcase/showcase5.png"
+  alt_text: "kuva vasemmalla"
+  image_position: "left" # "left" tai "right"
+  content: |
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur consectetur, nisl nisi consectetur nisi, euismod euismod nisi nisi euismod.
+
+    Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  button:
+    enable: true
+    label: "Varaa konsultaatio"
+    link: "https://calendar.app.google/zeDfowAGrkcpjp9r9"

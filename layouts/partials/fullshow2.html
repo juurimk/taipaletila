@@ -1,0 +1,120 @@
+{{ $data := index site.Data site.Language.Lang }}
+
+{{/* Get sectionset for fullshow2 section */}}
+{{ $sectionset := index site.Params.sectionsets "fullshow2" | default "lightset" }}
+
+{{ if $data.fullshow2.fullshow2.enable }}
+{{ with $data.fullshow2.fullshow2 }}
+
+{{/* Determine background type and build classes/styles */}}
+{{ $bgType := "" }}
+{{ $bgClass := "" }}
+{{ $bgStyle := "" }}
+
+{{/* Tarkista onko uusi background-rakenne käytössä */}}
+{{ if .background }}
+  {{ $bgType = .background.type }}
+{{ else if .background_image }}
+  {{/* Vanha rakenne - käytä taustakuvaa */}}
+  {{ $bgType = "image" }}
+{{ else }}
+  {{/* Ei taustaa määritelty - käytä väriä */}}
+  {{ $bgType = "color" }}
+{{ end }}
+
+{{ if eq $bgType "image" }}
+  {{ $bgClass = "bg-image" }}
+  {{ if .background.image }}
+    {{ $imageUrl := .background.image | absURL }}
+    {{ $bgStyle = printf "--bg-image: url('%s');" $imageUrl }}
+  {{ else if .background_image }}
+    {{ $imageUrl := .background_image | absURL }}
+    {{ $bgStyle = printf "--bg-image: url('%s');" $imageUrl }}
+  {{ end }}
+{{ else if eq $bgType "svg" }}
+  {{ $bgClass = "bg-svg" }}
+  {{ if .background.svg.pattern }}
+    {{ $svgUrl := .background.svg.pattern | absURL }}
+    {{ $svgOpacity := .background.svg.opacity | default 0.3 }}
+    {{ $svgRepeat := .background.svg.repeat | default "no-repeat" }}
+    {{ $svgSize := .background.svg.size | default "cover" }}
+    {{ $svgPosition := .background.svg.position | default "center" }}
+    {{ $svgAttachment := .background.svg.attachment | default "scroll" }}
+    
+    {{ $bgStyle = printf "--svg-pattern: url('%s'); --svg-opacity: %v; --svg-repeat: %s; --svg-size: %s; --svg-position: %s; --svg-attachment: %s;" $svgUrl $svgOpacity $svgRepeat $svgSize $svgPosition $svgAttachment }}
+  {{ end }}
+{{ else if eq $bgType "color" }}
+  {{ $bgClass = "bg-color" }}
+{{ end }}
+
+{{"<!-- Start Fullshow2 Section -->" | safeHTML}}
+<section id="fullshow2" class="section fullshow2-section section-{{ $sectionset }} {{ $bgClass }}" 
+         {{ if $bgStyle }}style="{{ $bgStyle | safeCSS }}"{{ end }}>
+  
+  <div class="fullshow2-overlay"></div>
+  <div class="container">
+    <div class="row align-items-center min-vh-70">
+      
+      {{ if eq .text_position "left" }}
+      {{"<!-- Text Left Layout -->" | safeHTML}}
+      <div class="col-lg-6">
+        <div class="fullshow2-content">
+          <h2>{{ .title }}</h2>
+          {{ if .description }}
+          <p>{{ .description }}</p>
+          {{ end }}
+          {{ if .button.enable }}
+          {{ with .button }}
+          <a href="{{ .link }}" class="btn btn-calendar-fill page-scroll" role="button" aria-label="{{ .label }}">
+            {{ .label }}
+          </a>
+          {{ end }}
+          {{ end }}
+        </div>
+      </div>
+      <div class="col-lg-6"></div>
+      
+      {{ else if eq .text_position "right" }}
+      {{"<!-- Text Right Layout -->" | safeHTML}}
+      <div class="col-lg-6"></div>
+      <div class="col-lg-6">
+        <div class="fullshow2-content">
+          <h2>{{ .title }}</h2>
+          {{ if .description }}
+          <p>{{ .description }}</p>
+          {{ end }}
+          {{ if .button.enable }}
+          {{ with .button }}
+          <a href="{{ .link }}" class="btn btn-calendar-fill page-scroll" role="button" aria-label="{{ .label }}">
+            {{ .label }}
+          </a>
+          {{ end }}
+          {{ end }}
+        </div>
+      </div>
+      
+      {{ else }}
+      {{"<!-- Text Center Layout -->" | safeHTML}}
+      <div class="col-lg-12">
+        <div class="fullshow2-content text-center">
+          <h2>{{ .title }}</h2>
+          {{ if .description }}
+          <p>{{ .description }}</p>
+          {{ end }}
+          {{ if .button.enable }}
+          {{ with .button }}
+          <a href="{{ .link }}" class="btn btn-calendar-fill page-scroll" role="button" aria-label="{{ .label }}">
+            {{ .label }}
+          </a>
+          {{ end }}
+          {{ end }}
+        </div>
+      </div>
+      {{ end }}
+      
+    </div>
+  </div>
+</section>
+{{"<!-- /fullshow2 -->" | safeHTML}}
+{{ end }}
+{{ end }}

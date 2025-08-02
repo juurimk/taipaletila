@@ -32,24 +32,38 @@
 
     {{"<!-- Gallery Grid -->" | safeHTML}}
     <div class="row">
+      {{/* Tallenna ylätason show_text-arvo muuttujaan */}}
+      {{ $showText := .show_text }}
+      
       {{ range $index, $item := .items }}
       <div class="col-12 col-md-6 col-lg-4">
-        <div class="gallery-item {{ $item.category_slug }}">
-          <div class="gallery-image" onclick="openLightbox('{{ $item.image | absURL }}', '{{ $item.title }}', '{{ $item.description }}', '{{ $item.category }}')">
+        <div class="gallery-item {{ $item.category_slug }}{{ if not $showText }} gallery-item-image-only{{ end }}">
+          <div class="gallery-image" onclick="openLightbox('{{ $item.image | absURL }}', '{{ $item.title }}', '{{ $item.description }}', '{{ $item.category }}', '{{ if $showText }}true{{ else }}false{{ end }}')">
             <img src="{{ $item.image | absURL }}" alt="{{ $item.title }}">
           </div>
+          
+          {{/* Näytä tekstisisältö vain jos show_text on true */}}
+          {{ if $showText }}
           <div class="gallery-content">
+            {{ if $item.title }}
             <h3>
               {{ if $item.link }}<a href="{{ $item.link }}">{{ $item.title }}</a>{{ else }}{{ $item.title }}{{ end }}
             </h3>
-            {{ if $item.description }}<p>{{ $item.description | truncate 100 }}</p>{{ end }}
-            {{ if $item.category }}<div class="category">{{ $item.category }}</div>{{ end }}
+            {{ end }}
+            
+            {{ if $item.description }}
+            <p>{{ $item.description | truncate 100 }}</p>
+            {{ end }}
+            
+            {{ if $item.category }}
+            <div class="category">{{ $item.category }}</div>
+            {{ end }}
           </div>
+          {{ end }}
         </div>
       </div>
       {{ end }}
     </div>
-
 
     {{"<!-- Load More Button -->" | safeHTML}}
     {{ if gt (len .items) 3 }}
@@ -68,7 +82,7 @@
 <div id="galleryLightbox" onclick="closeLightbox()">
   <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); max-width: 95%; max-height: 95%; text-align: center;">
     <img id="lightboxImage" style="max-width: 100%; max-height: 80vh; object-fit: contain; display: block;">
-    <div id="lightboxTextBox" style="background: white; padding: 25px; text-align: left; border-radius: 0 0 0px 0px; min-width: 400px;">
+    <div id="lightboxTextBox" style="background: white; padding: 25px; text-align: left; border-radius: 0 0 0px 0px; min-width: 400px; display: none;">
       <h3 id="lightboxTitle" style="margin: 0 0 15px 0; color: #333; font-size: 1.8rem; font-family: var(--sitefont); font-weight: 600;"></h3>
       <p id="lightboxDescription" style="margin: 0 0 15px 0; color: #333; line-height: 1.6; font-family: var(--sitefont); font-size: 1.1rem;"></p>
       <div id="lightboxCategory" style="color: #333; font-size: 1rem; font-weight: 500; text-transform: uppercase; font-family: var(--sitefont);"></div>
@@ -78,7 +92,7 @@
 </div>
 
 <script>
-function openLightbox(imageSrc, title, description, category) {
+function openLightbox(imageSrc, title, description, category, showText) {
   const lightbox = document.getElementById('galleryLightbox');
   const lightboxImage = document.getElementById('lightboxImage');
   const lightboxTitle = document.getElementById('lightboxTitle');
@@ -87,15 +101,24 @@ function openLightbox(imageSrc, title, description, category) {
   const lightboxTextBox = document.getElementById('lightboxTextBox');
   
   lightboxImage.src = imageSrc;
-  lightboxTitle.textContent = title;
-  lightboxDescription.textContent = description;
-  lightboxCategory.textContent = category;
-  
-  // Aseta tekstilaatikon leveys samaksi kuin kuva
-  lightboxImage.onload = function() {
-    lightboxTextBox.style.width = lightboxImage.offsetWidth + 'px';
-  };
-  
+
+  // Näytä tekstilaatikko ja tekstit vain jos showText on tosi (string 'true')
+  if (showText === 'true') {
+    lightboxTitle.textContent = title;
+    lightboxDescription.textContent = description;
+    lightboxCategory.textContent = category;
+    lightboxTextBox.style.display = 'block';
+    lightboxImage.onload = function() {
+      lightboxTextBox.style.width = lightboxImage.offsetWidth + 'px';
+    };
+  } else {
+    // Piilota tekstilaatikko ja tyhjennä tekstit
+    lightboxTextBox.style.display = 'none';
+    lightboxTitle.textContent = '';
+    lightboxDescription.textContent = '';
+    lightboxCategory.textContent = '';
+  }
+
   lightbox.style.display = 'block';
   document.body.style.overflow = 'hidden';
 }
@@ -114,7 +137,7 @@ document.addEventListener('keydown', function(e) {
 
 document.addEventListener('DOMContentLoaded', function() {
     const filterButtons = document.querySelectorAll('.gallery-filter .filter-item');
-    const galleryItems = document.querySelectorAll('.gallery-section [class*="col-"]'); // VAIN gallery-sectionissa
+    const galleryItems = document.querySelectorAll('.gallery-section [class*="col-"]');
     const loadMoreBtn = document.getElementById('gallery-load-more-btn');
     let visibleCount = 3;
     let currentFilter = '*';
@@ -122,13 +145,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // Filter functionality
     filterButtons.forEach(button => {
         button.addEventListener('click', function() {
-            // Update active button
             filterButtons.forEach(btn => btn.classList.remove('selected'));
             this.classList.add('selected');
 
-            // Filter items
             currentFilter = this.dataset.filter;
-            visibleCount = 3; // Reset to show 3 items
+            visibleCount = 3;
             
             const filteredItems = Array.from(galleryItems).filter(item => {
                 const galleryItem = item.querySelector('.gallery-item');
@@ -136,17 +157,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 return currentFilter === '*' || galleryItem.classList.contains(currentFilter.replace('.', ''));
             });
 
-            // Hide all items
             galleryItems.forEach(item => item.style.display = 'none');
             
-            // Show filtered items (first 3)
             filteredItems.forEach((item, index) => {
                 if (index < visibleCount) {
                     item.style.display = 'block';
                 }
             });
 
-            // Update load more button
             updateLoadMoreButton(filteredItems);
         });
     });
@@ -160,7 +178,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 return currentFilter === '*' || galleryItem.classList.contains(currentFilter.replace('.', ''));
             });
 
-            // Show 3 more items
             filteredItems.forEach((item, index) => {
                 if (index >= visibleCount && index < visibleCount + 3) {
                     item.style.display = 'block';
@@ -182,7 +199,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Initialize - show first 3 items VAIN GALLERIASSA
+    // Initialize - show first 3 items
     const allItems = Array.from(galleryItems);
     allItems.forEach((item, index) => {
         if (index >= 3) {
