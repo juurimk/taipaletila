@@ -20,11 +20,11 @@
           <h1 class="blog_single_main_h1">{{ .Title }}</h1>
           <div class="blog-meta-info">
             <div class="blog-date text-muted d-inline-block">
-              <i class="fas fa-calendar-alt"></i>{{ .Date.Format "02.01.2006" }}
+              {{ .Date.Format "02.01.2006" }}
             </div>
             {{ if .Params.author }}
             <div class="blog-author text-muted d-inline-block">
-              <i class="fas fa-user"></i>{{ .Params.author }}
+              {{ .Params.author }}
             </div>
             {{ end }}
           </div>

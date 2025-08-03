@@ -730,7 +730,6 @@ p {
 }
 
 .footer-description p {
-  color: #ffffff !important;
   font-size: 0.9rem !important;
   line-height: 1.5 !important;
   margin-bottom: 30px !important;
@@ -765,7 +764,6 @@ p {
   }
   
   h6 {
-    color: #ffffff !important;
     font-size: 16px !important;
     font-weight: 400 !important;
     margin-bottom: 25px !important;
@@ -774,7 +772,6 @@ p {
 }
 
 .footer-social-subtitle {
-  color: #ffffff !important;
   font-size: 16px !important;
   font-weight: 300 !important;
   margin-bottom: 0 !important;
@@ -784,7 +781,6 @@ p {
 .footer-sitemap,
 .footer-privacy {
   h6 {
-    color: #ffffff !important;
     font-size: 16px !important;
     font-weight: 400 !important;
     margin-bottom: 25px !important;
@@ -794,22 +790,17 @@ p {
 
 .footer-link-list {
   li a {
-    color: #ffffff !important;
     text-decoration: none;
     font-size: 0.9rem;
     font-weight: 400;
     transition: all 0.3s ease;
-    
-    &:hover {
-      color: rgba(255, 255, 255, 0.7) !important;
-    }
   }
 }
 
 .social-icons {
   list-style: none;
   padding: 0;
-  margin: 0px 0;
+  margin: 0;
   display: flex;
   gap: 20px;
   
@@ -822,34 +813,44 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 8px;
+    padding: 0;
     transition: all 0.3s ease;
     
     i {
-      color: #ffffff !important;
       font-size: 24px !important;
       transition: all 0.3s ease;
     }
     
     &:hover i {
-      color: rgba(255, 255, 255, 0.7) !important;
       transform: translateY(-2px);
     }
   }
 }
 
+.footer-business {
+  font-size: 0.9rem !important;
+  line-height: 1.5 !important;
+  margin-bottom: 30px !important;
+  font-weight: 400 !important;
+  
+  @media (max-width: 768px) {
+    text-align: center;
+  }
+}
+
 .footer-brand-text {
-  color: #ffffff !important;
   font-size: 0.9rem !important;
   font-weight: 400 !important;
   letter-spacing: 0.5px !important;
+  line-height: 1.5 !important;
   opacity: 0.85;
-  padding: 2rem 1rem 0.5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+  padding: 0.5rem 1rem 0.5rem;
   text-align: center !important;
+  margin-bottom: 30px !important;
   
   @media (max-width: 768px) {
-    padding: 1.5rem 0 2rem 0 !important;
+    padding: 1rem 0 2rem 0 !important;
+    text-align: center;
   }
 }
 
@@ -880,25 +881,138 @@ footer {
   justify-content: center !important;
   outline: none !important;
   box-shadow: none !important;
-  opacity: 1 !important; // Varmista että oletuksena on 1
-  transition: opacity 0.2s ease !important; // Lisää transition
-  
-  @media (min-width: 768px) {
-    margin: 15px auto 0 !important;
-  }
+  opacity: 1 !important;
+  transition: opacity 0.2s ease !important;
+  background-color: transparent !important;
 }
 
 // =============================================================================
 // Footer Sectionset-spesifiset tyylit
 // =============================================================================
-{{ range $sectionsetName, $colors := $currentSiteset.sectionsets }}
-{{ if or (eq $sectionsetName "coloriset") (eq $sectionsetName "darkset") }}
-.footer-section.section-{{ $sectionsetName }} {
+
+// Lightset footer
+.footer-section.section-lightset {
+  .footer-description p {
+    color: var(--siteset-lightset-color) !important;
+  }
+  
+  .footer-business {
+    color: var(--siteset-lightset-color) !important;
+  }
+  
+  .footer-social h6,
+  .footer-social-subtitle,
+  .footer-sitemap h6,
+  .footer-privacy h6 {
+    color: var(--siteset-lightset-color) !important;
+  }
+  
+  .footer-link-list li a {
+    color: var(--siteset-lightset-color) !important;
+    
+    &:hover {
+      color: var(--siteset-lightset-button) !important;
+    }
+  }
+  
+  .social-icons li a i {
+    color: var(--siteset-lightset-color) !important;
+    
+    &:hover {
+      color: var(--siteset-lightset-button) !important;
+    }
+  }
+  
+  .footer-brand-text {
+    color: var(--siteset-lightset-color) !important;
+    border-top: 1px solid transparent !important;
+    opacity: 0.7;
+  }
+}
+
+// Neutralset footer
+.footer-section.section-neutralset {
+  .footer-description p {
+    color: var(--siteset-neutralset-color) !important;
+  }
+  
+  .footer-business {
+    color: var(--siteset-neutralset-color) !important;
+  }
+  
+  .footer-social h6,
+  .footer-social-subtitle,
+  .footer-sitemap h6,
+  .footer-privacy h6 {
+    color: var(--siteset-neutralset-color) !important;
+  }
+  
+  .footer-link-list li a {
+    color: var(--siteset-neutralset-color) !important;
+    
+    &:hover {
+      color: var(--siteset-neutralset-button) !important;
+    }
+  }
+  
+  .social-icons li a i {
+    color: var(--siteset-neutralset-color) !important;
+    
+    &:hover {
+      color: var(--siteset-neutralset-button) !important;
+    }
+  }
+  
+  .footer-brand-text {
+    color: var(--siteset-neutralset-color) !important;
+    border-top: 1px solid transparent !important;
+    opacity: 0.7;
+  }
+}
+
+// Darkset footer (säilytetään valkoinen teksti)
+.footer-section.section-darkset {
+  .footer-description p {
+    color: #ffffff !important;
+  }
+  
+  .footer-business {
+    color: #ffffff !important;
+  }
+  
+  .footer-social h6,
+  .footer-social-subtitle,
+  .footer-sitemap h6,
+  .footer-privacy h6 {
+    color: #ffffff !important;
+  }
+  
+  .footer-link-list li a {
+    color: #ffffff !important;
+    
+    &:hover {
+      color: rgba(255, 255, 255, 0.7) !important;
+    }
+  }
+  
+  .social-icons li a i {
+    color: #ffffff !important;
+    
+    &:hover {
+      color: rgba(255, 255, 255, 0.7) !important;
+    }
+  }
+  
+  .footer-brand-text {
+    color: #ffffff !important;
+    border-top: 1px solid transparent !important;
+    font-size: 0.9rem !important;
+  }
+  
   .scroll-to-top {
-    border: 1px solid var(--siteset-{{ $sectionsetName }}-button) !important;
-    color: var(--siteset-{{ $sectionsetName }}-button) !important;
+    border: 1px solid var(--siteset-darkset-button) !important;
+    color: var(--siteset-darkset-button) !important;
     background-color: transparent !important;
-    margin-top: 0px !important;
     
     &:hover,
     &:active {
@@ -906,9 +1020,57 @@ footer {
     }
   }
 }
-{{ end }}
-{{ end }}
 
+// Coloriset footer (säilytetään valkoinen teksti)
+.footer-section.section-coloriset {
+  .footer-description p {
+    color: #ffffff !important;
+  }
+  
+  .footer-business {
+    color: #ffffff !important;
+  }
+  
+  .footer-social h6,
+  .footer-social-subtitle,
+  .footer-sitemap h6,
+  .footer-privacy h6 {
+    color: #ffffff !important;
+  }
+  
+  .footer-link-list li a {
+    color: #ffffff !important;
+    
+    &:hover {
+      color: rgba(255, 255, 255, 0.7) !important;
+    }
+  }
+  
+  .social-icons li a i {
+    color: #ffffff !important;
+    
+    &:hover {
+      color: rgba(255, 255, 255, 0.7) !important;
+    }
+  }
+  
+  .footer-brand-text {
+    color: #ffffff !important;
+    border-top: 1px solid transparent !important;
+    font-size: 0.9rem !important;
+  }
+  
+  .scroll-to-top {
+    border: 1px solid var(--siteset-coloriset-button) !important;
+    color: var(--siteset-coloriset-button) !important;
+    background-color: transparent !important;
+    
+    &:hover,
+    &:active {
+      opacity: 0.5 !important;
+    }
+  }
+}
 // =============================================================================
 // KORJAUS: Tumman viivan poisto vasemmalta puolelta
 // =============================================================================

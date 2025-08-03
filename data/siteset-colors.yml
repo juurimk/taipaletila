@@ -1678,9 +1678,9 @@ sitesets:
       darkset:
         bg_color: "#282523"
         color: "#f7ebdd"
-        button: "#ffa22c"
+        button: "#4e8d9e"
         button_text: "#282523"
-        h2: "#f7ebdd"
+        h2: "#4e8d9e"
         h1: "#f2f2f2"
         mask_color: "#282523"
         opacity:

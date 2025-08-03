@@ -42,7 +42,7 @@
 					{{"<!-- Business name and number -->" | safeHTML}}
 					<div class="footer-business mt-4 mb-4">
   {{ range (split .business_info "\n") }}
-    <p class="mb-1">{{ . | markdownify }}</p>
+    <p class="footer-business">{{ . | markdownify }}</p>
   {{ end }}
 </div>
 					

@@ -358,19 +358,7 @@
 
   .packages-title {
     margin-bottom: 15px;
-    color: var(--siteset-lightset-h2);
-
-    .section-darkset & {
-      color: var(--siteset-darkset-h2);
-    }
-
-    .section-neutralset & {
-      color: var(--siteset-neutralset-h2);
-    }
-
-    .section-coloriset & {
-      color: var(--siteset-coloriset-h2);
-    }
+    color: var(--siteset-sectionset-h2);
   }
 
   .packages-description {

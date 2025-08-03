@@ -250,41 +250,42 @@ siteset = "cp"
 # Each section can use different sectionsets within the same siteset
 # Available sectionsets: lightset, neutralset, darkset, coloriset
 [params.sectionsets]
-  banner = "lightset"        # Hero/banner section
+
   about = "darkset"        # About section
-  services = "neutralset"   # Services section
-  service_pages = "lightset"  # Individual service pages 
-  service = "lightset"   # Service section
-  portfolio = "lightset"    # Portfolio section
-  team = "lightset"        # Team section
-  pricing = "lightset"    # Pricing section
+  article = "coloriset"   # blogit
+  banner = "lightset"        # Hero/banner section
+  benefits = "darkset"    # ikonibanneri singlesivulla
   blog = "lightset"         # Blog section
   blog_single = "lightset"   # Individual blog posts
-  contact = "lightset"       # Contact section
   comparison = "lightset" # Comparison section
-  faq = "neutralset"         # FAQ section
-  funfacts = "neutralset"   # Funfacts section (tumma teksti valkoiselle taustakuvalle)
-  testimonial = "coloriset" # Testimonial section
+  contact = "lightset"       # Contact section
   cta = "coloriset"          # Call-to-action section
-  newsletter = "coloriset"   # Newsletter section 
-  feature = "coloriset"   # ikoninostot section 
-  article = "coloriset"   # blogit
-  gallery = "lightset"   # gridilistaus tuotteista
-  services-hero = "lightset"   # Services hero single sivuilla (tuotesivut)
-  navigation = "coloriset"   # navbar
-  main_text = "lightset"   # service-single sivun ensimmäinen palvelukuvaus
-  packages = "coloriset"       # services singlesivun main teksti osio
-  expert = "darkset"     # singlesivulla kouluttaja osio
-  benefits = "darkset"    # ikonibanneri singlesivulla
-  service_faq = "neutralset" # services single sivun faq
-  footer = "coloriset" # footer section
-  privacy = "neutralset" # privacy, jos ei pdf
-  showcase = "lightset" # mainososio
-  fullshow = "coloriset" # fullscreen taustakuva osio
-  logoband = "coloriset" # asiakaslogot osio
-  fullshow2 = "darkset" # fullscreen taustakuva osio
   double = "darkset" # kaksi tasa divia ja button
   double2 = "lightset" # kaksi tasa divia ja button, jos käytössä enemmän kuin 1 doublea
+  expert = "darkset"     # singlesivulla kouluttaja osio
+  faq = "neutralset"         # FAQ section
+  feature = "coloriset"   # ikoninostot section 
+  footer = "darkset" # footer section
+  fullshow = "coloriset" # fullscreen taustakuva osio
+  fullshow2 = "darkset" # fullscreen taustakuva osio
+  funfacts = "neutralset"   # Funfacts section (tumma teksti valkoiselle taustakuvalle)
+  gallery = "coloriset"   # gridilistaus tuotteista
+  logoband = "coloriset" # asiakaslogot osio
+  main_text = "lightset"   # service-single sivun ensimmäinen palvelukuvaus
+  navigation = "coloriset"   # navbar
+  newsletter = "coloriset"   # Newsletter section 
+  packages = "coloriset"       # services singlesivun main teksti osio
+  portfolio = "lightset"    # Portfolio section
+  pricing = "lightset"    # Pricing section
+  privacy = "neutralset" # privacy, jos ei pdf
+  service = "lightset"   # Service section
+  service_faq = "neutralset" # services single sivun faq
+  service_pages = "lightset"  # Individual service pages 
+  services = "neutralset"   # Services section
+  services-hero = "lightset"   # Services hero single sivuilla (tuotesivut)
+  showcase = "lightset" # mainososio
+  team = "lightset"        # Team section
+  testimonial = "coloriset" # Testimonial section
 
 
 # preloader

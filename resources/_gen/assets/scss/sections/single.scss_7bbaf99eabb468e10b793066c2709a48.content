@@ -27,8 +27,8 @@
   width: 60%;
   text-align: left;
   font-style: italic;
-  font-weight: 600 !important;
-  font-size: 1.1rem !important;
+  font-weight: 400 !important;
+  font-size: 1.3rem !important;
   border-left: 0px solid var(--siteset-lightset-button);
   background-color: rgba(0, 0, 0, 0);
   position: relative;
@@ -64,10 +64,11 @@
 .section .post-single-content h2,
 .section_single_blog .post-single-content h2,
 .section-lightset .post-single-content h2 {
-  font-size: 1.5rem !important;
+  font-size: 1.8rem !important;
   text-align: left;
   color: #000 !important;
   margin-bottom: 1rem;
+  margin-top: 1.6rem;
   color: var(--siteset-lightset-h2) !important; }
 
 .section .post-single-content h3,
@@ -150,7 +151,7 @@
   font-style: italic;
   font-weight: 600 !important;
   color: #000 !important;
-  margin-bottom: 1.5rem; }
+  margin-bottom: 3rem; }
 
 .blog-post-cta {
   margin-top: 2rem; }
