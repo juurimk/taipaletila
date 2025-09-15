@@ -368,6 +368,12 @@ p {
 // =============================================================================
 // Navigation
 // =============================================================================
+// Use the configured navigation sectionset background color dynamically
+.navigation {
+  {{- $navSectionset := index site.Params.sectionsets "navigation" | default "lightset" -}}
+  background-color: var(--siteset-{{ $navSectionset }}-bg) !important;
+}
+
 .navigation {
   // background-color: rgba(255, 255, 255, 0.95) !important;
   position: fixed !important;
@@ -473,7 +479,8 @@ p {
 {{ else }}
 .section-{{ $sectionsetName }} ~ .navigation .navbar-nav .nav-link,
 .navigation.section-{{ $sectionsetName }} .navbar-nav .nav-link {
-  color: var(--siteset-{{ $sectionsetName }}-button) !important;
+  /* Use primary text color on light/neutral backgrounds for better contrast */
+  color: var(--siteset-{{ $sectionsetName }}-color) !important;
   
   &:hover {
     color: var(--siteset-{{ $sectionsetName }}-h2) !important;
@@ -1210,5 +1217,3 @@ a.mask:hover {
     {{ end }}
   {{ end }}
 {{ end }}
-
-

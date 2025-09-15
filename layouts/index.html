@@ -5,6 +5,10 @@
 {{ partial "banner.html" . }} 
 {{ end }}
 
+{{ if site.Params.sections.double2.enable }}
+{{ partial "double2.html" . }} 
+{{ end }}
+
 {{ if site.Params.sections.services.enable }}
 {{ partial "services.html" . }} 
 {{ end }}
@@ -61,8 +65,8 @@
 {{ partial "logoband.html" . }}
 {{ end }}
 
-{{ if site.Params.sections.fullshow2.enable }}
-{{ partial "fullshow2.html" . }}
+{{ if site.Params.sections.gallery.enable }}
+{{ partial "gallery.html" . }}
 {{ end }}
 
 {{ if site.Params.sections.blog.enable }}
@@ -81,16 +85,13 @@
 {{ partial "double.html" . }} 
 {{ end }}
 
-{{ if site.Params.sections.double2.enable }}
-{{ partial "double2.html" . }} 
-{{ end }}
 
 {{ if site.Params.sections.newsletter.enable }}
 {{ partial "newsletter.html" . }}
 {{ end }}
 
-{{ if site.Params.sections.gallery.enable }}
-{{ partial "gallery.html" . }}
+{{ if site.Params.sections.fullshow2.enable }}
+{{ partial "fullshow2.html" . }}
 {{ end }}
 
 {{ if site.Params.sections.contact.enable }}

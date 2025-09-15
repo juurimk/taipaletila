@@ -174,8 +174,9 @@ blogBannerSubtitle = "Your Subtitle Here"
 # sitefont = "Manrope"
 
 # DM Sans (versatile - perfect for UI and content)
- sitefontlink = "https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,700;1,400&family=Comfortaa:wght@300..700&display=swap"
- sitefont = "DM Sans, Comfortaa"
+# Nunito Sans (enabled)
+ sitefontlink = "https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+ sitefont = "Nunito Sans"
 
 # System fonts (fastest - no web loading)
 # sitefontlink = ""
@@ -187,17 +188,17 @@ blogBannerSubtitle = "Your Subtitle Here"
 
 ############################# Siteset Colors Configuration ##########################
 # Choose siteset colors from available options: saaristo, kaste, korpi, hiekka, loimu, viima, verso, kipina, apila, helle, sahakka, ruska, harmonia, tuli, yo, tiikeri, syksy, neon, pastilli, pinkki, onecolor, terra, jklav1, jklav2, cp
-siteset = "cp"
+siteset = "apila"
 
 [params.sections]
     [params.sections.banner]
       enable = true
     [params.sections.team]
-      enable = true
+      enable = false
     [params.sections.service]
       enable = false
     [params.sections.services]
-      enable = true
+      enable = false
     [params.sections.feature]
       enable = false
     [params.sections.about]
@@ -209,7 +210,7 @@ siteset = "cp"
     [params.sections.portfolio]
       enable = false
     [params.sections.funfacts]
-      enable = true
+      enable = false
     [params.sections.comparison]
       enable = false
     [params.sections.pricing]
@@ -217,9 +218,9 @@ siteset = "cp"
     [params.sections.testimonial]
       enable = false
     [params.sections.blog]
-      enable = true
+      enable = false
     [params.sections.faq]
-      enable = true
+      enable = false
     [params.sections.newsletter]
       enable = false
     [params.sections.contact]
@@ -231,15 +232,15 @@ siteset = "cp"
     [params.sections.footer]
       enable = true
     [params.sections.showcase]
-      enable = true
+      enable = false
     [params.sections.fullshow]
       enable = false
     [params.sections.logoband]
-      enable = true
+      enable = false
     [params.sections.fullshow2]
       enable = true
     [params.sections.double]
-      enable = true
+      enable = false
     [params.sections.double2]
       enable = true
     
@@ -398,4 +399,3 @@ contentDir = "content/finnish"
 weight = 2
 home = "Koti"
 copyright = "Copyright &copy; 2025 juuri.ai. Kaikki oikeudet pidätetään."
-
